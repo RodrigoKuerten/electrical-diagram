@@ -1,0 +1,237 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    name: Format (clang-format)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-format
+          clang-format --version
+
+      - name: Verify formatting configuration
+        run: test -f .clang-format
+
+      - name: Check C++ formatting
+        shell: bash
+        run: |
+          mapfile -t files < <(git ls-files '*.cpp' '*.hpp' '*.h' '*.cc')
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No tracked C++ or header files yet; nothing to check."
+            exit 0
+          fi
+          printf 'Checking %d file(s) with clang-format\n' "${#files[@]}"
+          clang-format --dry-run --Werror --style=file "${files[@]}"
+
+  build-linux:
+    name: Linux (${{ matrix.compiler }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - compiler: gcc
+            cc: gcc
+            cxx: g++
+          - compiler: clang
+            cc: clang
+            cxx: clang++
+    env:
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build libgl1-mesa-dev
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          modules: "qtsvg qttools"
+          cache: true
+
+      - name: Configure
+        run: |
+          cmake -S . -B build -G Ninja \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DCMAKE_PREFIX_PATH="${QT_ROOT_DIR:-$CMAKE_PREFIX_PATH}" \
+            -DFIOVIVO_BUILD_TESTS=ON \
+            -DFIOVIVO_BUILD_UI=ON \
+            -DFIOVIVO_WARNINGS_AS_ERRORS=ON
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test
+        working-directory: build
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ctest --output-on-failure
+
+  build-windows:
+    name: Windows (MSVC)
+    runs-on: windows-2022
+    timeout-minutes: 60
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          arch: win64_msvc2022_64
+          modules: "qtsvg qttools"
+          cache: true
+
+      - name: Configure
+        shell: pwsh
+        run: |
+          $qtRoot = if ($env:QT_ROOT_DIR) { $env:QT_ROOT_DIR } else { $env:CMAKE_PREFIX_PATH }
+          if (-not $qtRoot) {
+            throw "install-qt-action did not provide QT_ROOT_DIR or CMAKE_PREFIX_PATH"
+          }
+          Write-Host "Using Qt from $qtRoot"
+          $configureArgs = @(
+            "-S", ".",
+            "-B", "build",
+            "-G", "Visual Studio 17 2022",
+            "-A", "x64",
+            "-DCMAKE_PREFIX_PATH=$qtRoot",
+            "-DFIOVIVO_BUILD_TESTS=ON",
+            "-DFIOVIVO_BUILD_UI=ON",
+            "-DFIOVIVO_WARNINGS_AS_ERRORS=ON"
+          )
+          cmake @configureArgs
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      - name: Test
+        working-directory: build
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ctest -C Release --output-on-failure
+
+  sanitizers:
+    name: Sanitizers (ASan + UBSan)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      CC: gcc
+      CXX: g++
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build
+
+      - name: Configure
+        run: |
+          cmake -S . -B build -G Ninja \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DFIOVIVO_BUILD_UI=OFF \
+            -DFIOVIVO_BUILD_TESTS=ON \
+            -DFIOVIVO_ENABLE_SANITIZERS=ON
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test with ASan and UBSan
+        working-directory: build
+        env:
+          ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+          UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+        run: ctest --output-on-failure
+
+  coverage:
+    name: Coverage (lcov)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      CC: gcc
+      CXX: g++
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build lcov
+
+      - name: Configure
+        run: |
+          cmake -S . -B build -G Ninja \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -DFIOVIVO_BUILD_UI=OFF \
+            -DFIOVIVO_BUILD_TESTS=ON \
+            -DFIOVIVO_COVERAGE=ON
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Test
+        working-directory: build
+        run: ctest --output-on-failure
+
+      - name: Capture and summarize coverage
+        shell: bash
+        run: |
+          lcov --capture --directory build --output-file coverage.info \
+            --ignore-errors mismatch,gcov,source
+          lcov --remove coverage.info \
+            '/usr/*' \
+            '*/tests/*' \
+            '*/_deps/*' \
+            --output-file coverage.filtered.info \
+            --ignore-errors unused
+          if [ ! -s coverage.filtered.info ]; then
+            echo "Coverage report is empty; check the instrumentation flags." >&2
+            exit 1
+          fi
+          lcov --summary coverage.filtered.info 2>&1 | tee coverage-summary.txt
+          {
+            echo "### Coverage summary"
+            echo '```text'
+            cat coverage-summary.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: |
+            coverage.filtered.info
+            coverage-summary.txt
+          if-no-files-found: error
+          retention-days: 14

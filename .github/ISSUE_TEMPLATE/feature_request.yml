@@ -1,0 +1,82 @@
+name: Feature request
+description: Suggest an improvement for FioVivo
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > **FioVivo is not a safety-critical tool.** It is an educational and prototyping
+        > tool, not a certified electrical design, protection coordination or safety tool.
+        > Features must not be justified by, or imply, real-installation verification.
+
+        Please describe the problem first, then the proposed change, and check whether the
+        idea already appears in `docs/plan.md`.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What limitation or workflow problem does this address?
+      placeholder: "When I ..., I cannot ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior or UI you would like.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches, workarounds, or existing related features.
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Relevant phase or scope
+      description: See the roadmap in `docs/plan.md` and `README.md`.
+      options:
+        - Phase 1 - Editor core
+        - Phase 2 - Scan-cycle simulator
+        - Phase 3 - Persistence, export and printing
+        - Phase 4 - Extras
+        - Tooling, documentation or CI
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dependency
+    attributes:
+      label: Would this require a new third-party dependency?
+      options:
+        - "No"
+        - "Yes (explain below)"
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Mockups, standards references, example diagrams or related issues.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This request fits the educational and prototyping scope of FioVivo.
+          required: true
+        - label: This request does not weaken or contradict the safety disclaimer.
+          required: true
+        - label: I am willing to help implement or test this change.

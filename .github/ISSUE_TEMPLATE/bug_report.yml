@@ -1,0 +1,96 @@
+name: Bug report
+description: Report a reproducible defect in FioVivo
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > **FioVivo is not a safety-critical tool.** It is an educational and prototyping
+        > tool, not a certified electrical design, protection coordination or safety tool.
+        > Never use it to validate a real installation.
+
+        Thanks for helping improve FioVivo. Please search existing issues before filing
+        and include enough detail to reproduce the problem.
+
+  - type: input
+    id: version
+    attributes:
+      label: FioVivo version or commit
+      description: The version shown in the About dialog, or the commit SHA.
+      placeholder: "0.1.0 / abc1234"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows 11 (MSVC)
+        - Windows 11 (MSYS2 UCRT64)
+        - Linux
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: input
+    id: toolchain
+    attributes:
+      label: Qt version and compiler
+      description: For example, Qt 6.8.3 with GCC 13.3 or MSVC 19.40.
+      placeholder: "Qt 6.8.3, GCC 13.3"
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence, including the project file used.
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happens instead? Include the exact message if there is one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, stack trace or screenshots
+      description: Paste relevant output or attach images. Remove personal or sensitive data.
+
+  - type: textarea
+    id: sample-project
+    attributes:
+      label: Minimal example project
+      description: |
+        If the bug needs a diagram, attach a small `.dcj` file or describe its contents.
+        Do not upload confidential or installation-specific documents.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I can reproduce this on a current build of the project.
+          required: true
+        - label: I understand that FioVivo must not be used for safety-critical design, verification or commissioning.
+          required: true
