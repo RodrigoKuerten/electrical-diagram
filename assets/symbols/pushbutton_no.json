@@ -1,0 +1,20 @@
+{
+  "symbol_version": 1,
+  "type": "pushbutton_no",
+  "display_name": "Pushbutton NO",
+  "display_name_pt": "Botoeira NA",
+  "category": "control",
+  "size": [30, 40],
+  "pins": [
+    {"name": "13", "role": "contact_common", "x": 15, "y": 0, "required": true},
+    {"name": "14", "role": "contact_no", "x": 15, "y": 40, "required": true}
+  ],
+  "default_parameters": {"color": "green", "mode": "momentary", "label_group": ""},
+  "parameter_schema": [
+    {"key": "color", "type": "enum", "label": "Color", "label_pt": "Cor", "options": ["green", "red", "black"]},
+    {"key": "mode", "type": "enum", "label": "Mode", "label_pt": "Modo", "options": ["momentary", "maintained"]},
+    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+  ],
+  "states": {"active": "pushbutton_no_active.svg"},
+  "element_ids": {"active": ["contact_blade"]}
+}

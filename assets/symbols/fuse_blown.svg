@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 40" width="20mm" height="40mm" stroke="#1f2933" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="10" y1="0" x2="10" y2="2.5"/>
+  <line x1="10" y1="2.5" x2="10" y2="12"/>
+  <g id="fuse_element">
+    <rect x="5" y="12" width="10" height="16"/>
+    <line x1="10" y1="12" x2="10" y2="17"/>
+    <line x1="10" y1="17" x2="8.6" y2="19.2"/>
+    <line x1="11.4" y1="20.8" x2="10" y2="23"/>
+    <line x1="10" y1="23" x2="10" y2="28"/>
+  </g>
+  <line x1="10" y1="28" x2="10" y2="37.5"/>
+  <line x1="10" y1="37.5" x2="10" y2="40"/>
+</svg>

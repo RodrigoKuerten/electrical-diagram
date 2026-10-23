@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 44" width="24mm" height="44mm" stroke="#1f2933" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="12" y1="0" x2="12" y2="2.5"/>
+  <line x1="12" y1="2.5" x2="12" y2="13"/>
+  <line x1="10.5" y1="13" x2="13.5" y2="13"/>
+  <line id="breaker_blade" x1="12" y1="13" x2="20.5" y2="27.7"/>
+  <line x1="9.5" y1="30" x2="14.5" y2="30"/>
+  <rect id="trip_square" x="14.5" y="28.5" width="3" height="3"/>
+  <line x1="12" y1="30" x2="12" y2="41.5"/>
+  <line x1="12" y1="41.5" x2="12" y2="44"/>
+</svg>

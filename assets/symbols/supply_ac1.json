@@ -1,0 +1,21 @@
+{
+  "symbol_version": 1,
+  "type": "supply_ac1",
+  "display_name": "Single-phase supply",
+  "display_name_pt": "Alimentação monofásica",
+  "category": "supplies",
+  "size": [34, 34],
+  "pins": [
+    {"name": "L", "role": "supply_in", "x": 34, "y": 10, "required": true},
+    {"name": "N", "role": "neutral", "x": 34, "y": 22, "required": true},
+    {"name": "PE", "role": "earth", "x": 34, "y": 30, "required": false}
+  ],
+  "default_parameters": {"rated_voltage": 220, "frequency": 60, "neutral": true, "earth": true},
+  "parameter_schema": [
+    {"key": "rated_voltage", "type": "number", "label": "Rated voltage", "label_pt": "Tensão nominal", "unit": "V", "min": 0},
+    {"key": "frequency", "type": "number", "label": "Frequency", "label_pt": "Frequência", "unit": "Hz", "min": 0},
+    {"key": "neutral", "type": "bool", "label": "Neutral conductor", "label_pt": "Condutor neutro"},
+    {"key": "earth", "type": "bool", "label": "Protective earth", "label_pt": "Condutor de proteção"}
+  ],
+  "states": {}
+}

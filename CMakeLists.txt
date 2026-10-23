@@ -53,6 +53,7 @@ endif()
 add_subdirectory(src/core)
 add_subdirectory(src/sim)
 add_subdirectory(src/io)
+add_subdirectory(src/library)
 
 if(FIOVIVO_BUILD_TESTS)
   enable_testing()

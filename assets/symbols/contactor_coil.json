@@ -1,0 +1,19 @@
+{
+  "symbol_version": 1,
+  "type": "contactor_coil",
+  "display_name": "Contactor coil",
+  "display_name_pt": "Bobina de contator",
+  "category": "contactors",
+  "size": [40, 30],
+  "pins": [
+    {"name": "A1", "role": "coil_input", "x": 10, "y": 0, "required": true},
+    {"name": "A2", "role": "coil_output", "x": 10, "y": 30, "required": true}
+  ],
+  "default_parameters": {"rated_voltage": 220, "label_group": ""},
+  "parameter_schema": [
+    {"key": "rated_voltage", "type": "number", "label": "Rated voltage", "label_pt": "Tensão nominal", "unit": "V", "min": 0},
+    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+  ],
+  "states": {"active": "contactor_coil_active.svg"},
+  "element_ids": {"coil_energized": ["coil_body"]}
+}

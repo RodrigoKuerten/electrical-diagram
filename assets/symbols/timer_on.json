@@ -1,0 +1,22 @@
+{
+  "symbol_version": 1,
+  "type": "timer_on",
+  "display_name": "On-delay timer",
+  "display_name_pt": "Temporizador com retardo na energização",
+  "category": "timers",
+  "size": [70, 50],
+  "pins": [
+    {"name": "A1", "role": "coil_input", "x": 0, "y": 15, "required": true},
+    {"name": "A2", "role": "coil_output", "x": 0, "y": 35, "required": true},
+    {"name": "15", "role": "contact_common", "x": 70, "y": 15, "required": true},
+    {"name": "18", "role": "contact_no", "x": 70, "y": 35, "required": true}
+  ],
+  "default_parameters": {"delay_ms": 3000, "time_base": "ms", "label_group": ""},
+  "parameter_schema": [
+    {"key": "delay_ms", "type": "int", "label": "Delay", "label_pt": "Atraso", "unit": "ms", "min": 0},
+    {"key": "time_base", "type": "enum", "label": "Time base", "label_pt": "Base de tempo", "options": ["ms", "s"]},
+    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+  ],
+  "states": {"active": "timer_on_active.svg"},
+  "element_ids": {"active": ["timer_contact_blade", "clock_face"]}
+}

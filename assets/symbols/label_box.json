@@ -1,0 +1,15 @@
+{
+  "symbol_version": 1,
+  "type": "label_box",
+  "display_name": "Label box",
+  "display_name_pt": "Caixa de texto",
+  "category": "annotations",
+  "size": [60, 20],
+  "pins": [],
+  "default_parameters": {"text": "", "font_size": 3.5},
+  "parameter_schema": [
+    {"key": "text", "type": "string", "label": "Text", "label_pt": "Texto"},
+    {"key": "font_size", "type": "number", "label": "Font size", "label_pt": "Tamanho da fonte", "unit": "mm", "min": 0.5, "max": 200}
+  ],
+  "states": {}
+}

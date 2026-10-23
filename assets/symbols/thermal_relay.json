@@ -1,0 +1,22 @@
+{
+  "symbol_version": 1,
+  "type": "thermal_relay",
+  "display_name": "Thermal overload relay",
+  "display_name_pt": "Relé térmico",
+  "category": "protection",
+  "size": [60, 60],
+  "pins": [
+    {"name": "95", "role": "contact_common", "x": 0, "y": 15, "required": true},
+    {"name": "96", "role": "contact_nc", "x": 60, "y": 15, "required": true},
+    {"name": "97", "role": "contact_common", "x": 0, "y": 45, "required": true},
+    {"name": "98", "role": "contact_no", "x": 60, "y": 45, "required": true}
+  ],
+  "default_parameters": {"trip_current": 10, "reset_mode": "manual", "label_group": ""},
+  "parameter_schema": [
+    {"key": "trip_current", "type": "number", "label": "Trip current", "label_pt": "Corrente de disparo", "unit": "A", "min": 0},
+    {"key": "reset_mode", "type": "enum", "label": "Reset mode", "label_pt": "Modo de rearme", "options": ["manual", "automatic"]},
+    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+  ],
+  "states": {"tripped": "thermal_relay_tripped.svg"},
+  "element_ids": {"tripped": ["nc_contact_blade", "no_contact_blade"]}
+}

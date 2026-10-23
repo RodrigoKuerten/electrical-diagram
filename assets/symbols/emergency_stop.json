@@ -1,0 +1,19 @@
+{
+  "symbol_version": 1,
+  "type": "emergency_stop",
+  "display_name": "Emergency stop",
+  "display_name_pt": "Botão de emergência",
+  "category": "control",
+  "size": [34, 44],
+  "pins": [
+    {"name": "1", "role": "contact_common", "x": 17, "y": 0, "required": true},
+    {"name": "2", "role": "contact_nc", "x": 17, "y": 44, "required": true}
+  ],
+  "default_parameters": {"latching": true, "label_group": ""},
+  "parameter_schema": [
+    {"key": "latching", "type": "bool", "label": "Latching", "label_pt": "Retenção"},
+    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+  ],
+  "states": {"active": "emergency_stop_active.svg"},
+  "element_ids": {"active": ["contact_blade"]}
+}

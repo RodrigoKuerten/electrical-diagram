@@ -1,0 +1,18 @@
+{
+  "symbol_version": 1,
+  "type": "contactor_aux_no",
+  "display_name": "Contactor auxiliary NO contact",
+  "display_name_pt": "Contato auxiliar NA do contator",
+  "category": "contactors",
+  "size": [30, 40],
+  "pins": [
+    {"name": "13", "role": "contact_common", "x": 15, "y": 0, "required": true},
+    {"name": "14", "role": "contact_no", "x": 15, "y": 40, "required": true}
+  ],
+  "default_parameters": {"label_group": ""},
+  "parameter_schema": [
+    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+  ],
+  "states": {"active": "contactor_aux_no_active.svg"},
+  "element_ids": {"active": ["contact_blade"]}
+}

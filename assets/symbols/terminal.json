@@ -1,0 +1,16 @@
+{
+  "symbol_version": 1,
+  "type": "terminal",
+  "display_name": "Terminal",
+  "display_name_pt": "Terminal",
+  "category": "terminals",
+  "size": [20, 20],
+  "pins": [
+    {"name": "1", "role": "terminal", "x": 10, "y": 20, "required": false}
+  ],
+  "default_parameters": {"terminal_number": "1"},
+  "parameter_schema": [
+    {"key": "terminal_number", "type": "string", "label": "Terminal number", "label_pt": "Número do terminal"}
+  ],
+  "states": {}
+}

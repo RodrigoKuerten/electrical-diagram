@@ -1,0 +1,19 @@
+{
+  "symbol_version": 1,
+  "type": "fuse",
+  "display_name": "Fuse",
+  "display_name_pt": "Fusível",
+  "category": "protection",
+  "size": [20, 40],
+  "pins": [
+    {"name": "1", "role": "contact_common", "x": 10, "y": 0, "required": true},
+    {"name": "2", "role": "contact_common", "x": 10, "y": 40, "required": true}
+  ],
+  "default_parameters": {"rated_current": 10, "blown": false},
+  "parameter_schema": [
+    {"key": "rated_current", "type": "number", "label": "Rated current", "label_pt": "Corrente nominal", "unit": "A", "min": 0},
+    {"key": "blown", "type": "bool", "label": "Blown", "label_pt": "Queimado"}
+  ],
+  "states": {"blown": "fuse_blown.svg"},
+  "element_ids": {"blown": ["fuse_element"]}
+}

@@ -1,0 +1,20 @@
+{
+  "symbol_version": 1,
+  "type": "pushbutton_nc",
+  "display_name": "Pushbutton NC",
+  "display_name_pt": "Botoeira NF",
+  "category": "control",
+  "size": [30, 40],
+  "pins": [
+    {"name": "21", "role": "contact_common", "x": 15, "y": 0, "required": true},
+    {"name": "22", "role": "contact_nc", "x": 15, "y": 40, "required": true}
+  ],
+  "default_parameters": {"color": "red", "mode": "momentary", "label_group": ""},
+  "parameter_schema": [
+    {"key": "color", "type": "enum", "label": "Color", "label_pt": "Cor", "options": ["green", "red", "black"]},
+    {"key": "mode", "type": "enum", "label": "Mode", "label_pt": "Modo", "options": ["momentary", "maintained"]},
+    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+  ],
+  "states": {"active": "pushbutton_nc_active.svg"},
+  "element_ids": {"active": ["contact_blade"]}
+}
