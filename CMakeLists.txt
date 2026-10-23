@@ -52,6 +52,7 @@ endif()
 
 add_subdirectory(src/core)
 add_subdirectory(src/sim)
+add_subdirectory(src/io)
 
 if(FIOVIVO_BUILD_TESTS)
   enable_testing()
@@ -60,7 +61,7 @@ endif()
 
 include(GNUInstallDirs)
 install(
-  TARGETS fiovivo_core fiovivo_sim
+  TARGETS fiovivo_core fiovivo_sim fiovivo_io
   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"

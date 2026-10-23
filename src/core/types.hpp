@@ -70,6 +70,7 @@ struct Metadata {
   std::string created_utc;
   std::string modified_utc;
   std::string revision = "A";
+  UnknownFields unknown_fields;
 
   friend bool operator==(const Metadata&, const Metadata&) = default;
 };
@@ -79,6 +80,7 @@ struct Labels {
   bool show_description = false;
   Vec2 tag_offset{0.0, -6.0};
   Vec2 description_offset{0.0, 6.0};
+  UnknownFields unknown_fields;
 
   friend bool operator==(const Labels&, const Labels&) = default;
 };
@@ -87,6 +89,7 @@ struct WireStyle {
   std::string color = "#1f2933";
   double thickness = 0.8;
   WireDash dash = WireDash::Solid;
+  UnknownFields unknown_fields;
 
   friend bool operator==(const WireStyle&, const WireStyle&) = default;
 };

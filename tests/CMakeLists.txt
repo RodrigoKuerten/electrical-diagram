@@ -17,4 +17,14 @@ target_include_directories(fiovivo_sim_tests PRIVATE "${CMAKE_CURRENT_SOURCE_DIR
 fiovivo_configure_target(fiovivo_sim_tests)
 gtest_discover_tests(fiovivo_sim_tests)
 
+add_executable(
+  fiovivo_io_tests
+  unit/io/test_json_io.cpp
+  unit/io/test_bom.cpp
+)
+target_link_libraries(fiovivo_io_tests PRIVATE fiovivo_io fiovivo_core GTest::gtest_main)
+target_include_directories(fiovivo_io_tests PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+fiovivo_configure_target(fiovivo_io_tests)
+gtest_discover_tests(fiovivo_io_tests)
+
 

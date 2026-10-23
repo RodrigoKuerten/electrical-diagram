@@ -20,6 +20,7 @@ struct Pin {
   Vec2 offset;
   bool required = false;
   std::vector<WireId> wires;
+  UnknownFields unknown_fields;
 
   friend bool operator==(const Pin&, const Pin&) = default;
 };
@@ -55,15 +56,14 @@ struct Component {
 struct WireEndpoint {
   ComponentId component;
   PinId pin;
+  UnknownFields unknown_fields;
 
-  constexpr WireEndpoint() = default;
-  constexpr WireEndpoint(ComponentId component_id, PinId pin_id)
-      : component(component_id), pin(pin_id) {}
+  WireEndpoint() = default;
+  WireEndpoint(ComponentId component_id, PinId pin_id) : component(component_id), pin(pin_id) {}
   explicit WireEndpoint(const PinRef& ref) : component(ref.component), pin(ref.pin) {}
 
   [[nodiscard]] PinRef toPinRef() const { return {component, pin}; }
-  friend constexpr bool operator==(const WireEndpoint&, const WireEndpoint&) = default;
-  friend constexpr auto operator<=>(const WireEndpoint&, const WireEndpoint&) = default;
+  friend bool operator==(const WireEndpoint&, const WireEndpoint&) = default;
 };
 
 struct Wire {

@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fiovivo.local/schema/dcj-1.json",
+  "title": "FioVivo project file (.dcj)",
+  "description": "Educational electrical control diagram project. Unknown object members are preserved by the application.",
+  "type": "object",
+  "required": ["format", "format_version", "metadata", "sheets"],
+  "properties": {
+    "format": { "const": "dcj" },
+    "format_version": { "const": 1 },
+    "app_version": { "type": "string" },
+    "metadata": { "$ref": "#/$defs/metadata" },
+    "sheets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/sheet" }
+    },
+    "library_refs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/library_ref" }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[cpswa][0-9]+$" },
+    "component_id": { "type": "string", "pattern": "^c[0-9]+$" },
+    "pin_id": { "type": "string", "pattern": "^p[0-9]+$" },
+    "wire_id": { "type": "string", "pattern": "^w[0-9]+$" },
+    "sheet_id": { "type": "string", "pattern": "^s[0-9]+$" },
+    "annotation_id": { "type": "string", "pattern": "^a[0-9]+$" },
+    "point": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "number" }
+    },
+    "size": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "number", "minimum": 0 }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["title", "author", "created_utc", "modified_utc", "revision"],
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "created_utc": { "type": "string" },
+        "modified_utc": { "type": "string" },
+        "revision": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "labels": {
+      "type": "object",
+      "required": ["show_tag", "show_description", "tag_offset", "description_offset"],
+      "properties": {
+        "show_tag": { "type": "boolean" },
+        "show_description": { "type": "boolean" },
+        "tag_offset": { "$ref": "#/$defs/point" },
+        "description_offset": { "$ref": "#/$defs/point" }
+      },
+      "additionalProperties": true
+    },
+    "pin": {
+      "type": "object",
+      "required": ["id", "name", "role", "offset", "required"],
+      "properties": {
+        "id": { "$ref": "#/$defs/pin_id" },
+        "name": { "type": "string" },
+        "role": {
+          "type": "string",
+          "enum": [
+            "terminal",
+            "coil_input",
+            "coil_output",
+            "contact_common",
+            "contact_no",
+            "contact_nc",
+            "supply_in",
+            "supply_out",
+            "neutral",
+            "earth",
+            "signal_in",
+            "signal_out"
+          ]
+        },
+        "offset": { "$ref": "#/$defs/point" },
+        "required": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "component": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "tag",
+        "position",
+        "size",
+        "rotation",
+        "pins",
+        "parameters",
+        "labels"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/component_id" },
+        "type": { "type": "string", "minLength": 1 },
+        "tag": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "position": { "$ref": "#/$defs/point" },
+        "size": { "$ref": "#/$defs/size" },
+        "rotation": { "type": "integer", "enum": [0, 90, 180, 270] },
+        "pins": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pin" }
+        },
+        "parameters": { "type": "object" },
+        "labels": { "$ref": "#/$defs/labels" }
+      },
+      "additionalProperties": true
+    },
+    "endpoint": {
+      "type": "object",
+      "required": ["component", "pin"],
+      "properties": {
+        "component": { "$ref": "#/$defs/component_id" },
+        "pin": { "$ref": "#/$defs/pin_id" }
+      },
+      "additionalProperties": true
+    },
+    "wire_style": {
+      "type": "object",
+      "required": ["color", "thickness", "dash"],
+      "properties": {
+        "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "thickness": { "type": "number", "minimum": 0 },
+        "dash": { "type": "string", "enum": ["solid", "dashed", "dotted"] }
+      },
+      "additionalProperties": true
+    },
+    "wire": {
+      "type": "object",
+      "required": ["id", "from", "to", "route", "style", "allow_self_loop"],
+      "properties": {
+        "id": { "$ref": "#/$defs/wire_id" },
+        "from": { "$ref": "#/$defs/endpoint" },
+        "to": { "$ref": "#/$defs/endpoint" },
+        "route": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/point" }
+        },
+        "style": { "$ref": "#/$defs/wire_style" },
+        "allow_self_loop": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "annotation": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "position",
+        "size",
+        "text",
+        "font_size",
+        "color"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/annotation_id" },
+        "kind": { "type": "string", "enum": ["text", "rectangle", "legend"] },
+        "position": { "$ref": "#/$defs/point" },
+        "size": { "$ref": "#/$defs/size" },
+        "text": { "type": "string" },
+        "font_size": { "type": "number", "minimum": 0 },
+        "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+      },
+      "additionalProperties": true
+    },
+    "sheet": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "paper",
+        "orientation",
+        "margin",
+        "show_frame",
+        "components",
+        "wires",
+        "annotations"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/sheet_id" },
+        "name": { "type": "string", "minLength": 1 },
+        "paper": { "type": "string", "enum": ["A4", "A3", "A2", "A1", "Letter"] },
+        "orientation": { "type": "string", "enum": ["landscape", "portrait"] },
+        "margin": { "type": "number", "minimum": 0 },
+        "show_frame": { "type": "boolean" },
+        "components": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/component" }
+        },
+        "wires": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/wire" }
+        },
+        "annotations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/annotation" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "library_ref": {
+      "type": "object",
+      "required": ["type", "symbol_version"],
+      "properties": {
+        "type": { "type": "string", "minLength": 1 },
+        "symbol_version": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": true
+    }
+  }
+}

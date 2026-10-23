@@ -1,0 +1,7 @@
+#pragma once
+
+namespace fiovivo::io::detail {
+
+inline constexpr const char* kFileFormatSchemaJson = R"FIOVIVO_SCHEMA(@FIOVIVO_SCHEMA_JSON@)FIOVIVO_SCHEMA";
+
+} // namespace fiovivo::io::detail
