@@ -1,0 +1,106 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "FIOVIVO_BUILD_TESTS": "ON",
+        "FIOVIVO_BUILD_UI": "ON"
+      }
+    },
+    {
+      "name": "linux-debug",
+      "displayName": "Linux Debug (Ninja)",
+      "inherits": "base",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux" },
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug", "FIOVIVO_WARNINGS_AS_ERRORS": "ON" }
+    },
+    {
+      "name": "linux-release",
+      "displayName": "Linux Release (Ninja)",
+      "inherits": "base",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux" },
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "windows-debug",
+      "displayName": "Windows Debug (MSVC)",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/windows-debug",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "FIOVIVO_BUILD_TESTS": "ON",
+        "FIOVIVO_BUILD_UI": "ON",
+        "FIOVIVO_WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "windows-release",
+      "displayName": "Windows Release (MSVC)",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/windows-release",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "FIOVIVO_BUILD_TESTS": "ON",
+        "FIOVIVO_BUILD_UI": "ON"
+      }
+    },
+    {
+      "name": "windows-msys2-debug",
+      "displayName": "Windows Debug (MSYS2 UCRT64 GCC)",
+      "inherits": "base",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_PREFIX_PATH": "C:/msys64/ucrt64",
+        "FIOVIVO_WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "windows-msys2-release",
+      "displayName": "Windows Release (MSYS2 UCRT64 GCC)",
+      "inherits": "base",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/msys64/ucrt64"
+      }
+    },
+    {
+      "name": "asan",
+      "displayName": "Linux ASan + UBSan",
+      "inherits": "base",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux" },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "FIOVIVO_ENABLE_SANITIZERS": "ON",
+        "FIOVIVO_BUILD_UI": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "linux-debug", "configurePreset": "linux-debug" },
+    { "name": "linux-release", "configurePreset": "linux-release" },
+    { "name": "windows-debug", "configurePreset": "windows-debug", "configuration": "Debug" },
+    { "name": "windows-release", "configurePreset": "windows-release", "configuration": "Release" },
+    { "name": "windows-msys2-debug", "configurePreset": "windows-msys2-debug" },
+    { "name": "windows-msys2-release", "configurePreset": "windows-msys2-release" },
+    { "name": "asan", "configurePreset": "asan" }
+  ],
+  "testPresets": [
+    { "name": "linux-debug", "configurePreset": "linux-debug", "output": { "outputOnFailure": true } },
+    { "name": "linux-release", "configurePreset": "linux-release", "output": { "outputOnFailure": true } },
+    { "name": "windows-debug", "configurePreset": "windows-debug", "configuration": "Debug", "output": { "outputOnFailure": true } },
+    { "name": "windows-release", "configurePreset": "windows-release", "configuration": "Release", "output": { "outputOnFailure": true } },
+    { "name": "windows-msys2-debug", "configurePreset": "windows-msys2-debug", "output": { "outputOnFailure": true } },
+    { "name": "windows-msys2-release", "configurePreset": "windows-msys2-release", "output": { "outputOnFailure": true } },
+    { "name": "asan", "configurePreset": "asan", "output": { "outputOnFailure": true } }
+  ]
+}

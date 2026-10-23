@@ -1,0 +1,43 @@
+# Build trees
+build/
+build-*/
+out/
+cmake-build-*/
+
+# IDE / editor
+.vscode/
+.idea/
+*.user
+*.user.*
+compile_commands.json
+
+# Qt generated
+*.qm
+*_autogen/
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+
+# Test / coverage artifacts
+Testing/
+*.gcda
+*.gcno
+*.profraw
+*.profdata
+coverage/
+*.lcov
+test-results/
+
+# Exports and local data
+*.png
+*.pdf
+*.csv
+!tests/data/**/*.csv
+*.dcj.autosave
+.autosave/
+recovery/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
