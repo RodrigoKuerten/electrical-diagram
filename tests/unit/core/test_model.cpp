@@ -1,7 +1,8 @@
-#include <gtest/gtest.h>
-
 #include "core/model.hpp"
 #include "core/types.hpp"
+
+#include <gtest/gtest.h>
+
 #include "unit/core/test_helpers.hpp"
 
 namespace fiovivo {
@@ -115,8 +116,7 @@ TEST(ModelTest, RejectsInvalidWires) {
   const auto allowed = diagram.createWire(sheet_id, {coil_id, a1}, {coil_id, a2}, {}, {}, true);
   ASSERT_TRUE(allowed);
 
-  const auto duplicate =
-      diagram.createWire(sheet_id, {coil_id, a1}, {coil_id, a2}, {}, {}, true);
+  const auto duplicate = diagram.createWire(sheet_id, {coil_id, a1}, {coil_id, a2}, {}, {}, true);
   ASSERT_FALSE(duplicate);
   EXPECT_EQ(duplicate.error().code, ErrorCode::DuplicateWire);
 

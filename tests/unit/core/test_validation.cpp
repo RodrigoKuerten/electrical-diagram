@@ -1,27 +1,28 @@
+#include "core/model.hpp"
+#include "core/types.hpp"
+#include "core/validation.hpp"
+
 #include <gtest/gtest.h>
 
 #include <algorithm>
 
-#include "core/model.hpp"
-#include "core/types.hpp"
-#include "core/validation.hpp"
 #include "unit/core/test_helpers.hpp"
 
 namespace fiovivo {
 namespace {
 
 [[nodiscard]] bool hasCode(const ValidationReport& report, ProblemCode code) {
-  return std::any_of(report.problems.begin(), report.problems.end(),
+  return std::any_of(report.problems.begin(),
+                     report.problems.end(),
                      [code](const Problem& problem) { return problem.code == code; });
 }
 
-[[nodiscard]] std::size_t countCode(const ValidationReport& report, ProblemCode code,
-                                    ProblemSeverity severity) {
-  return static_cast<std::size_t>(
-      std::count_if(report.problems.begin(), report.problems.end(),
-                    [code, severity](const Problem& problem) {
-                      return problem.code == code && problem.severity == severity;
-                    }));
+[[nodiscard]] std::size_t
+countCode(const ValidationReport& report, ProblemCode code, ProblemSeverity severity) {
+  return static_cast<std::size_t>(std::count_if(
+      report.problems.begin(), report.problems.end(), [code, severity](const Problem& problem) {
+        return problem.code == code && problem.severity == severity;
+      }));
 }
 
 TEST(ValidationTest, DuplicateTagsAreErrors) {

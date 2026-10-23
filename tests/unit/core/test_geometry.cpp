@@ -1,8 +1,8 @@
-#include <cmath>
+#include "core/geometry.hpp"
 
 #include <gtest/gtest.h>
 
-#include "core/geometry.hpp"
+#include <cmath>
 
 namespace fiovivo {
 namespace {

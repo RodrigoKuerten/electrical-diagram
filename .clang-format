@@ -58,9 +58,7 @@ ReflowComments: true
 SortIncludes: CaseSensitive
 SpaceAfterCStyleCast: false
 SpaceAfterTemplateKeyword: false
-SpaceBeforeCpp11Braces: true
 SpaceBeforeParens: ControlStatements
 SpaceInEmptyBlock: false
-Standard: c++20
 TabWidth: 2
 UseTab: Never

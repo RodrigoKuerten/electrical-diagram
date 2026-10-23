@@ -1,5 +1,8 @@
 #pragma once
 
+#include "core/geometry.hpp"
+#include "core/ids.hpp"
+
 #include <cstdint>
 #include <map>
 #include <optional>
@@ -7,9 +10,6 @@
 #include <string_view>
 #include <variant>
 #include <vector>
-
-#include "core/geometry.hpp"
-#include "core/ids.hpp"
 
 namespace fiovivo {
 
@@ -53,14 +53,14 @@ using ParameterValue = std::variant<bool, std::int64_t, double, std::string>;
 using ParameterMap = std::map<std::string, ParameterValue>;
 using UnknownFields = std::map<std::string, std::string>;
 
-[[nodiscard]] bool parameterBool(const ParameterMap& parameters, std::string_view key,
-                                 bool fallback = false);
-[[nodiscard]] std::int64_t parameterInt(const ParameterMap& parameters, std::string_view key,
-                                        std::int64_t fallback = 0);
-[[nodiscard]] double parameterNumber(const ParameterMap& parameters, std::string_view key,
-                                     double fallback = 0.0);
-[[nodiscard]] std::string parameterString(const ParameterMap& parameters, std::string_view key,
-                                          std::string fallback = {});
+[[nodiscard]] bool
+parameterBool(const ParameterMap& parameters, std::string_view key, bool fallback = false);
+[[nodiscard]] std::int64_t
+parameterInt(const ParameterMap& parameters, std::string_view key, std::int64_t fallback = 0);
+[[nodiscard]] double
+parameterNumber(const ParameterMap& parameters, std::string_view key, double fallback = 0.0);
+[[nodiscard]] std::string
+parameterString(const ParameterMap& parameters, std::string_view key, std::string fallback = {});
 [[nodiscard]] const ParameterValue* findParameter(const ParameterMap& parameters,
                                                   std::string_view key);
 

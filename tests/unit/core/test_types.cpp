@@ -1,15 +1,23 @@
-#include <gtest/gtest.h>
-
 #include "core/types.hpp"
+
+#include <gtest/gtest.h>
 
 namespace fiovivo {
 namespace {
 
 TEST(TypesTest, PinRoleRoundTrip) {
-  for (PinRole role : {PinRole::Terminal, PinRole::CoilInput, PinRole::CoilOutput,
-                       PinRole::ContactCommon, PinRole::ContactNo, PinRole::ContactNc,
-                       PinRole::SupplyIn, PinRole::SupplyOut, PinRole::Neutral, PinRole::Earth,
-                       PinRole::SignalIn, PinRole::SignalOut}) {
+  for (PinRole role : {PinRole::Terminal,
+                       PinRole::CoilInput,
+                       PinRole::CoilOutput,
+                       PinRole::ContactCommon,
+                       PinRole::ContactNo,
+                       PinRole::ContactNc,
+                       PinRole::SupplyIn,
+                       PinRole::SupplyOut,
+                       PinRole::Neutral,
+                       PinRole::Earth,
+                       PinRole::SignalIn,
+                       PinRole::SignalOut}) {
     const auto parsed = pinRoleFromString(toString(role));
     ASSERT_TRUE(parsed.has_value());
     EXPECT_EQ(*parsed, role);
@@ -38,8 +46,8 @@ TEST(TypesTest, PaperDimensionsLandscapeAndPortrait) {
 }
 
 TEST(TypesTest, PaperAndOrientationRoundTrip) {
-  for (PaperSize size : {PaperSize::A4, PaperSize::A3, PaperSize::A2, PaperSize::A1,
-                         PaperSize::Letter}) {
+  for (PaperSize size :
+       {PaperSize::A4, PaperSize::A3, PaperSize::A2, PaperSize::A1, PaperSize::Letter}) {
     EXPECT_EQ(paperSizeFromString(toString(size)), size);
   }
   EXPECT_EQ(orientationFromString("portrait"), Orientation::Portrait);
@@ -86,8 +94,8 @@ TEST(TypesTest, WireDashAndAnnotationRoundTrip) {
   for (WireDash dash : {WireDash::Solid, WireDash::Dashed, WireDash::Dotted}) {
     EXPECT_EQ(wireDashFromString(toString(dash)), dash);
   }
-  for (AnnotationKind kind : {AnnotationKind::Text, AnnotationKind::Rectangle,
-                              AnnotationKind::Legend}) {
+  for (AnnotationKind kind :
+       {AnnotationKind::Text, AnnotationKind::Rectangle, AnnotationKind::Legend}) {
     EXPECT_EQ(annotationKindFromString(toString(kind)), kind);
   }
 }

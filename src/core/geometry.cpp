@@ -36,7 +36,8 @@ constexpr double kEpsilon = 1e-9;
   return result;
 }
 
-[[nodiscard]] double collisionLength(const std::vector<Vec2>& route, const std::vector<Rect>& rects) {
+[[nodiscard]] double collisionLength(const std::vector<Vec2>& route,
+                                     const std::vector<Rect>& rects) {
   double total = 0.0;
   for (std::size_t i = 1; i < route.size(); ++i) {
     const Segment segment{route[i - 1], route[i]};
@@ -68,28 +69,28 @@ constexpr double kEpsilon = 1e-9;
 
 Rotation nextClockwise(Rotation rotation) {
   switch (rotation) {
-    case Rotation::Deg0:
-      return Rotation::Deg90;
-    case Rotation::Deg90:
-      return Rotation::Deg180;
-    case Rotation::Deg180:
-      return Rotation::Deg270;
-    case Rotation::Deg270:
-      return Rotation::Deg0;
+  case Rotation::Deg0:
+    return Rotation::Deg90;
+  case Rotation::Deg90:
+    return Rotation::Deg180;
+  case Rotation::Deg180:
+    return Rotation::Deg270;
+  case Rotation::Deg270:
+    return Rotation::Deg0;
   }
   return Rotation::Deg0;
 }
 
 Rotation mirrorRotation(Rotation rotation) {
   switch (rotation) {
-    case Rotation::Deg0:
-      return Rotation::Deg0;
-    case Rotation::Deg90:
-      return Rotation::Deg270;
-    case Rotation::Deg180:
-      return Rotation::Deg180;
-    case Rotation::Deg270:
-      return Rotation::Deg90;
+  case Rotation::Deg0:
+    return Rotation::Deg0;
+  case Rotation::Deg90:
+    return Rotation::Deg270;
+  case Rotation::Deg180:
+    return Rotation::Deg180;
+  case Rotation::Deg270:
+    return Rotation::Deg90;
   }
   return Rotation::Deg0;
 }
@@ -98,14 +99,14 @@ int rotationDegrees(Rotation rotation) { return static_cast<int>(rotation); }
 
 Vec2 rotateVector(Vec2 value, Rotation rotation) {
   switch (rotation) {
-    case Rotation::Deg0:
-      return value;
-    case Rotation::Deg90:
-      return {-value.y, value.x};
-    case Rotation::Deg180:
-      return {-value.x, -value.y};
-    case Rotation::Deg270:
-      return {value.y, -value.x};
+  case Rotation::Deg0:
+    return value;
+  case Rotation::Deg90:
+    return {-value.y, value.x};
+  case Rotation::Deg180:
+    return {-value.x, -value.y};
+  case Rotation::Deg270:
+    return {value.y, -value.x};
   }
   return value;
 }
@@ -162,8 +163,7 @@ bool segmentIntersectsRect(const Segment& segment, const Rect& rect) {
   const double max_x = std::max(segment.from.x, segment.to.x);
   const double min_y = std::min(segment.from.y, segment.to.y);
   const double max_y = std::max(segment.from.y, segment.to.y);
-  if (max_x < rect.left() || min_x > rect.right() || max_y < rect.top() ||
-      min_y > rect.bottom()) {
+  if (max_x < rect.left() || min_x > rect.right() || max_y < rect.top() || min_y > rect.bottom()) {
     return false;
   }
   if (nearlyEqual(min_x, max_x)) {
@@ -175,8 +175,11 @@ bool segmentIntersectsRect(const Segment& segment, const Rect& rect) {
   return true;
 }
 
-std::vector<Vec2> orthogonalRoute(Vec2 start, Vec2 end, Vec2 start_direction,
-                                  Vec2 end_direction, const std::vector<Rect>& obstacles,
+std::vector<Vec2> orthogonalRoute(Vec2 start,
+                                  Vec2 end,
+                                  Vec2 start_direction,
+                                  Vec2 end_direction,
+                                  const std::vector<Rect>& obstacles,
                                   const RouteOptions& options) {
   if (nearlyEqual(start.x, end.x) || nearlyEqual(start.y, end.y)) {
     return simplify({start, end});

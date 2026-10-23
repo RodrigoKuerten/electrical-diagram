@@ -5,7 +5,8 @@
 namespace fiovivo {
 namespace {
 
-template <typename Id> void observeId(std::uint64_t& next, Id id) {
+template<typename Id>
+void observeId(std::uint64_t& next, Id id) {
   if (id.valid() && id.value() >= next) {
     next = id.value() + 1;
   }

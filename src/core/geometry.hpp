@@ -102,7 +102,9 @@ struct RouteOptions {
 // derived from the requested directions (0, 0 means "derive automatically"). Obstacles are
 // expanded by options.clearance. The function is deterministic: identical input yields identical
 // output.
-[[nodiscard]] std::vector<Vec2> orthogonalRoute(Vec2 start, Vec2 end, Vec2 start_direction,
+[[nodiscard]] std::vector<Vec2> orthogonalRoute(Vec2 start,
+                                                Vec2 end,
+                                                Vec2 start_direction,
                                                 Vec2 end_direction,
                                                 const std::vector<Rect>& obstacles = {},
                                                 const RouteOptions& options = {});

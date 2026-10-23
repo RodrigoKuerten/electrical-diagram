@@ -1,15 +1,15 @@
 #pragma once
 
+#include "core/geometry.hpp"
+#include "core/ids.hpp"
+#include "core/result.hpp"
+#include "core/types.hpp"
+
 #include <cstddef>
 #include <optional>
 #include <string>
 #include <string_view>
 #include <vector>
-
-#include "core/geometry.hpp"
-#include "core/ids.hpp"
-#include "core/result.hpp"
-#include "core/types.hpp"
 
 namespace fiovivo {
 
@@ -154,7 +154,9 @@ public:
   Result<SheetId> addSheet(Sheet sheet);
   Result<ComponentId> addComponent(SheetId sheet_id, Component component);
   Result<WireId> addWire(SheetId sheet_id, Wire wire);
-  Result<WireId> createWire(SheetId sheet_id, PinRef from, PinRef to,
+  Result<WireId> createWire(SheetId sheet_id,
+                            PinRef from,
+                            PinRef to,
                             const std::vector<Rect>& obstacles = {},
                             WireStyle style = {},
                             bool allow_self_loop = false);

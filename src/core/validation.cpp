@@ -1,5 +1,7 @@
 #include "core/validation.hpp"
 
+#include "core/types.hpp"
+
 #include <algorithm>
 #include <map>
 #include <numeric>
@@ -7,8 +9,6 @@
 #include <string>
 #include <utility>
 #include <vector>
-
-#include "core/types.hpp"
 
 namespace fiovivo {
 namespace {
@@ -24,8 +24,7 @@ public:
 
   int find(int index) {
     if (parents_[static_cast<std::size_t>(index)] != index) {
-      parents_[static_cast<std::size_t>(index)] =
-          find(parents_[static_cast<std::size_t>(index)]);
+      parents_[static_cast<std::size_t>(index)] = find(parents_[static_cast<std::size_t>(index)]);
     }
     return parents_[static_cast<std::size_t>(index)];
   }
@@ -119,8 +118,7 @@ private:
   return std::make_pair(PinRef{component.id, first->id}, PinRef{component.id, second->id});
 }
 
-[[nodiscard]] std::vector<std::pair<PinRef, PinRef>>
-passThroughPairs(const Component& component) {
+[[nodiscard]] std::vector<std::pair<PinRef, PinRef>> passThroughPairs(const Component& component) {
   using namespace component_type;
   std::vector<std::pair<PinRef, PinRef>> result;
   if (component.type == kThermalRelay) {
@@ -181,9 +179,7 @@ struct ConnectivityGraph {
     ensure(pin);
     return indices.at(pin);
   }
-  void connect(const PinRef& left, const PinRef& right) {
-    sets.unite(index(left), index(right));
-  }
+  void connect(const PinRef& left, const PinRef& right) { sets.unite(index(left), index(right)); }
   void addSource(const PinRef& pin, std::string group) {
     const int root = sets.find(index(pin));
     sources[root].insert(std::move(group));
@@ -230,42 +226,42 @@ struct ConnectivityGraph {
 
 std::string_view toString(ProblemSeverity severity) {
   switch (severity) {
-    case ProblemSeverity::Error:
-      return "error";
-    case ProblemSeverity::Warning:
-      return "warning";
-    case ProblemSeverity::Info:
-      return "info";
+  case ProblemSeverity::Error:
+    return "error";
+  case ProblemSeverity::Warning:
+    return "warning";
+  case ProblemSeverity::Info:
+    return "info";
   }
   return "warning";
 }
 
 std::string_view toString(ProblemCode code) {
   switch (code) {
-    case ProblemCode::DuplicateTag:
-      return "duplicate_tag";
-    case ProblemCode::DuplicateId:
-      return "duplicate_id";
-    case ProblemCode::FloatingWire:
-      return "floating_wire";
-    case ProblemCode::InvalidWireEndpoint:
-      return "invalid_wire_endpoint";
-    case ProblemCode::SelfLoopNotAllowed:
-      return "self_loop_not_allowed";
-    case ProblemCode::RequiredPinUnconnected:
-      return "required_pin_unconnected";
-    case ProblemCode::UnmatchedContact:
-      return "unmatched_contact";
-    case ProblemCode::CoilWithoutContact:
-      return "coil_without_contact";
-    case ProblemCode::MissingSupplyPath:
-      return "missing_supply_path";
-    case ProblemCode::ComponentOverlap:
-      return "component_overlap";
-    case ProblemCode::InvalidComponent:
-      return "invalid_component";
-    case ProblemCode::InvalidPinConnection:
-      return "invalid_pin_connection";
+  case ProblemCode::DuplicateTag:
+    return "duplicate_tag";
+  case ProblemCode::DuplicateId:
+    return "duplicate_id";
+  case ProblemCode::FloatingWire:
+    return "floating_wire";
+  case ProblemCode::InvalidWireEndpoint:
+    return "invalid_wire_endpoint";
+  case ProblemCode::SelfLoopNotAllowed:
+    return "self_loop_not_allowed";
+  case ProblemCode::RequiredPinUnconnected:
+    return "required_pin_unconnected";
+  case ProblemCode::UnmatchedContact:
+    return "unmatched_contact";
+  case ProblemCode::CoilWithoutContact:
+    return "coil_without_contact";
+  case ProblemCode::MissingSupplyPath:
+    return "missing_supply_path";
+  case ProblemCode::ComponentOverlap:
+    return "component_overlap";
+  case ProblemCode::InvalidComponent:
+    return "invalid_component";
+  case ProblemCode::InvalidPinConnection:
+    return "invalid_pin_connection";
   }
   return "unknown";
 }
@@ -337,19 +333,31 @@ ValidationReport validate(const Diagram& diagram) {
     for (const Component& component : sheet.components) {
       tags[component.tag].push_back(component.id);
       if (component.tag.empty()) {
-        report.add({ProblemSeverity::Error, ProblemCode::InvalidComponent,
-                    "Component has an empty tag", sheet.id, component.id, std::nullopt,
+        report.add({ProblemSeverity::Error,
+                    ProblemCode::InvalidComponent,
+                    "Component has an empty tag",
+                    sheet.id,
+                    component.id,
+                    std::nullopt,
                     std::nullopt});
       }
       if (component.type.empty()) {
-        report.add({ProblemSeverity::Error, ProblemCode::InvalidComponent,
-                    "Component has an empty type", sheet.id, component.id, std::nullopt,
+        report.add({ProblemSeverity::Error,
+                    ProblemCode::InvalidComponent,
+                    "Component has an empty type",
+                    sheet.id,
+                    component.id,
+                    std::nullopt,
                     std::nullopt});
       }
       if (component.pins.empty() && component.type != component_type::kLabelBox) {
-        report.add({ProblemSeverity::Warning, ProblemCode::InvalidComponent,
-                    "Component has no electrical pins: " + component.tag, sheet.id, component.id,
-                    std::nullopt, std::nullopt});
+        report.add({ProblemSeverity::Warning,
+                    ProblemCode::InvalidComponent,
+                    "Component has no electrical pins: " + component.tag,
+                    sheet.id,
+                    component.id,
+                    std::nullopt,
+                    std::nullopt});
       }
     }
   }
@@ -359,9 +367,13 @@ ValidationReport validate(const Diagram& diagram) {
     }
     for (std::size_t index = 1; index < ids.size(); ++index) {
       const Sheet* sheet = diagram.findSheetForComponent(ids[index]);
-      report.add({ProblemSeverity::Error, ProblemCode::DuplicateTag,
-                  "Duplicate tag: " + tag, sheet == nullptr ? SheetId{} : sheet->id, ids[index],
-                  std::nullopt, std::nullopt});
+      report.add({ProblemSeverity::Error,
+                  ProblemCode::DuplicateTag,
+                  "Duplicate tag: " + tag,
+                  sheet == nullptr ? SheetId{} : sheet->id,
+                  ids[index],
+                  std::nullopt,
+                  std::nullopt});
     }
   }
 
@@ -370,34 +382,56 @@ ValidationReport validate(const Diagram& diagram) {
     std::set<WireId> wire_ids;
     for (const Wire& wire : sheet.wires) {
       if (!wire_ids.insert(wire.id).second) {
-        report.add({ProblemSeverity::Error, ProblemCode::DuplicateId, "Duplicate wire id",
-                    sheet.id, std::nullopt, wire.id, std::nullopt});
+        report.add({ProblemSeverity::Error,
+                    ProblemCode::DuplicateId,
+                    "Duplicate wire id",
+                    sheet.id,
+                    std::nullopt,
+                    wire.id,
+                    std::nullopt});
       }
       const Component* from_component = sheet.findComponent(wire.from.component);
       const Component* to_component = sheet.findComponent(wire.to.component);
-      const Pin* from_pin = from_component == nullptr ? nullptr : from_component->findPin(wire.from.pin);
+      const Pin* from_pin = from_component == nullptr ? nullptr
+                                                      : from_component->findPin(wire.from.pin);
       const Pin* to_pin = to_component == nullptr ? nullptr : to_component->findPin(wire.to.pin);
       if (from_component == nullptr || to_component == nullptr || from_pin == nullptr ||
           to_pin == nullptr) {
-        report.add({ProblemSeverity::Error, ProblemCode::FloatingWire,
-                    "Wire has a missing endpoint", sheet.id, std::nullopt, wire.id,
+        report.add({ProblemSeverity::Error,
+                    ProblemCode::FloatingWire,
+                    "Wire has a missing endpoint",
+                    sheet.id,
+                    std::nullopt,
+                    wire.id,
                     std::nullopt});
         continue;
       }
       if (wire.from.pin == wire.to.pin) {
-        report.add({ProblemSeverity::Error, ProblemCode::InvalidWireEndpoint,
-                    "Wire connects a pin to itself", sheet.id, from_component->id, wire.id,
+        report.add({ProblemSeverity::Error,
+                    ProblemCode::InvalidWireEndpoint,
+                    "Wire connects a pin to itself",
+                    sheet.id,
+                    from_component->id,
+                    wire.id,
                     PinRef{from_component->id, from_pin->id}});
       }
       if (from_component->id == to_component->id && !wire.allow_self_loop) {
-        report.add({ProblemSeverity::Error, ProblemCode::SelfLoopNotAllowed,
-                    "Self-loop wire is not allowed", sheet.id, from_component->id, wire.id,
+        report.add({ProblemSeverity::Error,
+                    ProblemCode::SelfLoopNotAllowed,
+                    "Self-loop wire is not allowed",
+                    sheet.id,
+                    from_component->id,
+                    wire.id,
                     std::nullopt});
       }
       for (const Pin* pin : {from_pin, to_pin}) {
         if (std::find(pin->wires.begin(), pin->wires.end(), wire.id) == pin->wires.end()) {
-          report.add({ProblemSeverity::Error, ProblemCode::InvalidPinConnection,
-                      "Pin does not list its wire", sheet.id, from_component->id, wire.id,
+          report.add({ProblemSeverity::Error,
+                      ProblemCode::InvalidPinConnection,
+                      "Pin does not list its wire",
+                      sheet.id,
+                      from_component->id,
+                      wire.id,
                       PinRef{from_component->id, pin->id}});
         }
       }
@@ -409,24 +443,36 @@ ValidationReport validate(const Diagram& diagram) {
         for (const WireId wire_id : pin.wires) {
           const Wire* wire = sheet.findWire(wire_id);
           if (wire == nullptr) {
-            report.add({ProblemSeverity::Error, ProblemCode::InvalidPinConnection,
-                        "Pin references a missing wire: " + pinLabel(component, pin), sheet.id,
-                        component.id, wire_id, PinRef{component.id, pin.id}});
+            report.add({ProblemSeverity::Error,
+                        ProblemCode::InvalidPinConnection,
+                        "Pin references a missing wire: " + pinLabel(component, pin),
+                        sheet.id,
+                        component.id,
+                        wire_id,
+                        PinRef{component.id, pin.id}});
             continue;
           }
           const bool references_pin =
               (wire->from.pin == pin.id && wire->from.component == component.id) ||
               (wire->to.pin == pin.id && wire->to.component == component.id);
           if (!references_pin) {
-            report.add({ProblemSeverity::Error, ProblemCode::InvalidPinConnection,
-                        "Pin/wire back-reference mismatch: " + pinLabel(component, pin), sheet.id,
-                        component.id, wire_id, PinRef{component.id, pin.id}});
+            report.add({ProblemSeverity::Error,
+                        ProblemCode::InvalidPinConnection,
+                        "Pin/wire back-reference mismatch: " + pinLabel(component, pin),
+                        sheet.id,
+                        component.id,
+                        wire_id,
+                        PinRef{component.id, pin.id}});
           }
         }
         if (pin.required && pin.wires.empty()) {
-          report.add({ProblemSeverity::Warning, ProblemCode::RequiredPinUnconnected,
-                      "Required pin is not connected: " + pinLabel(component, pin), sheet.id,
-                      component.id, std::nullopt, PinRef{component.id, pin.id}});
+          report.add({ProblemSeverity::Warning,
+                      ProblemCode::RequiredPinUnconnected,
+                      "Required pin is not connected: " + pinLabel(component, pin),
+                      sheet.id,
+                      component.id,
+                      std::nullopt,
+                      PinRef{component.id, pin.id}});
         }
       }
     }
@@ -444,14 +490,22 @@ ValidationReport validate(const Diagram& diagram) {
     }
     for (const Component& component : sheet.components) {
       if (isCoilContact(component) && !coil_groups.contains(component.labelGroup())) {
-        report.add({ProblemSeverity::Warning, ProblemCode::UnmatchedContact,
+        report.add({ProblemSeverity::Warning,
+                    ProblemCode::UnmatchedContact,
                     "Contact has no matching coil for label group " + component.labelGroup(),
-                    sheet.id, component.id, std::nullopt, std::nullopt});
+                    sheet.id,
+                    component.id,
+                    std::nullopt,
+                    std::nullopt});
       }
       if (isContactorCoil(component) && !contact_groups.contains(component.labelGroup())) {
-        report.add({ProblemSeverity::Info, ProblemCode::CoilWithoutContact,
-                    "Coil has no matching contacts: " + component.tag, sheet.id, component.id,
-                    std::nullopt, std::nullopt});
+        report.add({ProblemSeverity::Info,
+                    ProblemCode::CoilWithoutContact,
+                    "Coil has no matching contacts: " + component.tag,
+                    sheet.id,
+                    component.id,
+                    std::nullopt,
+                    std::nullopt});
       }
     }
 
@@ -464,9 +518,13 @@ ValidationReport validate(const Diagram& diagram) {
       const Pin* a1 = component.findPin("A1");
       const Pin* a2 = component.findPin("A2");
       if (a1 == nullptr || a2 == nullptr) {
-        report.add({ProblemSeverity::Warning, ProblemCode::MissingSupplyPath,
-                    "Coil has no A1/A2 pin pair: " + component.tag, sheet.id, component.id,
-                    std::nullopt, std::nullopt});
+        report.add({ProblemSeverity::Warning,
+                    ProblemCode::MissingSupplyPath,
+                    "Coil has no A1/A2 pin pair: " + component.tag,
+                    sheet.id,
+                    component.id,
+                    std::nullopt,
+                    std::nullopt});
         continue;
       }
       const auto first_groups = graph.sourceGroups(PinRef{component.id, a1->id});
@@ -477,9 +535,13 @@ ValidationReport validate(const Diagram& diagram) {
         path_ok = false;
       }
       if (!path_ok) {
-        report.add({ProblemSeverity::Warning, ProblemCode::MissingSupplyPath,
-                    "Coil has no complete supply path: " + component.tag, sheet.id, component.id,
-                    std::nullopt, std::nullopt});
+        report.add({ProblemSeverity::Warning,
+                    ProblemCode::MissingSupplyPath,
+                    "Coil has no complete supply path: " + component.tag,
+                    sheet.id,
+                    component.id,
+                    std::nullopt,
+                    std::nullopt});
       }
     }
 
@@ -493,20 +555,23 @@ ValidationReport validate(const Diagram& diagram) {
         if (!a.intersects(b)) {
           continue;
         }
-        const double overlap_width =
-            std::min(a.right(), b.right()) - std::max(a.left(), b.left());
-        const double overlap_height =
-            std::min(a.bottom(), b.bottom()) - std::max(a.top(), b.top());
+        const double overlap_width = std::min(a.right(), b.right()) - std::max(a.left(), b.left());
+        const double overlap_height = std::min(a.bottom(), b.bottom()) - std::max(a.top(), b.top());
         if (overlap_width > 2.0 && overlap_height > 2.0) {
-          report.add({ProblemSeverity::Warning, ProblemCode::ComponentOverlap,
-                      "Components overlap: " + left.tag + " and " + right.tag, sheet.id, right.id,
-                      std::nullopt, std::nullopt});
+          report.add({ProblemSeverity::Warning,
+                      ProblemCode::ComponentOverlap,
+                      "Components overlap: " + left.tag + " and " + right.tag,
+                      sheet.id,
+                      right.id,
+                      std::nullopt,
+                      std::nullopt});
         }
       }
     }
   }
 
-  std::stable_sort(report.problems.begin(), report.problems.end(),
+  std::stable_sort(report.problems.begin(),
+                   report.problems.end(),
                    [](const Problem& left, const Problem& right) {
                      if (left.sheet != right.sheet) {
                        return left.sheet < right.sheet;

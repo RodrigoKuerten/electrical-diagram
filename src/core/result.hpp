@@ -47,45 +47,46 @@ struct Error {
 
 [[nodiscard]] inline std::string_view errorCodeName(ErrorCode code) {
   switch (code) {
-    case ErrorCode::InvalidArgument:
-      return "invalid_argument";
-    case ErrorCode::NotFound:
-      return "not_found";
-    case ErrorCode::DuplicateId:
-      return "duplicate_id";
-    case ErrorCode::DuplicateTag:
-      return "duplicate_tag";
-    case ErrorCode::InvalidReference:
-      return "invalid_reference";
-    case ErrorCode::SelfLoopNotAllowed:
-      return "self_loop_not_allowed";
-    case ErrorCode::SamePin:
-      return "same_pin";
-    case ErrorCode::DuplicateWire:
-      return "duplicate_wire";
-    case ErrorCode::PinAlreadyOccupied:
-      return "pin_already_occupied";
-    case ErrorCode::ParseError:
-      return "parse_error";
-    case ErrorCode::UnsupportedVersion:
-      return "unsupported_version";
-    case ErrorCode::SchemaViolation:
-      return "schema_violation";
-    case ErrorCode::IoError:
-      return "io_error";
-    case ErrorCode::Oscillation:
-      return "oscillation";
-    case ErrorCode::SimulationError:
-      return "simulation_error";
-    case ErrorCode::Unsupported:
-      return "unsupported";
-    case ErrorCode::Cancelled:
-      return "cancelled";
+  case ErrorCode::InvalidArgument:
+    return "invalid_argument";
+  case ErrorCode::NotFound:
+    return "not_found";
+  case ErrorCode::DuplicateId:
+    return "duplicate_id";
+  case ErrorCode::DuplicateTag:
+    return "duplicate_tag";
+  case ErrorCode::InvalidReference:
+    return "invalid_reference";
+  case ErrorCode::SelfLoopNotAllowed:
+    return "self_loop_not_allowed";
+  case ErrorCode::SamePin:
+    return "same_pin";
+  case ErrorCode::DuplicateWire:
+    return "duplicate_wire";
+  case ErrorCode::PinAlreadyOccupied:
+    return "pin_already_occupied";
+  case ErrorCode::ParseError:
+    return "parse_error";
+  case ErrorCode::UnsupportedVersion:
+    return "unsupported_version";
+  case ErrorCode::SchemaViolation:
+    return "schema_violation";
+  case ErrorCode::IoError:
+    return "io_error";
+  case ErrorCode::Oscillation:
+    return "oscillation";
+  case ErrorCode::SimulationError:
+    return "simulation_error";
+  case ErrorCode::Unsupported:
+    return "unsupported";
+  case ErrorCode::Cancelled:
+    return "cancelled";
   }
   return "unknown";
 }
 
-template <typename T> class Result {
+template<typename T>
+class Result {
 public:
   Result(T value) : storage_(std::move(value)) {}
   Result(Error error) : storage_(std::move(error)) {}
@@ -126,7 +127,8 @@ private:
   std::variant<T, Error> storage_;
 };
 
-template <> class Result<void> {
+template<>
+class Result<void> {
 public:
   Result() = default;
   Result(Error error) : error_(std::move(error)) {}
@@ -147,8 +149,8 @@ private:
   std::optional<Error> error_;
 };
 
-[[nodiscard]] inline Error makeError(ErrorCode code, std::string message,
-                                     std::string context = {}) {
+[[nodiscard]] inline Error
+makeError(ErrorCode code, std::string message, std::string context = {}) {
   return Error{code, std::move(message), std::move(context)};
 }
 

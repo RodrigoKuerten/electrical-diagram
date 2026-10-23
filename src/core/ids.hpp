@@ -15,7 +15,8 @@ struct WireIdTag;
 struct SheetIdTag;
 struct AnnotationIdTag;
 
-template <typename Tag> class StrongId {
+template<typename Tag>
+class StrongId {
 public:
   using Value = std::uint64_t;
 
@@ -97,13 +98,15 @@ private:
 
 namespace std {
 
-template <typename Tag> struct hash<fiovivo::StrongId<Tag>> {
+template<typename Tag>
+struct hash<fiovivo::StrongId<Tag>> {
   [[nodiscard]] std::size_t operator()(const fiovivo::StrongId<Tag>& id) const noexcept {
     return std::hash<std::uint64_t>{}(id.value());
   }
 };
 
-template <> struct hash<fiovivo::PinRef> {
+template<>
+struct hash<fiovivo::PinRef> {
   [[nodiscard]] std::size_t operator()(const fiovivo::PinRef& ref) const noexcept {
     const auto first = std::hash<std::uint64_t>{}(ref.component.value());
     const auto second = std::hash<std::uint64_t>{}(ref.pin.value());

@@ -21,14 +21,14 @@ namespace {
 } // namespace
 
 const Pin* Component::findPin(PinId pin_id) const {
-  const auto iterator = std::find_if(pins.begin(), pins.end(),
-                                     [pin_id](const Pin& pin) { return pin.id == pin_id; });
+  const auto iterator =
+      std::find_if(pins.begin(), pins.end(), [pin_id](const Pin& pin) { return pin.id == pin_id; });
   return iterator == pins.end() ? nullptr : &*iterator;
 }
 
 Pin* Component::findPin(PinId pin_id) {
-  const auto iterator = std::find_if(pins.begin(), pins.end(),
-                                     [pin_id](const Pin& pin) { return pin.id == pin_id; });
+  const auto iterator =
+      std::find_if(pins.begin(), pins.end(), [pin_id](const Pin& pin) { return pin.id == pin_id; });
   return iterator == pins.end() ? nullptr : &*iterator;
 }
 
@@ -69,8 +69,7 @@ std::string Component::labelGroup() const {
 }
 
 bool Component::hasRole(PinRole role) const {
-  return std::any_of(pins.begin(), pins.end(),
-                     [role](const Pin& pin) { return pin.role == role; });
+  return std::any_of(pins.begin(), pins.end(), [role](const Pin& pin) { return pin.role == role; });
 }
 
 const Component* Sheet::findComponent(ComponentId component_id) const {
@@ -90,30 +89,28 @@ Component* Sheet::findComponent(ComponentId component_id) {
 }
 
 const Component* Sheet::findComponentByTag(std::string_view tag) const {
-  const auto iterator =
-      std::find_if(components.begin(), components.end(),
-                   [tag](const Component& item) { return item.tag == tag; });
+  const auto iterator = std::find_if(components.begin(),
+                                     components.end(),
+                                     [tag](const Component& item) { return item.tag == tag; });
   return iterator == components.end() ? nullptr : &*iterator;
 }
 
 Component* Sheet::findComponentByTag(std::string_view tag) {
-  const auto iterator =
-      std::find_if(components.begin(), components.end(),
-                   [tag](const Component& item) { return item.tag == tag; });
+  const auto iterator = std::find_if(components.begin(),
+                                     components.end(),
+                                     [tag](const Component& item) { return item.tag == tag; });
   return iterator == components.end() ? nullptr : &*iterator;
 }
 
 const Wire* Sheet::findWire(WireId wire_id) const {
-  const auto iterator =
-      std::find_if(wires.begin(), wires.end(),
-                   [wire_id](const Wire& wire) { return wire.id == wire_id; });
+  const auto iterator = std::find_if(
+      wires.begin(), wires.end(), [wire_id](const Wire& wire) { return wire.id == wire_id; });
   return iterator == wires.end() ? nullptr : &*iterator;
 }
 
 Wire* Sheet::findWire(WireId wire_id) {
-  const auto iterator =
-      std::find_if(wires.begin(), wires.end(),
-                   [wire_id](const Wire& wire) { return wire.id == wire_id; });
+  const auto iterator = std::find_if(
+      wires.begin(), wires.end(), [wire_id](const Wire& wire) { return wire.id == wire_id; });
   return iterator == wires.end() ? nullptr : &*iterator;
 }
 
@@ -214,20 +211,19 @@ Result<WireId> Sheet::addWire(Wire wire) {
   }
   if (wire.from.component == wire.to.component && !wire.allow_self_loop) {
     return makeError(ErrorCode::SelfLoopNotAllowed,
-                     "Self-loop wires require allow_self_loop", from_component->tag);
+                     "Self-loop wires require allow_self_loop",
+                     from_component->tag);
   }
   for (const WireId existing_id : from_pin->wires) {
     const Wire* existing = findWire(existing_id);
     if (existing == nullptr) {
       continue;
     }
-    const bool same_direction =
-        existing->from == wire.from && existing->to == wire.to;
-    const bool opposite_direction =
-        existing->from == wire.to && existing->to == wire.from;
+    const bool same_direction = existing->from == wire.from && existing->to == wire.to;
+    const bool opposite_direction = existing->from == wire.to && existing->to == wire.from;
     if (same_direction || opposite_direction) {
-      return makeError(ErrorCode::DuplicateWire, "These pins are already connected",
-                       from_component->tag);
+      return makeError(
+          ErrorCode::DuplicateWire, "These pins are already connected", from_component->tag);
     }
   }
   if (wire.route.size() < 2) {
@@ -270,8 +266,9 @@ bool Sheet::removeComponent(ComponentId component_id) {
     removeWire(wire_id);
   }
   const auto iterator =
-      std::remove_if(components.begin(), components.end(),
-                     [component_id](const Component& item) { return item.id == component_id; });
+      std::remove_if(components.begin(), components.end(), [component_id](const Component& item) {
+        return item.id == component_id;
+      });
   if (iterator == components.end()) {
     return false;
   }
@@ -280,8 +277,8 @@ bool Sheet::removeComponent(ComponentId component_id) {
 }
 
 bool Sheet::removeWire(WireId wire_id) {
-  const auto iterator = std::find_if(wires.begin(), wires.end(),
-                                     [wire_id](const Wire& wire) { return wire.id == wire_id; });
+  const auto iterator = std::find_if(
+      wires.begin(), wires.end(), [wire_id](const Wire& wire) { return wire.id == wire_id; });
   if (iterator == wires.end()) {
     return false;
   }
@@ -315,21 +312,23 @@ void Sheet::clear() {
   annotations.clear();
 }
 
-bool Sheet::hasComponent(ComponentId component_id) const { return findComponent(component_id) != nullptr; }
+bool Sheet::hasComponent(ComponentId component_id) const {
+  return findComponent(component_id) != nullptr;
+}
 
 bool Sheet::hasWire(WireId wire_id) const { return findWire(wire_id) != nullptr; }
 
 Sheet* Diagram::findSheet(SheetId sheet_id) {
-  const auto iterator =
-      std::find_if(sheets.begin(), sheets.end(),
-                   [sheet_id](const Sheet& sheet) { return sheet.id == sheet_id; });
+  const auto iterator = std::find_if(sheets.begin(), sheets.end(), [sheet_id](const Sheet& sheet) {
+    return sheet.id == sheet_id;
+  });
   return iterator == sheets.end() ? nullptr : &*iterator;
 }
 
 const Sheet* Diagram::findSheet(SheetId sheet_id) const {
-  const auto iterator =
-      std::find_if(sheets.begin(), sheets.end(),
-                   [sheet_id](const Sheet& sheet) { return sheet.id == sheet_id; });
+  const auto iterator = std::find_if(sheets.begin(), sheets.end(), [sheet_id](const Sheet& sheet) {
+    return sheet.id == sheet_id;
+  });
   return iterator == sheets.end() ? nullptr : &*iterator;
 }
 
@@ -435,16 +434,15 @@ std::string Diagram::uniqueTag(std::string_view base) const {
     return clean;
   }
   std::size_t digit_start = clean.size();
-  while (digit_start > 0 &&
-         std::isdigit(static_cast<unsigned char>(clean[digit_start - 1])) != 0) {
+  while (digit_start > 0 && std::isdigit(static_cast<unsigned char>(clean[digit_start - 1])) != 0) {
     --digit_start;
   }
   const std::string stem = clean.substr(0, digit_start);
   const std::string numeric_suffix = clean.substr(digit_start);
   long long numeric_base = 1;
   if (!numeric_suffix.empty()) {
-    const auto parsed = std::from_chars(numeric_suffix.data(),
-                                        numeric_suffix.data() + numeric_suffix.size(), numeric_base);
+    const auto parsed = std::from_chars(
+        numeric_suffix.data(), numeric_suffix.data() + numeric_suffix.size(), numeric_base);
     if (parsed.ec != std::errc{}) {
       numeric_base = 1;
     }
@@ -533,8 +531,11 @@ Result<WireId> Diagram::addWire(SheetId sheet_id, Wire wire) {
   return result;
 }
 
-Result<WireId> Diagram::createWire(SheetId sheet_id, PinRef from, PinRef to,
-                                   const std::vector<Rect>& obstacles, WireStyle style,
+Result<WireId> Diagram::createWire(SheetId sheet_id,
+                                   PinRef from,
+                                   PinRef to,
+                                   const std::vector<Rect>& obstacles,
+                                   WireStyle style,
                                    bool allow_self_loop) {
   Sheet* sheet = findSheet(sheet_id);
   if (sheet == nullptr) {
@@ -573,8 +574,9 @@ Result<AnnotationId> Diagram::addAnnotation(SheetId sheet_id, Annotation annotat
 
 bool Diagram::removeSheet(SheetId sheet_id) {
   const auto iterator =
-      std::remove_if(sheets.begin(), sheets.end(),
-                     [sheet_id](const Sheet& sheet) { return sheet.id == sheet_id; });
+      std::remove_if(sheets.begin(), sheets.end(), [sheet_id](const Sheet& sheet) {
+        return sheet.id == sheet_id;
+      });
   if (iterator == sheets.end()) {
     return false;
   }

@@ -6,30 +6,30 @@ namespace fiovivo {
 
 std::string_view toString(PinRole role) {
   switch (role) {
-    case PinRole::Terminal:
-      return "terminal";
-    case PinRole::CoilInput:
-      return "coil_input";
-    case PinRole::CoilOutput:
-      return "coil_output";
-    case PinRole::ContactCommon:
-      return "contact_common";
-    case PinRole::ContactNo:
-      return "contact_no";
-    case PinRole::ContactNc:
-      return "contact_nc";
-    case PinRole::SupplyIn:
-      return "supply_in";
-    case PinRole::SupplyOut:
-      return "supply_out";
-    case PinRole::Neutral:
-      return "neutral";
-    case PinRole::Earth:
-      return "earth";
-    case PinRole::SignalIn:
-      return "signal_in";
-    case PinRole::SignalOut:
-      return "signal_out";
+  case PinRole::Terminal:
+    return "terminal";
+  case PinRole::CoilInput:
+    return "coil_input";
+  case PinRole::CoilOutput:
+    return "coil_output";
+  case PinRole::ContactCommon:
+    return "contact_common";
+  case PinRole::ContactNo:
+    return "contact_no";
+  case PinRole::ContactNc:
+    return "contact_nc";
+  case PinRole::SupplyIn:
+    return "supply_in";
+  case PinRole::SupplyOut:
+    return "supply_out";
+  case PinRole::Neutral:
+    return "neutral";
+  case PinRole::Earth:
+    return "earth";
+  case PinRole::SignalIn:
+    return "signal_in";
+  case PinRole::SignalOut:
+    return "signal_out";
   }
   return "terminal";
 }
@@ -63,16 +63,16 @@ bool isSourceRole(PinRole role) {
 
 std::string_view toString(PaperSize size) {
   switch (size) {
-    case PaperSize::A4:
-      return "A4";
-    case PaperSize::A3:
-      return "A3";
-    case PaperSize::A2:
-      return "A2";
-    case PaperSize::A1:
-      return "A1";
-    case PaperSize::Letter:
-      return "Letter";
+  case PaperSize::A4:
+    return "A4";
+  case PaperSize::A3:
+    return "A3";
+  case PaperSize::A2:
+    return "A2";
+  case PaperSize::A1:
+    return "A1";
+  case PaperSize::Letter:
+    return "Letter";
   }
   return "A4";
 }
@@ -113,21 +113,21 @@ std::optional<Orientation> orientationFromString(std::string_view value) {
 Vec2 paperDimensions(PaperSize size, Orientation orientation) {
   Vec2 landscape{};
   switch (size) {
-    case PaperSize::A4:
-      landscape = {297.0, 210.0};
-      break;
-    case PaperSize::A3:
-      landscape = {420.0, 297.0};
-      break;
-    case PaperSize::A2:
-      landscape = {594.0, 420.0};
-      break;
-    case PaperSize::A1:
-      landscape = {841.0, 594.0};
-      break;
-    case PaperSize::Letter:
-      landscape = {279.4, 215.9};
-      break;
+  case PaperSize::A4:
+    landscape = {297.0, 210.0};
+    break;
+  case PaperSize::A3:
+    landscape = {420.0, 297.0};
+    break;
+  case PaperSize::A2:
+    landscape = {594.0, 420.0};
+    break;
+  case PaperSize::A1:
+    landscape = {841.0, 594.0};
+    break;
+  case PaperSize::Letter:
+    landscape = {279.4, 215.9};
+    break;
   }
   if (orientation == Orientation::Portrait) {
     return {landscape.y, landscape.x};
@@ -137,12 +137,12 @@ Vec2 paperDimensions(PaperSize size, Orientation orientation) {
 
 std::string_view toString(WireDash dash) {
   switch (dash) {
-    case WireDash::Solid:
-      return "solid";
-    case WireDash::Dashed:
-      return "dashed";
-    case WireDash::Dotted:
-      return "dotted";
+  case WireDash::Solid:
+    return "solid";
+  case WireDash::Dashed:
+    return "dashed";
+  case WireDash::Dotted:
+    return "dotted";
   }
   return "solid";
 }
@@ -162,12 +162,12 @@ std::optional<WireDash> wireDashFromString(std::string_view value) {
 
 std::string_view toString(AnnotationKind kind) {
   switch (kind) {
-    case AnnotationKind::Text:
-      return "text";
-    case AnnotationKind::Rectangle:
-      return "rectangle";
-    case AnnotationKind::Legend:
-      return "legend";
+  case AnnotationKind::Text:
+    return "text";
+  case AnnotationKind::Rectangle:
+    return "rectangle";
+  case AnnotationKind::Legend:
+    return "legend";
   }
   return "text";
 }
@@ -186,7 +186,7 @@ std::optional<AnnotationKind> annotationKindFromString(std::string_view value) {
 }
 
 namespace {
-template <typename T>
+template<typename T>
 [[nodiscard]] T parameterAs(const ParameterMap& parameters, std::string_view key, T fallback) {
   const auto iterator = parameters.find(std::string(key));
   if (iterator == parameters.end()) {
@@ -203,8 +203,8 @@ bool parameterBool(const ParameterMap& parameters, std::string_view key, bool fa
   return parameterAs<bool>(parameters, key, fallback);
 }
 
-std::int64_t parameterInt(const ParameterMap& parameters, std::string_view key,
-                          std::int64_t fallback) {
+std::int64_t
+parameterInt(const ParameterMap& parameters, std::string_view key, std::int64_t fallback) {
   const auto iterator = parameters.find(std::string(key));
   if (iterator == parameters.end()) {
     return fallback;
@@ -232,8 +232,8 @@ double parameterNumber(const ParameterMap& parameters, std::string_view key, dou
   return fallback;
 }
 
-std::string parameterString(const ParameterMap& parameters, std::string_view key,
-                            std::string fallback) {
+std::string
+parameterString(const ParameterMap& parameters, std::string_view key, std::string fallback) {
   const auto iterator = parameters.find(std::string(key));
   if (iterator == parameters.end()) {
     return fallback;
@@ -309,15 +309,14 @@ bool isSupply(std::string_view type) {
 
 bool isLoad(std::string_view type) {
   using namespace component_type;
-  return type == kContactorCoil || type == kPilotLamp || type == kMotor3ph ||
-         type == kTimerOn || type == kTimerOff;
+  return type == kContactorCoil || type == kPilotLamp || type == kMotor3ph || type == kTimerOn ||
+         type == kTimerOff;
 }
 
 bool isUserActuated(std::string_view type) {
   using namespace component_type;
   return type == kPushbuttonNo || type == kPushbuttonNc || type == kEmergencyStop ||
-         type == kSelectorSwitch || type == kThermalRelay || type == kFuse ||
-         type == kBreaker;
+         type == kSelectorSwitch || type == kThermalRelay || type == kFuse || type == kBreaker;
 }
 
 } // namespace fiovivo
