@@ -126,8 +126,7 @@ jobs:
           python --version
           python -m pip install --disable-pip-version-check "aqtinstall==3.3.*" "py7zr"
           python -m aqt install-qt windows desktop 6.8.3 win64_msvc2022_64 `
-            --outputdir C:\Qt --archives qtbase qtsvg qttools `
-            --modules qtdeclarative *> qt-install.log
+            --outputdir C:\Qt --archives qtbase qtsvg qttools qtdeclarative *> qt-install.log
           if ($LASTEXITCODE -ne 0) {
             $details = (Get-Content qt-install.log -Tail 40) -join " | "
             Write-Output "::error title=aqt install failed::$details"
