@@ -90,8 +90,7 @@ const Component& ComponentItem::component() const {
 
 QRectF ComponentItem::boundingRect() const {
   const Component& item = component();
-  const double extra = 10.0;
-  return QRectF(-4.0, -extra, item.size.x + 8.0, item.size.y + extra * 2.0);
+  return QRectF(-12.0, -16.0, item.size.x + 24.0, item.size.y + 31.0);
 }
 
 void ComponentItem::rebuildPins() {
@@ -198,8 +197,12 @@ void ComponentItem::paint(QPainter* painter,
     painter->drawText(symbol_rect, Qt::AlignCenter, QString::fromStdString(item.type));
   }
 
+  // Scene units are millimetres. Qt fonts are sized in points, so a screen-sized font would
+  // be many millimetres tall here and get clipped by its label rectangle. Use a small point
+  // size that maps to roughly 3 mm of text on the sheet.
   QFont tag_font = QApplication::font();
   tag_font.setBold(true);
+  tag_font.setPointSizeF(4.2);
   painter->setFont(tag_font);
   painter->setPen(scene_->textColor());
   QString tag = QString::fromStdString(item.tag);
@@ -207,18 +210,31 @@ void ComponentItem::paint(QPainter* painter,
   if (!status.isEmpty()) {
     tag += QStringLiteral(" [%1]").arg(status);
   }
+  const auto draw_label = [&](const QString& text, const QFont& font, const QRectF& area) {
+    const QFontMetricsF metrics(font);
+    const QRectF text_bounds = metrics.boundingRect(text);
+    const QPointF origin(item.size.x / 2.0 - text_bounds.center().x(),
+                         area.center().y() - text_bounds.center().y());
+    QPainterPath path;
+    path.addText(origin, font, text);
+    // Draw a thin white outline instead of an opaque label background. Wires remain visible
+    // around the glyphs, while the tag stays readable when a wire passes behind it.
+    painter->setPen(QPen(Qt::white, 1.0, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter->setBrush(Qt::white);
+    painter->drawPath(path);
+    painter->setPen(Qt::NoPen);
+    painter->setBrush(scene_->textColor());
+    painter->drawPath(path);
+  };
   if (item.labels.show_tag) {
-    const QRectF tag_rect(-20.0, -9.0, item.size.x + 40.0, 5.5);
-    painter->drawText(tag_rect, Qt::AlignHCenter | Qt::AlignVCenter, tag);
+    draw_label(tag, tag_font, QRectF(-55.0, -13.0, item.size.x + 110.0, 8.5));
   }
   if (item.labels.show_description && !item.description.empty()) {
     QFont description_font = QApplication::font();
-    description_font.setPointSizeF(std::max(6.0, description_font.pointSizeF() - 1.0));
-    painter->setFont(description_font);
-    const QRectF description_rect(-20.0, item.size.y + 4.0, item.size.x + 40.0, 5.0);
-    painter->drawText(description_rect,
-                      Qt::AlignHCenter | Qt::AlignVCenter,
-                      QString::fromStdString(item.description));
+    description_font.setPointSizeF(3.5);
+    draw_label(QString::fromStdString(item.description),
+               description_font,
+               QRectF(-45.0, item.size.y + 3.0, item.size.x + 90.0, 7.0));
   }
 
   if (isSelected()) {

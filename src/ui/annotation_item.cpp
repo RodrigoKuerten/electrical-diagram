@@ -59,7 +59,7 @@ void AnnotationItem::paint(QPainter* painter,
   }
   if (!text_.isEmpty()) {
     QFont font = painter->font();
-    font.setPointSizeF(std::max(4.0, font_size_ * 2.4));
+    font.setPointSizeF(std::max(2.6, font_size_ * 0.95));
     painter->setFont(font);
     painter->setPen(color);
     const QRectF text_rect = rect_.adjusted(1.5, 1.0, -1.5, -1.0);

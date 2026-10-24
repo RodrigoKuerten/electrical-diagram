@@ -361,7 +361,9 @@ void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
       painter->fillRect(block, Qt::white);
     }
     painter->drawRect(block);
-    painter->setFont(QFont(QStringLiteral("Sans Serif"), 3));
+    QFont title_font(QStringLiteral("Sans Serif"));
+    title_font.setPointSizeF(3.5);
+    painter->setFont(title_font);
 
     const double row_height = block_height / 5.0;
     for (int row = 1; row < 5; ++row) {

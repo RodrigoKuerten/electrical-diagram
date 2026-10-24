@@ -7,7 +7,6 @@
 #include <QCoreApplication>
 #include <QGraphicsSceneHoverEvent>
 #include <QPainter>
-#include <QToolTip>
 
 namespace fiovivo::ui {
 
@@ -70,13 +69,13 @@ void PinItem::setHighlighted(bool highlighted) {
 void PinItem::hoverEnterEvent(QGraphicsSceneHoverEvent* event) {
   QGraphicsItem::hoverEnterEvent(event);
   setHighlighted(true);
-  QToolTip::showText(event->screenPos(), toolTip(), nullptr);
+  // Let QGraphicsScene show the item tooltip. Showing QToolTip manually here as well causes
+  // flicker and can cover nearby wires/text with two competing tooltip windows.
 }
 
 void PinItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event) {
   QGraphicsItem::hoverLeaveEvent(event);
   setHighlighted(false);
-  QToolTip::hideText();
 }
 
 void PinItem::updateTooltip() {

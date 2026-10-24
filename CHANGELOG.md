@@ -59,6 +59,12 @@ are present; the Phase 4 symbol editor and simulation snapshot files remain futu
 - Fixed the command-line open path and canvas fit after the window is shown.
 - Prevented W from stealing keystrokes in text fields; wire mode is toggled by the view
   shortcut or the toolbar action.
+- Corrected canvas label sizing in millimetre scene coordinates so tag/description text is no
+  longer clipped by its label rectangle, and replaced opaque label boxes with a thin white
+  glyph halo so labels do not hide wires.
+- Prevented hover repaint fragments that made wires or text appear to vanish; the canvas now
+  uses full-viewport updates and relies on the scene tooltip instead of showing a second
+  manual tooltip.
 
 ### Known limitations
 

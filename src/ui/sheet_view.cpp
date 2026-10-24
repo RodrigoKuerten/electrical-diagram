@@ -26,7 +26,9 @@ SheetView::SheetView(QWidget* parent) : QGraphicsView(parent) {
   setDragMode(QGraphicsView::RubberBandDrag);
   setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
   setResizeAnchor(QGraphicsView::AnchorViewCenter);
-  setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
+  // A full repaint avoids stale wire/text fragments when a pin hover highlight or a tooltip
+  // changes a small region of the scene.
+  setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
   setFocusPolicy(Qt::StrongFocus);
   setMouseTracking(true);
   setBackgroundBrush(Qt::NoBrush);
