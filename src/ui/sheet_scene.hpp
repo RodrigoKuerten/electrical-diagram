@@ -3,6 +3,7 @@
 #include "core/ids.hpp"
 #include "core/model.hpp"
 #include "ui/sim_ui_types.hpp"
+#include "ui/theme.hpp"
 
 #include <QColor>
 #include <QGraphicsScene>
@@ -58,23 +59,16 @@ public:
   [[nodiscard]] double gridSize() const { return grid_size_; }
   [[nodiscard]] QPointF snap(QPointF point) const;
 
-  void setWireColor(const QColor& color) { wire_color_ = color; }
-  void setEnergizedColor(const QColor& color) {
-    energized_color_ = color;
+  void setThemePalette(const ThemePalette& palette) {
+    theme_ = palette;
     update();
   }
-  void setSelectionColor(const QColor& color) { selection_color_ = color; }
-  void setPinColor(const QColor& color) { pin_color_ = color; }
-  void setTextColor(const QColor& color) { text_color_ = color; }
-  void setCanvasBackground(const QColor& color) {
-    canvas_background_ = color;
-    update();
-  }
-  [[nodiscard]] QColor wireColor() const { return wire_color_; }
-  [[nodiscard]] QColor energizedColor() const { return energized_color_; }
-  [[nodiscard]] QColor selectionColor() const { return selection_color_; }
-  [[nodiscard]] QColor pinColor() const { return pin_color_; }
-  [[nodiscard]] QColor textColor() const { return text_color_; }
+  [[nodiscard]] const ThemePalette& themePalette() const { return theme_; }
+  [[nodiscard]] QColor wireColor() const { return theme_.color(ThemeToken::WireDefault); }
+  [[nodiscard]] QColor energizedColor() const { return theme_.color(ThemeToken::WireEnergized); }
+  [[nodiscard]] QColor selectionColor() const { return theme_.color(ThemeToken::Selection); }
+  [[nodiscard]] QColor pinColor() const { return theme_.color(ThemeToken::SymbolStroke); }
+  [[nodiscard]] QColor textColor() const { return theme_.color(ThemeToken::TextPrimary); }
 
   void setWireMode(bool enabled);
   [[nodiscard]] bool wireMode() const { return wire_mode_; }
@@ -169,12 +163,7 @@ private:
   bool export_mode_ = false;
   bool export_transparent_ = false;
 
-  QColor wire_color_{"#1f2933"};
-  QColor energized_color_{"#d97706"};
-  QColor selection_color_{"#2563eb"};
-  QColor pin_color_{"#1f2933"};
-  QColor text_color_{"#111827"};
-  QColor canvas_background_{"#d8dee6"};
+  ThemePalette theme_ = lightTheme();
 
   std::optional<PinRef> wire_start_;
   bool wire_dragging_ = false;

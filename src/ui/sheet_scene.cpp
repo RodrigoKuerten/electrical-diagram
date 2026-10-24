@@ -39,12 +39,6 @@ namespace {
 
 constexpr const char* kSymbolMimeType = "application/x-fiovivo-symbol";
 
-[[nodiscard]] QColor pageTextColor() { return QColor("#1f2933"); }
-
-[[nodiscard]] QColor gridMinorColor() { return QColor("#e2e8f0"); }
-
-[[nodiscard]] QColor gridMajorColor() { return QColor("#cbd5e1"); }
-
 } // namespace
 
 SheetScene::SheetScene(Document* document,
@@ -301,7 +295,7 @@ void SheetScene::requestProperties(ComponentId id) { emit propertiesRequested(id
 void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
   const bool transparent_export = export_mode_ && export_transparent_;
   if (!transparent_export) {
-    painter->fillRect(rect, canvas_background_);
+    painter->fillRect(rect, theme_.color(ThemeToken::CanvasBackground));
   }
   const QRectF page = pageRect();
   const fiovivo::Sheet* current = sheet();
@@ -312,23 +306,23 @@ void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
   painter->setRenderHint(QPainter::Antialiasing, false);
   if (!transparent_export) {
     painter->setPen(Qt::NoPen);
-    painter->setBrush(QColor(0, 0, 0, 45));
+    painter->setBrush(theme_.color(ThemeToken::SheetShadow));
     painter->drawRect(page.translated(2.0, 2.0));
-    painter->setBrush(Qt::white);
+    painter->setBrush(theme_.color(ThemeToken::SheetBackground));
   } else {
     painter->setBrush(Qt::NoBrush);
   }
-  painter->setPen(QPen(QColor("#94a3b8"), 0.4));
+  painter->setPen(QPen(theme_.color(ThemeToken::SheetBorder), 0.4));
   painter->drawRect(page);
 
   if (grid_visible_ && !export_mode_ && grid_size_ > 0.5) {
     painter->save();
     painter->setClipRect(page);
     const double minor = grid_size_;
-    QPen minor_pen(gridMinorColor());
+    QPen minor_pen(theme_.color(ThemeToken::GridMinor));
     minor_pen.setCosmetic(true);
     minor_pen.setWidthF(0.0);
-    QPen major_pen(gridMajorColor());
+    QPen major_pen(theme_.color(ThemeToken::GridMajor));
     major_pen.setCosmetic(true);
     major_pen.setWidthF(0.0);
     for (double x = page.left(); x <= page.right(); x += minor) {
@@ -349,7 +343,7 @@ void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
   if (current->setup.show_frame) {
     const double margin = current->setup.margin;
     const QRectF frame = page.adjusted(margin, margin, -margin, -margin);
-    painter->setPen(QPen(pageTextColor(), 0.5));
+    painter->setPen(QPen(theme_.color(ThemeToken::SheetText), 0.5));
     painter->setBrush(Qt::NoBrush);
     painter->drawRect(frame);
 
@@ -358,7 +352,7 @@ void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
     const QRectF block(
         frame.right() - block_width, frame.bottom() - block_height, block_width, block_height);
     if (!transparent_export) {
-      painter->fillRect(block, Qt::white);
+      painter->fillRect(block, theme_.color(ThemeToken::TitleBlockBackground));
     }
     painter->drawRect(block);
     QFont title_font(QStringLiteral("Sans Serif"));
@@ -387,7 +381,7 @@ void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
     const QString sheet_label =
         tr("Sheet %1/%2").arg(sheet_number).arg(document_->diagram().sheets.size());
 
-    const auto draw_field = [painter, block, block_width, row_height](
+    const auto draw_field = [this, painter, block, block_width, row_height](
                                 int row, const QString& label, const QString& value) {
       const QRectF label_rect(block.left() + 1.0,
                               block.top() + row * row_height + 0.8,
@@ -397,9 +391,9 @@ void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
                               block.top() + row * row_height + 0.8,
                               block_width * 0.42 - 2.0,
                               row_height - 1.0);
-      painter->setPen(QColor("#475569"));
+      painter->setPen(theme_.color(ThemeToken::SheetTextMuted));
       painter->drawText(label_rect, Qt::AlignLeft | Qt::AlignVCenter, label);
-      painter->setPen(pageTextColor());
+      painter->setPen(theme_.color(ThemeToken::SheetText));
       painter->drawText(value_rect, Qt::AlignLeft | Qt::AlignVCenter, value);
     };
     // QPainter::drawText does not support eliding; clip manually.
@@ -573,7 +567,7 @@ void SheetScene::beginWiring(PinRef start) {
     wire_preview_->setZValue(20.0);
     addItem(wire_preview_.get());
   }
-  QPen pen(energized_color_, 0.8, Qt::DashLine);
+  QPen pen(energizedColor(), 0.8, Qt::DashLine);
   pen.setCosmetic(true);
   wire_preview_->setPen(pen);
   ComponentItem* item = componentItem(start.component);
@@ -627,7 +621,7 @@ void SheetScene::finishWiring(PinRef target) {
     obstacles.push_back(component.boundingBox());
   }
   WireStyle style;
-  style.color = wire_color_.name().toStdString();
+  style.color = wireColor().name().toStdString();
   style.thickness = 0.8;
   WireId created;
   Error wire_error;

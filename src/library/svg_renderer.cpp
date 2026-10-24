@@ -1,5 +1,6 @@
 #include "library/svg_renderer.hpp"
 
+#include <QFile>
 #include <QPainter>
 #include <QRectF>
 #include <QSize>
@@ -10,8 +11,17 @@
 namespace fiovivo {
 namespace {
 
-[[nodiscard]] std::unique_ptr<QSvgRenderer> loadSvg(const std::filesystem::path& path) {
-  auto renderer = std::make_unique<QSvgRenderer>(QString::fromStdString(path.string()));
+[[nodiscard]] std::unique_ptr<QSvgRenderer>
+loadSvg(const std::filesystem::path& path, const std::map<QString, QString>& color_overrides) {
+  QFile file(QString::fromStdString(path.string()));
+  if (!file.open(QIODevice::ReadOnly)) {
+    return nullptr;
+  }
+  QByteArray contents = file.readAll();
+  for (const auto& [source, replacement] : color_overrides) {
+    contents.replace(source.toUtf8(), replacement.toUtf8());
+  }
+  auto renderer = std::make_unique<QSvgRenderer>(contents);
   if (!renderer->isValid()) {
     return nullptr;
   }
@@ -26,20 +36,30 @@ SymbolSvgRenderer::SymbolSvgRenderer(const SymbolDefinition& definition,
 
 SymbolSvgRenderer::~SymbolSvgRenderer() = default;
 
-Result<void> SymbolSvgRenderer::load() {
+Result<void> SymbolSvgRenderer::load() { return loadInternal(); }
+
+Result<void> SymbolSvgRenderer::setColorOverrides(const std::map<QString, QString>& overrides) {
+  color_overrides_ = overrides;
+  return loadInternal();
+}
+
+Result<void> SymbolSvgRenderer::loadInternal() {
   const std::filesystem::path base_path = directory_ / (definition_.type + ".svg");
-  base_ = loadSvg(base_path);
-  if (!base_) {
+  auto base = loadSvg(base_path, color_overrides_);
+  if (!base) {
     return makeError(ErrorCode::IoError, "Could not load symbol SVG", base_path.string());
   }
+  std::map<std::string, std::unique_ptr<QSvgRenderer>> states;
   for (const auto& [state, filename] : definition_.states) {
     const std::filesystem::path path = directory_ / filename;
-    auto renderer = loadSvg(path);
+    auto renderer = loadSvg(path, color_overrides_);
     if (!renderer) {
       return makeError(ErrorCode::IoError, "Could not load symbol state SVG", path.string());
     }
-    states_[state] = std::move(renderer);
+    states[state] = std::move(renderer);
   }
+  base_ = std::move(base);
+  states_ = std::move(states);
   return {};
 }
 
@@ -93,6 +113,17 @@ Result<void> SymbolRenderCache::loadAll() {
       return loaded.error();
     }
     renderers_[type] = std::move(renderer);
+  }
+  return {};
+}
+
+Result<void> SymbolRenderCache::setColorOverrides(const std::map<QString, QString>& overrides) {
+  for (const auto& [type, renderer] : renderers_) {
+    (void)type;
+    const auto loaded = renderer->setColorOverrides(overrides);
+    if (!loaded) {
+      return loaded.error();
+    }
   }
   return {};
 }

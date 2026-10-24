@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QByteArray>
-#include <QColor>
 #include <QString>
 #include <QStringList>
 
@@ -21,11 +20,6 @@ public:
   void setGridVisible(bool visible);
   [[nodiscard]] double gridSize() const;
   void setGridSize(double size);
-
-  [[nodiscard]] QColor wireColor() const;
-  void setWireColor(const QColor& color);
-  [[nodiscard]] QColor energizedColor() const;
-  void setEnergizedColor(const QColor& color);
 
   [[nodiscard]] int cycleMs() const;
   void setCycleMs(int cycle_ms);

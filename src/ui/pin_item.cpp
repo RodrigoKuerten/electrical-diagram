@@ -30,7 +30,7 @@ void PinItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, Q
   painter->setRenderHint(QPainter::Antialiasing, true);
   const QColor base = component_ != nullptr && component_->sheetScene() != nullptr
                           ? component_->sheetScene()->pinColor()
-                          : QColor("#1f2933");
+                          : currentTheme().color(ThemeToken::SymbolStroke);
   QColor color = base;
   if (highlighted_) {
     color = component_->sheetScene()->energizedColor();

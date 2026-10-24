@@ -18,6 +18,8 @@ add_library(
   simulation_controller.cpp
   simulation_log_dock.cpp
   simulation_worker.cpp
+  theme.cpp
+  theme_icons.cpp
   ui_helpers.cpp
   wire_item.cpp
   dialogs/about_dialog.cpp

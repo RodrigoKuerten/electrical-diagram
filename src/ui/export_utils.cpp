@@ -1,7 +1,9 @@
 #include "ui/export_utils.hpp"
 
 #include "ui/sheet_scene.hpp"
+#include "ui/theme.hpp"
 
+#include <QColor>
 #include <QGraphicsItem>
 #include <QImage>
 #include <QPageLayout>
@@ -68,7 +70,8 @@ bool exportPng(SheetScene& scene,
     const QSize pixel_size(static_cast<int>(std::ceil(page.width() * factor)),
                            static_cast<int>(std::ceil(page.height() * factor)));
     QImage image(pixel_size, QImage::Format_ARGB32_Premultiplied);
-    image.fill(options.transparent ? Qt::transparent : Qt::white);
+    image.fill(options.transparent ? QColor(Qt::transparent)
+                                   : currentTheme().color(ThemeToken::SheetBackground));
     QPainter painter(&image);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setRenderHint(QPainter::TextAntialiasing, true);

@@ -57,6 +57,7 @@ private:
   void createStatusBar();
   void connectSignals();
   void applyTheme();
+  void updateThemeIcons();
   void updateWindowTitle();
   void updateSheetCombo();
   void updateUndoActions();

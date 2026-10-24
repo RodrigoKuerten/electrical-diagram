@@ -1,14 +1,13 @@
 #include "ui/app_settings.hpp"
 
+#include "ui/theme.hpp"
+
 #include <QApplication>
 #include <QDir>
 #include <QFileInfo>
 #include <QFont>
-#include <QPalette>
 #include <QSettings>
 #include <QStandardPaths>
-#include <QStyle>
-#include <QStyleFactory>
 
 #include <memory>
 
@@ -54,20 +53,6 @@ void AppSettings::setGridSize(double size) {
   impl_->settings->setValue("canvas/grid_size", qBound(1.0, size, 50.0));
 }
 
-QColor AppSettings::wireColor() const {
-  return QColor(impl_->settings->value("canvas/wire_color", "#1f2933").toString());
-}
-void AppSettings::setWireColor(const QColor& color) {
-  impl_->settings->setValue("canvas/wire_color", color.name());
-}
-
-QColor AppSettings::energizedColor() const {
-  return QColor(impl_->settings->value("canvas/energized_color", "#d97706").toString());
-}
-void AppSettings::setEnergizedColor(const QColor& color) {
-  impl_->settings->setValue("canvas/energized_color", color.name());
-}
-
 int AppSettings::cycleMs() const {
   return impl_->settings->value("simulation/cycle_ms", 10).toInt();
 }
@@ -83,9 +68,11 @@ void AppSettings::setSimulationSpeed(double speed) {
 }
 
 QString AppSettings::theme() const {
-  return impl_->settings->value("ui/theme", "light").toString();
+  return themeModeName(themeModeFromName(impl_->settings->value("ui/theme", "light").toString()));
 }
-void AppSettings::setTheme(const QString& theme) { impl_->settings->setValue("ui/theme", theme); }
+void AppSettings::setTheme(const QString& theme) {
+  impl_->settings->setValue("ui/theme", themeModeName(themeModeFromName(theme)));
+}
 
 int AppSettings::fontPointSize() const {
   return impl_->settings->value("ui/font_point_size", 10).toInt();
@@ -133,30 +120,7 @@ void AppSettings::applyAppearance(QApplication& application) const {
   QFont font = application.font();
   font.setPointSize(fontPointSize());
   application.setFont(font);
-
-  if (theme() == "dark") {
-    application.setStyle(QStyleFactory::create("Fusion"));
-    QPalette palette;
-    palette.setColor(QPalette::Window, QColor("#1e2329"));
-    palette.setColor(QPalette::WindowText, QColor("#e7edf3"));
-    palette.setColor(QPalette::Base, QColor("#161a1f"));
-    palette.setColor(QPalette::AlternateBase, QColor("#20262d"));
-    palette.setColor(QPalette::ToolTipBase, QColor("#2b333c"));
-    palette.setColor(QPalette::ToolTipText, QColor("#e7edf3"));
-    palette.setColor(QPalette::Text, QColor("#e7edf3"));
-    palette.setColor(QPalette::Button, QColor("#242b33"));
-    palette.setColor(QPalette::ButtonText, QColor("#e7edf3"));
-    palette.setColor(QPalette::BrightText, QColor("#ff6b6b"));
-    palette.setColor(QPalette::Link, QColor("#63b3ed"));
-    palette.setColor(QPalette::Highlight, QColor("#2b6cb0"));
-    palette.setColor(QPalette::HighlightedText, QColor("#ffffff"));
-    palette.setColor(QPalette::Disabled, QPalette::Text, QColor("#7b8794"));
-    palette.setColor(QPalette::Disabled, QPalette::ButtonText, QColor("#7b8794"));
-    application.setPalette(palette);
-  } else {
-    application.setStyle(QStyleFactory::create("Fusion"));
-    application.setPalette(application.style()->standardPalette());
-  }
+  (void)applyTheme(application, themeModeFromName(theme()));
 }
 
 } // namespace fiovivo::ui

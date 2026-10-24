@@ -1,9 +1,12 @@
 #include "ui/problems_dock.hpp"
 
+#include "ui/theme.hpp"
 #include "ui/ui_helpers.hpp"
 
+#include <QApplication>
 #include <QHeaderView>
 #include <QLabel>
+#include <QPalette>
 #include <QStyle>
 #include <QTableWidget>
 #include <QTableWidgetItem>
@@ -136,9 +139,20 @@ void ProblemsDock::refreshSummary() {
           .arg(static_cast<qulonglong>(errors))
           .arg(static_cast<qulonglong>(warnings))
           .arg(static_cast<qulonglong>(infos)));
-  summary_->setStyleSheet(errors > 0
-                              ? QStringLiteral("color:#b91c1c;")
-                              : (warnings > 0 ? QStringLiteral("color:#b45309;") : QString()));
+
+  QPalette palette = QApplication::palette();
+  if (errors > 0) {
+    const QColor color = currentTheme().color(ThemeToken::StatusError);
+    palette.setColor(QPalette::WindowText, color);
+    palette.setColor(QPalette::Text, color);
+  } else if (warnings > 0) {
+    const QColor color = currentTheme().color(ThemeToken::StatusWarning);
+    palette.setColor(QPalette::WindowText, color);
+    palette.setColor(QPalette::Text, color);
+  }
+  summary_->setPalette(palette);
 }
+
+void ProblemsDock::refreshTheme() { refreshSummary(); }
 
 } // namespace fiovivo::ui

@@ -20,6 +20,7 @@ public:
 
   void setReport(const ValidationReport& report);
   void clear();
+  void refreshTheme();
 
 signals:
   void navigateTo(quint64 component, bool has_component, quint64 wire);

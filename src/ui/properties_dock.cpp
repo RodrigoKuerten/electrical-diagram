@@ -6,6 +6,7 @@
 #include "ui/document.hpp"
 #include "ui/properties_dock.hpp"
 #include "ui/sheet_scene.hpp"
+#include "ui/theme.hpp"
 #include "ui/ui_helpers.hpp"
 
 #include <QCheckBox>
@@ -38,6 +39,12 @@
 
 namespace fiovivo::ui {
 namespace {
+
+void styleColorButton(QPushButton* button, const QColor& color) {
+  button->setText(color.name());
+  button->setStyleSheet(QStringLiteral("background-color:%1; color:%2;")
+                            .arg(color.name(), readableTextColor(color, currentTheme()).name()));
+}
 
 [[nodiscard]] QDoubleSpinBox* makeLengthSpin(QWidget* parent) {
   auto* spin = new QDoubleSpinBox(parent);
@@ -467,9 +474,12 @@ void PropertiesDock::buildWire(WireId id, QVBoxLayout* layout) {
                                    QString::fromStdString(endpointName(*sheet, wire->to))),
                  this));
   auto* form = new QFormLayout();
-  auto* color = new QPushButton(QString::fromStdString(wire->style.color), this);
-  color->setStyleSheet(QStringLiteral("background-color:%1; color: white;")
-                           .arg(QString::fromStdString(wire->style.color)));
+  QColor wire_color(QString::fromStdString(wire->style.color));
+  if (!wire_color.isValid()) {
+    wire_color = scene_->wireColor();
+  }
+  auto* color = new QPushButton(this);
+  styleColorButton(color, wire_color);
   auto* thickness = new QDoubleSpinBox(this);
   thickness->setRange(0.1, 10.0);
   thickness->setDecimals(2);
@@ -503,8 +513,7 @@ void PropertiesDock::buildWire(WireId id, QVBoxLayout* layout) {
   connect(color, &QPushButton::clicked, this, [this, color, apply_style] {
     const QColor chosen = QColorDialog::getColor(QColor(color->text()), this, tr("Wire color"));
     if (chosen.isValid()) {
-      color->setText(chosen.name());
-      color->setStyleSheet(QStringLiteral("background-color:%1; color: white;").arg(chosen.name()));
+      styleColorButton(color, chosen);
       apply_style();
     }
   });

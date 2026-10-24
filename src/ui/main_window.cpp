@@ -20,6 +20,8 @@
 #include "ui/sheet_view.hpp"
 #include "ui/simulation_controller.hpp"
 #include "ui/simulation_log_dock.hpp"
+#include "ui/theme.hpp"
+#include "ui/theme_icons.hpp"
 #include "ui/ui_helpers.hpp"
 
 #include <QAction>
@@ -56,7 +58,6 @@
 #include <QStandardPaths>
 #include <QStatusBar>
 #include <QStringConverter>
-#include <QStyle>
 #include <QTabWidget>
 #include <QTextStream>
 #include <QTime>
@@ -198,17 +199,16 @@ void MainWindow::initializeSymbols() {
 }
 
 void MainWindow::createActions() {
-  auto style_icon = [this](QStyle::StandardPixmap icon) { return style()->standardIcon(icon); };
-
-  new_action_ = new QAction(style_icon(QStyle::SP_FileIcon), tr("&New..."), this);
+  const ThemePalette& palette = currentTheme();
+  new_action_ = new QAction(themeIcon(ThemeIcon::New, palette), tr("&New..."), this);
   new_action_->setShortcut(QKeySequence::New);
   new_action_->setStatusTip(tr("Create a new project"));
 
-  open_action_ = new QAction(style_icon(QStyle::SP_DialogOpenButton), tr("&Open..."), this);
+  open_action_ = new QAction(themeIcon(ThemeIcon::Open, palette), tr("&Open..."), this);
   open_action_->setShortcut(QKeySequence::Open);
   open_action_->setStatusTip(tr("Open a .dcj project"));
 
-  save_action_ = new QAction(style_icon(QStyle::SP_DialogSaveButton), tr("&Save"), this);
+  save_action_ = new QAction(themeIcon(ThemeIcon::Save, palette), tr("&Save"), this);
   save_action_->setShortcut(QKeySequence::Save);
   save_action_->setStatusTip(tr("Save the current project"));
 
@@ -249,13 +249,13 @@ void MainWindow::createActions() {
   wire_mode_action_ = new QAction(tr("&Wire Mode"), this);
   wire_mode_action_->setCheckable(true);
 
-  run_action_ = new QAction(style_icon(QStyle::SP_MediaPlay), tr("&Start Simulation"), this);
+  run_action_ = new QAction(themeIcon(ThemeIcon::Play, palette), tr("&Start Simulation"), this);
   run_action_->setShortcut(QKeySequence(Qt::Key_F5));
-  step_action_ = new QAction(style_icon(QStyle::SP_MediaSkipForward), tr("Step &Cycle"), this);
+  step_action_ = new QAction(themeIcon(ThemeIcon::Step, palette), tr("Step &Cycle"), this);
   step_action_->setShortcut(QKeySequence(Qt::Key_F10));
   step_n_action_ = new QAction(tr("Step &N Cycles..."), this);
   step_n_action_->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F10));
-  reset_action_ = new QAction(style_icon(QStyle::SP_MediaStop), tr("&Reset Simulation"), this);
+  reset_action_ = new QAction(themeIcon(ThemeIcon::Stop, palette), tr("&Reset Simulation"), this);
   reset_action_->setShortcut(QKeySequence(Qt::SHIFT | Qt::Key_F5));
   reset_estop_action_ = new QAction(tr("Reset Emergency Stop(s)"), this);
 
@@ -595,16 +595,53 @@ void MainWindow::connectSignals() {
 
 void MainWindow::applyTheme() {
   settings_.applyAppearance(*qApp);
-  const bool dark = settings_.theme() == "dark";
-  scene_->setCanvasBackground(QColor(dark ? "#20262d" : "#d8dee6"));
-  scene_->setTextColor(QColor("#111827"));
-  scene_->setPinColor(QColor("#111827"));
-  scene_->setSelectionColor(QColor(dark ? "#60a5fa" : "#2563eb"));
-  scene_->setEnergizedColor(settings_.energizedColor());
-  scene_->setWireColor(settings_.wireColor());
+  const ThemePalette& palette = currentTheme();
+  scene_->setThemePalette(palette);
+  if (render_cache_ != nullptr) {
+    const auto result = render_cache_->setColorOverrides(symbolColorOverrides(palette));
+    if (!result) {
+      appendOutput(tr("Could not apply theme colours to symbols: %1")
+                       .arg(QString::fromStdString(result.error().toString())));
+    }
+  }
+  if (library_dock_ != nullptr) {
+    library_dock_->setThemePalette(palette);
+  }
+  if (problems_dock_ != nullptr) {
+    problems_dock_->refreshTheme();
+  }
   scene_->setGridVisible(settings_.gridVisible());
   scene_->setGridSize(settings_.gridSize());
+  updateThemeIcons();
   view_->viewport()->update();
+}
+
+void MainWindow::updateThemeIcons() {
+  const ThemePalette& palette = currentTheme();
+  const auto set_icon = [&palette](QAction* action, ThemeIcon icon) {
+    if (action != nullptr) {
+      action->setIcon(themeIcon(icon, palette));
+    }
+  };
+  set_icon(new_action_, ThemeIcon::New);
+  set_icon(open_action_, ThemeIcon::Open);
+  set_icon(save_action_, ThemeIcon::Save);
+  set_icon(undo_action_, ThemeIcon::Undo);
+  set_icon(redo_action_, ThemeIcon::Redo);
+  set_icon(cut_action_, ThemeIcon::Cut);
+  set_icon(copy_action_, ThemeIcon::Copy);
+  set_icon(paste_action_, ThemeIcon::Paste);
+  set_icon(zoom_in_action_, ThemeIcon::ZoomIn);
+  set_icon(zoom_out_action_, ThemeIcon::ZoomOut);
+  set_icon(fit_action_, ThemeIcon::Fit);
+  set_icon(step_action_, ThemeIcon::Step);
+  set_icon(reset_action_, ThemeIcon::Stop);
+  set_icon(grid_action_, ThemeIcon::Grid);
+  set_icon(wire_mode_action_, ThemeIcon::Wire);
+  set_icon(validate_action_, ThemeIcon::Validate);
+  const bool running =
+      controller_ != nullptr && controller_->state() == SimulationController::State::Running;
+  set_icon(run_action_, running ? ThemeIcon::Pause : ThemeIcon::Play);
 }
 
 QString MainWindow::documentDisplayName() const {
@@ -705,17 +742,17 @@ void MainWindow::updateSimulationUi() {
   switch (controller_->state()) {
   case SimulationController::State::Running:
     run_action_->setText(tr("&Pause Simulation"));
-    run_action_->setIcon(style()->standardIcon(QStyle::SP_MediaPause));
+    run_action_->setIcon(themeIcon(ThemeIcon::Pause, currentTheme()));
     run_action_->setToolTip(tr("Pause simulation (F5)"));
     break;
   case SimulationController::State::Paused:
     run_action_->setText(tr("&Resume Simulation"));
-    run_action_->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
+    run_action_->setIcon(themeIcon(ThemeIcon::Play, currentTheme()));
     run_action_->setToolTip(tr("Resume simulation (F5)"));
     break;
   case SimulationController::State::Stopped:
     run_action_->setText(tr("&Start Simulation"));
-    run_action_->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
+    run_action_->setIcon(themeIcon(ThemeIcon::Play, currentTheme()));
     run_action_->setToolTip(tr("Start simulation (F5)"));
     break;
   }

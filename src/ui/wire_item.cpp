@@ -78,7 +78,7 @@ void WireItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, 
   painter->setRenderHint(QPainter::Antialiasing, true);
   QColor base(style_.color.c_str());
   if (!base.isValid()) {
-    base = QColor("#1f2933");
+    base = scene_->wireColor();
   }
   if (live_) {
     QColor glow = scene_->energizedColor();

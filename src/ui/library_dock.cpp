@@ -10,6 +10,8 @@
 #include <QLineEdit>
 #include <QLocale>
 #include <QMimeData>
+#include <QPainter>
+#include <QPixmap>
 #include <QTreeWidget>
 #include <QVBoxLayout>
 
@@ -108,12 +110,46 @@ void LibraryDock::buildTree() {
       item->setText(0, QString::fromStdString(definition->displayName(isPortuguese())));
       item->setData(0, Qt::UserRole, QString::fromStdString(definition->type));
       item->setToolTip(0, QString::fromStdString(definition->type));
-      if (auto renderer = render_cache_.renderer(definition->type)) {
-        item->setIcon(0, QIcon(renderer->icon(QSize(48, 48))));
-      }
+      item->setIcon(0, symbolIcon(definition->type));
       raw_category->addChild(item.release());
     }
     raw_category->setExpanded(true);
+  }
+}
+
+void LibraryDock::setThemePalette(const ThemePalette& palette) {
+  palette_ = palette;
+  updateIcons();
+}
+
+QIcon LibraryDock::symbolIcon(std::string_view type) const {
+  QPixmap tile(QSize(48, 48));
+  tile.fill(Qt::transparent);
+  QPainter painter(&tile);
+  painter.setRenderHint(QPainter::Antialiasing, true);
+  painter.setPen(Qt::NoPen);
+  painter.setBrush(palette_.color(ThemeToken::LibrarySymbolTile));
+  painter.drawRoundedRect(QRectF(0.5, 0.5, 47.0, 47.0), 3.0, 3.0);
+  if (auto renderer = render_cache_.renderer(type)) {
+    painter.drawPixmap(0, 0, renderer->icon(QSize(48, 48)));
+  }
+  painter.end();
+  return QIcon(tile);
+}
+
+void LibraryDock::updateIcons() {
+  if (tree_ == nullptr) {
+    return;
+  }
+  for (int category_index = 0; category_index < tree_->topLevelItemCount(); ++category_index) {
+    QTreeWidgetItem* category = tree_->topLevelItem(category_index);
+    for (int child_index = 0; child_index < category->childCount(); ++child_index) {
+      QTreeWidgetItem* child = category->child(child_index);
+      const QString type = child->data(0, Qt::UserRole).toString();
+      if (!type.isEmpty()) {
+        child->setIcon(0, symbolIcon(type.toStdString()));
+      }
+    }
   }
 }
 

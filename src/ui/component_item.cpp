@@ -192,7 +192,7 @@ void ComponentItem::paint(QPainter* painter,
   if (auto renderer = scene_->renderCache()->renderer(item.type)) {
     renderer->paint(*painter, symbol_rect, symbolState());
   } else {
-    painter->setPen(QPen(QColor("#b91c1c"), 0.8));
+    painter->setPen(QPen(scene_->themePalette().color(ThemeToken::StatusError), 0.8));
     painter->drawRect(symbol_rect);
     painter->drawText(symbol_rect, Qt::AlignCenter, QString::fromStdString(item.type));
   }
@@ -219,8 +219,9 @@ void ComponentItem::paint(QPainter* painter,
     path.addText(origin, font, text);
     // Draw a thin white outline instead of an opaque label background. Wires remain visible
     // around the glyphs, while the tag stays readable when a wire passes behind it.
-    painter->setPen(QPen(Qt::white, 1.0, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-    painter->setBrush(Qt::white);
+    const QColor outline = scene_->themePalette().color(ThemeToken::SheetBackground);
+    painter->setPen(QPen(outline, 1.0, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter->setBrush(outline);
     painter->drawPath(path);
     painter->setPen(Qt::NoPen);
     painter->setBrush(scene_->textColor());

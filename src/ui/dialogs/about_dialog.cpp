@@ -1,8 +1,11 @@
 #include "ui/dialogs/about_dialog.hpp"
 
+#include "ui/theme.hpp"
+
 #include <QApplication>
 #include <QDialogButtonBox>
 #include <QLabel>
+#include <QPalette>
 #include <QVBoxLayout>
 
 namespace fiovivo::ui {
@@ -31,7 +34,11 @@ AboutDialog::AboutDialog(QWidget* parent) : QDialog(parent) {
          "electrical safety are not simulated."),
       this);
   warning->setWordWrap(true);
-  warning->setStyleSheet(QStringLiteral("color:#b91c1c;"));
+  QPalette warning_palette = warning->palette();
+  const QColor warning_color = currentTheme().color(ThemeToken::StatusError);
+  warning_palette.setColor(QPalette::WindowText, warning_color);
+  warning_palette.setColor(QPalette::Text, warning_color);
+  warning->setPalette(warning_palette);
   layout->addWidget(warning);
 
   auto* license = new QLabel(

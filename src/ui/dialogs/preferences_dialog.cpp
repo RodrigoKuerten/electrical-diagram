@@ -3,15 +3,12 @@
 #include "ui/app_settings.hpp"
 
 #include <QCheckBox>
-#include <QColor>
-#include <QColorDialog>
 #include <QComboBox>
 #include <QDialogButtonBox>
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QLabel>
 #include <QMessageBox>
-#include <QPushButton>
 #include <QSpinBox>
 #include <QVBoxLayout>
 
@@ -38,15 +35,6 @@ PreferencesDialog::PreferencesDialog(AppSettings& settings, QWidget* parent)
   grid_size_->setSuffix(QStringLiteral(" mm"));
   grid_size_->setValue(settings_.gridSize());
 
-  wire_color_ = new QPushButton(this);
-  wire_color_->setText(settings_.wireColor().name());
-  wire_color_->setStyleSheet(
-      QStringLiteral("background-color:%1; color:white;").arg(settings_.wireColor().name()));
-  energized_color_ = new QPushButton(this);
-  energized_color_->setText(settings_.energizedColor().name());
-  energized_color_->setStyleSheet(
-      QStringLiteral("background-color:%1; color:white;").arg(settings_.energizedColor().name()));
-
   cycle_ms_ = new QSpinBox(this);
   cycle_ms_->setRange(1, 1000);
   cycle_ms_->setSuffix(QStringLiteral(" ms"));
@@ -71,8 +59,6 @@ PreferencesDialog::PreferencesDialog(AppSettings& settings, QWidget* parent)
   form->addRow(tr("Language"), language_);
   form->addRow(tr("Grid"), grid_visible_);
   form->addRow(tr("Grid size"), grid_size_);
-  form->addRow(tr("Default wire color"), wire_color_);
-  form->addRow(tr("Energized color"), energized_color_);
   form->addRow(tr("Simulation cycle"), cycle_ms_);
   form->addRow(tr("Default speed"), speed_);
   form->addRow(tr("Theme"), theme_);
@@ -86,15 +72,11 @@ PreferencesDialog::PreferencesDialog(AppSettings& settings, QWidget* parent)
 
   auto* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
   layout->addWidget(buttons);
-  connect(wire_color_, &QPushButton::clicked, this, &PreferencesDialog::chooseWireColor);
-  connect(energized_color_, &QPushButton::clicked, this, &PreferencesDialog::chooseEnergizedColor);
   connect(buttons, &QDialogButtonBox::accepted, this, [this] {
     const QString old_language = settings_.language();
     settings_.setLanguage(language_->currentData().toString());
     settings_.setGridVisible(grid_visible_->isChecked());
     settings_.setGridSize(grid_size_->value());
-    settings_.setWireColor(QColor(wire_color_->text()));
-    settings_.setEnergizedColor(QColor(energized_color_->text()));
     settings_.setCycleMs(cycle_ms_->value());
     settings_.setSimulationSpeed(speed_->currentData().toDouble());
     settings_.setTheme(theme_->currentData().toString());
@@ -107,26 +89,6 @@ PreferencesDialog::PreferencesDialog(AppSettings& settings, QWidget* parent)
     accept();
   });
   connect(buttons, &QDialogButtonBox::rejected, this, &QDialog::reject);
-}
-
-void PreferencesDialog::chooseWireColor() {
-  const QColor color =
-      QColorDialog::getColor(QColor(wire_color_->text()), this, tr("Default wire color"));
-  if (color.isValid()) {
-    wire_color_->setText(color.name());
-    wire_color_->setStyleSheet(
-        QStringLiteral("background-color:%1; color:white;").arg(color.name()));
-  }
-}
-
-void PreferencesDialog::chooseEnergizedColor() {
-  const QColor color =
-      QColorDialog::getColor(QColor(energized_color_->text()), this, tr("Energized path color"));
-  if (color.isValid()) {
-    energized_color_->setText(color.name());
-    energized_color_->setStyleSheet(
-        QStringLiteral("background-color:%1; color:white;").arg(color.name()));
-  }
 }
 
 } // namespace fiovivo::ui

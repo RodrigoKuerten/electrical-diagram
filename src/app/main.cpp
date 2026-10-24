@@ -9,6 +9,11 @@
 #include <QTranslator>
 
 int main(int argc, char** argv) {
+#ifdef Q_OS_WIN
+  // The native Windows menu bar follows the operating-system theme, which would contradict an
+  // in-application light/dark choice. Draw the menu bar with the active theme palette instead.
+  QCoreApplication::setAttribute(Qt::AA_DontUseNativeMenuBar);
+#endif
   QApplication application(argc, argv);
   QApplication::setOrganizationName(QStringLiteral("FioVivo"));
   QApplication::setOrganizationDomain(QStringLiteral("fiovivo.local"));
