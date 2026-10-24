@@ -19,7 +19,8 @@ questions that still need the project owner's confirmation.
 - Snapshot undo/redo through a `QUndoStack`; every editing operation is undoable.
 - Properties edition for tag (with uniqueness validation), description, position, rotation,
   typed parameters, wire style and annotation text.
-- Light/dark theme, font size, grid, wire color and energized-path color settings.
+- Palette-driven light/dark theme with runtime switching, font size and grid settings.
+  See `docs/theme-audit/report.md` for the Track A audit and regression tests.
 
 ### Simulator
 

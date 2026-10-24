@@ -55,7 +55,8 @@ src/
   io/          json_io, schema_validator, bom; embedded schema generated from docs/
   library/     symbol_definition, svg_renderer
   ui/          main_window, document, sheet_scene/view, component/pin/wire/annotation items,
-               docks, dialogs, simulation controller/worker, export helpers, settings
+               docks, dialogs, simulation controller/worker, export helpers, settings,
+               theme palette/tokens and theme-aware icons
   app/         main.cpp
   i18n/        fiovivo_pt_BR.ts, fiovivo_en.ts, lrelease build integration
 tests/
@@ -158,6 +159,12 @@ sequence is independent of host load; tests drive `sim::Simulator::step()` direc
   applies `SimFrame` updates to the current scene without rebuilding the document.
 - `io` is used for load/save/BOM; `ui/export_utils` renders PNG/SVG/PDF and print previews
   with Qt.
+- `ui/theme` owns every named colour token for the light and dark themes. `AppSettings`
+  installs an explicit `QPalette`; `MainWindow::applyTheme()` pushes the same tokens to the
+  scene, symbol renderer, library icons and action icons. Legacy SVG colours are substituted
+  at renderer load time, so `assets/symbols/` stays untouched.
+- `ui/theme_icons` draws original monochrome toolbar icons from the active palette instead
+  of relying on platform icons that only suit one background.
 
 ## 8. Internationalization
 

@@ -22,7 +22,7 @@ and export scope. The table below is honest about the remaining gaps.
 | 1 | Editor core | implemented |
 | 2 | Scan-cycle simulator | implemented |
 | 3 | Persistence, export and printing | implemented, with the gaps listed below |
-| 4 | Extras | partial: dark theme, multi-sheet navigation, settings |
+| 4 | Extras | partial: multi-sheet navigation, settings; light/dark theme completed in Track A |
 
 See [`docs/report.md`](docs/report.md) for the final delivery report and
 [`docs/plan.md`](docs/plan.md) for the decision log.
@@ -52,8 +52,9 @@ See [`docs/report.md`](docs/report.md) for the final delivery report and
   - autosave every two minutes and startup recovery.
 - Export to PNG (1x/2x/4x, transparent option), SVG, PDF and BOM CSV; print and print preview.
 - Brazilian Portuguese (default) and English UI through Qt Linguist (`tr()`, `.ts`, `.qm`).
-- Light and dark themes, adjustable font size, configurable grid, wire/energized colors,
-  cycle period and default simulation speed.
+- Palette-driven light and dark themes with runtime switching, adjustable font size,
+  configurable grid, cycle period and default simulation speed. All canvas, grid, sheet,
+  title-block, symbol, wire, dock and dialog colours come from named theme tokens.
 - Examples for direct-on start, star-delta, timer sequence, two-motor interlock and
   emergency stop, exercised by the test suite.
 
@@ -188,13 +189,18 @@ ctest --preset windows-msys2-debug --output-on-failure
 ```
 
 The suite includes headless core/sim/io tests, the five example scenarios, determinism checks,
-timer timing, UI canvas tests, export checks, translation loading, a 500-component/
-800-wire performance test and a 500-component rendering test. UI tests run with
-`QT_QPA_PLATFORM=offscreen`.
+timer timing, UI canvas tests, theme palette/contrast/golden tests, export checks,
+translation loading, a 500-component/800-wire performance test and a 500-component
+rendering test. UI tests run with `QT_QPA_PLATFORM=offscreen`. Theme goldens are updated
+only with `--update-golden`, and the light-theme investigation is recorded in
+[`docs/theme-audit/report.md`](docs/theme-audit/report.md).
 
-Current local results: **134/134 tests pass** in Debug and Release with the UI enabled,
-**122/122 headless tests** pass in the coverage configuration, and gcovr reports **88% line
-coverage** across `core`+`sim` (core about 88%, simulator about 90%).
+Current local results: **140/140 tests pass** in Debug with the UI enabled; in the local
+Release build all tests pass except the 500-component rendering budget, which also exceeds
+its limit on the pre-theme baseline at this Qt version (see
+`docs/theme-audit/report.md`). **122/122 headless tests** pass in the coverage configuration,
+and gcovr reports **88% line coverage** across `core`+`sim` (core about 88%, simulator about
+90%).
 
 Golden files live in `tests/data/golden/`. Updating one is deliberate: edit the exporter,
 review the diff, run the generator, and commit both together. See the README in that folder.
