@@ -341,11 +341,12 @@ Policy:
 - A normal test run never rewrites a golden file. If a golden test fails, the test reports a
   diff and exits.
 - Golden updates are a deliberate, separate action. The harness will expose a dedicated
-  CMake target (planned name: `update_golden`) or an equivalent explicit command. CI and the
-  normal `ctest` invocation use comparison mode only. The planned command shape is:
+  explicit helper command, never automatically by CI. CI and the normal `ctest` invocation
+  use comparison mode only. The BOM golden is generated with:
 
   ```bash
-  cmake --build --preset <preset> --target update_golden
+  python tools/make_bom_golden.py
+  git diff tests/data/golden/
   ```
 
 - Run the update command only after deciding that the new output is correct. Review the diff

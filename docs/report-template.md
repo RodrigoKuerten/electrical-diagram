@@ -55,7 +55,7 @@ pending. Deviations already documented in docs/plan.md §3 must appear here.]`
 
 | ID | Specification reference | Requirement | Implemented behavior | Rationale | Owner decision | Status |
 |---|---|---|---|---|---|---|
-| DEV-001 | Original spec §3.3 (one wire per pin) | A pin may connect to at most one wire | Multiple wires per pin are allowed; a junction dot is drawn when three or more conductors meet; `max_wires_per_pin` can limit this | The required parallel circuits, self-holding, indicator lamps and bundled examples cannot be built with one wire per pin | Pending: docs/plan.md §5, question 2 | `[TODO: accepted / rejected / pending]` |
+| DEV-001 | Original spec §3.3 (one wire per pin) | A pin may connect to at most one wire | Multiple wires per pin are allowed; a junction dot is drawn when three or more conductors meet; there is no hard cap in this build | The required parallel circuits, self-holding, indicator lamps and bundled examples cannot be built with one wire per pin | Pending: docs/plan.md §5, question 2 | `[TODO: accepted / rejected / pending]` |
 | DEV-002 | `[TODO: specification section]` | `[TODO: original requirement]` | `[TODO: actual behavior]` | `[TODO: reason]` | `[TODO: decision or pending]` | `[TODO: status]` |
 | DEV-003 | `[TODO: specification section]` | `[TODO: original requirement]` | `[TODO: actual behavior]` | `[TODO: reason]` | `[TODO: decision or pending]` | `[TODO: status]` |
 
@@ -68,7 +68,7 @@ owner"). Do not close them in this report without an explicit owner answer.
 |---|---|---|---|---|
 | 1 | Confirm the final product name and application ID | Working title **FioVivo**, namespace `fiovivo`, extension `.dcj` | `[TODO: pending]` | `[TODO]` |
 | 2 | Are multiple wires per pin and explicit junctions acceptable? | Multiple wires allowed, with junction dots; see DEV-001 | `[TODO: pending]` | `[TODO]` |
-| 3 | Which phase is the delivery target for the first public release? | Phase 1 plus the Phase 2 simulator, with Phase 3 foundations | `[TODO: pending]` | `[TODO]` |
+| 3 | Which phase is the delivery target for the first public release? | Phase 1, Phase 2 and most of Phase 3 are integrated; snapshot files and shortcut remapping remain | `[TODO: pending]` | `[TODO]` |
 | 4 | Should the About dialog link to the repository and issue tracker at a final URL? | `[TODO: current behavior]` | `[TODO: pending]` | `[TODO]` |
 | 5 | Should the default paper be A4 landscape or A3? | A4 landscape | `[TODO: pending]` | `[TODO]` |
 | 6 | Is MIT the intended project license? | MIT (see `LICENSE`) | `[TODO: pending]` | `[TODO]` |

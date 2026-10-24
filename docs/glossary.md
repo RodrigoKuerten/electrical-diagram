@@ -113,7 +113,7 @@ and data; Portuguese appears in translated UI text and in the documentation only
 | elemento de passagem | pass-through element | A closed contact, selector path, intact fuse or closed breaker that connects its terminals. |
 | ciclo de varredura | scan cycle | One execution of the simulation loop, from input snapshot through state commit. |
 | tempo simulado | simulated time | Time derived from the scan index and `cycle_ms`, not from the wall clock. |
-| instantâneo | snapshot | An immutable copy of runtime or document state. Document snapshots are planned for undo; simulation snapshots are planned for debugging. |
+| instantâneo | snapshot | An immutable copy of runtime or document state. Document snapshots power undo/redo; simulation snapshots are used for deterministic tests and replay. |
 | desfazer | undo | Restore the document to an earlier snapshot. |
 | refazer | redo | Reapply a document snapshot that was undone. |
 | biblioteca de símbolos | symbol library | The SVG artwork and JSON manifests that define symbols and pins. |
