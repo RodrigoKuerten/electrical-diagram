@@ -377,6 +377,103 @@ TEST(SimulatorTest, RejectsUnknownSnapshotComponents) {
   EXPECT_EQ(result.error().code, ErrorCode::InvalidReference);
 }
 
+TEST(SimulatorTest, BreakerTripAndMotorSinglePhase) {
+  Bench breaker_bench;
+  const ComponentId supply =
+      breaker_bench.add(test::makeSupplyAc1(breaker_bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId breaker =
+      breaker_bench.add(test::makeBreaker(breaker_bench.diagram, "Q1", {100.0, 0.0}));
+  const ComponentId lamp =
+      breaker_bench.add(test::makeLamp(breaker_bench.diagram, "H1", {300.0, 0.0}));
+  ASSERT_TRUE(breaker_bench.wire(supply, "L", breaker, "1").valid());
+  ASSERT_TRUE(breaker_bench.wire(breaker, "2", lamp, "A1").valid());
+  ASSERT_TRUE(breaker_bench.wire(supply, "N", lamp, "A2").valid());
+  Simulator breaker_sim(breaker_bench.diagram);
+  ASSERT_TRUE(breaker_sim.step());
+  EXPECT_TRUE(breaker_sim.state(lamp).energized);
+  ASSERT_TRUE(breaker_sim.setTripped(breaker, true));
+  ASSERT_TRUE(breaker_sim.step());
+  EXPECT_FALSE(breaker_sim.state(lamp).energized);
+
+  Bench motor_bench;
+  const ComponentId phases =
+      motor_bench.add(test::makeSupplyAc3(motor_bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId motor =
+      motor_bench.add(test::makeMotor(motor_bench.diagram, "M1", {300.0, 0.0}));
+  ASSERT_TRUE(motor_bench.wire(phases, "L1", motor, "U1").valid());
+  Simulator motor_sim(motor_bench.diagram);
+  ASSERT_TRUE(motor_sim.step());
+  EXPECT_FALSE(motor_sim.state(motor).energized);
+}
+
+TEST(SimulatorTest, MultipleCoilsShareAGroupForContacts) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId coil1 = bench.add(test::makeCoil(bench.diagram, "KM1", {100.0, 0.0}, "SHARED"));
+  const ComponentId coil2 =
+      bench.add(test::makeCoil(bench.diagram, "KM2", {100.0, 100.0}, "SHARED"));
+  const ComponentId contact =
+      bench.add(test::makeAuxNo(bench.diagram, "KM1.1", {200.0, 0.0}, "SHARED"));
+  const ComponentId lamp = bench.add(test::makeLamp(bench.diagram, "H1", {300.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", coil1, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", coil1, "A2").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", contact, "13").valid());
+  ASSERT_TRUE(bench.wire(contact, "14", lamp, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(coil1).energized);
+  EXPECT_FALSE(simulator.state(coil2).energized);
+  EXPECT_TRUE(simulator.state(contact).closed);
+  EXPECT_TRUE(simulator.state(lamp).energized);
+}
+
+TEST(SimulatorTest, ThreePositionSelector) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId selector = bench.add(test::makeSelector(bench.diagram, "S1", {100.0, 0.0}, 3));
+  const ComponentId lamp1 = bench.add(test::makeLamp(bench.diagram, "H1", {300.0, 0.0}));
+  const ComponentId lamp2 = bench.add(test::makeLamp(bench.diagram, "H2", {300.0, 100.0}));
+  const ComponentId lamp3 = bench.add(test::makeLamp(bench.diagram, "H3", {300.0, 200.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", selector, "1").valid());
+  ASSERT_TRUE(bench.wire(selector, "2", lamp1, "A1").valid());
+  ASSERT_TRUE(bench.wire(selector, "3", lamp2, "A1").valid());
+  ASSERT_TRUE(bench.wire(selector, "4", lamp3, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp1, "A2").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp2, "A2").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp3, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp1).energized);
+  ASSERT_TRUE(simulator.setSelectorPosition(selector, 2));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp2).energized);
+  EXPECT_FALSE(simulator.state(lamp1).energized);
+  ASSERT_TRUE(simulator.setSelectorPosition(selector, 3));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp3).energized);
+  EXPECT_FALSE(simulator.state(lamp2).energized);
+}
+
+TEST(SimulatorTest, SnapshotValidationAndFaultRecovery) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId lamp = bench.add(test::makeLamp(bench.diagram, "H1", {100.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", lamp, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp, "A2").valid());
+  Simulator simulator(bench.diagram);
+  SimulationSnapshot snapshot = simulator.snapshot();
+  snapshot.time_ms = -1;
+  EXPECT_FALSE(simulator.restore(snapshot));
+  snapshot.time_ms = 0;
+  snapshot.states.erase(lamp);
+  EXPECT_FALSE(simulator.restore(snapshot));
+  snapshot = simulator.snapshot();
+  snapshot.inputs[ComponentId{999}] = DigitalInputState{};
+  EXPECT_FALSE(simulator.restore(snapshot));
+  EXPECT_FALSE(simulator.restore(SimulationSnapshot{}));
+}
+
 TEST(SimulatorTest, InputSettersValidateComponentTypes) {
   Bench bench;
   const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));

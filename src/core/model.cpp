@@ -125,11 +125,15 @@ Pin* Sheet::findPin(PinRef ref) {
 }
 
 std::optional<Vec2> Sheet::pinPosition(PinRef ref) const {
-  const Pin* pin = findPin(ref);
+  const Component* component = findComponent(ref.component);
+  if (component == nullptr) {
+    return std::nullopt;
+  }
+  const Pin* pin = component->findPin(ref.pin);
   if (pin == nullptr) {
     return std::nullopt;
   }
-  return findComponent(ref.component)->pinPosition(*pin);
+  return component->pinPosition(*pin);
 }
 
 std::vector<WireId> Sheet::wiresAtPin(PinRef ref) const {

@@ -181,8 +181,20 @@ std::vector<Vec2> orthogonalRoute(Vec2 start,
                                   Vec2 end_direction,
                                   const std::vector<Rect>& obstacles,
                                   const RouteOptions& options) {
+  std::vector<Rect> expanded;
+  expanded.reserve(obstacles.size());
+  for (const Rect& rect : obstacles) {
+    expanded.push_back(rect.expanded(options.clearance));
+  }
+
   if (nearlyEqual(start.x, end.x) || nearlyEqual(start.y, end.y)) {
-    return simplify({start, end});
+    const Segment direct{start, end};
+    const bool blocked = std::any_of(expanded.begin(), expanded.end(), [&direct](const Rect& rect) {
+      return segmentIntersectsRect(direct, rect);
+    });
+    if (!blocked) {
+      return simplify({start, end});
+    }
   }
 
   auto normalize = [](Vec2 value) {
@@ -209,12 +221,6 @@ std::vector<Vec2> orthogonalRoute(Vec2 start,
   const Vec2 s1 = start + start_dir * options.stub_length;
   const Vec2 e1 = end + end_dir * options.stub_length;
 
-  std::vector<Rect> expanded;
-  expanded.reserve(obstacles.size());
-  for (const Rect& rect : obstacles) {
-    expanded.push_back(rect.expanded(options.clearance));
-  }
-
   std::vector<std::vector<Vec2>> candidates;
   candidates.push_back(makeRoute(start, s1, e1, end));
 
@@ -226,6 +232,25 @@ std::vector<Vec2> orthogonalRoute(Vec2 start,
   candidates.push_back(simplify({start, s1, {s1.x, middle_y[1]}, {e1.x, middle_y[1]}, e1, end}));
   candidates.push_back(simplify({start, s1, {end.x, s1.y}, end}));
   candidates.push_back(simplify({start, s1, {s1.x, end.y}, end}));
+
+  if (!expanded.empty()) {
+    Rect combined = expanded.front();
+    for (const Rect& rect : expanded) {
+      const double left = std::min(combined.left(), rect.left());
+      const double top = std::min(combined.top(), rect.top());
+      const double right = std::max(combined.right(), rect.right());
+      const double bottom = std::max(combined.bottom(), rect.bottom());
+      combined = Rect{left, top, right - left, bottom - top};
+    }
+    const double top = combined.top() - 1.0;
+    const double bottom = combined.bottom() + 1.0;
+    const double left = combined.left() - 1.0;
+    const double right = combined.right() + 1.0;
+    candidates.push_back(simplify({start, {start.x, top}, {end.x, top}, end}));
+    candidates.push_back(simplify({start, {start.x, bottom}, {end.x, bottom}, end}));
+    candidates.push_back(simplify({start, {left, start.y}, {left, end.y}, end}));
+    candidates.push_back(simplify({start, {right, start.y}, {right, end.y}, end}));
+  }
 
   std::size_t best_index = 0;
   double best_cost = std::numeric_limits<double>::infinity();

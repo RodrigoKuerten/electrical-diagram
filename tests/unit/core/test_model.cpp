@@ -220,6 +220,149 @@ TEST(ModelTest, RemovesSheetAndAnnotation) {
   EXPECT_TRUE(diagram.sheets.empty());
 }
 
+TEST(ModelTest, SheetLookupBoundsAndEndpointNames) {
+  Diagram diagram;
+  const SheetId sheet_id = diagram.addSheet(test::makeSheet(diagram)).value();
+  Component supply = test::makeSupplyAc1(diagram, "X1", {10.0, 20.0});
+  Component coil = test::makeCoil(diagram, "KM1", {100.0, 20.0});
+  const ComponentId supply_id = diagram.addComponent(sheet_id, std::move(supply)).value();
+  const ComponentId coil_id = diagram.addComponent(sheet_id, std::move(coil)).value();
+  const Sheet* sheet = diagram.findSheet(sheet_id);
+  ASSERT_NE(sheet, nullptr);
+  EXPECT_TRUE(sheet->hasComponent(coil_id));
+  EXPECT_FALSE(sheet->hasComponent(ComponentId{999}));
+  const PinId live = test::pinId(diagram, supply_id, "L");
+  const PinId a1 = test::pinId(diagram, coil_id, "A1");
+  const auto wire = diagram.createWire(sheet_id, {supply_id, live}, {coil_id, a1});
+  ASSERT_TRUE(wire);
+  EXPECT_TRUE(sheet->hasWire(wire.value()));
+  EXPECT_FALSE(sheet->hasWire(WireId{999}));
+  EXPECT_EQ(sheet->wiresAtPin({coil_id, a1}).size(), 1U);
+  EXPECT_EQ(endpointName(*sheet, {supply_id, live}), "X1:L");
+  EXPECT_EQ(endpointName(*sheet, {ComponentId{999}, PinId{999}}), "?");
+  EXPECT_GT(sheet->bounds().width, 0.0);
+  EXPECT_NE(diagram.findSheetForComponent(coil_id), nullptr);
+  EXPECT_NE(diagram.findPin({coil_id, a1}), nullptr);
+  EXPECT_NE(diagram.findWire(wire.value()), nullptr);
+  EXPECT_EQ(diagram.findSheetForComponent(ComponentId{999}), nullptr);
+  EXPECT_EQ(diagram.findPin({ComponentId{999}, PinId{999}}), nullptr);
+  EXPECT_EQ(diagram.findWire(WireId{999}), nullptr);
+
+  const Component* component = diagram.findComponent(coil_id);
+  ASSERT_NE(component, nullptr);
+  EXPECT_NE(component->pinPosition("A1"), std::nullopt);
+  EXPECT_EQ(component->pinPosition("missing"), std::nullopt);
+  EXPECT_TRUE(component->hasRole(PinRole::CoilInput));
+  EXPECT_FALSE(component->hasRole(PinRole::Earth));
+
+  EXPECT_TRUE(diagram.removeWire(wire.value()));
+  EXPECT_FALSE(diagram.removeWire(wire.value()));
+  EXPECT_TRUE(sheet->findPin({coil_id, a1})->wires.empty());
+  EXPECT_TRUE(diagram.removeSheet(sheet_id));
+  EXPECT_FALSE(diagram.removeSheet(sheet_id));
+}
+
+TEST(ModelTest, RejectsInvalidComponentsSheetsAndAnnotations) {
+  Diagram diagram;
+  const SheetId sheet_id = diagram.addSheet(test::makeSheet(diagram)).value();
+  Component no_tag = test::makeCoil(diagram, "KM1", {0.0, 0.0});
+  no_tag.tag.clear();
+  EXPECT_FALSE(diagram.addComponent(sheet_id, no_tag));
+  Component no_type = test::makeCoil(diagram, "KM2", {0.0, 0.0});
+  no_type.type.clear();
+  EXPECT_FALSE(diagram.addComponent(sheet_id, no_type));
+  EXPECT_FALSE(diagram.addComponent(SheetId{999}, test::makeCoil(diagram, "KM3", {0.0, 0.0})));
+
+  Sheet duplicate_sheet = test::makeSheet(diagram);
+  duplicate_sheet.id = sheet_id;
+  EXPECT_FALSE(diagram.addSheet(std::move(duplicate_sheet)));
+  Sheet empty_name;
+  empty_name.id = diagram.ids().newSheetId();
+  EXPECT_FALSE(diagram.addSheet(std::move(empty_name)));
+
+  Annotation annotation;
+  annotation.id = diagram.ids().newAnnotationId();
+  annotation.text = "one";
+  ASSERT_TRUE(diagram.addAnnotation(sheet_id, annotation));
+  EXPECT_FALSE(diagram.addAnnotation(sheet_id, annotation));
+  EXPECT_FALSE(diagram.addAnnotation(SheetId{999}, annotation));
+}
+
+TEST(ModelTest, SheetWireAndAnnotationErrorPaths) {
+  Diagram diagram;
+  const SheetId sheet_id = diagram.addSheet(test::makeSheet(diagram)).value();
+  Component coil1 = test::makeCoil(diagram, "KM1", {0.0, 0.0});
+  Component coil2 = test::makeCoil(diagram, "KM2", {100.0, 0.0});
+  const ComponentId first = diagram.addComponent(sheet_id, std::move(coil1)).value();
+  const ComponentId second = diagram.addComponent(sheet_id, std::move(coil2)).value();
+  Sheet* sheet = diagram.findSheet(sheet_id);
+  const PinId a1 = test::pinId(diagram, first, "A1");
+  const PinId a2 = test::pinId(diagram, first, "A2");
+  const PinId b1 = test::pinId(diagram, second, "A1");
+  const PinId b2 = test::pinId(diagram, second, "A2");
+
+  Wire self_loop;
+  self_loop.id = diagram.ids().newWireId();
+  self_loop.from = {first, a1};
+  self_loop.to = {first, a2};
+  EXPECT_EQ(sheet->addWire(self_loop).error().code, ErrorCode::SelfLoopNotAllowed);
+
+  Wire same_pin;
+  same_pin.id = diagram.ids().newWireId();
+  same_pin.from = {first, a1};
+  same_pin.to = {first, a1};
+  EXPECT_EQ(sheet->addWire(same_pin).error().code, ErrorCode::SamePin);
+
+  Wire missing_pin;
+  missing_pin.id = diagram.ids().newWireId();
+  missing_pin.from = {first, PinId{999}};
+  missing_pin.to = {second, b1};
+  EXPECT_EQ(sheet->addWire(missing_pin).error().code, ErrorCode::InvalidReference);
+
+  Wire valid;
+  valid.id = diagram.ids().newWireId();
+  valid.from = {first, a1};
+  valid.to = {second, b1};
+  ASSERT_TRUE(sheet->addWire(valid));
+  EXPECT_EQ(sheet->addWire(valid).error().code, ErrorCode::DuplicateId);
+
+  Wire duplicate_pair;
+  duplicate_pair.id = diagram.ids().newWireId();
+  duplicate_pair.from = {second, b1};
+  duplicate_pair.to = {first, a1};
+  EXPECT_EQ(sheet->addWire(duplicate_pair).error().code, ErrorCode::DuplicateWire);
+
+  // A self-loop is accepted only with the explicit flag.
+  Wire allowed_self_loop;
+  allowed_self_loop.id = diagram.ids().newWireId();
+  allowed_self_loop.from = {first, a1};
+  allowed_self_loop.to = {first, a2};
+  allowed_self_loop.allow_self_loop = true;
+  EXPECT_TRUE(sheet->addWire(allowed_self_loop));
+  (void)b2;
+
+  Annotation annotation;
+  annotation.id = diagram.ids().newAnnotationId();
+  ASSERT_TRUE(sheet->addAnnotation(annotation));
+  EXPECT_TRUE(sheet->removeAnnotation(annotation.id));
+  EXPECT_FALSE(sheet->removeAnnotation(annotation.id));
+}
+
+TEST(ModelTest, RebuildsAllocatorAfterExplicitIds) {
+  Diagram diagram;
+  const SheetId sheet_id = diagram.addSheet(test::makeSheet(diagram)).value();
+  Component component = test::makeCoil(diagram, "KM1", {0.0, 0.0});
+  component.id = ComponentId{500};
+  const ComponentId high = diagram.addComponent(sheet_id, std::move(component)).value();
+  EXPECT_EQ(high, ComponentId{500});
+  EXPECT_GE(diagram.ids().nextComponentValue(), 501U);
+  // Lower the allocator and rebuild it from the data.
+  const auto lowered = diagram.ids().newComponentId();
+  EXPECT_GT(lowered.value(), 500U);
+  diagram.rebuildIdAllocator();
+  EXPECT_GT(diagram.ids().newComponentId().value(), 500U);
+}
+
 TEST(ModelTest, EqualDiagramRoundTripsByValue) {
   Diagram diagram;
   const SheetId sheet_id = diagram.addSheet(test::makeSheet(diagram)).value();

@@ -654,18 +654,48 @@ Result<Simulator::Dsu> Simulator::solveCoils(const BaseGraph& base) {
 
   for (int pass = 0; pass < options_.max_passes; ++pass) {
     bool changed = false;
+    std::map<std::string, bool> groups = groupStates();
+    if (base.contactor_edges.empty()) {
+      // Without contactor contacts the graph is identical for every coil. Build it once.
+      Dsu trial = base.dsu;
+      for (const Component* coil : coils) {
+        const bool energized = loadEnergized(trial, base, *coil);
+        ComponentState& state = states_[coil->id];
+        if (state.energized != energized) {
+          state.energized = energized;
+          changed = true;
+        }
+      }
+      if (!changed) {
+        return trial;
+      }
+      continue;
+    }
+
     for (const Component* coil : coils) {
-      std::map<std::string, bool> groups = groupStates();
       Dsu trial = withContactorEdges(base, groups);
       const bool energized = loadEnergized(trial, base, *coil);
       ComponentState& state = states_[coil->id];
       if (state.energized != energized) {
         state.energized = energized;
         changed = true;
+        if (isContactorCoilComponent(*coil)) {
+          // Keep the shared group snapshot in sync for the next coil in this pass.
+          bool any_on = false;
+          const std::string group = coil->labelGroup();
+          for (const Sheet& sheet : diagram_.sheets) {
+            for (const Component& other : sheet.components) {
+              if (isContactorCoilComponent(other) && other.labelGroup() == group) {
+                any_on = any_on || states_[other.id].energized;
+              }
+            }
+          }
+          groups[group] = any_on;
+        }
       }
     }
     if (!changed) {
-      return withContactorEdges(base, groupStates());
+      return withContactorEdges(base, groups);
     }
   }
 
