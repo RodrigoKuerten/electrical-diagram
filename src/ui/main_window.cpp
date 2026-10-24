@@ -635,7 +635,8 @@ void MainWindow::updateSheetCombo() {
   const QSignalBlocker blocker(sheet_combo_);
   sheet_combo_->clear();
   for (const Sheet& sheet : document_->diagram().sheets) {
-    sheet_combo_->addItem(QString::fromStdString(sheet.name), sheet.id.value());
+    sheet_combo_->addItem(QString::fromStdString(sheet.name),
+                          static_cast<qulonglong>(sheet.id.value()));
   }
   const SheetId current = document_->currentSheetId();
   for (int index = 0; index < sheet_combo_->count(); ++index) {
