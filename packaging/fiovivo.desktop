@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=FioVivo
+GenericName=Electrical Diagram Editor
+Comment=Educational electrical control diagram editor and simulator
+Comment[pt_BR]=Editor e simulador educacional de diagramas de comando elétrico
+Exec=fiovivo %F
+Icon=fiovivo
+Terminal=false
+Categories=Education;Engineering;Science;
+MimeType=application/x-fiovivo-dcj;
+Keywords=electrical;diagram;simulation;contactor;PLC;
+Keywords[pt_BR]=elétrica;diagrama;simulação;contator;CLP;
+StartupNotify=true

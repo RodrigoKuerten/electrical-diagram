@@ -7,6 +7,6 @@ if(FIOVIVO_BUILD_UI)
   fiovivo_configure_target(fiovivo_library)
   target_link_libraries(
     fiovivo_library
-    PUBLIC fiovivo_symbols Qt6::Core Qt6::Gui Qt6::Svg Qt6::Widgets
+    PUBLIC fiovivo_symbols Qt6::Core Qt6::Gui Qt6::Svg
   )
 endif()

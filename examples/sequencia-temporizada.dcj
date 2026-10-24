@@ -1,0 +1,779 @@
+{
+  "app_version": "0.1.0",
+  "format": "dcj",
+  "format_version": 1,
+  "library_refs": [
+    {
+      "symbol_version": 1,
+      "type": "pilot_lamp"
+    },
+    {
+      "symbol_version": 1,
+      "type": "pushbutton_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "supply_ac1"
+    },
+    {
+      "symbol_version": 1,
+      "type": "timer_off"
+    },
+    {
+      "symbol_version": 1,
+      "type": "timer_on"
+    }
+  ],
+  "metadata": {
+    "author": "FioVivo examples",
+    "created_utc": "2026-01-01T00:00:00Z",
+    "modified_utc": "2026-01-01T00:00:00Z",
+    "revision": "A",
+    "title": "Sequência temporizada"
+  },
+  "sheets": [
+    {
+      "annotations": [
+        {
+          "color": "#1f2933",
+          "font_size": 3.0,
+          "id": "a1",
+          "kind": "text",
+          "position": [
+            20.0,
+            170.0
+          ],
+          "size": [
+            230.0,
+            10.0
+          ],
+          "text": "S1 é mantida. H1 liga após 2 s (TON) e H2 desliga 3 s após a abertura (TOF)."
+        }
+      ],
+      "components": [
+        {
+          "description": "",
+          "id": "c1",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "earth": true,
+            "frequency": 60,
+            "neutral": true,
+            "rated_voltage": 220
+          },
+          "pins": [
+            {
+              "id": "p1",
+              "name": "L",
+              "offset": [
+                34.0,
+                10.0
+              ],
+              "required": true,
+              "role": "supply_in"
+            },
+            {
+              "id": "p2",
+              "name": "N",
+              "offset": [
+                34.0,
+                22.0
+              ],
+              "required": true,
+              "role": "neutral"
+            },
+            {
+              "id": "p3",
+              "name": "PE",
+              "offset": [
+                34.0,
+                30.0
+              ],
+              "required": false,
+              "role": "earth"
+            }
+          ],
+          "position": [
+            10.0,
+            20.0
+          ],
+          "rotation": 0,
+          "size": [
+            34.0,
+            34.0
+          ],
+          "tag": "X1",
+          "type": "supply_ac1"
+        },
+        {
+          "description": "",
+          "id": "c2",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "green",
+            "label_group": "",
+            "mode": "maintained"
+          },
+          "pins": [
+            {
+              "id": "p4",
+              "name": "13",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p5",
+              "name": "14",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            70.0,
+            20.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "S1",
+          "type": "pushbutton_no"
+        },
+        {
+          "description": "",
+          "id": "c3",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "delay_ms": 2000,
+            "label_group": "",
+            "time_base": "ms"
+          },
+          "pins": [
+            {
+              "id": "p6",
+              "name": "A1",
+              "offset": [
+                0.0,
+                15.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p7",
+              "name": "A2",
+              "offset": [
+                0.0,
+                35.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            },
+            {
+              "id": "p8",
+              "name": "15",
+              "offset": [
+                70.0,
+                15.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p9",
+              "name": "18",
+              "offset": [
+                70.0,
+                35.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            130.0,
+            20.0
+          ],
+          "rotation": 0,
+          "size": [
+            70.0,
+            50.0
+          ],
+          "tag": "TM1",
+          "type": "timer_on"
+        },
+        {
+          "description": "",
+          "id": "c4",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "delay_ms": 3000,
+            "label_group": "",
+            "time_base": "ms"
+          },
+          "pins": [
+            {
+              "id": "p10",
+              "name": "A1",
+              "offset": [
+                0.0,
+                15.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p11",
+              "name": "A2",
+              "offset": [
+                0.0,
+                35.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            },
+            {
+              "id": "p12",
+              "name": "15",
+              "offset": [
+                70.0,
+                15.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p13",
+              "name": "18",
+              "offset": [
+                70.0,
+                35.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            130.0,
+            100.0
+          ],
+          "rotation": 0,
+          "size": [
+            70.0,
+            50.0
+          ],
+          "tag": "TM2",
+          "type": "timer_off"
+        },
+        {
+          "description": "",
+          "id": "c5",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "green",
+            "rated_voltage": 220
+          },
+          "pins": [
+            {
+              "id": "p14",
+              "name": "A1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p15",
+              "name": "A2",
+              "offset": [
+                15.0,
+                34.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            250.0,
+            20.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            34.0
+          ],
+          "tag": "H1",
+          "type": "pilot_lamp"
+        },
+        {
+          "description": "",
+          "id": "c6",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "green",
+            "rated_voltage": 220
+          },
+          "pins": [
+            {
+              "id": "p16",
+              "name": "A1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p17",
+              "name": "A2",
+              "offset": [
+                15.0,
+                34.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            250.0,
+            100.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            34.0
+          ],
+          "tag": "H2",
+          "type": "pilot_lamp"
+        }
+      ],
+      "id": "s1",
+      "margin": 10.0,
+      "name": "Folha 1",
+      "orientation": "landscape",
+      "paper": "A4",
+      "show_frame": true,
+      "wires": [
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c1",
+            "pin": "p1"
+          },
+          "id": "w1",
+          "route": [
+            [
+              44.0,
+              30.0
+            ],
+            [
+              85.0,
+              30.0
+            ],
+            [
+              85.0,
+              20.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c2",
+            "pin": "p4"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c2",
+            "pin": "p5"
+          },
+          "id": "w2",
+          "route": [
+            [
+              85.0,
+              60.0
+            ],
+            [
+              130.0,
+              60.0
+            ],
+            [
+              130.0,
+              35.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c3",
+            "pin": "p6"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c2",
+            "pin": "p5"
+          },
+          "id": "w3",
+          "route": [
+            [
+              85.0,
+              60.0
+            ],
+            [
+              130.0,
+              60.0
+            ],
+            [
+              130.0,
+              115.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c4",
+            "pin": "p10"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c3",
+            "pin": "p7"
+          },
+          "id": "w4",
+          "route": [
+            [
+              130.0,
+              55.0
+            ],
+            [
+              44.0,
+              55.0
+            ],
+            [
+              44.0,
+              42.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p2"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c4",
+            "pin": "p11"
+          },
+          "id": "w5",
+          "route": [
+            [
+              130.0,
+              135.0
+            ],
+            [
+              44.0,
+              135.0
+            ],
+            [
+              44.0,
+              42.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p2"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c1",
+            "pin": "p1"
+          },
+          "id": "w6",
+          "route": [
+            [
+              44.0,
+              30.0
+            ],
+            [
+              200.0,
+              30.0
+            ],
+            [
+              200.0,
+              35.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c3",
+            "pin": "p8"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c3",
+            "pin": "p9"
+          },
+          "id": "w7",
+          "route": [
+            [
+              200.0,
+              55.0
+            ],
+            [
+              265.0,
+              55.0
+            ],
+            [
+              265.0,
+              20.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c5",
+            "pin": "p14"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c5",
+            "pin": "p15"
+          },
+          "id": "w8",
+          "route": [
+            [
+              265.0,
+              54.0
+            ],
+            [
+              44.0,
+              54.0
+            ],
+            [
+              44.0,
+              42.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p2"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c1",
+            "pin": "p1"
+          },
+          "id": "w9",
+          "route": [
+            [
+              44.0,
+              30.0
+            ],
+            [
+              200.0,
+              30.0
+            ],
+            [
+              200.0,
+              115.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c4",
+            "pin": "p12"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c4",
+            "pin": "p13"
+          },
+          "id": "w10",
+          "route": [
+            [
+              200.0,
+              135.0
+            ],
+            [
+              265.0,
+              135.0
+            ],
+            [
+              265.0,
+              100.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c6",
+            "pin": "p16"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c6",
+            "pin": "p17"
+          },
+          "id": "w11",
+          "route": [
+            [
+              265.0,
+              134.0
+            ],
+            [
+              44.0,
+              134.0
+            ],
+            [
+              44.0,
+              42.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p2"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-fiovivo-dcj">
+    <comment>FioVivo electrical diagram</comment>
+    <comment xml:lang="pt_BR">Diagrama elétrico FioVivo</comment>
+    <glob pattern="*.dcj"/>
+    <icon name="fiovivo"/>
+  </mime-type>
+</mime-info>

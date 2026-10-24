@@ -1,0 +1,1713 @@
+{
+  "app_version": "0.1.0",
+  "format": "dcj",
+  "format_version": 1,
+  "library_refs": [
+    {
+      "symbol_version": 1,
+      "type": "breaker"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contactor_aux_nc"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contactor_aux_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contactor_coil"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contactor_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "fuse"
+    },
+    {
+      "symbol_version": 1,
+      "type": "motor_3ph"
+    },
+    {
+      "symbol_version": 1,
+      "type": "pilot_lamp"
+    },
+    {
+      "symbol_version": 1,
+      "type": "pushbutton_nc"
+    },
+    {
+      "symbol_version": 1,
+      "type": "pushbutton_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "supply_ac3"
+    },
+    {
+      "symbol_version": 1,
+      "type": "thermal_relay"
+    }
+  ],
+  "metadata": {
+    "author": "FioVivo examples",
+    "created_utc": "2026-01-01T00:00:00Z",
+    "modified_utc": "2026-01-01T00:00:00Z",
+    "revision": "A",
+    "title": "Partida direta"
+  },
+  "sheets": [
+    {
+      "annotations": [
+        {
+          "color": "#1f2933",
+          "font_size": 3.0,
+          "id": "a1",
+          "kind": "text",
+          "position": [
+            10.0,
+            270.0
+          ],
+          "size": [
+            260.0,
+            10.0
+          ],
+          "text": "Controle em L1 + N. Os contatos 95/96 e 97/98 representam o relé térmico; o aquecimento não é simulado."
+        }
+      ],
+      "components": [
+        {
+          "description": "",
+          "id": "c1",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "earth": true,
+            "frequency": 60,
+            "neutral": true,
+            "rated_voltage": 380
+          },
+          "pins": [
+            {
+              "id": "p1",
+              "name": "L1",
+              "offset": [
+                40.0,
+                10.0
+              ],
+              "required": true,
+              "role": "supply_in"
+            },
+            {
+              "id": "p2",
+              "name": "L2",
+              "offset": [
+                40.0,
+                22.0
+              ],
+              "required": true,
+              "role": "supply_in"
+            },
+            {
+              "id": "p3",
+              "name": "L3",
+              "offset": [
+                40.0,
+                34.0
+              ],
+              "required": true,
+              "role": "supply_in"
+            },
+            {
+              "id": "p4",
+              "name": "N",
+              "offset": [
+                40.0,
+                46.0
+              ],
+              "required": false,
+              "role": "neutral"
+            },
+            {
+              "id": "p5",
+              "name": "PE",
+              "offset": [
+                40.0,
+                56.0
+              ],
+              "required": false,
+              "role": "earth"
+            }
+          ],
+          "position": [
+            10.0,
+            20.0
+          ],
+          "rotation": 0,
+          "size": [
+            40.0,
+            60.0
+          ],
+          "tag": "X1",
+          "type": "supply_ac3"
+        },
+        {
+          "description": "",
+          "id": "c2",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "poles": 3,
+            "rated_current": 16,
+            "tripped": false
+          },
+          "pins": [
+            {
+              "id": "p6",
+              "name": "1",
+              "offset": [
+                12.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p7",
+              "name": "2",
+              "offset": [
+                12.0,
+                44.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            }
+          ],
+          "position": [
+            80.0,
+            20.0
+          ],
+          "rotation": 0,
+          "size": [
+            24.0,
+            44.0
+          ],
+          "tag": "Q1",
+          "type": "breaker"
+        },
+        {
+          "description": "",
+          "id": "c3",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p8",
+              "name": "1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p9",
+              "name": "2",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            130.0,
+            20.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "KM1.1",
+          "type": "contactor_no"
+        },
+        {
+          "description": "",
+          "id": "c4",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p10",
+              "name": "1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p11",
+              "name": "2",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            130.0,
+            80.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "KM1.2",
+          "type": "contactor_no"
+        },
+        {
+          "description": "",
+          "id": "c5",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p12",
+              "name": "1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p13",
+              "name": "2",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            130.0,
+            140.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "KM1.3",
+          "type": "contactor_no"
+        },
+        {
+          "description": "",
+          "id": "c6",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "connection": "delta",
+            "min_live_phases": 2,
+            "power_kw": 1.5,
+            "rated_voltage": 380
+          },
+          "pins": [
+            {
+              "id": "p14",
+              "name": "U1",
+              "offset": [
+                0.0,
+                14.0
+              ],
+              "required": true,
+              "role": "supply_in"
+            },
+            {
+              "id": "p15",
+              "name": "V1",
+              "offset": [
+                0.0,
+                28.0
+              ],
+              "required": true,
+              "role": "supply_in"
+            },
+            {
+              "id": "p16",
+              "name": "W1",
+              "offset": [
+                0.0,
+                42.0
+              ],
+              "required": true,
+              "role": "supply_in"
+            }
+          ],
+          "position": [
+            320.0,
+            60.0
+          ],
+          "rotation": 0,
+          "size": [
+            56.0,
+            56.0
+          ],
+          "tag": "M1",
+          "type": "motor_3ph"
+        },
+        {
+          "description": "",
+          "id": "c7",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "blown": false,
+            "rated_current": 10
+          },
+          "pins": [
+            {
+              "id": "p17",
+              "name": "1",
+              "offset": [
+                10.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p18",
+              "name": "2",
+              "offset": [
+                10.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            }
+          ],
+          "position": [
+            40.0,
+            200.0
+          ],
+          "rotation": 0,
+          "size": [
+            20.0,
+            40.0
+          ],
+          "tag": "F2",
+          "type": "fuse"
+        },
+        {
+          "description": "",
+          "id": "c8",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "red",
+            "label_group": "",
+            "mode": "momentary"
+          },
+          "pins": [
+            {
+              "id": "p19",
+              "name": "21",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p20",
+              "name": "22",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_nc"
+            }
+          ],
+          "position": [
+            90.0,
+            200.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "S2",
+          "type": "pushbutton_nc"
+        },
+        {
+          "description": "",
+          "id": "c9",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "green",
+            "label_group": "",
+            "mode": "momentary"
+          },
+          "pins": [
+            {
+              "id": "p21",
+              "name": "13",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p22",
+              "name": "14",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            140.0,
+            200.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "S1",
+          "type": "pushbutton_no"
+        },
+        {
+          "description": "",
+          "id": "c10",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p23",
+              "name": "13",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p24",
+              "name": "14",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            140.0,
+            260.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "KM1.4",
+          "type": "contactor_aux_no"
+        },
+        {
+          "description": "",
+          "id": "c11",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p25",
+              "name": "21",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p26",
+              "name": "22",
+              "offset": [
+                15.0,
+                40.0
+              ],
+              "required": true,
+              "role": "contact_nc"
+            }
+          ],
+          "position": [
+            300.0,
+            160.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            40.0
+          ],
+          "tag": "KM1.5",
+          "type": "contactor_aux_nc"
+        },
+        {
+          "description": "",
+          "id": "c12",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": "",
+            "reset_mode": "manual",
+            "trip_current": 10
+          },
+          "pins": [
+            {
+              "id": "p27",
+              "name": "95",
+              "offset": [
+                0.0,
+                15.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p28",
+              "name": "96",
+              "offset": [
+                60.0,
+                15.0
+              ],
+              "required": true,
+              "role": "contact_nc"
+            },
+            {
+              "id": "p29",
+              "name": "97",
+              "offset": [
+                0.0,
+                45.0
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p30",
+              "name": "98",
+              "offset": [
+                60.0,
+                45.0
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            220.0,
+            200.0
+          ],
+          "rotation": 0,
+          "size": [
+            60.0,
+            60.0
+          ],
+          "tag": "F1",
+          "type": "thermal_relay"
+        },
+        {
+          "description": "",
+          "id": "c13",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": "",
+            "rated_voltage": 220
+          },
+          "pins": [
+            {
+              "id": "p31",
+              "name": "A1",
+              "offset": [
+                10.0,
+                0.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p32",
+              "name": "A2",
+              "offset": [
+                10.0,
+                30.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            360.0,
+            200.0
+          ],
+          "rotation": 0,
+          "size": [
+            40.0,
+            30.0
+          ],
+          "tag": "KM1",
+          "type": "contactor_coil"
+        },
+        {
+          "description": "",
+          "id": "c14",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "green",
+            "rated_voltage": 220
+          },
+          "pins": [
+            {
+              "id": "p33",
+              "name": "A1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p34",
+              "name": "A2",
+              "offset": [
+                15.0,
+                34.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            300.0,
+            250.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            34.0
+          ],
+          "tag": "H1",
+          "type": "pilot_lamp"
+        },
+        {
+          "description": "",
+          "id": "c15",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "green",
+            "rated_voltage": 220
+          },
+          "pins": [
+            {
+              "id": "p35",
+              "name": "A1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p36",
+              "name": "A2",
+              "offset": [
+                15.0,
+                34.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            340.0,
+            250.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            34.0
+          ],
+          "tag": "H2",
+          "type": "pilot_lamp"
+        },
+        {
+          "description": "",
+          "id": "c16",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "green",
+            "rated_voltage": 220
+          },
+          "pins": [
+            {
+              "id": "p37",
+              "name": "A1",
+              "offset": [
+                15.0,
+                0.0
+              ],
+              "required": true,
+              "role": "coil_input"
+            },
+            {
+              "id": "p38",
+              "name": "A2",
+              "offset": [
+                15.0,
+                34.0
+              ],
+              "required": true,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            380.0,
+            250.0
+          ],
+          "rotation": 0,
+          "size": [
+            30.0,
+            34.0
+          ],
+          "tag": "H3",
+          "type": "pilot_lamp"
+        }
+      ],
+      "id": "s1",
+      "margin": 10.0,
+      "name": "Folha 1",
+      "orientation": "landscape",
+      "paper": "A3",
+      "show_frame": true,
+      "wires": [
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c1",
+            "pin": "p1"
+          },
+          "id": "w1",
+          "route": [
+            [
+              50.0,
+              30.0
+            ],
+            [
+              92.0,
+              30.0
+            ],
+            [
+              92.0,
+              20.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c2",
+            "pin": "p6"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c2",
+            "pin": "p7"
+          },
+          "id": "w2",
+          "route": [
+            [
+              92.0,
+              64.0
+            ],
+            [
+              145.0,
+              64.0
+            ],
+            [
+              145.0,
+              20.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c3",
+            "pin": "p8"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c3",
+            "pin": "p9"
+          },
+          "id": "w3",
+          "route": [
+            [
+              145.0,
+              60.0
+            ],
+            [
+              320.0,
+              60.0
+            ],
+            [
+              320.0,
+              74.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c6",
+            "pin": "p14"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c1",
+            "pin": "p2"
+          },
+          "id": "w4",
+          "route": [
+            [
+              50.0,
+              42.0
+            ],
+            [
+              145.0,
+              42.0
+            ],
+            [
+              145.0,
+              80.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c4",
+            "pin": "p10"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c4",
+            "pin": "p11"
+          },
+          "id": "w5",
+          "route": [
+            [
+              145.0,
+              120.0
+            ],
+            [
+              320.0,
+              120.0
+            ],
+            [
+              320.0,
+              88.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c6",
+            "pin": "p15"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c1",
+            "pin": "p3"
+          },
+          "id": "w6",
+          "route": [
+            [
+              50.0,
+              54.0
+            ],
+            [
+              145.0,
+              54.0
+            ],
+            [
+              145.0,
+              140.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c5",
+            "pin": "p12"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c5",
+            "pin": "p13"
+          },
+          "id": "w7",
+          "route": [
+            [
+              145.0,
+              180.0
+            ],
+            [
+              320.0,
+              180.0
+            ],
+            [
+              320.0,
+              102.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c6",
+            "pin": "p16"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c1",
+            "pin": "p1"
+          },
+          "id": "w8",
+          "route": [
+            [
+              50.0,
+              30.0
+            ],
+            [
+              50.0,
+              200.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c7",
+            "pin": "p17"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c7",
+            "pin": "p18"
+          },
+          "id": "w9",
+          "route": [
+            [
+              50.0,
+              240.0
+            ],
+            [
+              105.0,
+              240.0
+            ],
+            [
+              105.0,
+              200.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c8",
+            "pin": "p19"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c8",
+            "pin": "p20"
+          },
+          "id": "w10",
+          "route": [
+            [
+              105.0,
+              240.0
+            ],
+            [
+              155.0,
+              240.0
+            ],
+            [
+              155.0,
+              200.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c9",
+            "pin": "p21"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c8",
+            "pin": "p20"
+          },
+          "id": "w11",
+          "route": [
+            [
+              105.0,
+              240.0
+            ],
+            [
+              155.0,
+              240.0
+            ],
+            [
+              155.0,
+              260.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c10",
+            "pin": "p23"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c9",
+            "pin": "p22"
+          },
+          "id": "w12",
+          "route": [
+            [
+              155.0,
+              240.0
+            ],
+            [
+              220.0,
+              240.0
+            ],
+            [
+              220.0,
+              215.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c12",
+            "pin": "p27"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c10",
+            "pin": "p24"
+          },
+          "id": "w13",
+          "route": [
+            [
+              155.0,
+              300.0
+            ],
+            [
+              220.0,
+              300.0
+            ],
+            [
+              220.0,
+              215.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c12",
+            "pin": "p27"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c12",
+            "pin": "p28"
+          },
+          "id": "w14",
+          "route": [
+            [
+              280.0,
+              215.0
+            ],
+            [
+              370.0,
+              215.0
+            ],
+            [
+              370.0,
+              200.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c13",
+            "pin": "p31"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c13",
+            "pin": "p32"
+          },
+          "id": "w15",
+          "route": [
+            [
+              370.0,
+              230.0
+            ],
+            [
+              50.0,
+              230.0
+            ],
+            [
+              50.0,
+              66.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p4"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c13",
+            "pin": "p31"
+          },
+          "id": "w16",
+          "route": [
+            [
+              370.0,
+              200.0
+            ],
+            [
+              315.0,
+              200.0
+            ],
+            [
+              315.0,
+              250.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c14",
+            "pin": "p33"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c14",
+            "pin": "p34"
+          },
+          "id": "w17",
+          "route": [
+            [
+              315.0,
+              284.0
+            ],
+            [
+              50.0,
+              284.0
+            ],
+            [
+              50.0,
+              66.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p4"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c7",
+            "pin": "p18"
+          },
+          "id": "w18",
+          "route": [
+            [
+              50.0,
+              240.0
+            ],
+            [
+              315.0,
+              240.0
+            ],
+            [
+              315.0,
+              160.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c11",
+            "pin": "p25"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c11",
+            "pin": "p26"
+          },
+          "id": "w19",
+          "route": [
+            [
+              315.0,
+              200.0
+            ],
+            [
+              355.0,
+              200.0
+            ],
+            [
+              355.0,
+              250.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c15",
+            "pin": "p35"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c15",
+            "pin": "p36"
+          },
+          "id": "w20",
+          "route": [
+            [
+              355.0,
+              284.0
+            ],
+            [
+              50.0,
+              284.0
+            ],
+            [
+              50.0,
+              66.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p4"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c7",
+            "pin": "p18"
+          },
+          "id": "w21",
+          "route": [
+            [
+              50.0,
+              240.0
+            ],
+            [
+              220.0,
+              240.0
+            ],
+            [
+              220.0,
+              245.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c12",
+            "pin": "p29"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c12",
+            "pin": "p30"
+          },
+          "id": "w22",
+          "route": [
+            [
+              280.0,
+              245.0
+            ],
+            [
+              395.0,
+              245.0
+            ],
+            [
+              395.0,
+              250.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c16",
+            "pin": "p37"
+          }
+        },
+        {
+          "allow_self_loop": false,
+          "from": {
+            "component": "c16",
+            "pin": "p38"
+          },
+          "id": "w23",
+          "route": [
+            [
+              395.0,
+              284.0
+            ],
+            [
+              50.0,
+              284.0
+            ],
+            [
+              50.0,
+              66.0
+            ]
+          ],
+          "style": {
+            "color": "#1f2933",
+            "dash": "solid",
+            "thickness": 0.8
+          },
+          "to": {
+            "component": "c1",
+            "pin": "p4"
+          }
+        }
+      ]
+    }
+  ]
+}

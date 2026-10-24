@@ -12,6 +12,8 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+include(GNUInstallDirs)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
@@ -25,6 +27,7 @@ option(FIOVIVO_BUILD_UI "Build the Qt Widgets application" ON)
 option(FIOVIVO_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
 option(FIOVIVO_ENABLE_SANITIZERS "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
 option(FIOVIVO_COVERAGE "Instrument core and sim targets for coverage" OFF)
+option(FIOVIVO_BUILD_TOOLS "Build development helper tools" ON)
 
 include(FioVivoDependencies)
 
@@ -55,12 +58,21 @@ add_subdirectory(src/sim)
 add_subdirectory(src/io)
 add_subdirectory(src/library)
 
+if(FIOVIVO_BUILD_UI)
+  add_subdirectory(src/ui)
+  add_subdirectory(src/i18n)
+  add_subdirectory(src/app)
+endif()
+
+if(FIOVIVO_BUILD_TOOLS)
+  add_subdirectory(tools)
+endif()
+
 if(FIOVIVO_BUILD_TESTS)
   enable_testing()
   add_subdirectory(tests)
 endif()
 
-include(GNUInstallDirs)
 install(
   TARGETS fiovivo_core fiovivo_sim fiovivo_io
   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
@@ -71,3 +83,19 @@ install(
 install(DIRECTORY assets/ DESTINATION "${CMAKE_INSTALL_DATADIR}/fiovivo/assets")
 install(FILES docs/file-format.schema.json DESTINATION "${CMAKE_INSTALL_DATADIR}/fiovivo")
 install(DIRECTORY examples/ DESTINATION "${CMAKE_INSTALL_DATADIR}/fiovivo/examples")
+
+if(UNIX AND NOT APPLE)
+  install(FILES packaging/fiovivo.desktop DESTINATION "${CMAKE_INSTALL_DATADIR}/applications")
+  install(FILES packaging/fiovivo-dcj.xml DESTINATION "${CMAKE_INSTALL_DATADIR}/mime/packages")
+  install(FILES assets/fiovivo.svg
+          DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps"
+          RENAME fiovivo.svg)
+endif()
+
+set(CPACK_PACKAGE_NAME "FioVivo")
+set(CPACK_PACKAGE_VENDOR "FioVivo contributors")
+set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Educational electrical control diagram editor and simulator")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_GENERATOR "ZIP")
+include(CPack)

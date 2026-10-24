@@ -1,0 +1,43 @@
+add_library(
+  fiovivo_ui
+  STATIC
+  app_settings.cpp
+  annotation_item.cpp
+  asset_locator.cpp
+  component_factory.cpp
+  component_item.cpp
+  document.cpp
+  export_utils.cpp
+  library_dock.cpp
+  main_window.cpp
+  pin_item.cpp
+  problems_dock.cpp
+  properties_dock.cpp
+  sheet_scene.cpp
+  sheet_view.cpp
+  simulation_controller.cpp
+  simulation_log_dock.cpp
+  simulation_worker.cpp
+  ui_helpers.cpp
+  wire_item.cpp
+  dialogs/about_dialog.cpp
+  dialogs/new_project_dialog.cpp
+  dialogs/preferences_dialog.cpp
+)
+
+fiovivo_configure_target(fiovivo_ui)
+target_link_libraries(
+  fiovivo_ui
+  PUBLIC fiovivo_core
+         fiovivo_sim
+         fiovivo_io
+         fiovivo_library
+         Qt6::Core
+         Qt6::Gui
+         Qt6::Widgets
+         Qt6::Svg
+         Qt6::PrintSupport
+)
+target_compile_definitions(
+  fiovivo_ui PRIVATE FIOVIVO_SOURCE_ASSET_DIR="${PROJECT_SOURCE_DIR}/assets"
+)
