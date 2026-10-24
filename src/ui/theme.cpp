@@ -306,9 +306,9 @@ const ThemePalette& currentTheme() { return currentThemeStorage(); }
 
 double contrastRatio(const QColor& first, const QColor& second) {
   const auto luminance = [](const QColor& value) {
-    const double red = channelLuminance(value.redF());
-    const double green = channelLuminance(value.greenF());
-    const double blue = channelLuminance(value.blueF());
+    const double red = channelLuminance(static_cast<double>(value.redF()));
+    const double green = channelLuminance(static_cast<double>(value.greenF()));
+    const double blue = channelLuminance(static_cast<double>(value.blueF()));
     return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
   };
   const double first_luminance = luminance(first);
