@@ -66,7 +66,9 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ninja-build libgl1-mesa-dev
+          sudo apt-get install -y ninja-build libgl1-mesa-dev libxkbcommon-x11-0 \
+            libxcb-cursor0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 \
+            libxcb-render-util0 libxcb-shape0 libxcb-xinerama0 libxcb-xkb1
 
       - name: Pin Python for aqtinstall
         uses: actions/setup-python@v5
@@ -74,11 +76,14 @@ jobs:
           python-version: "3.12"
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: "6.8.3"
-          modules: "qtsvg qttools"
-          cache: true
+        shell: bash
+        run: |
+          python --version
+          python -m pip install --disable-pip-version-check "aqtinstall==3.3.*" "py7zr"
+          python -m aqt install-qt linux desktop 6.8.3 linux_gcc_64 \
+            --outputdir "$HOME/Qt" --modules qtsvg qttools
+          echo "QT_ROOT_DIR=$HOME/Qt/6.8.3/gcc_64" >> "$GITHUB_ENV"
+          echo "$HOME/Qt/6.8.3/gcc_64/bin" >> "$GITHUB_PATH"
 
       - name: Configure
         run: |
@@ -112,12 +117,14 @@ jobs:
           python-version: "3.12"
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: "6.8.3"
-          arch: win64_msvc2022_64
-          modules: "qtsvg qttools"
-          cache: true
+        shell: pwsh
+        run: |
+          python --version
+          python -m pip install --disable-pip-version-check "aqtinstall==3.3.*" "py7zr"
+          python -m aqt install-qt windows desktop 6.8.3 win64_msvc2022_64 `
+            --outputdir C:\Qt --modules qtsvg qttools
+          Write-Output "QT_ROOT_DIR=C:\Qt\6.8.3\msvc2022_64" >> $env:GITHUB_ENV
+          Write-Output "C:\Qt\6.8.3\msvc2022_64\bin" >> $env:GITHUB_PATH
 
       - name: Configure
         shell: pwsh
