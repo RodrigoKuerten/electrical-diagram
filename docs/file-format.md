@@ -143,7 +143,6 @@ canvas convention for three or more incident wires.
   "to": { "component": "c2", "pin": "p4" },
   "route": [[50.0, 40.0], [90.0, 40.0], [90.0, 100.0], [120.0, 100.0]],
   "style": {
-    "color": "#1f2933",
     "thickness": 0.8,
     "dash": "solid"
   },
@@ -157,6 +156,10 @@ canvas convention for three or more incident wires.
   uses `core/routing` and stores the resulting points. A route with fewer than two points is
   invalid.
 - `dash` is `solid`, `dashed` or `dotted`.
+- `color` is optional and uses the six-digit `#rrggbb` form when present. Omitting it means
+  "use the active theme's `wire.default` token"; FioVivo never writes a theme colour into a
+  new project just to satisfy the schema. Existing files that carry an explicit colour keep
+  it, so saved diagrams remain stable.
 - Deleting a component removes every wire attached to it.
 
 ## Annotation
@@ -168,13 +171,13 @@ canvas convention for three or more incident wires.
   "position": [10.0, 270.0],
   "size": [120.0, 8.0],
   "text": "Control circuit supplied from L1 + N.",
-  "font_size": 3.5,
-  "color": "#1f2933"
+  "font_size": 3.5
 }
 ```
 
 `kind` is `text`, `rectangle` or `legend`. The canvas paints text and rectangle framing;
-legend entries are currently rendered as framed text.
+legend entries are currently rendered as framed text. `color` is optional; when omitted the
+annotation follows the active theme's `text.primary` token.
 
 ## Unknown-field preservation
 

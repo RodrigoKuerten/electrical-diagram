@@ -132,7 +132,7 @@
     },
     "wire_style": {
       "type": "object",
-      "required": ["color", "thickness", "dash"],
+      "required": ["thickness", "dash"],
       "properties": {
         "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
         "thickness": { "type": "number", "minimum": 0 },
@@ -165,8 +165,7 @@
         "position",
         "size",
         "text",
-        "font_size",
-        "color"
+        "font_size"
       ],
       "properties": {
         "id": { "$ref": "#/$defs/annotation_id" },

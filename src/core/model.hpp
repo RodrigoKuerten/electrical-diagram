@@ -85,7 +85,8 @@ struct Annotation {
   Vec2 size{40.0, 10.0};
   std::string text;
   double font_size = 3.5;
-  std::string color = "#1f2933";
+  // Empty means "use the theme's sheet.text token".
+  std::string color;
   UnknownFields unknown_fields;
 
   friend bool operator==(const Annotation&, const Annotation&) = default;

@@ -86,7 +86,8 @@ struct Labels {
 };
 
 struct WireStyle {
-  std::string color = "#1f2933";
+  // Empty means "use the theme's wire.default token"; an explicit value overrides it.
+  std::string color;
   double thickness = 0.8;
   WireDash dash = WireDash::Solid;
   UnknownFields unknown_fields;

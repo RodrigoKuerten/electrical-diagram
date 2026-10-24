@@ -223,7 +223,7 @@ constexpr std::array<std::string_view, 7> kAnnotationFields{
     return makeError(ErrorCode::SchemaViolation, "Expected a wire style object", path);
   }
   WireStyle style;
-  style.color = value.value("color", std::string("#1f2933"));
+  style.color = value.value("color", std::string{});
   style.thickness = value.value("thickness", 0.8);
   const std::string dash = value.value("dash", std::string("solid"));
   const auto parsed_dash = wireDashFromString(dash);
@@ -241,7 +241,9 @@ constexpr std::array<std::string_view, 7> kAnnotationFields{
   if (!merged) {
     return merged.error();
   }
-  result["color"] = style.color;
+  if (!style.color.empty()) {
+    result["color"] = style.color;
+  }
   result["thickness"] = style.thickness;
   result["dash"] = std::string(toString(style.dash));
   return result;
@@ -500,7 +502,7 @@ constexpr std::array<std::string_view, 7> kAnnotationFields{
   annotation.size = size.value();
   annotation.text = value.at("text").get<std::string>();
   annotation.font_size = value.at("font_size").get<double>();
-  annotation.color = value.at("color").get<std::string>();
+  annotation.color = value.value("color", std::string{});
   annotation.unknown_fields = captureUnknown(value, kAnnotationFields);
   return annotation;
 }
@@ -517,7 +519,9 @@ constexpr std::array<std::string_view, 7> kAnnotationFields{
   result["size"] = sizeJson(annotation.size);
   result["text"] = annotation.text;
   result["font_size"] = annotation.font_size;
-  result["color"] = annotation.color;
+  if (!annotation.color.empty()) {
+    result["color"] = annotation.color;
+  }
   return result;
 }
 
