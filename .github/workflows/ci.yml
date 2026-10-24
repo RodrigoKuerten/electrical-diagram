@@ -81,7 +81,8 @@ jobs:
           python --version
           python -m pip install --disable-pip-version-check "aqtinstall==3.3.*" "py7zr"
           if ! python -m aqt install-qt linux desktop 6.8.3 linux_gcc_64 \
-              --outputdir "$HOME/Qt" --modules qtsvg qttools >qt-install.log 2>&1; then
+              --outputdir "$HOME/Qt" --archives qtbase qtsvg qttools \
+              --modules qtdeclarative >qt-install.log 2>&1; then
             echo "::error title=aqt install failed::$(tail -c 1200 qt-install.log)"
             tail -n 60 qt-install.log
             exit 1
@@ -126,7 +127,8 @@ jobs:
           python --version
           python -m pip install --disable-pip-version-check "aqtinstall==3.3.*" "py7zr"
           python -m aqt install-qt windows desktop 6.8.3 win64_msvc2022_64 `
-            --outputdir C:\Qt --modules qtsvg qttools *> qt-install.log
+            --outputdir C:\Qt --archives qtbase qtsvg qttools `
+            --modules qtdeclarative *> qt-install.log
           if ($LASTEXITCODE -ne 0) {
             $details = (Get-Content qt-install.log -Tail 40) -join " | "
             Write-Output "::error title=aqt install failed::$details"
