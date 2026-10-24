@@ -100,7 +100,14 @@ jobs:
             -DFIOVIVO_WARNINGS_AS_ERRORS=ON
 
       - name: Build
-        run: cmake --build build --parallel
+        shell: bash
+        run: |
+          export LD_LIBRARY_PATH="$QT_ROOT_DIR/lib:${LD_LIBRARY_PATH:-}"
+          if ! cmake --build build --parallel >build.log 2>&1; then
+            echo "::error title=build failed::$(tail -c 4000 build.log | tr '\n' ' ')"
+            tail -n 120 build.log
+            exit 1
+          fi
 
       - name: Test
         working-directory: build
