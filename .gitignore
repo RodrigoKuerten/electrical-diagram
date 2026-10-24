@@ -33,6 +33,8 @@ test-results/
 *.pdf
 *.csv
 !tests/data/**/*.csv
+!tests/golden/**/*.png
+!docs/theme-audit/**/*.png
 *.dcj.autosave
 .autosave/
 recovery/

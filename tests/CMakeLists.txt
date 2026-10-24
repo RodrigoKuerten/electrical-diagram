@@ -57,6 +57,22 @@ if(FIOVIVO_BUILD_UI)
     fiovivo_configure_target(fiovivo_ui_tests)
     add_dependencies(fiovivo_ui_tests fiovivo)
     gtest_discover_tests(fiovivo_ui_tests)
+
+    add_executable(fiovivo_theme_tests ui/test_theme.cpp)
+    target_link_libraries(
+      fiovivo_theme_tests
+      PRIVATE fiovivo_ui Qt6::Test Qt6::Widgets GTest::gtest_main
+    )
+    target_include_directories(fiovivo_theme_tests PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+    target_compile_definitions(
+      fiovivo_theme_tests
+      PRIVATE FIOVIVO_ASSET_DIR="${PROJECT_SOURCE_DIR}/assets"
+              FIOVIVO_GOLDEN_DIR="${PROJECT_SOURCE_DIR}/tests/golden"
+              FIOVIVO_SOURCE_DIR="${PROJECT_SOURCE_DIR}"
+    )
+    fiovivo_configure_target(fiovivo_theme_tests)
+    add_dependencies(fiovivo_theme_tests fiovivo)
+    gtest_discover_tests(fiovivo_theme_tests)
   else()
     message(STATUS "Qt6Test not found; UI tests will not be built")
   endif()
