@@ -5,6 +5,37 @@ All notable changes to FioVivo are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the
 project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-10-24
+
+CADe_SIMU 4.0 library migration.
+
+### Added
+
+- 215 CADe_SIMU-style symbols in 18 categories, generated as SVG + JSON manifests by
+  `tools/cadesimu_catalog/generate.py`, with active/tripped/blown/position state variants.
+- Multi-pole contactors, breakers, fuses, disconnectors, RCDs, integrated contactor/relay,
+  timed and thermal auxiliary contacts, sensors, logic gates, PLC/pneumatic/GRAFCET symbols.
+- Simulator support for multi-pole pass-through devices, group-controlled contacts, timed and
+  thermal auxiliary contacts, digital sensors/switches, ON/OFF/pulse/flasher timers and basic
+  logic gates with switched outputs.
+- Independent workspace dimensions with persistence in `.dcj`, View menu actions, a size
+  dialog, toolbar control and fit-to-workspace; zoom remains separate.
+- CADe_SIMU evidence package under `docs/cadesimu/`: PE resource inventory, recovered type IDs,
+  Ghidra pseudocode, insertion captures, visual comparisons, catalog and final report.
+
+### Changed
+
+- The original 20 FioVivo type identifiers remain loadable but now use the reconstructed
+  CADe_SIMU artwork and terminal-label language.
+- Insert menu groups symbols by category; the library dock shows the expanded catalog.
+- Theme goldens updated for the new artwork; debug suite now has 154 tests.
+
+### Limitations
+
+- PLC program execution, pneumatic pressure/mechanics, GRAFCET token flow and measurement
+  values remain out of scope.
+- Artwork is a vector reconstruction, not a byte-identical copy of the original GDI drawing.
+
 ## [0.1.0] - 2026-10-23
 
 First integrated development milestone. The editor, simulator and persistence/export scope

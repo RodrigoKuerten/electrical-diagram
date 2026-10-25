@@ -1,0 +1,2123 @@
+{
+  "app_version": "0.1.0",
+  "format": "dcj",
+  "format_version": 1,
+  "library_refs": [
+    {
+      "symbol_version": 1,
+      "type": "fuse_1p"
+    },
+    {
+      "symbol_version": 1,
+      "type": "fuse_3p"
+    },
+    {
+      "symbol_version": 1,
+      "type": "breaker_2p"
+    },
+    {
+      "symbol_version": 1,
+      "type": "rcd_4p"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contactor_3p"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contact_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contact_co"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contactor_aux_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "contactor_coil_bistable"
+    },
+    {
+      "symbol_version": 1,
+      "type": "timer_on_off"
+    },
+    {
+      "symbol_version": 1,
+      "type": "mushroom_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "switch_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "sensor_inductive_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "motor_3ph_6"
+    },
+    {
+      "symbol_version": 1,
+      "type": "logic_and"
+    },
+    {
+      "symbol_version": 1,
+      "type": "terminal_round"
+    },
+    {
+      "symbol_version": 1,
+      "type": "supply_earth"
+    },
+    {
+      "symbol_version": 1,
+      "type": "supply_battery"
+    },
+    {
+      "symbol_version": 1,
+      "type": "power_supply"
+    },
+    {
+      "symbol_version": 1,
+      "type": "diode"
+    },
+    {
+      "symbol_version": 1,
+      "type": "resistor_1p"
+    },
+    {
+      "symbol_version": 1,
+      "type": "vfd_ac_3p"
+    },
+    {
+      "symbol_version": 1,
+      "type": "pneumatic_cylinder_single"
+    },
+    {
+      "symbol_version": 1,
+      "type": "lamp_flashing"
+    },
+    {
+      "symbol_version": 1,
+      "type": "bell"
+    },
+    {
+      "symbol_version": 1,
+      "type": "horn"
+    },
+    {
+      "symbol_version": 1,
+      "type": "siren"
+    },
+    {
+      "symbol_version": 1,
+      "type": "display_7seg"
+    },
+    {
+      "symbol_version": 1,
+      "type": "pressure_switch_no"
+    },
+    {
+      "symbol_version": 1,
+      "type": "selector_2pos"
+    }
+  ],
+  "metadata": {
+    "author": "FioVivo validation",
+    "created_utc": "2026-10-25T00:00:00Z",
+    "modified_utc": "2026-10-25T00:00:00Z",
+    "revision": "A",
+    "title": "CADe exact symbol validation"
+  },
+  "sheets": [
+    {
+      "annotations": [],
+      "components": [
+        {
+          "description": "",
+          "id": "c1",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "rated_current": 10,
+            "blown": false
+          },
+          "pins": [
+            {
+              "id": "p1",
+              "name": "1",
+              "offset": [
+                3.536,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p2",
+              "name": "2",
+              "offset": [
+                3.536,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            20.0,
+            22.0
+          ],
+          "rotation": 0,
+          "size": [
+            6.055,
+            13.259
+          ],
+          "tag": "X1",
+          "type": "fuse_1p"
+        },
+        {
+          "description": "",
+          "id": "c2",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "rated_current": 10,
+            "blown": false
+          },
+          "pins": [
+            {
+              "id": "p3",
+              "name": "1",
+              "offset": [
+                0.0,
+                5.304
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p4",
+              "name": "3",
+              "offset": [
+                6.629,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p5",
+              "name": "5",
+              "offset": [
+                11.933,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p6",
+              "name": "7",
+              "offset": [
+                17.237,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p7",
+              "name": "2",
+              "offset": [
+                1.326,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p8",
+              "name": "4",
+              "offset": [
+                6.629,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p9",
+              "name": "6",
+              "offset": [
+                11.933,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p10",
+              "name": "8",
+              "offset": [
+                17.237,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            98.0,
+            22.0
+          ],
+          "rotation": 0,
+          "size": [
+            19.756,
+            13.259
+          ],
+          "tag": "X2",
+          "type": "fuse_3p"
+        },
+        {
+          "description": "",
+          "id": "c3",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "rated_current": 16,
+            "tripped": false
+          },
+          "pins": [
+            {
+              "id": "p11",
+              "name": "1",
+              "offset": [
+                8.839,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p12",
+              "name": "3",
+              "offset": [
+                14.143,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p13",
+              "name": "5",
+              "offset": [
+                19.446,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p14",
+              "name": "2",
+              "offset": [
+                8.839,
+                21.214
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p15",
+              "name": "4",
+              "offset": [
+                14.143,
+                21.214
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p16",
+              "name": "6",
+              "offset": [
+                22.098,
+                18.562
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            176.0,
+            22.0
+          ],
+          "rotation": 0,
+          "size": [
+            22.717,
+            21.214
+          ],
+          "tag": "X3",
+          "type": "breaker_2p"
+        },
+        {
+          "description": "",
+          "id": "c4",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "sensitivity_ma": 30,
+            "tripped": false
+          },
+          "pins": [
+            {
+              "id": "p17",
+              "name": "1",
+              "offset": [
+                0.0,
+                5.304
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p18",
+              "name": "3",
+              "offset": [
+                6.629,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p19",
+              "name": "5",
+              "offset": [
+                15.469,
+                5.304
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p20",
+              "name": "2",
+              "offset": [
+                1.326,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p21",
+              "name": "4",
+              "offset": [
+                6.629,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p22",
+              "name": "6",
+              "offset": [
+                15.469,
+                10.607
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            254.0,
+            22.0
+          ],
+          "rotation": 0,
+          "size": [
+            15.469,
+            13.259
+          ],
+          "tag": "X4",
+          "type": "rcd_4p"
+        },
+        {
+          "description": "",
+          "id": "c5",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "rated_voltage": 220,
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p23",
+              "name": "1",
+              "offset": [
+                2.652,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p24",
+              "name": "3",
+              "offset": [
+                7.955,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p25",
+              "name": "2",
+              "offset": [
+                2.652,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            },
+            {
+              "id": "p26",
+              "name": "4",
+              "offset": [
+                7.955,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            332.0,
+            22.0
+          ],
+          "rotation": 0,
+          "size": [
+            10.475,
+            13.259
+          ],
+          "tag": "X5",
+          "type": "contactor_3p"
+        },
+        {
+          "description": "",
+          "id": "c6",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p27",
+              "name": "11",
+              "offset": [
+                0.0,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p28",
+              "name": "12",
+              "offset": [
+                0.0,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            20.0,
+            84.0
+          ],
+          "rotation": 0,
+          "size": [
+            4.154,
+            13.259
+          ],
+          "tag": "X6",
+          "type": "contact_no"
+        },
+        {
+          "description": "",
+          "id": "c7",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p29",
+              "name": "67",
+              "offset": [
+                5.304,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p30",
+              "name": "68",
+              "offset": [
+                5.304,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            98.0,
+            84.0
+          ],
+          "rotation": 0,
+          "size": [
+            9.458,
+            13.259
+          ],
+          "tag": "X7",
+          "type": "contact_co"
+        },
+        {
+          "description": "",
+          "id": "c8",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p31",
+              "name": "13",
+              "offset": [
+                10.0,
+                4
+              ],
+              "required": true,
+              "role": "contact_common"
+            },
+            {
+              "id": "p32",
+              "name": "14",
+              "offset": [
+                10.0,
+                40
+              ],
+              "required": true,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            176.0,
+            84.0
+          ],
+          "rotation": 0,
+          "size": [
+            20.0,
+            44.0
+          ],
+          "tag": "X8",
+          "type": "contactor_aux_no"
+        },
+        {
+          "description": "",
+          "id": "c9",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "rated_voltage": 220,
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p33",
+              "name": "X1",
+              "offset": [
+                2.652,
+                2.652
+              ],
+              "required": false,
+              "role": "coil_input"
+            },
+            {
+              "id": "p34",
+              "name": "X2",
+              "offset": [
+                2.652,
+                13.259
+              ],
+              "required": false,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            254.0,
+            84.0
+          ],
+          "rotation": 0,
+          "size": [
+            6.806,
+            13.259
+          ],
+          "tag": "X9",
+          "type": "contactor_coil_bistable"
+        },
+        {
+          "description": "",
+          "id": "c10",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "delay_ms": 1000,
+            "time_base": "ms",
+            "label_group": ""
+          },
+          "pins": [
+            {
+              "id": "p35",
+              "name": "A1",
+              "offset": [
+                3.536,
+                2.652
+              ],
+              "required": false,
+              "role": "coil_input"
+            },
+            {
+              "id": "p36",
+              "name": "A2",
+              "offset": [
+                3.536,
+                13.259
+              ],
+              "required": false,
+              "role": "coil_output"
+            }
+          ],
+          "position": [
+            332.0,
+            84.0
+          ],
+          "rotation": 0,
+          "size": [
+            7.69,
+            13.259
+          ],
+          "tag": "X10",
+          "type": "timer_on_off"
+        },
+        {
+          "description": "",
+          "id": "c11",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "red",
+            "mode": "momentary"
+          },
+          "pins": [
+            {
+              "id": "p37",
+              "name": "11",
+              "offset": [
+                5.304,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p38",
+              "name": "12",
+              "offset": [
+                5.304,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            20.0,
+            146.0
+          ],
+          "rotation": 0,
+          "size": [
+            9.458,
+            13.259
+          ],
+          "tag": "X11",
+          "type": "mushroom_no"
+        },
+        {
+          "description": "",
+          "id": "c12",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "mode": "maintained"
+          },
+          "pins": [
+            {
+              "id": "p39",
+              "name": "11",
+              "offset": [
+                6.629,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p40",
+              "name": "12",
+              "offset": [
+                6.629,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            98.0,
+            146.0
+          ],
+          "rotation": 0,
+          "size": [
+            10.784,
+            13.259
+          ],
+          "tag": "X12",
+          "type": "switch_no"
+        },
+        {
+          "description": "",
+          "id": "c13",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "mode": "momentary"
+          },
+          "pins": [
+            {
+              "id": "p41",
+              "name": "1",
+              "offset": [
+                7.513,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p42",
+              "name": "2",
+              "offset": [
+                7.513,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            176.0,
+            146.0
+          ],
+          "rotation": 0,
+          "size": [
+            12.817,
+            13.259
+          ],
+          "tag": "X13",
+          "type": "sensor_inductive_no"
+        },
+        {
+          "description": "",
+          "id": "c14",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "power_kw": 1.5,
+            "rated_voltage": 380,
+            "min_live_phases": 2
+          },
+          "pins": [
+            {
+              "id": "p43",
+              "name": "U1",
+              "offset": [
+                2.652,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p44",
+              "name": "V1",
+              "offset": [
+                7.955,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p45",
+              "name": "W1",
+              "offset": [
+                13.259,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p46",
+              "name": "PE",
+              "offset": [
+                18.562,
+                2.652
+              ],
+              "required": false,
+              "role": "earth"
+            },
+            {
+              "id": "p47",
+              "name": "W2",
+              "offset": [
+                2.652,
+                23.866
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p48",
+              "name": "U2",
+              "offset": [
+                7.955,
+                23.866
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p49",
+              "name": "V2",
+              "offset": [
+                13.259,
+                23.866
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            254.0,
+            146.0
+          ],
+          "rotation": 0,
+          "size": [
+            22.717,
+            23.866
+          ],
+          "tag": "X14",
+          "type": "motor_3ph_6"
+        },
+        {
+          "description": "",
+          "id": "c15",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p50",
+              "name": "IN1",
+              "offset": [
+                0.0,
+                4.42
+              ],
+              "required": false,
+              "role": "signal_in"
+            },
+            {
+              "id": "p51",
+              "name": "IN2",
+              "offset": [
+                0.0,
+                9.723
+              ],
+              "required": false,
+              "role": "signal_in"
+            },
+            {
+              "id": "p52",
+              "name": "OUT",
+              "offset": [
+                13.259,
+                9.723
+              ],
+              "required": false,
+              "role": "signal_out"
+            }
+          ],
+          "position": [
+            332.0,
+            146.0
+          ],
+          "rotation": 0,
+          "size": [
+            15.778,
+            12.375
+          ],
+          "tag": "X15",
+          "type": "logic_and"
+        },
+        {
+          "description": "",
+          "id": "c16",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p53",
+              "name": "1",
+              "offset": [
+                7.955,
+                1.326
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            20.0,
+            208.0
+          ],
+          "rotation": 0,
+          "size": [
+            7.955,
+            2.21
+          ],
+          "tag": "X16",
+          "type": "terminal_round"
+        },
+        {
+          "description": "",
+          "id": "c17",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p54",
+              "name": "1",
+              "offset": [
+                2.21,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p55",
+              "name": "2",
+              "offset": [
+                2.21,
+                13.259
+              ],
+              "required": false,
+              "role": "supply_in"
+            }
+          ],
+          "position": [
+            98.0,
+            208.0
+          ],
+          "rotation": 0,
+          "size": [
+            4.729,
+            13.259
+          ],
+          "tag": "X17",
+          "type": "supply_earth"
+        },
+        {
+          "description": "",
+          "id": "c18",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p56",
+              "name": "1",
+              "offset": [
+                9.723,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p57",
+              "name": "2",
+              "offset": [
+                7.071,
+                13.259
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p58",
+              "name": "3",
+              "offset": [
+                12.375,
+                13.259
+              ],
+              "required": false,
+              "role": "supply_in"
+            }
+          ],
+          "position": [
+            176.0,
+            208.0
+          ],
+          "rotation": 0,
+          "size": [
+            14.894,
+            13.259
+          ],
+          "tag": "X18",
+          "type": "supply_battery"
+        },
+        {
+          "description": "",
+          "id": "c19",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p59",
+              "name": "A1",
+              "offset": [
+                0.0,
+                8.397
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p60",
+              "name": "A2",
+              "offset": [
+                15.911,
+                8.397
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p61",
+              "name": "PE",
+              "offset": [
+                7.955,
+                16.353
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            254.0,
+            208.0
+          ],
+          "rotation": 0,
+          "size": [
+            20.065,
+            16.353
+          ],
+          "tag": "X19",
+          "type": "power_supply"
+        },
+        {
+          "description": "",
+          "id": "c20",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p62",
+              "name": "PE",
+              "offset": [
+                18.562,
+                10.607
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p63",
+              "name": "1",
+              "offset": [
+                2.652,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p64",
+              "name": "2",
+              "offset": [
+                7.955,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p65",
+              "name": "3",
+              "offset": [
+                13.259,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p66",
+              "name": "+",
+              "offset": [
+                0.0,
+                15.911
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p67",
+              "name": "4",
+              "offset": [
+                5.304,
+                18.562
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p68",
+              "name": "5",
+              "offset": [
+                10.607,
+                18.562
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            332.0,
+            208.0
+          ],
+          "rotation": 0,
+          "size": [
+            20.065,
+            18.562
+          ],
+          "tag": "X20",
+          "type": "diode"
+        },
+        {
+          "description": "",
+          "id": "c21",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p69",
+              "name": "1",
+              "offset": [
+                1.326,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p70",
+              "name": "3",
+              "offset": [
+                6.629,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p71",
+              "name": "5",
+              "offset": [
+                11.933,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p72",
+              "name": "2",
+              "offset": [
+                1.326,
+                15.911
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p73",
+              "name": "4",
+              "offset": [
+                6.629,
+                15.911
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p74",
+              "name": "6",
+              "offset": [
+                11.933,
+                15.911
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            20.0,
+            270.0
+          ],
+          "rotation": 0,
+          "size": [
+            14.452,
+            15.911
+          ],
+          "tag": "X21",
+          "type": "resistor_1p"
+        },
+        {
+          "description": "",
+          "id": "c22",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p75",
+              "name": "L1",
+              "offset": [
+                2.652,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p76",
+              "name": "L2",
+              "offset": [
+                7.955,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p77",
+              "name": "L3",
+              "offset": [
+                13.259,
+                2.652
+              ],
+              "required": false,
+              "role": "supply_in"
+            },
+            {
+              "id": "p78",
+              "name": "PE",
+              "offset": [
+                18.562,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p79",
+              "name": "U",
+              "offset": [
+                2.652,
+                29.17
+              ],
+              "required": false,
+              "role": "supply_out"
+            },
+            {
+              "id": "p80",
+              "name": "V",
+              "offset": [
+                7.955,
+                29.17
+              ],
+              "required": false,
+              "role": "supply_out"
+            },
+            {
+              "id": "p81",
+              "name": "W",
+              "offset": [
+                13.259,
+                29.17
+              ],
+              "required": false,
+              "role": "supply_out"
+            }
+          ],
+          "position": [
+            98.0,
+            270.0
+          ],
+          "rotation": 0,
+          "size": [
+            22.717,
+            29.17
+          ],
+          "tag": "X22",
+          "type": "vfd_ac_3p"
+        },
+        {
+          "description": "",
+          "id": "c23",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "stroke_mm": 100
+          },
+          "pins": [
+            {
+              "id": "p82",
+              "name": "4",
+              "offset": [
+                13.259,
+                38.009
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p83",
+              "name": "2",
+              "offset": [
+                17.679,
+                38.009
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p84",
+              "name": "3",
+              "offset": [
+                13.259,
+                45.964
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p85",
+              "name": "1",
+              "offset": [
+                15.027,
+                45.964
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p86",
+              "name": "5",
+              "offset": [
+                17.679,
+                45.964
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            176.0,
+            270.0
+          ],
+          "rotation": 0,
+          "size": [
+            40.263,
+            51.268
+          ],
+          "tag": "X23",
+          "type": "pneumatic_cylinder_single"
+        },
+        {
+          "description": "",
+          "id": "c24",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "color": "amber",
+            "period_ms": 1000
+          },
+          "pins": [
+            {
+              "id": "p87",
+              "name": "X1",
+              "offset": [
+                1.768,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p88",
+              "name": "X2",
+              "offset": [
+                1.768,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            254.0,
+            270.0
+          ],
+          "rotation": 0,
+          "size": [
+            9.281,
+            13.259
+          ],
+          "tag": "X24",
+          "type": "lamp_flashing"
+        },
+        {
+          "description": "",
+          "id": "c25",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p89",
+              "name": "X1",
+              "offset": [
+                0.0,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p90",
+              "name": "X2",
+              "offset": [
+                0.0,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            332.0,
+            270.0
+          ],
+          "rotation": 0,
+          "size": [
+            5.304,
+            13.259
+          ],
+          "tag": "X25",
+          "type": "bell"
+        },
+        {
+          "description": "",
+          "id": "c26",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p91",
+              "name": "X1",
+              "offset": [
+                0.0,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p92",
+              "name": "X2",
+              "offset": [
+                0.0,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            20.0,
+            332.0
+          ],
+          "rotation": 0,
+          "size": [
+            7.071,
+            13.259
+          ],
+          "tag": "X26",
+          "type": "horn"
+        },
+        {
+          "description": "",
+          "id": "c27",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p93",
+              "name": "X1",
+              "offset": [
+                0.0,
+                2.652
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p94",
+              "name": "X2",
+              "offset": [
+                0.0,
+                13.259
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            98.0,
+            332.0
+          ],
+          "rotation": 0,
+          "size": [
+            4.154,
+            13.259
+          ],
+          "tag": "X27",
+          "type": "siren"
+        },
+        {
+          "description": "",
+          "id": "c28",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {},
+          "pins": [
+            {
+              "id": "p95",
+              "name": "1",
+              "offset": [
+                2.652,
+                23.866
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p96",
+              "name": "2",
+              "offset": [
+                5.304,
+                23.866
+              ],
+              "required": false,
+              "role": "terminal"
+            },
+            {
+              "id": "p97",
+              "name": "4",
+              "offset": [
+                10.607,
+                23.866
+              ],
+              "required": false,
+              "role": "terminal"
+            }
+          ],
+          "position": [
+            176.0,
+            332.0
+          ],
+          "rotation": 0,
+          "size": [
+            13.259,
+            24.308
+          ],
+          "tag": "X28",
+          "type": "display_7seg"
+        },
+        {
+          "description": "",
+          "id": "c29",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "threshold": 0.5
+          },
+          "pins": [
+            {
+              "id": "p98",
+              "name": "1",
+              "offset": [
+                5.304,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p99",
+              "name": "2",
+              "offset": [
+                5.304,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            254.0,
+            332.0
+          ],
+          "rotation": 0,
+          "size": [
+            10.607,
+            13.259
+          ],
+          "tag": "X29",
+          "type": "pressure_switch_no"
+        },
+        {
+          "description": "",
+          "id": "c30",
+          "labels": {
+            "description_offset": [
+              0.0,
+              6.0
+            ],
+            "show_description": false,
+            "show_tag": true,
+            "tag_offset": [
+              0.0,
+              -6.0
+            ]
+          },
+          "parameters": {
+            "positions": 2,
+            "position": 1
+          },
+          "pins": [
+            {
+              "id": "p100",
+              "name": "1",
+              "offset": [
+                12.375,
+                2.652
+              ],
+              "required": false,
+              "role": "contact_common"
+            },
+            {
+              "id": "p101",
+              "name": "2",
+              "offset": [
+                7.071,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            },
+            {
+              "id": "p102",
+              "name": "3",
+              "offset": [
+                12.375,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            },
+            {
+              "id": "p103",
+              "name": "4",
+              "offset": [
+                17.679,
+                13.259
+              ],
+              "required": false,
+              "role": "contact_no"
+            }
+          ],
+          "position": [
+            332.0,
+            332.0
+          ],
+          "rotation": 0,
+          "size": [
+            20.198,
+            13.259
+          ],
+          "tag": "X30",
+          "type": "selector_2pos"
+        }
+      ],
+      "id": "s1",
+      "margin": 10.0,
+      "name": "Validation",
+      "orientation": "landscape",
+      "paper": "A3",
+      "show_frame": true,
+      "wires": []
+    }
+  ]
+}

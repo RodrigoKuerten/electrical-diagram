@@ -1,0 +1,2438 @@
+[
+ {
+  "command": 32829,
+  "name": "Motor trifásico",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   107,
+   104,
+   189,
+   179
+  ],
+  "w": 82,
+  "h": 75
+ },
+ {
+  "command": 32830,
+  "name": "Motor trifásico YD",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   107,
+   104,
+   189,
+   170
+  ],
+  "w": 82,
+  "h": 66
+ },
+ {
+  "command": 32831,
+  "name": "Motor monofásico",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   103,
+   104,
+   189,
+   176
+  ],
+  "w": 86,
+  "h": 72
+ },
+ {
+  "command": 32832,
+  "name": "Motor Dahalander",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   107,
+   104,
+   189,
+   176
+  ],
+  "w": 82,
+  "h": 72
+ },
+ {
+  "command": 32833,
+  "name": "Motor trifásico rotor bobinado",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   104,
+   104,
+   174,
+   152
+  ],
+  "w": 70,
+  "h": 48
+ },
+ {
+  "command": 32834,
+  "name": "Contactor III",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   104,
+   104,
+   161,
+   152
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32835,
+  "name": "Contactor II",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   104,
+   104,
+   185,
+   152
+  ],
+  "w": 81,
+  "h": 48
+ },
+ {
+  "command": 32836,
+  "name": "Contactor IIII",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   94,
+   104,
+   161,
+   152
+  ],
+  "w": 67,
+  "h": 48
+ },
+ {
+  "command": 32837,
+  "name": "Interruptor II",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   94,
+   104,
+   174,
+   152
+  ],
+  "w": 80,
+  "h": 48
+ },
+ {
+  "command": 32838,
+  "name": "Interruptor III",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   94,
+   104,
+   185,
+   152
+  ],
+  "w": 91,
+  "h": 48
+ },
+ {
+  "command": 32839,
+  "name": "Interruptor IIII",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   108,
+   104,
+   161,
+   152
+  ],
+  "w": 53,
+  "h": 48
+ },
+ {
+  "command": 32840,
+  "name": "Fusible II",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   108,
+   104,
+   174,
+   152
+  ],
+  "w": 66,
+  "h": 48
+ },
+ {
+  "command": 32841,
+  "name": "Fusible III",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   108,
+   104,
+   185,
+   152
+  ],
+  "w": 77,
+  "h": 48
+ },
+ {
+  "command": 32842,
+  "name": "Fusible IIIN",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   108,
+   104,
+   161,
+   152
+  ],
+  "w": 53,
+  "h": 48
+ },
+ {
+  "command": 32843,
+  "name": "Fusible IN",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   104,
+   104,
+   161,
+   152
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32844,
+  "name": "Fusible seccionable IN",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   104,
+   104,
+   161,
+   152
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32845,
+  "name": "Fusible seccionable II",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   104,
+   104,
+   174,
+   152
+  ],
+  "w": 70,
+  "h": 48
+ },
+ {
+  "command": 32854,
+  "name": "Fusible I",
+  "bars": [
+   177
+  ],
+  "bbox": [
+   104,
+   104,
+   150,
+   152
+  ],
+  "w": 46,
+  "h": 48
+ },
+ {
+  "command": 32859,
+  "name": "Interruptor automático I",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   104,
+   104,
+   161,
+   152
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32860,
+  "name": "Interruptor automático IN",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   104,
+   104,
+   161,
+   152
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32861,
+  "name": "Interruptor automático II",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   104,
+   104,
+   174,
+   152
+  ],
+  "w": 70,
+  "h": 48
+ },
+ {
+  "command": 32862,
+  "name": "Interruptor automático III",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   104,
+   104,
+   185,
+   152
+  ],
+  "w": 81,
+  "h": 48
+ },
+ {
+  "command": 32863,
+  "name": "Interruptor automático IIIN",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   92,
+   104,
+   161,
+   164
+  ],
+  "w": 69,
+  "h": 60
+ },
+ {
+  "command": 32864,
+  "name": "Interruptor diferencial IN",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   92,
+   104,
+   185,
+   164
+  ],
+  "w": 93,
+  "h": 60
+ },
+ {
+  "command": 32865,
+  "name": "Interruptor diferencial IIIN",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   104,
+   104,
+   178,
+   152
+  ],
+  "w": 74,
+  "h": 48
+ },
+ {
+  "command": 32866,
+  "name": "Relé térmico",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   91,
+   104,
+   164,
+   170
+  ],
+  "w": 73,
+  "h": 66
+ },
+ {
+  "command": 32867,
+  "name": "Disyuntor II",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   91,
+   104,
+   176,
+   170
+  ],
+  "w": 85,
+  "h": 66
+ },
+ {
+  "command": 32870,
+  "name": "Alimentación L1 + L2 + L3 + N",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   112,
+   61,
+   171,
+   98
+  ],
+  "w": 59,
+  "h": 37
+ },
+ {
+  "command": 32873,
+  "name": "Alimentación Fase + Neutro",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   112,
+   62,
+   147,
+   98
+  ],
+  "w": 35,
+  "h": 36
+ },
+ {
+  "command": 32874,
+  "name": "Alimentación Fase",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   112,
+   62,
+   147,
+   98
+  ],
+  "w": 35,
+  "h": 36
+ },
+ {
+  "command": 32875,
+  "name": "Alimentación Neutro",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   112,
+   60,
+   159,
+   98
+  ],
+  "w": 47,
+  "h": 38
+ },
+ {
+  "command": 32876,
+  "name": "Alimentación +-",
+  "bars": [
+   183,
+   292
+  ],
+  "bbox": [
+   112,
+   60,
+   147,
+   98
+  ],
+  "w": 35,
+  "h": 38
+ },
+ {
+  "command": 32877,
+  "name": "Alimentación Positivo",
+  "bars": [
+   183,
+   292
+  ],
+  "bbox": [
+   112,
+   62,
+   147,
+   98
+  ],
+  "w": 35,
+  "h": 36
+ },
+ {
+  "command": 32883,
+  "name": "Alimentación L1 + L2 + L3 + N + PE",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   112,
+   61,
+   147,
+   98
+  ],
+  "w": 35,
+  "h": 37
+ },
+ {
+  "command": 32890,
+  "name": "Conexión",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   121,
+   74,
+   151,
+   104
+  ],
+  "w": 30,
+  "h": 30
+ },
+ {
+  "command": 32891,
+  "name": "Entrada mangueral",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   121,
+   75,
+   170,
+   123
+  ],
+  "w": 49,
+  "h": 48
+ },
+ {
+  "command": 32892,
+  "name": "Cable III vertical",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   121,
+   76,
+   170,
+   123
+  ],
+  "w": 49,
+  "h": 47
+ },
+ {
+  "command": 32893,
+  "name": "Cable III horizontal",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   121,
+   76,
+   150,
+   103
+  ],
+  "w": 29,
+  "h": 27
+ },
+ {
+  "command": 32894,
+  "name": "Cable III vertical",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   121,
+   76,
+   150,
+   103
+  ],
+  "w": 29,
+  "h": 27
+ },
+ {
+  "command": 32897,
+  "name": "Cable protección",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   109,
+   71,
+   161,
+   103
+  ],
+  "w": 52,
+  "h": 32
+ },
+ {
+  "command": 32898,
+  "name": "Conexión de salida",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   91,
+   74,
+   152,
+   140
+  ],
+  "w": 61,
+  "h": 66
+ },
+ {
+  "command": 32899,
+  "name": "Disyuntor I",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   104,
+   74,
+   150,
+   122
+  ],
+  "w": 46,
+  "h": 48
+ },
+ {
+  "command": 32900,
+  "name": "Contactor I",
+  "bars": [
+   175
+  ],
+  "bbox": [
+   94,
+   74,
+   150,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32910,
+  "name": "Pulsador NA",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   100,
+   74,
+   153,
+   122
+  ],
+  "w": 53,
+  "h": 48
+ },
+ {
+  "command": 32913,
+  "name": "Pulsador NA-NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   100,
+   74,
+   164,
+   122
+  ],
+  "w": 64,
+  "h": 48
+ },
+ {
+  "command": 32914,
+  "name": "Pulsador CON",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   152,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32915,
+  "name": "Pulsador seta NA",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   153,
+   122
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32918,
+  "name": "Pulsador seta NA-NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   164,
+   122
+  ],
+  "w": 68,
+  "h": 48
+ },
+ {
+  "command": 32919,
+  "name": "Pulsador seta CON",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   152,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32920,
+  "name": "Interruptor NA",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   153,
+   122
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32921,
+  "name": "Interruptor NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   170,
+   122
+  ],
+  "w": 74,
+  "h": 48
+ },
+ {
+  "command": 32922,
+  "name": "Interruptor NA-NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   164,
+   122
+  ],
+  "w": 68,
+  "h": 48
+ },
+ {
+  "command": 32923,
+  "name": "Interruptor CON",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   152,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32924,
+  "name": "Final de carrera NA",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   153,
+   122
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32925,
+  "name": "Final de carrera NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   170,
+   122
+  ],
+  "w": 74,
+  "h": 48
+ },
+ {
+  "command": 32926,
+  "name": "Final de carrera NA-NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   164,
+   122
+  ],
+  "w": 68,
+  "h": 48
+ },
+ {
+  "command": 32927,
+  "name": "Final de carrera COM",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   100,
+   74,
+   156,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32928,
+  "name": "Contacto auxiliar relé térmico NA",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   100,
+   74,
+   156,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32929,
+  "name": "Contacto auxiliar relé térmico NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   100,
+   74,
+   174,
+   122
+  ],
+  "w": 74,
+  "h": 48
+ },
+ {
+  "command": 32930,
+  "name": "Contacto auxiliar relé térmico NA-NC",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   100,
+   74,
+   168,
+   122
+  ],
+  "w": 68,
+  "h": 48
+ },
+ {
+  "command": 32934,
+  "name": "Contacto temporizado a la conexión NA",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   153,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32935,
+  "name": "Contacto temporizado a la conexión NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   170,
+   122
+  ],
+  "w": 73,
+  "h": 48
+ },
+ {
+  "command": 32936,
+  "name": "Contacto temporizado a la conexión NA+NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   164,
+   122
+  ],
+  "w": 67,
+  "h": 48
+ },
+ {
+  "command": 32937,
+  "name": "Contacto temporizado a la conexión CON",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   108,
+   74,
+   152,
+   122
+  ],
+  "w": 44,
+  "h": 48
+ },
+ {
+  "command": 32938,
+  "name": "Contacto NA",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   108,
+   74,
+   153,
+   122
+  ],
+  "w": 45,
+  "h": 48
+ },
+ {
+  "command": 32939,
+  "name": "Contacto NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   108,
+   74,
+   170,
+   122
+  ],
+  "w": 62,
+  "h": 48
+ },
+ {
+  "command": 32940,
+  "name": "Contacto NA+NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   108,
+   74,
+   164,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32941,
+  "name": "Contacto CON",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   152,
+   122
+  ],
+  "w": 55,
+  "h": 48
+ },
+ {
+  "command": 32942,
+  "name": "Contacto temporizado a la deconexión NA",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   153,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32943,
+  "name": "Contacto temporizado a la deconexión NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   170,
+   122
+  ],
+  "w": 73,
+  "h": 48
+ },
+ {
+  "command": 32944,
+  "name": "Contacto temporizado a la deconexión NA+NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   164,
+   122
+  ],
+  "w": 67,
+  "h": 48
+ },
+ {
+  "command": 32945,
+  "name": "Contacto temporizado a la deconexión CON",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   152,
+   122
+  ],
+  "w": 55,
+  "h": 48
+ },
+ {
+  "command": 32946,
+  "name": "Contacto temporizado a la conexión deconexión NA",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   153,
+   122
+  ],
+  "w": 56,
+  "h": 48
+ },
+ {
+  "command": 32947,
+  "name": "Contacto temporizado a la conexión deconexión NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   170,
+   122
+  ],
+  "w": 73,
+  "h": 48
+ },
+ {
+  "command": 32948,
+  "name": "Contacto temporizado a la conexión deconexión NA+NC",
+  "bars": [
+   191
+  ],
+  "bbox": [
+   97,
+   74,
+   164,
+   122
+  ],
+  "w": 67,
+  "h": 48
+ },
+ {
+  "command": 32949,
+  "name": "Contacto temporizado a la conexión deconexión CON",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   104,
+   74,
+   154,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 32952,
+  "name": "Bobina electroválvula",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   104,
+   74,
+   154,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 32953,
+  "name": "Temporizador a la conexión",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   104,
+   74,
+   154,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 32954,
+  "name": "Temporizador a la desconexión",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   104,
+   74,
+   154,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 32955,
+  "name": "Temporizador a la conexión desconexión",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   104,
+   74,
+   154,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 32956,
+  "name": "Relé intermitente",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   104,
+   74,
+   158,
+   122
+  ],
+  "w": 54,
+  "h": 48
+ },
+ {
+  "command": 32957,
+  "name": "Bobina biestable contactor, relé",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   103,
+   74,
+   153,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 32958,
+  "name": "Piloto señalización",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   103,
+   74,
+   160,
+   122
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32959,
+  "name": "Piloto señalización intermitente",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   105,
+   74,
+   162,
+   122
+  ],
+  "w": 57,
+  "h": 48
+ },
+ {
+  "command": 32960,
+  "name": "Bocina",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   109,
+   74,
+   162,
+   122
+  ],
+  "w": 53,
+  "h": 48
+ },
+ {
+  "command": 32961,
+  "name": "Sirena",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   109,
+   74,
+   159,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 32962,
+  "name": "Timbre",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   109,
+   74,
+   158,
+   122
+  ],
+  "w": 49,
+  "h": 48
+ },
+ {
+  "command": 32969,
+  "name": "Borne cuadrado",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   112,
+   70,
+   152,
+   103
+  ],
+  "w": 40,
+  "h": 33
+ },
+ {
+  "command": 32970,
+  "name": "Borne redondo",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   96,
+   71,
+   152,
+   103
+  ],
+  "w": 56,
+  "h": 32
+ },
+ {
+  "command": 32992,
+  "name": "2 Bornes redondos",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   112,
+   70,
+   171,
+   100
+  ],
+  "w": 59,
+  "h": 30
+ },
+ {
+  "command": 32993,
+  "name": "3 Bornes redondos",
+  "bars": [
+   187
+  ],
+  "bbox": [
+   112,
+   70,
+   183,
+   100
+  ],
+  "w": 71,
+  "h": 30
+ },
+ {
+  "command": 32994,
+  "name": "3 Bornes redondos",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   146
+  ],
+  "w": 82,
+  "h": 72
+ },
+ {
+  "command": 32995,
+  "name": "Motor II Veloc",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   108,
+   74,
+   168,
+   128
+  ],
+  "w": 60,
+  "h": 54
+ },
+ {
+  "command": 32998,
+  "name": "Rectificador",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   108,
+   74,
+   171,
+   134
+  ],
+  "w": 63,
+  "h": 60
+ },
+ {
+  "command": 32999,
+  "name": "Fuente de alimentación",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   121,
+   55,
+   189,
+   116
+  ],
+  "w": 68,
+  "h": 61
+ },
+ {
+  "command": 33000,
+  "name": "Motor cc. de imán permanente",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   121,
+   54,
+   189,
+   116
+  ],
+  "w": 68,
+  "h": 62
+ },
+ {
+  "command": 33003,
+  "name": "Resistencia I",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   174,
+   128
+  ],
+  "w": 67,
+  "h": 54
+ },
+ {
+  "command": 33004,
+  "name": "Resistencia III",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   108,
+   74,
+   180,
+   134
+  ],
+  "w": 72,
+  "h": 60
+ },
+ {
+  "command": 33005,
+  "name": "Autotransformador III",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   183,
+   146
+  ],
+  "w": 76,
+  "h": 72
+ },
+ {
+  "command": 33006,
+  "name": "Arrancador electónico c.a.",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   158
+  ],
+  "w": 82,
+  "h": 84
+ },
+ {
+  "command": 33007,
+  "name": "Variador velocidad c.a. II",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   158
+  ],
+  "w": 82,
+  "h": 84
+ },
+ {
+  "command": 33012,
+  "name": "Control Variador velocidad c.a.",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   218,
+   158
+  ],
+  "w": 111,
+  "h": 84
+ },
+ {
+  "command": 33016,
+  "name": "Variador velocidad c.c. II",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   158
+  ],
+  "w": 82,
+  "h": 84
+ },
+ {
+  "command": 33017,
+  "name": "Variador velocidad c.c. II",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   158
+  ],
+  "w": 82,
+  "h": 84
+ },
+ {
+  "command": 33018,
+  "name": "Variador velocidad c.c. III",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   158
+  ],
+  "w": 82,
+  "h": 84
+ },
+ {
+  "command": 33021,
+  "name": "Det. inductivo NC",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ },
+ {
+  "command": 33022,
+  "name": "Det. capacitivo NA",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ },
+ {
+  "command": 33023,
+  "name": "Det. capacitivo NC",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ },
+ {
+  "command": 33024,
+  "name": "Det. magnético NA",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ },
+ {
+  "command": 33025,
+  "name": "Det. magnético NC",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   104,
+   74,
+   168,
+   134
+  ],
+  "w": 64,
+  "h": 60
+ },
+ {
+  "command": 33033,
+  "name": "Det. inductivo NA",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ },
+ {
+  "command": 33034,
+  "name": "Barrera receptor NC",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ },
+ {
+  "command": 33043,
+  "name": "Alimentación Protección",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   107,
+   74,
+   151,
+   122
+  ],
+  "w": 44,
+  "h": 48
+ },
+ {
+  "command": 33044,
+  "name": "Diodo",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   108,
+   74,
+   183,
+   134
+  ],
+  "w": 75,
+  "h": 60
+ },
+ {
+  "command": 33045,
+  "name": "Fuente de alimentación III",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   108,
+   74,
+   174,
+   128
+  ],
+  "w": 66,
+  "h": 54
+ },
+ {
+  "command": 33046,
+  "name": "Transformador III",
+  "bars": [
+   183
+  ],
+  "bbox": [
+   112,
+   74,
+   157,
+   116
+  ],
+  "w": 45,
+  "h": 42
+ },
+ {
+  "command": 33047,
+  "name": "Bateria",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   161,
+   122
+  ],
+  "w": 65,
+  "h": 48
+ },
+ {
+  "command": 33048,
+  "name": "Conmutador I-0-II",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   96,
+   74,
+   173,
+   122
+  ],
+  "w": 77,
+  "h": 48
+ },
+ {
+  "command": 33049,
+  "name": "Conmutador I-II-III",
+  "bars": [
+   189
+  ],
+  "bbox": [
+   100,
+   74,
+   162,
+   122
+  ],
+  "w": 62,
+  "h": 48
+ },
+ {
+  "command": 33050,
+  "name": "Conmutador cruce",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   91,
+   74,
+   161,
+   140
+  ],
+  "w": 70,
+  "h": 66
+ },
+ {
+  "command": 33055,
+  "name": "Limitador sobretensiones IN",
+  "bars": [
+   179
+  ],
+  "bbox": [
+   108,
+   74,
+   188,
+   134
+  ],
+  "w": 80,
+  "h": 60
+ },
+ {
+  "command": 33056,
+  "name": "Limitador sobretensiones IIIN",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   121,
+   63,
+   179,
+   117
+  ],
+  "w": 58,
+  "h": 54
+ },
+ {
+  "command": 33057,
+  "name": "AND",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   121,
+   63,
+   179,
+   117
+  ],
+  "w": 58,
+  "h": 54
+ },
+ {
+  "command": 33058,
+  "name": "OR",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   121,
+   63,
+   180,
+   105
+  ],
+  "w": 59,
+  "h": 42
+ },
+ {
+  "command": 33059,
+  "name": "INV",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   121,
+   63,
+   179,
+   117
+  ],
+  "w": 58,
+  "h": 54
+ },
+ {
+  "command": 33060,
+  "name": "EXOR",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   121,
+   63,
+   179,
+   117
+  ],
+  "w": 58,
+  "h": 54
+ },
+ {
+  "command": 33061,
+  "name": "NAND",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   121,
+   63,
+   179,
+   117
+  ],
+  "w": 58,
+  "h": 54
+ },
+ {
+  "command": 33062,
+  "name": "NOR",
+  "bars": [
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   174,
+   104
+  ],
+  "w": 53,
+  "h": 42
+ },
+ {
+  "command": 33063,
+  "name": "NA",
+  "bars": [
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   174,
+   105
+  ],
+  "w": 53,
+  "h": 43
+ },
+ {
+  "command": 33066,
+  "name": "Flanco ascendente",
+  "bars": [
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   174,
+   104
+  ],
+  "w": 53,
+  "h": 42
+ },
+ {
+  "command": 33067,
+  "name": "Flanco descendente",
+  "bars": [
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   174,
+   103
+  ],
+  "w": 53,
+  "h": 41
+ },
+ {
+  "command": 33070,
+  "name": "Set",
+  "bars": [
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   174,
+   103
+  ],
+  "w": 53,
+  "h": 41
+ },
+ {
+  "command": 33079,
+  "name": "Preselector BCD",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   98,
+   70,
+   149,
+   103
+  ],
+  "w": 51,
+  "h": 33
+ },
+ {
+  "command": 33083,
+  "name": "Etapa inicial",
+  "bars": [
+   228
+  ],
+  "bbox": [
+   115,
+   74,
+   167,
+   122
+  ],
+  "w": 52,
+  "h": 48
+ },
+ {
+  "command": 33084,
+  "name": "Etapa",
+  "bars": [
+   228
+  ],
+  "bbox": [
+   119,
+   74,
+   150,
+   110
+  ],
+  "w": 31,
+  "h": 36
+ },
+ {
+  "command": 33085,
+  "name": "Transición",
+  "bars": [
+   228
+  ],
+  "bbox": [
+   121,
+   68,
+   186,
+   108
+  ],
+  "w": 65,
+  "h": 40
+ },
+ {
+  "command": 33089,
+  "name": "Etapa inicial",
+  "bars": [
+   213
+  ],
+  "bbox": [
+   107,
+   74,
+   171,
+   146
+  ],
+  "w": 64,
+  "h": 72
+ },
+ {
+  "command": 33090,
+  "name": "Control arrancador electrónico c.a..",
+  "bars": [
+   228
+  ],
+  "bbox": [
+   117,
+   58,
+   151,
+   103
+  ],
+  "w": 34,
+  "h": 45
+ },
+ {
+  "command": 33091,
+  "name": "Enlace de entrada",
+  "bars": [
+   228
+  ],
+  "bbox": [
+   117,
+   74,
+   151,
+   114
+  ],
+  "w": 34,
+  "h": 40
+ },
+ {
+  "command": 33096,
+  "name": "Convergencia en \"O\"",
+  "bars": [
+   228
+  ],
+  "bbox": [
+   109,
+   74,
+   158,
+   134
+  ],
+  "w": 49,
+  "h": 60
+ },
+ {
+  "command": 33097,
+  "name": "Macro etapa",
+  "bars": [
+   226,
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   175,
+   129
+  ],
+  "w": 54,
+  "h": 67
+ },
+ {
+  "command": 33098,
+  "name": "Contador",
+  "bars": [
+   193
+  ],
+  "bbox": [
+   104,
+   74,
+   154,
+   122
+  ],
+  "w": 50,
+  "h": 48
+ },
+ {
+  "command": 33099,
+  "name": "Interruptor horario",
+  "bars": [
+   226,
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   175,
+   117
+  ],
+  "w": 54,
+  "h": 55
+ },
+ {
+  "command": 33100,
+  "name": "Temporizador conexión",
+  "bars": [
+   226,
+   292
+  ],
+  "bbox": [
+   121,
+   63,
+   175,
+   117
+  ],
+  "w": 54,
+  "h": 54
+ },
+ {
+  "command": 33103,
+  "name": "\"Y\"",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   152
+  ],
+  "w": 82,
+  "h": 78
+ },
+ {
+  "command": 33104,
+  "name": "Motor monofásico",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   102,
+   74,
+   181,
+   123
+  ],
+  "w": 79,
+  "h": 49
+ },
+ {
+  "command": 33112,
+  "name": "Divisor Binario",
+  "bars": [
+   226,
+   292
+  ],
+  "bbox": [
+   121,
+   62,
+   175,
+   117
+  ],
+  "w": 54,
+  "h": 55
+ },
+ {
+  "command": 33115,
+  "name": "Temporizador intermitente",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   115,
+   32,
+   173,
+   103
+  ],
+  "w": 58,
+  "h": 71
+ },
+ {
+  "command": 33116,
+  "name": "Display BCD",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   115,
+   26,
+   173,
+   103
+  ],
+  "w": 58,
+  "h": 77
+ },
+ {
+  "command": 33117,
+  "name": "Display 7 Seg.",
+  "bars": [
+   226
+  ],
+  "bbox": [
+   115,
+   26,
+   173,
+   103
+  ],
+  "w": 58,
+  "h": 77
+ },
+ {
+  "command": 33237,
+  "name": "Contador de pulsos",
+  "bars": [
+   173
+  ],
+  "bbox": [
+   107,
+   74,
+   189,
+   152
+  ],
+  "w": 82,
+  "h": 78
+ },
+ {
+  "command": 33238,
+  "name": "Motor trifásico como monofásico",
+  "bars": [
+   242
+  ],
+  "bbox": [
+   121,
+   69,
+   313,
+   240
+  ],
+  "w": 192,
+  "h": 171
+ },
+ {
+  "command": 33243,
+  "name": "Actuador simple efecto",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   108,
+   61,
+   237,
+   207
+  ],
+  "w": 129,
+  "h": 146
+ },
+ {
+  "command": 33246,
+  "name": "Actuador sin vástago",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   108,
+   55,
+   237,
+   207
+  ],
+  "w": 129,
+  "h": 152
+ },
+ {
+  "command": 33247,
+  "name": "Actuador sin vástago magnético",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   108,
+   68,
+   237,
+   205
+  ],
+  "w": 129,
+  "h": 137
+ },
+ {
+  "command": 33248,
+  "name": "Actuador giro",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   108,
+   55,
+   237,
+   207
+  ],
+  "w": 129,
+  "h": 152
+ },
+ {
+  "command": 33249,
+  "name": "Pinza doble efecto",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   98,
+   74,
+   222,
+   207
+  ],
+  "w": 124,
+  "h": 133
+ },
+ {
+  "command": 33250,
+  "name": "Ventosa",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   94,
+   69,
+   209,
+   207
+  ],
+  "w": 115,
+  "h": 138
+ },
+ {
+  "command": 33251,
+  "name": "Motor neumático",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   119,
+   69,
+   237,
+   207
+  ],
+  "w": 118,
+  "h": 138
+ },
+ {
+  "command": 33252,
+  "name": "Motor neumático reversible",
+  "bars": [
+   269
+  ],
+  "bbox": [
+   108,
+   55,
+   224,
+   207
+  ],
+  "w": 116,
+  "h": 152
+ },
+ {
+  "command": 33253,
+  "name": "Pinza simple efecto",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ },
+ {
+  "command": 33254,
+  "name": "Presostato NA",
+  "bars": [
+   215
+  ],
+  "bbox": [
+   100,
+   74,
+   158,
+   122
+  ],
+  "w": 58,
+  "h": 48
+ }
+]

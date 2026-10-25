@@ -5,8 +5,11 @@
 > changed without touching the domain model.
 
 FioVivo is an educational electrical control diagram editor and simulator written in C++20
-with Qt 6 Widgets. It targets Brazilian NBR 5280-style command diagrams and uses graphical
-conventions inspired by IEC 60617. Every symbol in this repository was drawn from scratch.
+with Qt 6 Widgets. It targets Brazilian NBR 5280-style command diagrams. The current symbol
+library and electrical conventions were rebuilt from the shipped **CADe_SIMU 4.0** application:
+the library geometry, terminal numbering and state language were recovered with REA and Ghidra
+and reconstructed as original SVG assets. The project is not a copy of CADe_SIMU and is not a
+certified reproduction of IEC 60617.
 
 The application is a **prototyping and teaching tool**. It is **not** a certified electrical
 design, protection coordination or safety tool. It does not simulate voltage, current,
@@ -30,17 +33,31 @@ See [`docs/report.md`](docs/report.md) for the final delivery report and
 ## Features
 
 - Multi-sheet diagram model with strong component, pin, wire, sheet and annotation IDs.
-- Original SVG symbols with JSON pin manifests; all Phase 1 symbol types are present.
+- **215 CADe_SIMU-style component types** in 18 categories, with SVG artwork, JSON pin
+  manifests, terminal labels and state variants. The 20 original FioVivo types remain
+  loadable for existing projects and examples.
+- Multi-pole contactors and breakers, group-controlled relay/contactor contacts, timed and
+  thermal auxiliary contacts, selector positions, sensors, motors, logic gates, PLC blocks,
+  pneumatic symbols, terminals and measurement/GRAFCET symbols.
 - Grid snapping, orthogonal auto-routing, wiring drag, zoom, pan, selection, rotation,
   copy/paste, delete, duplicate and snapshot undo/redo.
+- **Independent workspace dimensions** in addition to zoom: the sheet can grow beyond the
+  printed page, persisted in the project file, with menu/toolbar controls and scrollbars.
+- **Zoom** from 25% to 400% with mouse-wheel anchoring under the cursor, keyboard/toolbar
+  controls and fit-to-page.
 - Properties panel with tag uniqueness checks, description, position, rotation, typed
   parameters, pin table and simulation status.
 - Searchable symbol library with drag and drop.
 - Validation rules and a clickable problems panel.
 - Deterministic scan-cycle simulator in a worker thread:
   - contactor self-holding ("selo"), NC interlocks and first-wins simultaneous starts;
-  - TON/TOF timers, emergency-stop latch, thermal relay, fuse/breaker, selector, lamp and
-    three-phase motor;
+  - multi-pole contactors/breakers, relay and contactor groups, changeover contacts,
+    timed and thermal auxiliary contacts;
+  - TON/TOF and ON/OFF/pulse/flasher timers, emergency-stop latch, thermal relay,
+    fuse/breaker, selector, lamp, buzzer/siren and three-phase motor;
+  - digital sensors, switches and limit switches as canvas inputs;
+  - basic logic gates (AND/OR/NOT/XOR/NAND/NOR), RS latch, edge detection, logic timer
+    and counter driving switched outputs;
   - fixed 16-pass convergence guard with oscillation detection;
   - input interaction on the canvas, step/step-N, speed control and simulated time;
   - highlight of energized paths and active devices;
@@ -64,11 +81,22 @@ These are documented rather than hidden:
 
 - Only presence/absence of energy is simulated. Voltage levels, current, power factor,
   impedance, phase angle, heating, mechanical motion and safety functions are not modelled.
+- **CADe_SIMU artwork is reconstructed, not byte-identical.** The 215 symbols follow the
+  recovered geometry, terminal numbering and visual language, but the original uses GDI
+  primitives and ClearType text; FioVivo uses antialiased SVG/Qt text. See
+  [`docs/cadesimu/report.md`](docs/cadesimu/report.md).
+- **PLC, pneumatic, GRAFCET and measurement are visual/limited.** No LADDER/STL program is
+  executed, no pressure/flow/cylinder position is simulated, there is no GRAFCET token engine,
+  and meters do not calculate values.
+- Protection is commanded, not calculated: a thermal relay trips by user action rather than a
+  current/time overload integral; an RCD does not detect residual current; short-circuit and
+  protection coordination are out of scope.
 - Loads in series are not supported; each load must reach a supply and a return path.
 - A load is energized when it sees two distinct source groups. A 24 V and a 220 V coil are
   indistinguishable in the current model.
-- The star-delta example models the control logic and contactor interlocks, not the six
-  winding terminals of a real motor; the motor is fed by the main contactor.
+- The star-delta example models the control logic and contactor interlocks; the optional
+  six-terminal three-phase motor symbol is available, but its winding ends are not tied to the
+  star/delta power contactors in the simulator.
 - **Multiple wires per pin** are allowed (with a junction dot for three or more) because the
   original one-wire-per-pin draft makes parallel circuits and the required examples
   impossible. This is the main deviation from the original specification; see
@@ -195,12 +223,11 @@ rendering test. UI tests run with `QT_QPA_PLATFORM=offscreen`. Theme goldens are
 only with `--update-golden`, and the light-theme investigation is recorded in
 [`docs/theme-audit/report.md`](docs/theme-audit/report.md).
 
-Current local results: **140/140 tests pass** in Debug with the UI enabled; in the local
+Current local results: **154/154 tests pass** in Debug with the UI enabled; in the local
 Release build all tests pass except the 500-component rendering budget, which also exceeds
 its limit on the pre-theme baseline at this Qt version (see
-`docs/theme-audit/report.md`). **122/122 headless tests** pass in the coverage configuration,
-and gcovr reports **88% line coverage** across `core`+`sim` (core about 88%, simulator about
-90%).
+`docs/theme-audit/report.md`). The headless suite includes the same core/sim/io tests; the
+coverage configuration previously reported **88% line coverage** across `core`+`sim`.
 
 Golden files live in `tests/data/golden/`. Updating one is deliberate: edit the exporter,
 review the diff, run the generator, and commit both together. See the README in that folder.
@@ -247,7 +274,9 @@ MIT-licensed; see [`LICENSE`](LICENSE).
 - [`docs/plan.md`](docs/plan.md) — architecture plan, decisions and open questions
 - [`docs/architecture.md`](docs/architecture.md) — layers, ownership, threading
 - [`docs/file-format.md`](docs/file-format.md) — `.dcj` format and worked example
-- [`docs/simulation-semantics.md`](docs/simulation-semantics.md) — scan model and limits
+- [`docs/cadesimu/report.md`](docs/cadesimu/report.md) - CADe_SIMU migration report, evidence and limits
+- [`docs/cadesimu/inventory.md`](docs/cadesimu/inventory.md) - 215-type catalog and recovered CADe_SIMU IDs
+- [`docs/simulation-semantics.md`](docs/simulation-semantics.md) - scan model and limits
 - [`docs/symbol-library.md`](docs/symbol-library.md) — symbols, pins, parameters, states
 - [`docs/glossary.md`](docs/glossary.md) — Portuguese/English electrical glossary
 - [`docs/contributing.md`](docs/contributing.md) — coding, commits and review

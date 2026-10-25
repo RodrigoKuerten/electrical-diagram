@@ -1,4 +1,11 @@
-# Final report — FioVivo 0.1.0
+# Final report
+
+> **CADe_SIMU migration addendum.** The symbol library was subsequently replaced with 213
+> CADe_SIMU-style types and its simulator was extended (multi-pole devices, sensors, logic,
+> timers and independent workspace dimensions). See
+> [`cadesimu/report.md`](cadesimu/report.md) and [`cadesimu/inventory.md`](cadesimu/inventory.md)
+> for the current counts, evidence and limitations. The historical text below describes the
+> original 20-symbol delivery. — FioVivo 0.1.0
 
 This report is the handoff required by section 17 of the project specification. It states
 what is present, what is not, the deliberate deviations, known bugs, measured results and the
@@ -9,7 +16,8 @@ questions that still need the project owner's confirmation.
 ### Editor
 
 - Multi-sheet `Diagram` model with strong typed IDs, metadata, sheet setup and annotations.
-- Original SVG symbols with JSON manifests for all 20 required Phase 1 types.
+- SVG symbols with JSON manifests. The current library has 213 CADe_SIMU-style types; the
+  original 20 Phase 1 types remain as loadable legacy identifiers.
 - Qt Widgets main window with menus, toolbar, context toolbar, symbol library, properties,
   problems, simulation log and output docks, and status bar.
 - QGraphicsScene canvas with grid, snap, page/frame/title block, zoom 25-400%, pan, selection,
@@ -125,8 +133,9 @@ Local environment:
 
 ### Tests
 
-- **134/134 CTest tests pass** in Debug and Release with the Qt UI enabled.
-- **122/122 headless tests pass** in the coverage configuration.
+- **154/154 CTest tests pass** in Debug with the Qt UI enabled (current CADe_SIMU catalog).
+- The earlier headless coverage configuration reported **122/122 tests pass** for the
+  original 20-symbol scope.
 - Coverage measured with gcovr:
   - `core`: approximately **88%** line coverage;
   - `sim`: approximately **90%** line coverage;
