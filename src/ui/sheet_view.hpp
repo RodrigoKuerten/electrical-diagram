@@ -20,6 +20,7 @@ public:
   [[nodiscard]] int zoomPercent() const;
   void setZoomPercent(int percent);
   void fitToPage();
+  void fitToWorkspace();
   void zoomIn();
   void zoomOut();
   void centerOnComponent(ComponentId id);

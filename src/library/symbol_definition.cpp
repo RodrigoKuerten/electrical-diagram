@@ -274,44 +274,86 @@ std::vector<std::string> SymbolLibrary::categories() const {
 
 std::string SymbolLibrary::defaultTagBase(std::string_view type) {
   using namespace component_type;
-  if (type == kSupplyAc3 || type == kSupplyAc1 || type == kSupplyDc) {
+  const auto starts = [type](std::string_view prefix) {
+    return type.size() >= prefix.size() && type.substr(0, prefix.size()) == prefix;
+  };
+  if (type == kSupplyAc3 || type == kSupplyAc1 || type == kSupplyDc || starts("supply_")) {
     return "X1";
   }
-  if (type == kFuse || type == kThermalRelay) {
+  if (type == kFuse || type == kThermalRelay || starts("fuse") || starts("contact_thermal")) {
     return "F1";
   }
-  if (type == kBreaker) {
+  if (type == kBreaker || starts("breaker") || starts("rcd_") || type == "motor_breaker_3p") {
     return "Q1";
   }
-  if (type == kContactorCoil) {
+  if (type == kContactorCoil || starts("contactor_coil") || type == "contactor_combo") {
     return "KM1";
   }
-  if (type == kContactorNo || type == kContactorAuxNo || type == kContactorAuxNc) {
-    return "KM1.1";
+  if (starts("relay_coil") || type == "relay_combo" || type == "teleruptor") {
+    return "K1";
   }
-  if (type == kPushbuttonNo || type == kPushbuttonNc) {
-    return "S1";
+  if (starts("solenoid_valve")) {
+    return "YV1";
   }
-  if (type == kEmergencyStop) {
-    return "S0";
-  }
-  if (type == kSelectorSwitch) {
-    return "SEL1";
-  }
-  if (type == kTimerOn || type == kTimerOff) {
-    return "TM1";
-  }
-  if (type == kPilotLamp) {
+  if (type == "horn") {
     return "H1";
   }
-  if (type == kMotor3ph) {
+  if (type == kContactorNo || type == kContactorAuxNo || type == kContactorAuxNc ||
+      starts("contactor_aux") || starts("relay_contact") || starts("contact_") ||
+      starts("contactor_")) {
+    return "KM1.1";
+  }
+  if (type == kPushbuttonNo || type == kPushbuttonNc || starts("pushbutton_")) {
+    return "S1";
+  }
+  if (type == kEmergencyStop || starts("mushroom_")) {
+    return "S0";
+  }
+  if (type == kSelectorSwitch || starts("selector_")) {
+    return "SEL1";
+  }
+  if (type == kTimerOn || type == kTimerOff || starts("timer_")) {
+    return "TM1";
+  }
+  if (starts("flasher") || starts("counter") || starts("time_switch")) {
+    return "KT1";
+  }
+  if (type == kPilotLamp || starts("pilot_lamp") || starts("lamp_") || starts("led")) {
+    return "H1";
+  }
+  if (type == kMotor3ph || starts("motor_") || type == "linear_actuator") {
     return "M1";
   }
-  if (type == kTerminal) {
+  if (type == kTerminal || starts("terminal") || starts("cable") || type == "junction") {
     return "XT1";
   }
   if (type == kLabelBox) {
     return "TXT1";
+  }
+  if (starts("logic_") || starts("display_")) {
+    return "U1";
+  }
+  if (starts("plc_") || starts("arduino")) {
+    return "PLC1";
+  }
+  if (starts("pneumatic_valve")) {
+    return "YV1";
+  }
+  if (starts("pneumatic_") || starts("valve_")) {
+    return "M1";
+  }
+  if (starts("meter_")) {
+    return "P1";
+  }
+  if (starts("grafcet_")) {
+    return "E1";
+  }
+  if (starts("sensor_") || starts("limit_") || starts("pressure_") || starts("vacuum_") ||
+      starts("thermostat_") || starts("float_") || starts("reed_")) {
+    return "S1";
+  }
+  if (starts("switch_")) {
+    return "S1";
   }
   return "X1";
 }

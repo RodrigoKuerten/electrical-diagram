@@ -205,6 +205,7 @@ SimFrame SimulationWorker::makeFrame() const {
     item.selector_position = state.selector_position;
     item.input_active = state.input_active;
     item.tripped = state.tripped;
+    item.logic_output = state.logic_output;
     frame.states.insert(id.value(), item);
   }
   for (const WireId wire : simulator_->liveWires()) {

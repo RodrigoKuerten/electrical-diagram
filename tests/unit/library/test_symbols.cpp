@@ -23,7 +23,7 @@ TEST(SymbolLibraryTest, LoadsAllRequiredDefinitions) {
   SymbolLibrary library;
   const auto result = library.loadFromDirectory(symbolDirectory());
   ASSERT_TRUE(result) << result.error().toString();
-  EXPECT_EQ(library.definitions().size(), 20U);
+  EXPECT_GE(library.definitions().size(), 20U);
   for (const std::string_view type :
        {component_type::kSupplyAc3,      component_type::kSupplyAc1,
         component_type::kSupplyDc,       component_type::kFuse,

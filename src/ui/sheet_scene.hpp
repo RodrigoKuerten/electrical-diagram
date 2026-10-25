@@ -48,6 +48,8 @@ public:
   [[nodiscard]] SymbolRenderCache* renderCache() const { return render_cache_; }
   [[nodiscard]] SheetId sheetId() const { return sheet_id_; }
   [[nodiscard]] QRectF pageRect() const;
+  // Usable drawing area. It is never smaller than the printed page, but may be larger.
+  [[nodiscard]] QRectF workspaceRect() const;
   [[nodiscard]] QString sheetName() const;
 
   void setSheet(SheetId id);

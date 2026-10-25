@@ -101,6 +101,8 @@ private:
   void runValidation();
   void navigateTo(quint64 component, bool has_component, quint64 wire);
   void showPreferences();
+  void showWorkspaceSizeDialog();
+  void resizeWorkspaceBy(double dw, double dh);
 
   void exportPng();
   void exportSvg();
@@ -171,6 +173,12 @@ private:
   QAction* zoom_in_action_ = nullptr;
   QAction* zoom_out_action_ = nullptr;
   QAction* fit_action_ = nullptr;
+  QAction* fit_workspace_action_ = nullptr;
+  QAction* workspace_size_action_ = nullptr;
+  QAction* workspace_wider_action_ = nullptr;
+  QAction* workspace_narrower_action_ = nullptr;
+  QAction* workspace_taller_action_ = nullptr;
+  QAction* workspace_shorter_action_ = nullptr;
   QAction* grid_action_ = nullptr;
   QAction* wire_mode_action_ = nullptr;
   QAction* run_action_ = nullptr;

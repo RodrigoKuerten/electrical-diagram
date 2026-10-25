@@ -7,30 +7,60 @@
 
 namespace fiovivo::ui {
 
+namespace {
+
+[[nodiscard]] bool startsWith(std::string_view value, std::string_view prefix) {
+  return value.size() >= prefix.size() && value.substr(0, prefix.size()) == prefix;
+}
+
+[[nodiscard]] bool isSensorLike(const Component& component) {
+  return startsWith(component.type, "sensor_") || startsWith(component.type, "pressure_") ||
+         startsWith(component.type, "vacuum_") || startsWith(component.type, "thermostat_") ||
+         startsWith(component.type, "float_") || startsWith(component.type, "reed_") ||
+         startsWith(component.type, "limit_");
+}
+
+[[nodiscard]] bool isSwitchLike(const Component& component) {
+  return startsWith(component.type, "switch_") || startsWith(component.type, "mushroom_") ||
+         isSensorLike(component);
+}
+
+[[nodiscard]] bool isSelectorType(std::string_view type) {
+  return type == component_type::kSelectorSwitch || startsWith(type, "selector_");
+}
+
+} // namespace
+
 std::string simulationStateKey(const Component& component, const SimItemState& state) {
   using namespace component_type;
-  if (component.type == kContactorNo || component.type == kContactorAuxNo ||
-      component.type == kContactorAuxNc) {
+  if (isContactorContact(component.type)) {
     return state.closed ? "active" : std::string{};
   }
-  if (component.type == kPushbuttonNo || component.type == kPushbuttonNc ||
-      component.type == kEmergencyStop) {
+  if (isPushbutton(component.type) || isSwitchLike(component) || component.type == kEmergencyStop ||
+      isSensorLike(component)) {
     return state.input_active ? "active" : std::string{};
   }
-  if (component.type == kFuse) {
+  if (component.type == kFuse || startsWith(component.type, "fuse")) {
     return state.tripped ? "blown" : std::string{};
   }
-  if (component.type == kBreaker || component.type == kThermalRelay) {
+  if (component.type == kBreaker || startsWith(component.type, "breaker") ||
+      startsWith(component.type, "rcd_") || component.type == "motor_breaker_3p" ||
+      component.type == kThermalRelay) {
     return state.tripped ? "tripped" : std::string{};
   }
-  if (component.type == kSelectorSwitch) {
+  if (isSelectorType(component.type)) {
     return "position_" + std::to_string(std::max(1, state.selector_position));
   }
-  if (component.type == kTimerOn || component.type == kTimerOff) {
+  if (isTimer(component.type)) {
     return state.timer_output ? "active" : std::string{};
   }
-  if (component.type == kContactorCoil || component.type == kPilotLamp ||
-      component.type == kMotor3ph) {
+  if (startsWith(component.type, "logic_") || startsWith(component.type, "display_")) {
+    return state.logic_output ? "active" : std::string{};
+  }
+  if (isCoil(component.type) || component.type == kPilotLamp || component.type == kMotor3ph ||
+      startsWith(component.type, "motor_") || startsWith(component.type, "lamp_") ||
+      component.type == "buzzer" || component.type == "siren" || component.type == "bell" ||
+      component.type == "horn" || component.type == "led" || component.type == "linear_actuator") {
     return state.energized ? "active" : std::string{};
   }
   return {};
@@ -38,24 +68,28 @@ std::string simulationStateKey(const Component& component, const SimItemState& s
 
 QString componentStateText(const Component& component, const SimItemState& state) {
   using namespace component_type;
-  if (component.type == kTimerOn || component.type == kTimerOff) {
+  if (isTimer(component.type)) {
     return state.timer_output ? QCoreApplication::translate("Simulation", "Timed out")
                               : QCoreApplication::translate("Simulation", "Timing");
   }
-  if (component.type == kContactorCoil) {
+  if (startsWith(component.type, "logic_")) {
+    return state.logic_output ? QCoreApplication::translate("Simulation", "Output ON")
+                              : QCoreApplication::translate("Simulation", "Output OFF");
+  }
+  if (isCoil(component.type)) {
     return state.energized ? QCoreApplication::translate("Simulation", "Energized")
                            : QCoreApplication::translate("Simulation", "De-energized");
   }
-  if (component.type == kContactorNo || component.type == kContactorAuxNo ||
-      component.type == kContactorAuxNc) {
+  if (isContactorContact(component.type)) {
     return state.closed ? QCoreApplication::translate("Simulation", "Closed")
                         : QCoreApplication::translate("Simulation", "Open");
   }
-  if (component.type == kPilotLamp) {
+  if (component.type == kPilotLamp || startsWith(component.type, "lamp_") ||
+      component.type == "led") {
     return state.energized ? QCoreApplication::translate("Simulation", "Lit")
                            : QCoreApplication::translate("Simulation", "Off");
   }
-  if (component.type == kMotor3ph) {
+  if (component.type == kMotor3ph || startsWith(component.type, "motor_")) {
     return state.energized ? QCoreApplication::translate("Simulation", "Running")
                            : QCoreApplication::translate("Simulation", "Stopped");
   }
@@ -63,20 +97,24 @@ QString componentStateText(const Component& component, const SimItemState& state
     return state.input_active ? QCoreApplication::translate("Simulation", "Triggered (latched)")
                               : QCoreApplication::translate("Simulation", "Released");
   }
-  if (component.type == kPushbuttonNo || component.type == kPushbuttonNc) {
+  if (isPushbutton(component.type) || isSwitchLike(component)) {
     return state.input_active ? QCoreApplication::translate("Simulation", "Pressed")
                               : QCoreApplication::translate("Simulation", "Released");
   }
-  if (component.type == kSelectorSwitch) {
+  if (isSelectorType(component.type)) {
     return QCoreApplication::translate("Simulation", "Position %1").arg(state.selector_position);
   }
-  if (component.type == kFuse) {
+  if (component.type == kFuse || startsWith(component.type, "fuse")) {
     return state.tripped ? QCoreApplication::translate("Simulation", "Blown")
                          : QCoreApplication::translate("Simulation", "Intact");
   }
-  if (component.type == kBreaker || component.type == kThermalRelay) {
+  if (component.type == kBreaker || startsWith(component.type, "breaker") ||
+      startsWith(component.type, "rcd_") || component.type == kThermalRelay) {
     return state.tripped ? QCoreApplication::translate("Simulation", "Tripped")
                          : QCoreApplication::translate("Simulation", "Ready");
+  }
+  if (state.energized || state.closed || state.input_active) {
+    return QCoreApplication::translate("Simulation", "Active");
   }
   return QCoreApplication::translate("Simulation", "No electrical state");
 }
@@ -138,6 +176,33 @@ QString categoryText(const std::string& category) {
   }
   if (category == "annotations") {
     return QCoreApplication::translate("SymbolCategory", "Annotations");
+  }
+  if (category == "relays") {
+    return QCoreApplication::translate("SymbolCategory", "Relays");
+  }
+  if (category == "contacts") {
+    return QCoreApplication::translate("SymbolCategory", "Contacts");
+  }
+  if (category == "sensors") {
+    return QCoreApplication::translate("SymbolCategory", "Sensors");
+  }
+  if (category == "power") {
+    return QCoreApplication::translate("SymbolCategory", "Power");
+  }
+  if (category == "logic") {
+    return QCoreApplication::translate("SymbolCategory", "Logic");
+  }
+  if (category == "plc") {
+    return QCoreApplication::translate("SymbolCategory", "PLC and I/O");
+  }
+  if (category == "pneumatic") {
+    return QCoreApplication::translate("SymbolCategory", "Pneumatics");
+  }
+  if (category == "measurement") {
+    return QCoreApplication::translate("SymbolCategory", "Measurement");
+  }
+  if (category == "grafcet") {
+    return QCoreApplication::translate("SymbolCategory", "GRAFCET");
   }
   return QString::fromStdString(category);
 }

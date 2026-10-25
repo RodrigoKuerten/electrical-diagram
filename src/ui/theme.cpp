@@ -352,6 +352,7 @@ const std::vector<std::pair<ThemeToken, ThemeToken>>& contrastPairs() {
 std::map<QString, QString> symbolColorOverrides(const ThemePalette& palette) {
   return {
       {QStringLiteral("#1f2933"), palette.color(ThemeToken::SymbolStroke).name()},
+      {QStringLiteral("#1f5f9e"), palette.color(ThemeToken::TextSecondary).name()},
       {QStringLiteral("#f2b134"), palette.color(ThemeToken::SymbolActive).name()},
       {QStringLiteral("#f7d154"), palette.color(ThemeToken::SymbolActive).name()},
       {QStringLiteral("#f2d27a"), palette.color(ThemeToken::SymbolActive).name()},

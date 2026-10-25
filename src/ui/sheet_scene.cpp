@@ -71,6 +71,17 @@ QRectF SheetScene::pageRect() const {
   return QRectF(0.0, 0.0, size.x, size.y);
 }
 
+QRectF SheetScene::workspaceRect() const {
+  const QRectF page = pageRect();
+  const Sheet* current = sheet();
+  if (current == nullptr) {
+    return page;
+  }
+  const Vec2 configured = current->setup.workspace_size;
+  return QRectF(
+      0.0, 0.0, std::max(page.width(), configured.x), std::max(page.height(), configured.y));
+}
+
 QString SheetScene::sheetName() const {
   const Sheet* current = sheet();
   return current == nullptr ? QString{} : QString::fromStdString(current->name);
@@ -159,7 +170,7 @@ void SheetScene::rebuild() {
     }
   }
 
-  setSceneRect(pageRect().adjusted(-20.0, -20.0, 20.0, 20.0));
+  setSceneRect(workspaceRect().adjusted(-20.0, -20.0, 20.0, 20.0));
   for (ComponentItem* item : std::as_const(component_items_)) {
     item->setSimulationEnabled(simulation_interactive_);
   }
@@ -303,7 +314,17 @@ void SheetScene::drawBackground(QPainter* painter, const QRectF& rect) {
     return;
   }
 
+  const QRectF workspace = workspaceRect();
   painter->setRenderHint(QPainter::Antialiasing, false);
+  if (!transparent_export && workspace != page) {
+    // A larger workspace is drawn as a dashed extension around the paper. Components keep
+    // their scene coordinates; only the visible/scrollable drawing area grows.
+    QPen workspace_pen(theme_.color(ThemeToken::CanvasBorder), 0.5, Qt::DashLine);
+    workspace_pen.setCosmetic(true);
+    painter->setPen(workspace_pen);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawRect(workspace);
+  }
   if (!transparent_export) {
     painter->setPen(Qt::NoPen);
     painter->setBrush(theme_.color(ThemeToken::SheetShadow));

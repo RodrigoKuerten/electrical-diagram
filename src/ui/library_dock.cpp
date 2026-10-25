@@ -88,6 +88,9 @@ void LibraryDock::buildTree() {
   std::map<std::string, std::vector<const SymbolDefinition*>> categories;
   for (const auto& [type, definition] : library_.definitions()) {
     (void)type;
+    if (definition.category == "legacy") {
+      continue;
+    }
     categories[definition.category].push_back(&definition);
   }
   for (auto& [category, definitions] : categories) {

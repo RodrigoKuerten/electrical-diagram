@@ -16,6 +16,7 @@ struct SimItemState {
   int selector_position = 1;
   bool input_active = false;
   bool tripped = false;
+  bool logic_output = false;
 };
 
 struct SimFrame {

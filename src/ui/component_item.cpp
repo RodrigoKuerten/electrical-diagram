@@ -24,14 +24,25 @@
 namespace fiovivo::ui {
 namespace {
 
-[[nodiscard]] bool isContact(std::string_view type) {
-  return type == component_type::kContactorNo || type == component_type::kContactorAuxNo ||
-         type == component_type::kContactorAuxNc;
+[[nodiscard]] bool startsWith(std::string_view value, std::string_view prefix) {
+  return value.size() >= prefix.size() && value.substr(0, prefix.size()) == prefix;
+}
+
+[[nodiscard]] bool isSelectorType(std::string_view type) {
+  return type == component_type::kSelectorSwitch || startsWith(type, "selector_");
 }
 
 [[nodiscard]] bool isProtection(std::string_view type) {
   return type == component_type::kFuse || type == component_type::kBreaker ||
-         type == component_type::kThermalRelay;
+         type == component_type::kThermalRelay || startsWith(type, "fuse") ||
+         startsWith(type, "breaker") || startsWith(type, "rcd_") || type == "motor_breaker_3p";
+}
+
+[[nodiscard]] bool isSwitchInput(std::string_view type) {
+  return startsWith(type, "switch_") || startsWith(type, "limit_") || startsWith(type, "sensor_") ||
+         startsWith(type, "pressure_") || startsWith(type, "vacuum_") ||
+         startsWith(type, "thermostat_") || startsWith(type, "float_") ||
+         startsWith(type, "reed_") || startsWith(type, "mushroom_");
 }
 
 [[nodiscard]] QString
@@ -40,33 +51,32 @@ shortState(const Component& component, const SimItemState& state, bool has_state
     return {};
   }
   using namespace component_type;
-  if (component.type == kContactorCoil) {
+  if (isContactorContact(component.type)) {
+    return state.closed ? QCoreApplication::translate("ComponentItem", "CLOSED")
+                        : QCoreApplication::translate("ComponentItem", "OPEN");
+  }
+  if (isPushbutton(component.type) || isSwitchInput(component.type) ||
+      component.type == kEmergencyStop) {
+    return state.input_active ? QCoreApplication::translate("ComponentItem", "ON") : QString{};
+  }
+  if (isCoil(component.type) || component.type == kPilotLamp ||
+      startsWith(component.type, "lamp_") || startsWith(component.type, "motor_") ||
+      component.type == kMotor3ph || component.type == "buzzer" || component.type == "siren" ||
+      component.type == "bell" || component.type == "horn" || component.type == "led") {
     return state.energized ? QCoreApplication::translate("ComponentItem", "ON")
                            : QCoreApplication::translate("ComponentItem", "OFF");
-  }
-  if (component.type == kPilotLamp) {
-    return state.energized ? QCoreApplication::translate("ComponentItem", "ON")
-                           : QCoreApplication::translate("ComponentItem", "OFF");
-  }
-  if (component.type == kMotor3ph) {
-    return state.energized ? QCoreApplication::translate("ComponentItem", "RUN")
-                           : QCoreApplication::translate("ComponentItem", "STOP");
-  }
-  if (component.type == kEmergencyStop) {
-    return state.input_active ? QCoreApplication::translate("ComponentItem", "STOP") : QString{};
   }
   if (component.type == kFuse && state.tripped) {
     return QCoreApplication::translate("ComponentItem", "BLOWN");
   }
-  if ((component.type == kBreaker || component.type == kThermalRelay) && state.tripped) {
+  if (isProtection(component.type) && state.tripped) {
     return QCoreApplication::translate("ComponentItem", "TRIP");
   }
-  if (isContact(component.type)) {
-    return state.closed ? QCoreApplication::translate("ComponentItem", "CLOSED")
-                        : QCoreApplication::translate("ComponentItem", "OPEN");
-  }
-  if (component.type == kSelectorSwitch) {
+  if (isSelectorType(component.type)) {
     return QCoreApplication::translate("ComponentItem", "P%1").arg(state.selector_position);
+  }
+  if (startsWith(component.type, "logic_")) {
+    return state.logic_output ? QCoreApplication::translate("ComponentItem", "ON") : QString{};
   }
   return {};
 }
@@ -210,11 +220,13 @@ void ComponentItem::paint(QPainter* painter,
   if (!status.isEmpty()) {
     tag += QStringLiteral(" [%1]").arg(status);
   }
-  const auto draw_label = [&](const QString& text, const QFont& font, const QRectF& area) {
+  const auto draw_label = [&](const QString& text, const QFont& font, const QRectF& area,
+                              bool right_aligned) {
     const QFontMetricsF metrics(font);
     const QRectF text_bounds = metrics.boundingRect(text);
-    const QPointF origin(item.size.x / 2.0 - text_bounds.center().x(),
-                         area.center().y() - text_bounds.center().y());
+    const double x = right_aligned ? area.right() - text_bounds.right()
+                                   : area.center().x() - text_bounds.center().x();
+    const QPointF origin(x, area.center().y() - text_bounds.center().y());
     QPainterPath path;
     path.addText(origin, font, text);
     // Draw a thin white outline instead of an opaque label background. Wires remain visible
@@ -228,14 +240,16 @@ void ComponentItem::paint(QPainter* painter,
     painter->drawPath(path);
   };
   if (item.labels.show_tag) {
-    draw_label(tag, tag_font, QRectF(-55.0, -13.0, item.size.x + 110.0, 8.5));
+    // CADe_SIMU prints the reference immediately to the left of the symbol, vertically
+    // centred.  The old implementation always centred it above the symbol, which pushed
+    // references into neighbouring devices on dense CADe-size drawings.
+    draw_label(tag, tag_font, QRectF(-42.0, item.size.y / 2.0 - 4.0, 40.0, 8.0), true);
   }
   if (item.labels.show_description && !item.description.empty()) {
     QFont description_font = QApplication::font();
     description_font.setPointSizeF(3.5);
-    draw_label(QString::fromStdString(item.description),
-               description_font,
-               QRectF(-45.0, item.size.y + 3.0, item.size.x + 90.0, 7.0));
+    draw_label(QString::fromStdString(item.description), description_font,
+               QRectF(-45.0, item.size.y + 3.0, item.size.x + 90.0, 7.0), false);
   }
 
   if (isSelected()) {
@@ -282,7 +296,7 @@ void ComponentItem::mousePressEvent(QGraphicsSceneMouseEvent* event) {
   if (simulation_enabled_) {
     const Component& item = component();
     const SimItemState state = scene_->simulationState(id_).value_or(SimItemState{});
-    if (isPushbutton(item.type)) {
+    if (isPushbutton(item.type) || isSwitchInput(item.type)) {
       if (parameterString(item.parameters, "action", "") == "reset_emergency") {
         scene_->requestEmergencyReset();
         setSelected(true);
@@ -330,7 +344,7 @@ void ComponentItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
   if (simulation_enabled_ && pressed_for_simulation_) {
     pressed_for_simulation_ = false;
     const Component& item = component();
-    if (isPushbutton(item.type) &&
+    if ((isPushbutton(item.type) || isSwitchInput(item.type)) &&
         parameterString(item.parameters, "mode", "momentary") != "maintained") {
       scene_->requestInput(id_.value(), false);
     }

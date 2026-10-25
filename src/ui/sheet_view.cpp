@@ -81,6 +81,27 @@ void SheetView::fitToPage() {
   emit zoomChanged(zoomPercent());
 }
 
+void SheetView::fitToWorkspace() {
+  if (sheet_scene_ == nullptr) {
+    return;
+  }
+  const QRectF target = sheet_scene_->workspaceRect().adjusted(-5.0, -5.0, 5.0, 5.0);
+  if (target.isEmpty()) {
+    return;
+  }
+  setTransformationAnchor(QGraphicsView::NoAnchor);
+  resetTransform();
+  fitInView(target, Qt::KeepAspectRatio);
+  const double fitted = transform().m11() / kBaseScale;
+  zoom_ = std::clamp(fitted, kMinZoom, kMaxZoom);
+  if (std::abs(fitted - zoom_) > 0.001) {
+    setTransform(QTransform::fromScale(kBaseScale * zoom_, kBaseScale * zoom_));
+  }
+  setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+  centerOn(target.center());
+  emit zoomChanged(zoomPercent());
+}
+
 void SheetView::zoomIn() {
   const QPointF center = mapToScene(viewport()->rect().center());
   setTransformationAnchor(QGraphicsView::NoAnchor);

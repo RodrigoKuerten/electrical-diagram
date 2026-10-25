@@ -55,6 +55,7 @@
 #include <QPrinter>
 #include <QShowEvent>
 #include <QSignalBlocker>
+#include <QSpinBox>
 #include <QStandardPaths>
 #include <QStatusBar>
 #include <QStringConverter>
@@ -69,6 +70,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <map>
 #include <memory>
 
 namespace fiovivo::ui {
@@ -241,7 +243,14 @@ void MainWindow::createActions() {
   zoom_out_action_ = new QAction(tr("Zoom &Out"), this);
   zoom_out_action_->setShortcut(QKeySequence::ZoomOut);
   fit_action_ = new QAction(tr("&Fit to Page"), this);
+  fit_workspace_action_ = new QAction(tr("Fit to &Workspace"), this);
   fit_action_->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_0));
+  workspace_size_action_ = new QAction(tr("&Workspace Size..."), this);
+  workspace_size_action_->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_W));
+  workspace_wider_action_ = new QAction(tr("Increase Canvas &Width"), this);
+  workspace_narrower_action_ = new QAction(tr("Decrease Canvas W&idth"), this);
+  workspace_taller_action_ = new QAction(tr("Increase Canvas &Height"), this);
+  workspace_shorter_action_ = new QAction(tr("Decrease Canvas Hei&ght"), this);
 
   grid_action_ = new QAction(tr("Show &Grid"), this);
   grid_action_->setCheckable(true);
@@ -279,6 +288,19 @@ void MainWindow::createActions() {
   connect(zoom_in_action_, &QAction::triggered, view_, &SheetView::zoomIn);
   connect(zoom_out_action_, &QAction::triggered, view_, &SheetView::zoomOut);
   connect(fit_action_, &QAction::triggered, view_, &SheetView::fitToPage);
+  connect(fit_workspace_action_, &QAction::triggered, view_, &SheetView::fitToWorkspace);
+  connect(workspace_size_action_, &QAction::triggered, this, &MainWindow::showWorkspaceSizeDialog);
+  connect(
+      workspace_wider_action_, &QAction::triggered, this, [this] { resizeWorkspaceBy(50.0, 0.0); });
+  connect(workspace_narrower_action_, &QAction::triggered, this, [this] {
+    resizeWorkspaceBy(-50.0, 0.0);
+  });
+  connect(workspace_taller_action_, &QAction::triggered, this, [this] {
+    resizeWorkspaceBy(0.0, 50.0);
+  });
+  connect(workspace_shorter_action_, &QAction::triggered, this, [this] {
+    resizeWorkspaceBy(0.0, -50.0);
+  });
   connect(grid_action_, &QAction::toggled, this, [this](bool checked) {
     settings_.setGridVisible(checked);
     scene_->setGridVisible(checked);
@@ -340,6 +362,13 @@ void MainWindow::createMenus() {
   view->addAction(zoom_in_action_);
   view->addAction(zoom_out_action_);
   view->addAction(fit_action_);
+  view->addAction(fit_workspace_action_);
+  view->addSeparator();
+  view->addAction(workspace_size_action_);
+  view->addAction(workspace_wider_action_);
+  view->addAction(workspace_narrower_action_);
+  view->addAction(workspace_taller_action_);
+  view->addAction(workspace_shorter_action_);
   view->addSeparator();
   view->addAction(grid_action_);
   view->addAction(wire_mode_action_);
@@ -354,6 +383,9 @@ void MainWindow::createMenus() {
   std::vector<const SymbolDefinition*> definitions;
   for (const auto& [type, definition] : library_->definitions()) {
     (void)type;
+    if (definition.category == "legacy") {
+      continue;
+    }
     definitions.push_back(&definition);
   }
   std::sort(definitions.begin(),
@@ -364,8 +396,17 @@ void MainWindow::createMenus() {
               }
               return left->display_name < right->display_name;
             });
+  std::map<std::string, QMenu*> category_menus;
   for (const SymbolDefinition* definition : definitions) {
-    QAction* action = symbols->addAction(QString::fromStdString(
+    QMenu* category_menu = nullptr;
+    const auto found = category_menus.find(definition->category);
+    if (found != category_menus.end()) {
+      category_menu = found->second;
+    } else {
+      category_menu = symbols->addMenu(categoryText(definition->category));
+      category_menus.emplace(definition->category, category_menu);
+    }
+    QAction* action = category_menu->addAction(QString::fromStdString(
         definition->displayName(QLocale().language() == QLocale::Portuguese)));
     const std::string type = definition->type;
     connect(action, &QAction::triggered, this, [this, type] {
@@ -433,6 +474,8 @@ void MainWindow::createToolbar() {
   toolbar->addAction(zoom_in_action_);
   toolbar->addAction(zoom_out_action_);
   toolbar->addAction(fit_action_);
+  toolbar->addAction(fit_workspace_action_);
+  toolbar->addAction(workspace_size_action_);
   toolbar->addSeparator();
   toolbar->addAction(run_action_);
   toolbar->addAction(step_action_);
@@ -1149,6 +1192,82 @@ void MainWindow::navigateTo(quint64 component, bool has_component, quint64 wire)
   view_->centerOnWire(wire_id);
   properties_panel_->show();
   properties_panel_->raise();
+}
+
+void MainWindow::showWorkspaceSizeDialog() {
+  Sheet* sheet = document_->currentSheet();
+  if (sheet == nullptr) {
+    return;
+  }
+  const Vec2 page = paperDimensions(sheet->setup.paper, sheet->setup.orientation);
+  const QRectF current = scene_->workspaceRect();
+
+  QDialog dialog(this);
+  dialog.setWindowTitle(tr("Workspace Size"));
+  auto* layout = new QFormLayout(&dialog);
+  auto* hint =
+      new QLabel(tr("The paper stays at %1 x %2 mm. The workspace can be larger so circuits extend "
+                    "beyond the printable page. Increasing it never moves existing components.")
+                     .arg(page.x, 0, 'f', 0)
+                     .arg(page.y, 0, 'f', 0),
+                 &dialog);
+  hint->setWordWrap(true);
+  layout->addRow(hint);
+  auto* width = new QSpinBox(&dialog);
+  width->setRange(static_cast<int>(page.x), 10000);
+  width->setSingleStep(10);
+  width->setSuffix(tr(" mm"));
+  width->setValue(static_cast<int>(std::lround(current.width())));
+  auto* height = new QSpinBox(&dialog);
+  height->setRange(static_cast<int>(page.y), 10000);
+  height->setSingleStep(10);
+  height->setSuffix(tr(" mm"));
+  height->setValue(static_cast<int>(std::lround(current.height())));
+  layout->addRow(tr("Width:"), width);
+  layout->addRow(tr("Height:"), height);
+  auto* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
+  layout->addRow(buttons);
+  connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+  connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+  if (dialog.exec() != QDialog::Accepted) {
+    return;
+  }
+  const Vec2 requested{static_cast<double>(width->value()), static_cast<double>(height->value())};
+  const SheetId sheet_id = sheet->id;
+  document_->mutate(tr("Resize workspace"), [sheet_id, requested](Diagram& diagram) {
+    if (Sheet* target = diagram.findSheet(sheet_id)) {
+      target->setup.workspace_size = requested;
+    }
+  });
+  appendOutput(tr("Workspace resized to %1 x %2 mm.")
+                   .arg(requested.x, 0, 'f', 0)
+                   .arg(requested.y, 0, 'f', 0));
+}
+
+void MainWindow::resizeWorkspaceBy(double dw, double dh) {
+  Sheet* sheet = document_->currentSheet();
+  if (sheet == nullptr) {
+    return;
+  }
+  const Vec2 page = paperDimensions(sheet->setup.paper, sheet->setup.orientation);
+  const QRectF current = scene_->workspaceRect();
+  const Vec2 requested{
+      std::clamp(current.width() + dw, page.x, 10000.0),
+      std::clamp(current.height() + dh, page.y, 10000.0),
+  };
+  if (std::abs(requested.x - current.width()) < 0.5 &&
+      std::abs(requested.y - current.height()) < 0.5) {
+    showStatusMessage(tr("Workspace is already at the minimum page size."));
+    return;
+  }
+  const SheetId sheet_id = sheet->id;
+  document_->mutate(tr("Resize workspace"), [sheet_id, requested](Diagram& diagram) {
+    if (Sheet* target = diagram.findSheet(sheet_id)) {
+      target->setup.workspace_size = requested;
+    }
+  });
+  showStatusMessage(
+      tr("Workspace: %1 x %2 mm").arg(requested.x, 0, 'f', 0).arg(requested.y, 0, 'f', 0));
 }
 
 void MainWindow::showPreferences() {
