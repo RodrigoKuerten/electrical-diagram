@@ -28,6 +28,10 @@ struct ComponentState {
   int selector_position = 1;
   bool input_active = false;
   bool tripped = false;
+  bool last_energized = false;
+  int counter = 0;
+  bool logic_output = false;
+  bool last_input = false;
 
   friend bool operator==(const ComponentState&, const ComponentState&) = default;
 };

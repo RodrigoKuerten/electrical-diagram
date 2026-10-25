@@ -55,6 +55,34 @@ private:
   return component.type + ":" + pin.name;
 }
 
+// CADe_SIMU uses several terminal naming conventions for coils (A1/A2, X1/X2, ...).
+// Prefer the traditional pair but fall back to the pin roles so exact CADe artwork keeps
+// working with the simulator and validator.
+[[nodiscard]] std::pair<const Pin*, const Pin*> coilTerminals(const Component& component) {
+  const Pin* first = component.findPin("A1");
+  const Pin* second = component.findPin("A2");
+  if (first != nullptr && second != nullptr) {
+    return {first, second};
+  }
+  first = nullptr;
+  second = nullptr;
+  for (const Pin& pin : component.pins) {
+    if (first == nullptr && pin.role == PinRole::CoilInput) {
+      first = &pin;
+    } else if (second == nullptr && pin.role == PinRole::CoilOutput) {
+      second = &pin;
+    }
+  }
+  if (first != nullptr && second != nullptr) {
+    return {first, second};
+  }
+  // Last resort: the first two pins in drawing order.
+  if (component.pins.size() >= 2) {
+    return {&component.pins[0], &component.pins[1]};
+  }
+  return {nullptr, nullptr};
+}
+
 [[nodiscard]] std::optional<std::pair<PinRef, PinRef>> passThroughPair(const Component& component) {
   using namespace component_type;
   const auto rolePin = [&component](PinRole role) -> const Pin* {
@@ -307,8 +335,7 @@ bool coilHasSupplyPath(const Diagram& diagram, const Component& coil) {
     return false;
   }
   ConnectivityGraph graph = buildGraph(*sheet);
-  const Pin* a1 = coil.findPin("A1");
-  const Pin* a2 = coil.findPin("A2");
+  const auto [a1, a2] = coilTerminals(coil);
   if (a1 == nullptr || a2 == nullptr) {
     return false;
   }
@@ -515,12 +542,11 @@ ValidationReport validate(const Diagram& diagram) {
       if (!isCoil(component.type)) {
         continue;
       }
-      const Pin* a1 = component.findPin("A1");
-      const Pin* a2 = component.findPin("A2");
+      const auto [a1, a2] = coilTerminals(component);
       if (a1 == nullptr || a2 == nullptr) {
         report.add({ProblemSeverity::Warning,
                     ProblemCode::MissingSupplyPath,
-                    "Coil has no A1/A2 pin pair: " + component.tag,
+                    "Coil has no usable terminal pair: " + component.tag,
                     sheet.id,
                     component.id,
                     std::nullopt,

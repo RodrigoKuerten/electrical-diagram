@@ -487,5 +487,262 @@ TEST(SimulatorTest, InputSettersValidateComponentTypes) {
   EXPECT_FALSE(simulator.setInput(ComponentId{999}, true));
 }
 
+// ---------------------------------------------------------------------------
+// CADe_SIMU-style multi-pole and sensor components
+// ---------------------------------------------------------------------------
+
+namespace {
+
+Component makeThreePoleContactor(Diagram& diagram, std::string tag, Vec2 position,
+                                 std::string group) {
+  Component component = test::makeComponent(
+      diagram, "contactor_3p", std::move(tag), position,
+      {{"1", PinRole::ContactCommon, {10.0, 0.0}, true},
+       {"2", PinRole::ContactNo, {10.0, 40.0}, true},
+       {"3", PinRole::ContactCommon, {21.0, 0.0}, true},
+       {"4", PinRole::ContactNo, {21.0, 40.0}, true},
+       {"5", PinRole::ContactCommon, {32.0, 0.0}, true},
+       {"6", PinRole::ContactNo, {32.0, 40.0}, true}},
+      {42.0, 44.0});
+  component.parameters["label_group"] = group;
+  return component;
+}
+
+Component makeBreakerThreePole(Diagram& diagram, std::string tag, Vec2 position) {
+  Component component = test::makeComponent(
+      diagram, "breaker_3p", std::move(tag), position,
+      {{"1", PinRole::Terminal, {10.0, 0.0}, true}, {"2", PinRole::Terminal, {10.0, 40.0}, true},
+       {"3", PinRole::Terminal, {21.0, 0.0}, true}, {"4", PinRole::Terminal, {21.0, 40.0}, true},
+       {"5", PinRole::Terminal, {32.0, 0.0}, true}, {"6", PinRole::Terminal, {32.0, 40.0}, true}},
+      {42.0, 44.0});
+  return component;
+}
+
+Component makeInductiveSensor(Diagram& diagram, std::string tag, Vec2 position) {
+  return test::makeComponent(diagram, "sensor_inductive_no", std::move(tag), position,
+                             {{"1", PinRole::ContactCommon, {8.0, 4.0}, true},
+                              {"2", PinRole::ContactNo, {22.0, 4.0}, true}},
+                             {32.0, 44.0});
+}
+
+} // namespace
+
+TEST(CadeSimuComponentsTest, ThreePoleContactorSwitchesEveryPole) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId coil = bench.add(test::makeCoil(bench.diagram, "KM1", {0.0, 100.0}));
+  const ComponentId contactor =
+      bench.add(makeThreePoleContactor(bench.diagram, "KM1.1", {100.0, 0.0}, "KM1"));
+  const ComponentId l1 = bench.add(test::makeLamp(bench.diagram, "H1", {250.0, 0.0}));
+  const ComponentId l2 = bench.add(test::makeLamp(bench.diagram, "H2", {250.0, 100.0}));
+  const ComponentId l3 = bench.add(test::makeLamp(bench.diagram, "H3", {250.0, 200.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", coil, "A1").valid());
+  ASSERT_TRUE(bench.wire(coil, "A2", supply, "N").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", contactor, "1").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", contactor, "3").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", contactor, "5").valid());
+  ASSERT_TRUE(bench.wire(contactor, "2", l1, "A1").valid());
+  ASSERT_TRUE(bench.wire(contactor, "4", l2, "A1").valid());
+  ASSERT_TRUE(bench.wire(contactor, "6", l3, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", l1, "A2").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", l2, "A2").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", l3, "A2").valid());
+
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(coil).energized);
+  EXPECT_TRUE(simulator.state(contactor).closed);
+  EXPECT_TRUE(simulator.state(l1).energized);
+  EXPECT_TRUE(simulator.state(l2).energized);
+  EXPECT_TRUE(simulator.state(l3).energized);
+}
+
+TEST(CadeSimuComponentsTest, ThreePoleBreakerTripsEveryPole) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId breaker =
+      bench.add(makeBreakerThreePole(bench.diagram, "Q1", {80.0, 0.0}));
+  const ComponentId lamp = bench.add(test::makeLamp(bench.diagram, "H1", {250.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", breaker, "1").valid());
+  ASSERT_TRUE(bench.wire(breaker, "2", lamp, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp).energized);
+  ASSERT_TRUE(simulator.setTripped(breaker, true));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_FALSE(simulator.state(lamp).energized);
+  ASSERT_TRUE(simulator.setTripped(breaker, false));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp).energized);
+}
+
+TEST(CadeSimuComponentsTest, InductiveSensorActsAsDigitalInput) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId sensor =
+      bench.add(makeInductiveSensor(bench.diagram, "B1", {80.0, 0.0}));
+  const ComponentId lamp = bench.add(test::makeLamp(bench.diagram, "H1", {250.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", sensor, "1").valid());
+  ASSERT_TRUE(bench.wire(sensor, "2", lamp, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_FALSE(simulator.state(lamp).energized);
+  ASSERT_TRUE(simulator.setInput(sensor, true));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp).energized);
+  ASSERT_TRUE(simulator.setInput(sensor, false));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_FALSE(simulator.state(lamp).energized);
+}
+
+TEST(CadeSimuComponentsTest, ThreePositionSelectorDrivesOneOutputAtATime) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  Component selector_component = test::makeComponent(
+      bench.diagram, "selector_3pos", "S1", {80.0, 0.0},
+      {{"1", PinRole::ContactCommon, {23.0, 4.0}, true},
+       {"2", PinRole::ContactNo, {7.0, 40.0}, true},
+       {"3", PinRole::ContactNo, {23.0, 40.0}, true},
+       {"4", PinRole::ContactNo, {39.0, 40.0}, true}},
+      {46.0, 44.0});
+  const ComponentId selector = bench.add(selector_component);
+  const ComponentId l2 = bench.add(test::makeLamp(bench.diagram, "H2", {250.0, 0.0}));
+  const ComponentId l3 = bench.add(test::makeLamp(bench.diagram, "H3", {250.0, 100.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", selector, "1").valid());
+  ASSERT_TRUE(bench.wire(selector, "2", l2, "A1").valid());
+  ASSERT_TRUE(bench.wire(selector, "3", l3, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", l2, "A2").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", l3, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(l2).energized);
+  EXPECT_FALSE(simulator.state(l3).energized);
+  ASSERT_TRUE(simulator.setSelectorPosition(selector, 2));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_FALSE(simulator.state(l2).energized);
+  EXPECT_TRUE(simulator.state(l3).energized);
+}
+
+TEST(CadeSimuComponentsTest, BuzzerAndRelayCoilAreLoads) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId buzzer = bench.add(test::makeComponent(
+      bench.diagram, "buzzer", "H1", {80.0, 0.0},
+      {{"A1", PinRole::CoilInput, {10.0, 4.0}, true},
+       {"A2", PinRole::CoilOutput, {10.0, 30.0}, true}},
+      {30.0, 34.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", buzzer, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", buzzer, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(buzzer).energized);
+}
+
+TEST(CadeSimuComponentsTest, LogicGateDrivesACoil) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId gate = bench.add(test::makeComponent(
+      bench.diagram, "logic_and", "U1", {80.0, 0.0},
+      {{"IN1", PinRole::SignalIn, {6.0, 10.0}, true},
+       {"IN2", PinRole::SignalIn, {6.0, 22.0}, true},
+       {"OUT", PinRole::SignalOut, {34.0, 15.0}, true},
+       {"0V", PinRole::SignalIn, {20.0, 30.0}, false}},
+      {40.0, 34.0}));
+  const ComponentId coil = bench.add(test::makeCoil(bench.diagram, "KM1", {200.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", gate, "IN1").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", gate, "IN2").valid());
+  ASSERT_TRUE(bench.wire(gate, "OUT", coil, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", coil, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(gate).logic_output);
+  EXPECT_TRUE(simulator.state(coil).energized);
+}
+
+TEST(CadeSimuComponentsTest, ThermalAuxiliaryContactsFollowRelay) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId thermal = bench.add(test::makeThermalRelay(bench.diagram, "F1", {60.0, 0.0}));
+  Component nc = test::makeComponent(
+      bench.diagram, "contact_thermal_nc", "F1.1", {150.0, 0.0},
+      {{"95", PinRole::ContactCommon, {8.0, 4.0}, true},
+       {"96", PinRole::ContactNc, {8.0, 40.0}, true}},
+      {20.0, 44.0});
+  nc.parameters["label_group"] = "F1";
+  const ComponentId nc_id = bench.add(nc);
+  Component no = test::makeComponent(
+      bench.diagram, "contact_thermal_no", "F1.2", {250.0, 0.0},
+      {{"97", PinRole::ContactCommon, {8.0, 4.0}, true},
+       {"98", PinRole::ContactNo, {8.0, 40.0}, true}},
+      {20.0, 44.0});
+  no.parameters["label_group"] = "F1";
+  const ComponentId no_id = bench.add(no);
+  const ComponentId lamp_nc = bench.add(test::makeLamp(bench.diagram, "H1", {350.0, 0.0}));
+  const ComponentId lamp_no = bench.add(test::makeLamp(bench.diagram, "H2", {450.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", nc_id, "95").valid());
+  ASSERT_TRUE(bench.wire(nc_id, "96", lamp_nc, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp_nc, "A2").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", no_id, "97").valid());
+  ASSERT_TRUE(bench.wire(no_id, "98", lamp_no, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp_no, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp_nc).energized);
+  EXPECT_FALSE(simulator.state(lamp_no).energized);
+  ASSERT_TRUE(simulator.setTripped(thermal, true));
+  ASSERT_TRUE(simulator.step());
+  EXPECT_FALSE(simulator.state(lamp_nc).energized);
+  EXPECT_TRUE(simulator.state(lamp_no).energized);
+}
+
+TEST(CadeSimuComponentsTest, TimedContactFollowsTimerGroup) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  const ComponentId timer = bench.add(test::makeTimer(bench.diagram, true, "KT1", {60.0, 0.0}, 20));
+  Component contact = test::makeComponent(
+      bench.diagram, "contact_timed_on_no", "KT1.1", {250.0, 0.0},
+      {{"15", PinRole::ContactCommon, {8.0, 4.0}, true},
+       {"18", PinRole::ContactNo, {8.0, 40.0}, true}},
+      {20.0, 44.0});
+  contact.parameters["label_group"] = "KT1";
+  const ComponentId contact_id = bench.add(contact);
+  const ComponentId lamp = bench.add(test::makeLamp(bench.diagram, "H1", {350.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", timer, "A1").valid());
+  ASSERT_TRUE(bench.wire(timer, "A2", supply, "N").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", contact_id, "15").valid());
+  ASSERT_TRUE(bench.wire(contact_id, "18", lamp, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_FALSE(simulator.state(lamp).energized);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(lamp).energized);
+}
+
+TEST(CadeSimuComponentsTest, IntegratedContactorCoilAndContactsWorkTogether) {
+  Bench bench;
+  const ComponentId supply = bench.add(test::makeSupplyAc1(bench.diagram, "X1", {0.0, 0.0}));
+  Component combo = test::makeComponent(
+      bench.diagram, "contactor_combo", "KM1", {80.0, 0.0},
+      {{"A1", PinRole::CoilInput, {8.0, 10.0}, true},
+       {"A2", PinRole::CoilOutput, {8.0, 54.0}, true},
+       {"1", PinRole::ContactCommon, {26.0, 4.0}, true},
+       {"2", PinRole::ContactNo, {26.0, 62.0}, true}},
+      {74.0, 66.0});
+  const ComponentId combo_id = bench.add(combo);
+  const ComponentId lamp = bench.add(test::makeLamp(bench.diagram, "H1", {300.0, 0.0}));
+  ASSERT_TRUE(bench.wire(supply, "L", combo_id, "A1").valid());
+  ASSERT_TRUE(bench.wire(combo_id, "A2", supply, "N").valid());
+  ASSERT_TRUE(bench.wire(supply, "L", combo_id, "1").valid());
+  ASSERT_TRUE(bench.wire(combo_id, "2", lamp, "A1").valid());
+  ASSERT_TRUE(bench.wire(supply, "N", lamp, "A2").valid());
+  Simulator simulator(bench.diagram);
+  ASSERT_TRUE(simulator.step());
+  EXPECT_TRUE(simulator.state(combo_id).energized);
+  EXPECT_TRUE(simulator.state(lamp).energized);
+}
+
 } // namespace
 } // namespace fiovivo::sim

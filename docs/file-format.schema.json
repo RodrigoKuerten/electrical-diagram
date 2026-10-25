@@ -198,6 +198,12 @@
         "orientation": { "type": "string", "enum": ["landscape", "portrait"] },
         "margin": { "type": "number", "minimum": 0 },
         "show_frame": { "type": "boolean" },
+        "workspace": {
+          "type": "array",
+          "items": { "type": "number", "minimum": 0 },
+          "minItems": 2,
+          "maxItems": 2
+        },
         "components": {
           "type": "array",
           "items": { "$ref": "#/$defs/component" }

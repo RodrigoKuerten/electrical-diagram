@@ -22,47 +22,136 @@ constexpr std::string_view kStateInput = "input";
 constexpr std::string_view kStateTripped = "tripped";
 constexpr std::string_view kStatePosition = "position";
 
-[[nodiscard]] const Pin* pinByRole(const Component& component, PinRole role) {
-  for (const Pin& pin : component.pins) {
-    if (pin.role == role) {
-      return &pin;
-    }
-  }
-  return nullptr;
-}
-
 [[nodiscard]] const Pin* pinByName(const Component& component, std::string_view name) {
   return component.findPin(name);
 }
 
+[[nodiscard]] bool startsWithT(std::string_view value, std::string_view prefix) {
+  return value.size() >= prefix.size() && value.substr(0, prefix.size()) == prefix;
+}
+
 [[nodiscard]] bool isLamp(const Component& component) {
-  return component.type == component_type::kPilotLamp;
+  return component.type == component_type::kPilotLamp ||
+         startsWithT(component.type, "pilot_lamp") || startsWithT(component.type, "lamp_") ||
+         component.type == "led";
 }
 
 [[nodiscard]] bool isMotor(const Component& component) {
-  return component.type == component_type::kMotor3ph;
+  return component.type == component_type::kMotor3ph || startsWithT(component.type, "motor_") ||
+         component.type == "linear_actuator";
+}
+
+[[nodiscard]] bool isProtectionType(std::string_view type) {
+  return type == component_type::kFuse || type == component_type::kBreaker ||
+         startsWithT(type, "fuse") || startsWithT(type, "breaker") || startsWithT(type, "rcd_") ||
+         type == "motor_breaker_3p";
+}
+
+[[nodiscard]] bool isThermalRelayType(std::string_view type) {
+  return type == component_type::kThermalRelay;
+}
+
+[[nodiscard]] bool isSelectorType(std::string_view type) {
+  return type == component_type::kSelectorSwitch || startsWithT(type, "selector_");
+}
+
+[[nodiscard]] bool isTimedContactType(std::string_view type) {
+  return startsWithT(type, "contact_timed_");
+}
+
+[[nodiscard]] bool isThermalContactType(std::string_view type) {
+  return startsWithT(type, "contact_thermal_");
+}
+
+[[nodiscard]] bool isLogicType(std::string_view type) { return startsWithT(type, "logic_"); }
+
+[[nodiscard]] bool isGroupContactType(std::string_view type) {
+  return type == component_type::kContactorNo || startsWithT(type, "contactor_aux_") ||
+         startsWithT(type, "relay_contact_") || startsWithT(type, "contact_") ||
+         startsWithT(type, "contactor_") || startsWithT(type, "relay_combo");
 }
 
 [[nodiscard]] bool isContactorContactType(std::string_view type) {
-  return type == component_type::kContactorNo || type == component_type::kContactorAuxNo ||
-         type == component_type::kContactorAuxNc;
+  return isGroupContactType(type) && !isThermalContactType(type) && !isTimedContactType(type);
+}
+
+struct ContactCandidate {
+  const Pin* first = nullptr;
+  const Pin* second = nullptr;
+  bool normally_open = true;
+  bool group_controlled = false;
+};
+
+[[nodiscard]] std::vector<ContactCandidate> contactCandidates(const Component& component) {
+  std::vector<ContactCandidate> result;
+  std::set<std::pair<PinId, PinId>> seen;
+  const auto add =
+      [&result,
+       &seen](const Pin* first, const Pin* second, bool normally_open, bool group_controlled) {
+        if (first == nullptr || second == nullptr || first->id == second->id) {
+          return;
+        }
+        const auto key = first->id < second->id ? std::make_pair(first->id, second->id)
+                                                : std::make_pair(second->id, first->id);
+        if (!seen.insert(key).second) {
+          return;
+        }
+        result.push_back(ContactCandidate{first, second, normally_open, group_controlled});
+      };
+
+  const bool group = isGroupContactType(component.type) && !isThermalContactType(component.type) &&
+                     !isTimedContactType(component.type);
+  if (isThermalRelayType(component.type)) {
+    add(component.findPin("95"), component.findPin("96"), false, false);
+    add(component.findPin("97"), component.findPin("98"), true, false);
+    return result;
+  }
+  const bool two_terminal = isProtectionType(component.type);
+  if (two_terminal) {
+    // Main poles and neutral pole. Legacy devices use 1/2 for a single pole.
+    static constexpr std::string_view tops[] = {"1", "3", "5", "7", "N"};
+    static constexpr std::string_view bottoms[] = {"2", "4", "6", "8", "N2"};
+    for (std::size_t i = 0; i < std::size(tops); ++i) {
+      add(component.findPin(tops[i]), component.findPin(bottoms[i]), true, false);
+    }
+  }
+
+  std::vector<const Pin*> commons;
+  std::vector<const Pin*> normally_open;
+  std::vector<const Pin*> normally_closed;
+  for (const Pin& pin : component.pins) {
+    if (pin.role == PinRole::ContactCommon) {
+      commons.push_back(&pin);
+    } else if (pin.role == PinRole::ContactNo) {
+      normally_open.push_back(&pin);
+    } else if (pin.role == PinRole::ContactNc) {
+      normally_closed.push_back(&pin);
+    }
+  }
+  for (std::size_t i = 0; i < commons.size(); ++i) {
+    if (i < normally_open.size()) {
+      add(commons[i], normally_open[i], true, group);
+    }
+    if (i < normally_closed.size()) {
+      add(commons[i], normally_closed[i], false, group);
+    }
+  }
+  // A changeover contact has one common and one NO + one NC pin.
+  if (commons.size() == 1 && normally_open.size() == 1 && normally_closed.size() == 1) {
+    add(commons.front(), normally_open.front(), true, group);
+    add(commons.front(), normally_closed.front(), false, group);
+  }
+  // Contactor and relay auxiliaries use standard 13/14 and 21/22 numbering.
+  add(component.findPin("13"), component.findPin("14"), true, group);
+  add(component.findPin("21"), component.findPin("22"), false, group);
+  return result;
 }
 
 [[nodiscard]] bool isNormallyOpenContact(const Component& component) {
-  return component.type != component_type::kContactorAuxNc;
-}
-
-[[nodiscard]] std::optional<std::pair<const Pin*, const Pin*>>
-contactorContactPins(const Component& component) {
-  const Pin* common = pinByRole(component, PinRole::ContactCommon);
-  const Pin* contact = pinByRole(component, PinRole::ContactNo);
-  if (contact == nullptr) {
-    contact = pinByRole(component, PinRole::ContactNc);
+  for (const ContactCandidate& candidate : contactCandidates(component)) {
+    return candidate.normally_open;
   }
-  if (common == nullptr || contact == nullptr) {
-    return std::nullopt;
-  }
-  return std::make_pair(common, contact);
+  return true;
 }
 
 [[nodiscard]] std::vector<PinRef> loadTerminals(const Component& component) {
@@ -72,16 +161,41 @@ contactorContactPins(const Component& component) {
       terminals.emplace_back(component.id, pin->id);
     }
   };
-  if (component.type == component_type::kMotor3ph) {
-    add("U1");
-    add("V1");
-    add("W1");
-  } else if (component.type == component_type::kPilotLamp ||
-             component.type == component_type::kContactorCoil ||
-             component.type == component_type::kTimerOn ||
-             component.type == component_type::kTimerOff) {
+  if (isMotor(component)) {
+    if (component.findPin("U1") != nullptr) {
+      add("U1");
+      add("V1");
+      add("W1");
+    } else if (component.findPin("A1") != nullptr && component.findPin("A2") != nullptr) {
+      add("A1");
+      add("A2");
+    } else if (component.findPin("+") != nullptr && component.findPin("-") != nullptr) {
+      add("+");
+      add("-");
+    } else {
+      for (const Pin& pin : component.pins) {
+        if (pin.role != PinRole::Earth) {
+          terminals.emplace_back(component.id, pin.id);
+          if (terminals.size() == 2) {
+            break;
+          }
+        }
+      }
+    }
+  } else {
     add("A1");
     add("A2");
+    if (terminals.empty()) {
+      for (const Pin& pin : component.pins) {
+        if (pin.role == PinRole::CoilInput || pin.role == PinRole::CoilOutput ||
+            pin.role == PinRole::Terminal) {
+          terminals.emplace_back(component.id, pin.id);
+          if (terminals.size() == 2) {
+            break;
+          }
+        }
+      }
+    }
   }
   return terminals;
 }
@@ -143,17 +257,19 @@ Result<void> Simulator::reset() {
   for (const Sheet& sheet : diagram_.sheets) {
     for (const Component& item : sheet.components) {
       DigitalInputState input;
-      if (item.type == component_type::kSelectorSwitch) {
+      if (isSelectorType(item.type)) {
         const int positions =
             std::max(1, static_cast<int>(parameterInt(item.parameters, "positions", 2)));
         input.selector_position = std::clamp(
             static_cast<int>(parameterInt(item.parameters, "position", 1)), 1, positions);
       }
-      if (item.type == component_type::kFuse) {
-        input.tripped = parameterBool(item.parameters, "blown", false);
-      } else if (item.type == component_type::kBreaker) {
-        input.tripped = parameterBool(item.parameters, "tripped", false);
-      } else if (item.type == component_type::kThermalRelay) {
+      if (startsWithT(item.type, "switch_power")) {
+        input.active = true;
+      }
+      if (isProtectionType(item.type)) {
+        input.tripped = parameterBool(item.parameters, "blown", false) ||
+                        parameterBool(item.parameters, "tripped", false);
+      } else if (isThermalRelayType(item.type)) {
         input.tripped = parameterBool(item.parameters, "tripped", false);
       }
       inputs_[item.id] = input;
@@ -170,7 +286,8 @@ Result<void> Simulator::reset() {
     }
   }
 
-  const BaseGraph base = buildBaseGraph();
+  BaseGraph base = buildBaseGraph();
+  evaluateLogic(base);
   Dsu dsu = withContactorEdges(base, groupStates());
   recomputeLiveWires(dsu, base);
   emitFrame();
@@ -192,6 +309,7 @@ Result<void> Simulator::step() {
   const std::uint64_t previous_cycle = cycle_;
 
   BaseGraph base = buildBaseGraph();
+  evaluateLogic(base);
   Result<Dsu> solved = solveCoils(base);
   if (!solved) {
     states_ = previous_states;
@@ -212,6 +330,7 @@ Result<void> Simulator::step() {
   const bool timers_changed = advanceTimers();
   if (timers_changed) {
     base = buildBaseGraph();
+    evaluateLogic(base);
     Result<Dsu> resolved = solveCoils(base);
     if (!resolved) {
       states_ = previous_states;
@@ -257,7 +376,11 @@ Result<void> Simulator::setInput(ComponentId component_id, bool active) {
   if (item == nullptr) {
     return makeError(ErrorCode::NotFound, "Component does not exist");
   }
-  if (!isPushbutton(item->type) && item->type != component_type::kEmergencyStop) {
+  if (!isPushbutton(item->type) && item->type != component_type::kEmergencyStop &&
+      !startsWithT(item->type, "switch_") && !startsWithT(item->type, "limit_") &&
+      !startsWithT(item->type, "sensor_") && !startsWithT(item->type, "pressure_") &&
+      !startsWithT(item->type, "vacuum_") && !startsWithT(item->type, "thermostat_") &&
+      !startsWithT(item->type, "float_") && !startsWithT(item->type, "reed_")) {
     return makeError(ErrorCode::Unsupported, "Component is not a digital input", item->tag);
   }
   DigitalInputState& input = inputs_[component_id];
@@ -279,8 +402,7 @@ Result<void> Simulator::setTripped(ComponentId component_id, bool tripped) {
   if (item == nullptr) {
     return makeError(ErrorCode::NotFound, "Component does not exist");
   }
-  if (item->type != component_type::kFuse && item->type != component_type::kBreaker &&
-      item->type != component_type::kThermalRelay) {
+  if (!isProtectionType(item->type) && !isThermalRelayType(item->type)) {
     return makeError(ErrorCode::Unsupported, "Component is not a protection device", item->tag);
   }
   DigitalInputState& input = inputs_[component_id];
@@ -302,7 +424,7 @@ Result<void> Simulator::setSelectorPosition(ComponentId component_id, int positi
   if (item == nullptr) {
     return makeError(ErrorCode::NotFound, "Component does not exist");
   }
-  if (item->type != component_type::kSelectorSwitch) {
+  if (!isSelectorType(item->type)) {
     return makeError(ErrorCode::Unsupported, "Component is not a selector switch", item->tag);
   }
   const int positions =
@@ -414,14 +536,6 @@ Simulator::BaseGraph Simulator::buildBaseGraph() const {
       base.dsu.unite(*left_index, *right_index);
     }
   };
-  const auto connectByName =
-      [&connect](const Component& item, std::string_view first, std::string_view second) {
-        const Pin* left = item.findPin(first);
-        const Pin* right = item.findPin(second);
-        if (left != nullptr && right != nullptr) {
-          connect(PinRef{item.id, left->id}, PinRef{item.id, right->id});
-        }
-      };
 
   for (const Sheet& sheet : diagram_.sheets) {
     for (const Wire& wire : sheet.wires) {
@@ -434,60 +548,6 @@ Simulator::BaseGraph Simulator::buildBaseGraph() const {
       const DigitalInputState input = inputFor(item.id);
       const ComponentState state = states_.contains(item.id) ? states_.at(item.id)
                                                              : ComponentState{};
-      if (isContactorContactType(item.type)) {
-        if (const auto pins = contactorContactPins(item)) {
-          const std::optional<int> first = indexOf(PinRef{item.id, pins->first->id});
-          const std::optional<int> second = indexOf(PinRef{item.id, pins->second->id});
-          if (first.has_value() && second.has_value()) {
-            base.contactor_edges.push_back(
-                ContactorEdge{*first, *second, item.labelGroup(), isNormallyOpenContact(item)});
-          }
-        }
-        continue;
-      }
-      if (item.type == component_type::kPushbuttonNo) {
-        if (input.active) {
-          connectByName(item, "13", "14");
-        }
-        continue;
-      }
-      if (item.type == component_type::kPushbuttonNc) {
-        if (!input.active) {
-          connectByName(item, "21", "22");
-        }
-        continue;
-      }
-      if (item.type == component_type::kEmergencyStop) {
-        if (!input.active) {
-          connectByName(item, "1", "2");
-        }
-        continue;
-      }
-      if (item.type == component_type::kFuse || item.type == component_type::kBreaker) {
-        if (!input.tripped) {
-          connectByName(item, "1", "2");
-        }
-        continue;
-      }
-      if (item.type == component_type::kThermalRelay) {
-        if (!input.tripped) {
-          connectByName(item, "95", "96");
-        } else {
-          connectByName(item, "97", "98");
-        }
-        continue;
-      }
-      if (item.type == component_type::kSelectorSwitch) {
-        const std::string target = std::to_string(std::max(1, input.selector_position) + 1);
-        connectByName(item, "1", target);
-        continue;
-      }
-      if (item.type == component_type::kTimerOn || item.type == component_type::kTimerOff) {
-        if (state.timer_output) {
-          connectByName(item, "15", "18");
-        }
-        continue;
-      }
       if (isSupply(item.type)) {
         for (const Pin& pin : item.pins) {
           if (pin.role == PinRole::SupplyIn || pin.role == PinRole::SupplyOut ||
@@ -497,6 +557,102 @@ Simulator::BaseGraph Simulator::buildBaseGraph() const {
               base.sources.push_back(SourcePin{*pin_index, item.type + ":" + pin.name});
             }
           }
+        }
+        continue;
+      }
+      if (isSelectorType(item.type)) {
+        const Pin* common = item.findPin("1");
+        const std::string target = std::to_string(std::clamp(input.selector_position, 1, 3) + 1);
+        if (const Pin* selected = item.findPin(target); common != nullptr && selected != nullptr) {
+          connect(PinRef{item.id, common->id}, PinRef{item.id, selected->id});
+        }
+        continue;
+      }
+      if (isThermalContactType(item.type)) {
+        bool tripped = false;
+        for (const Sheet& other_sheet : diagram_.sheets) {
+          for (const Component& other : other_sheet.components) {
+            if (isThermalRelayType(other.type) && other.labelGroup() == item.labelGroup()) {
+              const auto state_it = states_.find(other.id);
+              tripped = tripped || (state_it != states_.end() && state_it->second.tripped);
+            }
+          }
+        }
+        for (const ContactCandidate& candidate : contactCandidates(item)) {
+          const bool closed = candidate.normally_open ? tripped : !tripped;
+          if (closed) {
+            connect(PinRef{item.id, candidate.first->id}, PinRef{item.id, candidate.second->id});
+          }
+        }
+        continue;
+      }
+      if (isTimedContactType(item.type)) {
+        bool output = false;
+        for (const Sheet& other_sheet : diagram_.sheets) {
+          for (const Component& other : other_sheet.components) {
+            if (isTimer(other.type) && other.labelGroup() == item.labelGroup()) {
+              const auto state_it = states_.find(other.id);
+              output = output || (state_it != states_.end() && state_it->second.timer_output);
+            }
+          }
+        }
+        for (const ContactCandidate& candidate : contactCandidates(item)) {
+          const bool closed = candidate.normally_open ? output : !output;
+          if (closed) {
+            connect(PinRef{item.id, candidate.first->id}, PinRef{item.id, candidate.second->id});
+          }
+        }
+        continue;
+      }
+      if (isProtectionType(item.type)) {
+        for (const ContactCandidate& candidate : contactCandidates(item)) {
+          if (!input.tripped) {
+            connect(PinRef{item.id, candidate.first->id}, PinRef{item.id, candidate.second->id});
+          }
+        }
+        continue;
+      }
+      if (isThermalRelayType(item.type)) {
+        for (const ContactCandidate& candidate : contactCandidates(item)) {
+          const bool closed = candidate.normally_open ? input.tripped : !input.tripped;
+          if (closed) {
+            connect(PinRef{item.id, candidate.first->id}, PinRef{item.id, candidate.second->id});
+          }
+        }
+        continue;
+      }
+      if (item.type == component_type::kEmergencyStop || isPushbutton(item.type) ||
+          startsWithT(item.type, "switch_") || startsWithT(item.type, "limit_") ||
+          startsWithT(item.type, "sensor_") || startsWithT(item.type, "pressure_") ||
+          startsWithT(item.type, "vacuum_") || startsWithT(item.type, "thermostat_") ||
+          startsWithT(item.type, "float_") || startsWithT(item.type, "reed_")) {
+        for (const ContactCandidate& candidate : contactCandidates(item)) {
+          const bool closed = candidate.normally_open ? input.active : !input.active;
+          if (closed) {
+            connect(PinRef{item.id, candidate.first->id}, PinRef{item.id, candidate.second->id});
+          }
+        }
+        continue;
+      }
+      if (isTimer(item.type)) {
+        for (const ContactCandidate& candidate : contactCandidates(item)) {
+          const bool closed = candidate.normally_open ? state.timer_output : !state.timer_output;
+          if (closed) {
+            connect(PinRef{item.id, candidate.first->id}, PinRef{item.id, candidate.second->id});
+          }
+        }
+        continue;
+      }
+      for (const ContactCandidate& candidate : contactCandidates(item)) {
+        if (candidate.group_controlled) {
+          const std::optional<int> first = indexOf(PinRef{item.id, candidate.first->id});
+          const std::optional<int> second = indexOf(PinRef{item.id, candidate.second->id});
+          if (first.has_value() && second.has_value()) {
+            base.contactor_edges.push_back(
+                ContactorEdge{*first, *second, item.labelGroup(), candidate.normally_open});
+          }
+        } else {
+          connect(PinRef{item.id, candidate.first->id}, PinRef{item.id, candidate.second->id});
         }
       }
     }
@@ -586,7 +742,7 @@ std::map<std::string, bool> Simulator::groupStates() const {
   std::map<std::string, bool> groups;
   for (const Sheet& sheet : diagram_.sheets) {
     for (const Component& item : sheet.components) {
-      if (!isContactorCoilComponent(item)) {
+      if (!isCoil(item.type) || item.labelGroup().empty()) {
         continue;
       }
       const auto iterator = states_.find(item.id);
@@ -601,38 +757,181 @@ bool Simulator::advanceTimers() {
   bool changed = false;
   for (const Sheet& sheet : diagram_.sheets) {
     for (const Component& item : sheet.components) {
-      if (item.type != component_type::kTimerOn && item.type != component_type::kTimerOff) {
+      if (!isTimer(item.type)) {
         continue;
       }
       ComponentState& state = states_[item.id];
       const bool previous_output = state.timer_output;
-      const std::int64_t delay = delayMs(item);
       const std::int64_t cycle = options_.cycle_ms;
-      if (item.type == component_type::kTimerOn) {
-        if (state.energized) {
-          state.timer_elapsed_ms = std::min(delay, state.timer_elapsed_ms + cycle);
-          state.timer_output = state.timer_elapsed_ms >= delay;
+      if (item.type == component_type::kTimerOn || item.type == component_type::kTimerOff) {
+        const std::int64_t delay = delayMs(item);
+        if (item.type == component_type::kTimerOn) {
+          if (state.energized) {
+            state.timer_elapsed_ms = std::min(delay, state.timer_elapsed_ms + cycle);
+            state.timer_output = state.timer_elapsed_ms >= delay;
+          } else {
+            state.timer_elapsed_ms = 0;
+            state.timer_output = false;
+          }
         } else {
-          state.timer_elapsed_ms = 0;
-          state.timer_output = false;
+          if (state.energized) {
+            state.timer_elapsed_ms = 0;
+            state.timer_output = true;
+          } else if (state.timer_output) {
+            state.timer_elapsed_ms = std::min(delay, state.timer_elapsed_ms + cycle);
+            if (state.timer_elapsed_ms >= delay) {
+              state.timer_output = false;
+            }
+          } else {
+            state.timer_elapsed_ms = 0;
+          }
         }
-      } else {
+      } else if (item.type == "timer_on_off") {
+        const std::int64_t delay_on =
+            std::max<std::int64_t>(0, parameterInt(item.parameters, "delay_on_ms", delayMs(item)));
+        const std::int64_t delay_off =
+            std::max<std::int64_t>(0, parameterInt(item.parameters, "delay_off_ms", delayMs(item)));
         if (state.energized) {
-          state.timer_elapsed_ms = 0;
-          state.timer_output = true;
+          state.timer_elapsed_ms = std::min(delay_on, state.timer_elapsed_ms + cycle);
+          state.timer_output = state.timer_elapsed_ms >= delay_on;
         } else if (state.timer_output) {
-          state.timer_elapsed_ms = std::min(delay, state.timer_elapsed_ms + cycle);
-          if (state.timer_elapsed_ms >= delay) {
+          state.timer_elapsed_ms = std::min(delay_off, state.timer_elapsed_ms + cycle);
+          if (state.timer_elapsed_ms >= delay_off) {
             state.timer_output = false;
           }
         } else {
           state.timer_elapsed_ms = 0;
         }
+      } else if (item.type == "flasher") {
+        if (state.energized) {
+          const std::int64_t period =
+              std::max<std::int64_t>(1, parameterInt(item.parameters, "period_ms", 1000));
+          state.timer_elapsed_ms += cycle;
+          if (state.timer_elapsed_ms >= period / 2) {
+            state.timer_elapsed_ms = 0;
+            state.timer_output = !state.timer_output;
+          }
+        } else {
+          state.timer_elapsed_ms = 0;
+          state.timer_output = false;
+        }
+      } else if (item.type == "timer_pulse") {
+        const std::int64_t delay = delayMs(item);
+        if (state.energized && !state.last_energized) {
+          state.timer_elapsed_ms = 0;
+          state.timer_output = true;
+        } else if (state.energized && state.timer_output) {
+          state.timer_elapsed_ms = std::min(delay, state.timer_elapsed_ms + cycle);
+          if (state.timer_elapsed_ms >= delay) {
+            state.timer_output = false;
+          }
+        } else if (!state.energized) {
+          state.timer_elapsed_ms = 0;
+          state.timer_output = false;
+        }
       }
+      state.last_energized = state.energized;
       changed = changed || previous_output != state.timer_output;
     }
   }
   return changed;
+}
+
+void Simulator::evaluateLogic(BaseGraph& base) {
+  std::vector<const Component*> gates;
+  for (const Sheet& sheet : diagram_.sheets) {
+    for (const Component& item : sheet.components) {
+      if (isLogicType(item.type)) {
+        gates.push_back(&item);
+      }
+    }
+  }
+  if (gates.empty()) {
+    return;
+  }
+  std::stable_sort(gates.begin(), gates.end(), [](const Component* left, const Component* right) {
+    if (left->tag != right->tag) {
+      return left->tag < right->tag;
+    }
+    return left->id < right->id;
+  });
+  const std::vector<SourcePin> supply_sources = base.sources;
+  for (int pass = 0; pass < 6; ++pass) {
+    base.sources = supply_sources;
+    Dsu dsu = withContactorEdges(base, groupStates());
+    bool changed = false;
+    for (const Component* gate : gates) {
+      ComponentState& state = states_[gate->id];
+      const auto active = [&](std::string_view name) {
+        const Pin* pin = gate->findPin(name);
+        if (pin == nullptr) {
+          return false;
+        }
+        return !sourceGroups(dsu, base, PinRef{gate->id, pin->id}).empty();
+      };
+      const bool input = active("IN") || active("IN1");
+      const bool input2 = active("IN2");
+      bool output = state.logic_output;
+      if (gate->type == "logic_and" || gate->type == "logic_nand") {
+        output = input && input2;
+        if (gate->type == "logic_nand") {
+          output = !output;
+        }
+      } else if (gate->type == "logic_or" || gate->type == "logic_nor") {
+        output = input || input2;
+        if (gate->type == "logic_nor") {
+          output = !output;
+        }
+      } else if (gate->type == "logic_not") {
+        output = !input;
+      } else if (gate->type == "logic_xor") {
+        output = input != input2;
+      } else if (gate->type == "logic_sr") {
+        if (active("S")) {
+          output = true;
+        } else if (active("R")) {
+          output = false;
+        }
+      } else if (gate->type == "logic_edge_up") {
+        output = input && !state.last_input;
+      } else if (gate->type == "logic_edge_down") {
+        output = !input && state.last_input;
+      } else if (gate->type == "logic_timer_on") {
+        const std::int64_t delay = delayMs(*gate);
+        if (input) {
+          state.timer_elapsed_ms = std::min(delay, state.timer_elapsed_ms + options_.cycle_ms);
+          output = state.timer_elapsed_ms >= delay;
+        } else {
+          state.timer_elapsed_ms = 0;
+          output = false;
+        }
+      } else if (gate->type == "logic_counter") {
+        if (input && !state.last_input) {
+          ++state.counter;
+        }
+        const int preset = static_cast<int>(parameterInt(gate->parameters, "preset", 10));
+        output = state.counter >= preset;
+      }
+      state.last_input = input;
+      if (output != state.logic_output) {
+        state.logic_output = output;
+        changed = true;
+      }
+      if (output) {
+        const Pin* out = gate->findPin("OUT");
+        if (out != nullptr) {
+          const auto index = base.pin_indices.find(PinRef{gate->id, out->id});
+          if (index != base.pin_indices.end()) {
+            base.sources.push_back(
+                SourcePin{index->second, "logic:" + std::to_string(gate->id.value())});
+          }
+        }
+      }
+    }
+    if (!changed) {
+      break;
+    }
+  }
 }
 
 Result<Simulator::Dsu> Simulator::solveCoils(const BaseGraph& base) {
@@ -707,7 +1006,7 @@ Result<Simulator::Dsu> Simulator::solveCoils(const BaseGraph& base) {
 void Simulator::updateLoads(Dsu& final_dsu, const BaseGraph& base) {
   for (const Sheet& sheet : diagram_.sheets) {
     for (const Component& item : sheet.components) {
-      if (!isLamp(item) && !isMotor(item)) {
+      if (!isLoad(item.type) || isCoil(item.type)) {
         continue;
       }
       states_[item.id].energized = loadEnergized(final_dsu, base, item);
@@ -731,19 +1030,39 @@ void Simulator::updateVisualState(Dsu& final_dsu,
         const auto iterator = groups.find(item.labelGroup());
         const bool energized = iterator != groups.end() && iterator->second;
         state.closed = isNormallyOpenContact(item) ? energized : !energized;
-      } else if (item.type == component_type::kPushbuttonNo) {
-        state.closed = input.active;
-      } else if (item.type == component_type::kPushbuttonNc) {
-        state.closed = !input.active;
-      } else if (item.type == component_type::kEmergencyStop) {
-        state.closed = !input.active;
-      } else if (item.type == component_type::kFuse || item.type == component_type::kBreaker) {
+      } else if (isThermalContactType(item.type)) {
+        bool tripped = false;
+        for (const Sheet& other_sheet : diagram_.sheets) {
+          for (const Component& other : other_sheet.components) {
+            if (isThermalRelayType(other.type) && other.labelGroup() == item.labelGroup()) {
+              const auto state_it = states_.find(other.id);
+              tripped = tripped || (state_it != states_.end() && state_it->second.tripped);
+            }
+          }
+        }
+        state.closed = isNormallyOpenContact(item) ? tripped : !tripped;
+      } else if (isTimedContactType(item.type)) {
+        bool output = false;
+        for (const Sheet& other_sheet : diagram_.sheets) {
+          for (const Component& other : other_sheet.components) {
+            if (isTimer(other.type) && other.labelGroup() == item.labelGroup()) {
+              const auto state_it = states_.find(other.id);
+              output = output || (state_it != states_.end() && state_it->second.timer_output);
+            }
+          }
+        }
+        state.closed = isNormallyOpenContact(item) ? output : !output;
+      } else if (isPushbutton(item.type) || item.type == component_type::kEmergencyStop ||
+                 startsWithT(item.type, "switch_") || startsWithT(item.type, "limit_") ||
+                 startsWithT(item.type, "sensor_") || startsWithT(item.type, "pressure_") ||
+                 startsWithT(item.type, "vacuum_") || startsWithT(item.type, "thermostat_") ||
+                 startsWithT(item.type, "float_") || startsWithT(item.type, "reed_")) {
+        state.closed = isNormallyOpenContact(item) ? input.active : !input.active;
+      } else if (isProtectionType(item.type) || isThermalRelayType(item.type)) {
         state.closed = !input.tripped;
-      } else if (item.type == component_type::kThermalRelay) {
-        state.closed = !input.tripped;
-      } else if (item.type == component_type::kSelectorSwitch) {
+      } else if (isSelectorType(item.type)) {
         state.closed = true;
-      } else if (item.type == component_type::kTimerOn || item.type == component_type::kTimerOff) {
+      } else if (isTimer(item.type)) {
         state.closed = state.timer_output;
       }
     }
@@ -848,26 +1167,24 @@ bool Simulator::initialClosed(const Component& item, const DigitalInputState& in
   if (isContactorContactType(item.type)) {
     return !isNormallyOpenContact(item);
   }
-  if (item.type == component_type::kPushbuttonNo) {
-    return input.active;
-  }
-  if (item.type == component_type::kPushbuttonNc) {
-    return !input.active;
-  }
-  if (item.type == component_type::kEmergencyStop) {
-    return !input.active;
-  }
-  if (item.type == component_type::kFuse || item.type == component_type::kBreaker) {
-    return !input.tripped;
-  }
-  if (item.type == component_type::kThermalRelay) {
-    return !input.tripped;
-  }
-  if (item.type == component_type::kSelectorSwitch) {
+  if (isSelectorType(item.type)) {
     return true;
   }
-  if (item.type == component_type::kTimerOn || item.type == component_type::kTimerOff) {
+  if (isTimer(item.type)) {
     return false;
+  }
+  if (isProtectionType(item.type) || isThermalRelayType(item.type)) {
+    return !input.tripped;
+  }
+  if (isThermalContactType(item.type) || isTimedContactType(item.type)) {
+    return !isNormallyOpenContact(item);
+  }
+  if (isPushbutton(item.type) || item.type == component_type::kEmergencyStop ||
+      startsWithT(item.type, "switch_") || startsWithT(item.type, "limit_") ||
+      startsWithT(item.type, "sensor_") || startsWithT(item.type, "pressure_") ||
+      startsWithT(item.type, "vacuum_") || startsWithT(item.type, "thermostat_") ||
+      startsWithT(item.type, "float_") || startsWithT(item.type, "reed_")) {
+    return isNormallyOpenContact(item) ? input.active : !input.active;
   }
   return false;
 }
@@ -879,12 +1196,16 @@ DigitalInputState Simulator::inputFor(ComponentId id) const {
   return iterator == inputs_.end() ? DigitalInputState{} : iterator->second;
 }
 
-bool Simulator::isContactorCoilComponent(const Component& item) const {
-  return item.type == component_type::kContactorCoil;
-}
+bool Simulator::isContactorCoilComponent(const Component& item) const { return isCoil(item.type); }
 
 std::int64_t Simulator::delayMs(const Component& item) const {
   std::int64_t delay = parameterInt(item.parameters, "delay_ms", 0);
+  if (delay == 0) {
+    delay = parameterInt(item.parameters, "delay_on_ms", 0);
+  }
+  if (delay == 0) {
+    delay = parameterInt(item.parameters, "period_ms", 0);
+  }
   if (parameterString(item.parameters, "time_base", "ms") == "s") {
     delay *= 1000;
   }

@@ -87,6 +87,7 @@ private:
   [[nodiscard]] std::map<std::string, bool> groupStates() const;
 
   [[nodiscard]] bool advanceTimers();
+  void evaluateLogic(BaseGraph& base);
   Result<Dsu> solveCoils(const BaseGraph& base);
   void updateLoads(Dsu& final_dsu, const BaseGraph& base);
   void updateVisualState(Dsu& final_dsu,

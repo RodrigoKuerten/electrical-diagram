@@ -154,15 +154,16 @@ constexpr std::array<std::string_view, 6> kRootFields{
     "format", "format_version", "app_version", "metadata", "sheets", "library_refs"};
 constexpr std::array<std::string_view, 5> kMetadataFields{
     "title", "author", "created_utc", "modified_utc", "revision"};
-constexpr std::array<std::string_view, 9> kSheetFields{"id",
-                                                       "name",
-                                                       "paper",
-                                                       "orientation",
-                                                       "margin",
-                                                       "show_frame",
-                                                       "components",
-                                                       "wires",
-                                                       "annotations"};
+constexpr std::array<std::string_view, 10> kSheetFields{"id",
+                                                        "name",
+                                                        "paper",
+                                                        "orientation",
+                                                        "margin",
+                                                        "show_frame",
+                                                        "workspace",
+                                                        "components",
+                                                        "wires",
+                                                        "annotations"};
 constexpr std::array<std::string_view, 10> kComponentFields{"id",
                                                             "type",
                                                             "tag",
@@ -566,6 +567,17 @@ constexpr std::array<std::string_view, 7> kAnnotationFields{
     sheet.setup.orientation = *orientation;
     sheet.setup.margin = sheet_value.value("margin", 10.0);
     sheet.setup.show_frame = sheet_value.value("show_frame", true);
+    if (sheet_value.contains("workspace")) {
+      const auto workspace = parsePoint(sheet_value.at("workspace"), sheet_path + "/workspace");
+      if (!workspace) {
+        return workspace.error();
+      }
+      if (workspace.value().x < 0.0 || workspace.value().y < 0.0) {
+        return makeError(
+            ErrorCode::SchemaViolation, "Workspace dimensions must not be negative", sheet_path);
+      }
+      sheet.setup.workspace_size = workspace.value();
+    }
     sheet.unknown_fields = captureUnknown(sheet_value, kSheetFields);
     const auto added_sheet = diagram.addSheet(std::move(sheet));
     if (!added_sheet) {
@@ -660,6 +672,9 @@ constexpr std::array<std::string_view, 7> kAnnotationFields{
     sheet_json["orientation"] = std::string(toString(sheet.setup.orientation));
     sheet_json["margin"] = sheet.setup.margin;
     sheet_json["show_frame"] = sheet.setup.show_frame;
+    if (sheet.setup.workspace_size.x > 0.0 || sheet.setup.workspace_size.y > 0.0) {
+      sheet_json["workspace"] = sizeJson(sheet.setup.workspace_size);
+    }
 
     json components = json::array();
     for (const Component& component : sheet.components) {

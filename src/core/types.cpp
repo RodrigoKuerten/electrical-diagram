@@ -283,40 +283,63 @@ ComponentCategory categorizeComponent(std::string_view type) {
   return ComponentCategory::Unknown;
 }
 
+namespace {
+[[nodiscard]] bool startsWith(std::string_view value, std::string_view prefix) {
+  return value.size() >= prefix.size() && value.substr(0, prefix.size()) == prefix;
+}
+} // namespace
+
 bool isContactorContact(std::string_view type) {
   using namespace component_type;
-  return type == kContactorNo || type == kContactorAuxNo || type == kContactorAuxNc;
+  return type == kContactorNo || type == kContactorAuxNo || type == kContactorAuxNc ||
+         startsWith(type, "contactor_aux_") || startsWith(type, "relay_contact_") ||
+         startsWith(type, "contact_") || startsWith(type, "relay_combo") ||
+         (startsWith(type, "contactor_") && !startsWith(type, "contactor_coil"));
 }
 
 bool isPushbutton(std::string_view type) {
   using namespace component_type;
-  return type == kPushbuttonNo || type == kPushbuttonNc;
+  return type == kPushbuttonNo || type == kPushbuttonNc || startsWith(type, "pushbutton_") ||
+         startsWith(type, "mushroom_") || startsWith(type, "button_station");
 }
 
 bool isTimer(std::string_view type) {
-  return type == component_type::kTimerOn || type == component_type::kTimerOff;
+  return type == component_type::kTimerOn || type == component_type::kTimerOff ||
+         startsWith(type, "timer_") || type == "flasher";
 }
 
 bool isCoil(std::string_view type) {
   using namespace component_type;
-  return type == kContactorCoil || type == kTimerOn || type == kTimerOff;
+  return type == kContactorCoil || type == kTimerOn || type == kTimerOff ||
+         startsWith(type, "contactor_coil") || startsWith(type, "relay_coil") ||
+         startsWith(type, "contactor_combo") || startsWith(type, "relay_combo") ||
+         type == "teleruptor" || type == "solenoid_valve" || startsWith(type, "timer_") ||
+         type == "flasher" || startsWith(type, "coil_");
 }
 
 bool isSupply(std::string_view type) {
   using namespace component_type;
-  return type == kSupplyAc3 || type == kSupplyAc1 || type == kSupplyDc;
+  return type == kSupplyAc3 || type == kSupplyAc1 || type == kSupplyDc ||
+         startsWith(type, "supply_") || type == "power_supply";
 }
 
 bool isLoad(std::string_view type) {
   using namespace component_type;
-  return type == kContactorCoil || type == kPilotLamp || type == kMotor3ph || type == kTimerOn ||
-         type == kTimerOff;
+  return isCoil(type) || type == kPilotLamp || type == kMotor3ph || type == kTimerOn ||
+         type == kTimerOff || startsWith(type, "motor_") || startsWith(type, "lamp_") ||
+         startsWith(type, "pilot_lamp") || type == "buzzer" || type == "siren" || type == "bell" ||
+         type == "horn" || type == "led" || startsWith(type, "heater_") ||
+         type == "linear_actuator" || startsWith(type, "solenoid");
 }
 
 bool isUserActuated(std::string_view type) {
   using namespace component_type;
   return type == kPushbuttonNo || type == kPushbuttonNc || type == kEmergencyStop ||
-         type == kSelectorSwitch || type == kThermalRelay || type == kFuse || type == kBreaker;
+         type == kSelectorSwitch || type == kThermalRelay || type == kFuse || type == kBreaker ||
+         isPushbutton(type) || startsWith(type, "switch_") || startsWith(type, "limit_") ||
+         startsWith(type, "sensor_") || startsWith(type, "pressure_") ||
+         startsWith(type, "vacuum_") || startsWith(type, "thermostat_") ||
+         startsWith(type, "float_") || startsWith(type, "reed_") || startsWith(type, "selector_");
 }
 
 } // namespace fiovivo

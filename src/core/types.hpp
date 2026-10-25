@@ -145,6 +145,10 @@ struct PaperSetup {
   Orientation orientation = Orientation::Landscape;
   double margin = 10.0;
   bool show_frame = true;
+  // Drawing area available to the user. A zero component means "use the paper size".
+  // The page remains the printed/exported area; the workspace can be larger so circuits
+  // can extend beyond one printed page without being clipped by the view.
+  Vec2 workspace_size{0.0, 0.0};
 
   friend bool operator==(const PaperSetup&, const PaperSetup&) = default;
 };

@@ -61,6 +61,17 @@ TEST(JsonIoTest, RoundTripIsByteIdentical) {
   EXPECT_EQ(loaded.value().wireCount(), diagram.wireCount());
 }
 
+TEST(JsonIoTest, WorkspaceRoundTripsWithoutMovingComponents) {
+  Diagram diagram = makeEmbeddedDiagram();
+  diagram.sheets[0].setup.workspace_size = {800.0, 600.0};
+  const auto text = toJsonString(diagram);
+  ASSERT_TRUE(text);
+  const auto loaded = fromJsonString(text.value());
+  ASSERT_TRUE(loaded);
+  EXPECT_EQ(loaded.value().sheets[0].setup.workspace_size, (Vec2{800.0, 600.0}));
+  EXPECT_EQ(loaded.value().sheets[0].components, diagram.sheets[0].components);
+}
+
 TEST(JsonIoTest, UsesReadablePrefixedIds) {
   const Diagram diagram = makeEmbeddedDiagram();
   const auto text = toJsonString(diagram);

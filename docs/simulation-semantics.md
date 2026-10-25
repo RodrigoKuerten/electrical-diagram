@@ -205,7 +205,44 @@ stays off. The behavior is deterministic and independent of hash/pointer order.
 - On reset the simulator clears its log; the UI clears the log panel. The log is capped at
   50,000 entries in the engine and 5,000 rows in the UI.
 
-## 9. Explicit non-goals
+## 9. CADe_SIMU-style family extensions
+
+The migrated library adds the following generic families to the engine:
+
+- **Multi-pole protection and switching.** A device exposes one contact candidate per pole
+  (`1/2`, `3/4`, `5/6`, `7/8`, `N/N2`). A trip or blown state opens every pole. Legacy fuse and
+  breaker types still use their single `1/2` pair.
+- **Group-controlled contacts.** Any component whose type is a contactor/relay auxiliary or a
+  generic contact contributes a candidate edge parameterized by `label_group`. NO candidates
+  close when the group is energized; NC candidates open. A group is energized when any coil
+  with that group is energized.
+- **Integrated contactor/relay.** A `contactor_combo`/`relay_combo` is simultaneously a coil
+  load (`A1/A2`) and a set of group-controlled contacts, so one component can model the
+  original CADe_SIMU integrated device.
+- **Timed and thermal auxiliary contacts.** `contact_timed_*` follows a timer with the same
+  `label_group`; `contact_thermal_*` follows a thermal relay with the same group. This lets the
+  auxiliary contact be placed remotely from its actuator.
+- **Digital sensors and switches.** Pushbuttons, mushroom buttons, selector switches, limit
+  switches and inductive/capacitive/magnetic/photoelectric/pressure/vacuum/thermostat/float/reed
+  sensors are user-actuated inputs. `setInput()` validates that the type is user-actuated.
+  Momentary inputs are pressed/released from the canvas; maintained switches toggle.
+- **Selectors.** `1` is the common; the selected path is `2`, `3` or `4`. Positions are
+  clamped to the `positions` parameter.
+- **Timers.** TON and TOF preserve the original exact-cycle semantics. ON/OFF has independent
+  on and off delays; pulse produces a one-shot after a rising input edge; flasher toggles its
+  output every half period while energized.
+- **Logic gates.** Inputs are considered active when their pin reaches a source group. AND,
+  OR, NOT, XOR, NAND and NOR set `logic_output`; an active output is added as a synthetic
+  source group so it can drive a coil. SR, rising/falling edge, logic timer and counter are also
+  evaluated. Gate evaluation is repeated for up to six passes so cascaded gates settle within a
+  scan where possible.
+- **Motors and sounders.** Three-phase motors use the configured minimum number of live
+  phases. Lamps, LEDs, buzzers, sirens, bells and horns are two-terminal loads.
+
+These extensions share the same DSU, source-group and scan-cycle model; they do not introduce
+a second simulator.
+
+## 10. Explicit non-goals
 
 The following are **not** simulated:
 

@@ -68,6 +68,7 @@ references both the component and the pin.
   "orientation": "landscape",
   "margin": 10.0,
   "show_frame": true,
+  "workspace": [900.0, 600.0],
   "components": [ ... ],
   "wires": [ ... ],
   "annotations": [ ... ]
@@ -76,6 +77,11 @@ references both the component and the pin.
 
 `paper` is one of `A4`, `A3`, `A2`, `A1`, `Letter`. `orientation` is `landscape` or
 `portrait`. Margins and scene coordinates are in millimetres.
+
+`workspace` is an optional `[width, height]` pair. It defines the usable drawing area
+independently of the printed page. When omitted or zero, the workspace is the paper size.
+It must not be smaller than the paper. Increasing it never changes component or wire
+coordinates.
 
 ## Component
 
