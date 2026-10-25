@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.69999999999999 14" width="16.6621mm" height="6.1875mm">
+<text x="3" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="33" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<path d="M 1 7 L 7 7" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 29 7 L 31 7" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="7,1 25,1 25,13 7,13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="27.00" cy="7.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 1 L 25 1" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 1 L 25 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 13 L 7 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 13 L 7 1" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

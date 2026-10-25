@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 32" width="9.72321mm" height="14.1429mm">
+<text x="9" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">X1</text>
+<text x="9" y="25" fill="#1f5f9e" font-family="Arial" font-size="6">X2</text>
+<path d="M 21 20 L 20 20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 20 L 20 17" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 17 L 19 17" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 17 L 19 20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 20 L 17 20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 7 L 7 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 25 L 7 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="7.00" cy="19.00" rx="6.00" ry="6.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 14 L 11 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 23 L 11 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

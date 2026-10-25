@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.39999999999998 39" width="20.9491mm" height="17.2366mm">
+<text x="3" y="20" fill="#1f5f9e" font-family="Arial" font-size="6">A1</text>
+<text x="39" y="20" fill="#1f5f9e" font-family="Arial" font-size="6">A2</text>
+<text x="21" y="32" fill="#1f5f9e" font-family="Arial" font-size="6">PE</text>
+<path d="M 1 20 L 7 20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 20 L 37 20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 30 L 19 38" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="18.50" cy="20.00" rx="10.50" ry="10.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="7,18 9,18 9,22 7,22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="29,18 31,18 31,22 29,22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="17" y="14" fill="#1f2933" font-family="Arial" font-size="6">M</text>
+<path d="M 16 22 L 21 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 16 24 L 17 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 18 24 L 19 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 24 L 21 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="12,1 13,1 13,4 12,4" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="24,1 25,1 25,4 24,4" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="13,1 24,1 24,2 13,2" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

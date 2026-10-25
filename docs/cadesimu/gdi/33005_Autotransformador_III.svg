@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.39999999999998 56" width="20.9491mm" height="24.75mm">
+<text x="9" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="21" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<text x="33" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">5</text>
+<text x="9" y="49" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="21" y="49" fill="#1f5f9e" font-family="Arial" font-size="6">4</text>
+<text x="33" y="49" fill="#1f5f9e" font-family="Arial" font-size="6">6</text>
+<text x="39" y="25" fill="#1f5f9e" font-family="Arial" font-size="6">PE</text>
+<path d="M 7 7 L 7 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 49 L 7 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 7 L 19 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 49 L 19 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 7 L 31 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 49 L 31 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 37 31 L 43 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 13 L 37 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 37 13 L 37 49" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 37 49 L 1 49" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 49 L 1 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 19 L 19 43" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 37 L 25 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="13,25 25,25 19,37 13,25" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 31 L 19 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

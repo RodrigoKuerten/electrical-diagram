@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.399999999999977 22" width="6.80625mm" height="9.72321mm">
+<text x="3" y="20" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="7" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">IN</text>
+<path d="M 5 7 L 5 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="1,13 8,13 5,19 1,13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

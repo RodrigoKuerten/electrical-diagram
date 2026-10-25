@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 44" width="13.2589mm" height="19.4464mm">
+<text x="9" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="21" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="9" y="37" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<text x="15" y="37" fill="#1f5f9e" font-family="Arial" font-size="6">4</text>
+<text x="21" y="37" fill="#1f5f9e" font-family="Arial" font-size="6">5</text>
+<path d="M 7 7 L 7 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 7 L 19 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 37 L 7 43" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 37 L 13 43" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 37 L 19 43" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 13 L 25 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 13 L 25 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 37 L 1 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 37 L 1 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 15 L 19 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 20 L 20 20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="17,17 20,17 19,20 17,17" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 27 L 20 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 27 L 20 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="17,34 17,33 18,34 17,34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 10 19 L 10 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 28 L 13 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 28 L 7 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 10 21 L 7 28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 3 19 L 10 19 L 3 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 26 19 L 29 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 26 31 L 29 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="27,17 29,19 27,20 27,17" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="27,29 26,31 27,32 27,29" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

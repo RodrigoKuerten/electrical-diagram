@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 32" width="10.1652mm" height="14.1429mm">
+<text x="7" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">X1</text>
+<text x="7" y="25" fill="#1f5f9e" font-family="Arial" font-size="6">X2</text>
+<path d="M 5 7 L 5 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 25 L 5 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 13 L 5 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 15 L 9 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 15 L 9 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 23 L 1 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 23 L 1 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 23 L 5 25" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 17 L 18 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 20 L 22 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 18 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

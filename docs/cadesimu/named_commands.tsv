@@ -1,0 +1,342 @@
+command	bars	name
+32773	128	Zoom Normal
+32776	128	Zoom Ventana
+32777	128	Zoom todo
+32778	128	Rejilla
+32785	159	Configuraración
+32786	159	Redibujar
+32787	159	Linea
+32788	159	Rectángulo
+32789	159	Elipse
+32790	159	Rectángulo cóloreado
+32791	159	Elipse coloreada
+32792	159	Rellenar color
+32793	159	Color
+32812	171	Negro
+32813	171	Blanco
+32814	171	Gris
+32815	171	Gris claro
+32816	171	Granate\Granate
+32817	171	Rojo
+32818	171	Marron
+32819	171	Amarillo
+32820	171	Verde
+32821	171	Verde claro
+32822	171	Verde azul
+32823	171	Azul claro
+32824	167	Color
+32825	167	Contactores, Interruptores
+32826	167	Contactos auxiliares, Contactos temporizados
+32828	173	Aparatos de medida
+32829	173	Motor trifásico
+32830	173	Motor trifásico YD
+32831	173	Motor monofásico
+32832	173	Motor Dahalander
+32833	175	Motor trifásico rotor bobinado
+32834	175	Contactor III
+32835	175	Contactor II
+32836	175	Contactor IIII
+32837	175	Interruptor II
+32838	175	Interruptor III
+32839	177	Interruptor IIII
+32840	177	Fusible II
+32841	177	Fusible III
+32842	177	Fusible IIIN
+32843	177	Fusible IN
+32844	177	Fusible seccionable IN
+32845	177	Fusible seccionable II
+32854	177	Fusible I
+32857	167	Fusibles, Seccionadores
+32858	179	Automáticos, Diferenciales, Relés Térmicos, Disyuntores
+32859	179	Interruptor automático I
+32860	179	Interruptor automático IN
+32861	179	Interruptor automático II
+32862	179	Interruptor automático III
+32863	179	Interruptor automático IIIN
+32864	179	Interruptor diferencial IN
+32865	179	Interruptor diferencial IIIN
+32866	179	Relé térmico
+32867	179	Disyuntor II
+32868	167	Disyuntor III
+32869	183	Alimentaciones
+32870	183	Alimentación L1 + L2 + L3 + N
+32873	183	Alimentación Fase + Neutro
+32874	183	Alimentación Fase
+32875	183	Alimentación Neutro
+32876	183,292	Alimentación +-
+32877	183,292	Alimentación Positivo
+32883	183	Alimentación L1 + L2 + L3 + N + PE
+32884	187	Alimentación Protección
+32885	187	Cable fase
+32886	167	Manguera
+32889	187,226	Entrada mangueral
+32890	187	Conexión
+32891	187	Entrada mangueral
+32892	187	Cable III vertical
+32893	187	Cable III horizontal
+32894	187	Cable III vertical
+32895	187	Cable III horizontal
+32896	187	Cable neutro
+32897	187	Cable protección
+32898	179	Conexión de salida
+32899	175	Disyuntor I
+32900	175	Contactor I
+32905	128	Girar a la izquierda
+32906	183	Girar a la derecha
+32907	128	Alimentación Fase + Neutro + Protección
+32908	128	Espejo horizontal
+32909	189	Espejo vertical
+32910	189	Pulsador NA
+32913	189	Pulsador NA-NC
+32914	189	Pulsador CON
+32915	189	Pulsador seta NA
+32918	189	Pulsador seta NA-NC
+32919	189	Pulsador seta CON
+32920	189	Interruptor NA
+32921	189	Interruptor NC
+32922	189	Interruptor NA-NC
+32923	189	Interruptor CON
+32924	189	Final de carrera NA
+32925	189	Final de carrera NC
+32926	189	Final de carrera NA-NC
+32927	189	Final de carrera COM
+32928	189	Contacto auxiliar relé térmico NA
+32929	189	Contacto auxiliar relé térmico NC
+32930	189	Contacto auxiliar relé térmico NA-NC
+32931	167	Contacto auxiliar relé térmico CON
+32934	191	Contacto temporizado a la conexión NA
+32935	191	Contacto temporizado a la conexión NC
+32936	191	Contacto temporizado a la conexión NA+NC
+32937	191	Contacto temporizado a la conexión CON
+32938	191	Contacto NA
+32939	191	Contacto NC
+32940	191	Contacto NA+NC
+32941	191	Contacto CON
+32942	191	Contacto temporizado a la deconexión NA
+32943	191	Contacto temporizado a la deconexión NC
+32944	191	Contacto temporizado a la deconexión NA+NC
+32945	191	Contacto temporizado a la deconexión CON
+32946	191	Contacto temporizado a la conexión deconexión NA
+32947	191	Contacto temporizado a la conexión deconexión NC
+32948	191	Contacto temporizado a la conexión deconexión NA+NC
+32949	193	Contacto temporizado a la conexión deconexión CON
+32952	193	Bobina electroválvula
+32953	193	Temporizador a la conexión
+32954	193	Temporizador a la desconexión
+32955	193	Temporizador a la conexión desconexión
+32956	193	Relé intermitente
+32957	193	Bobina biestable contactor, relé
+32958	193	Piloto señalización
+32959	193	Piloto señalización intermitente
+32960	193	Bocina
+32961	193	Sirena
+32962	193	Timbre
+32964	193	Detectores
+32969	187	Borne cuadrado
+32970	187	Borne redondo
+32971	128	Conexión de entrada
+32972	128	Simulacion
+32974	128	Selecionar todo
+32975	128	Pausa
+32992	187	2 Bornes redondos
+32993	187	3 Bornes redondos
+32994	173	3 Bornes redondos
+32995	183	Motor II Veloc
+32998	183	Rectificador
+32999	173	Fuente de alimentación
+33000	173	Motor cc. de imán permanente
+33001	167	Motor cc. de independiente
+33002	213	Potencia
+33003	213	Resistencia I
+33004	213	Resistencia III
+33005	213	Autotransformador III
+33006	213	Arrancador electónico c.a.
+33007	213	Variador velocidad c.a. II
+33011	213	Barra de potencia
+33012	213	Control Variador velocidad c.a.
+33016	213	Variador velocidad c.c. II
+33017	213	Variador velocidad c.c. II
+33018	213	Variador velocidad c.c. III
+33021	215	Det. inductivo NC
+33022	215	Det. capacitivo NA
+33023	215	Det. capacitivo NC
+33024	215	Det. magnético NA
+33025	215	Det. magnético NC
+33030	167	Barra de detectores
+33033	215	Det. inductivo NA
+33034	215	Barrera receptor NC
+33035	187,226,292	Barrera receptor NA
+33037	187,292	Cable negativo
+33042	183	Exportar imagen
+33043	183	Alimentación Protección
+33044	183	Diodo
+33045	183	Fuente de alimentación III
+33046	183	Transformador III
+33047	189	Bateria
+33048	189	Conmutador I-0-II
+33049	189	Conmutador I-II-III
+33050	179	Conmutador cruce
+33055	179	Limitador sobretensiones IN
+33056	226	Limitador sobretensiones IIIN
+33057	226	AND
+33058	226	OR
+33059	226	INV
+33060	226	EXOR
+33061	226	NAND
+33062	292	NOR
+33063	292	NA
+33066	292	Flanco ascendente
+33067	292	Flanco descendente
+33068	167	Asignar
+33069	292	Lógica
+33070	292	Set
+33079	226	Preselector BCD
+33080	226	Prueba
+33081	167	Visualiza
+33083	228	Etapa inicial
+33084	228	Etapa
+33085	228	Transición
+33086	228	Acción
+33088	228	Barra Grafcet
+33089	213	Etapa inicial
+33090	228	Control arrancador electrónico c.a..
+33091	228	Enlace de entrada
+33092	228	Enlace de salida
+33093	228	Línea enlace
+33094	228	Convergencia en "Y"
+33095	228	Divergencia en "O"
+33096	228	Convergencia en "O"
+33097	226,292	Macro etapa
+33098	193	Contador
+33099	226,292	Interruptor horario
+33100	226,292	Temporizador conexión
+33101	228	Biestable
+33102	228	"0"
+33103	173	"Y"
+33104	173	Motor monofásico
+33105	128	Freno
+33106	128	Simular documento
+33107	167	Simular todos los documentos
+33108	242	Entrada/Salida
+33109	242	Intercambio entradas PC_SIMU
+33111	226,292	Barra Entrada/Salida
+33112	226,292	Divisor Binario
+33115	226	Temporizador intermitente
+33116	226	Display BCD
+33117	226	Display 7 Seg.
+33232	171	Espesor 1
+33233	171	Espesor 2
+33234	171	Espesor 3
+33237	173	Contador de pulsos
+33238	242	Motor trifásico como monofásico
+33241	167	PLC S7-1200
+33242	269	Actuadores neumáticos
+33243	269	Actuador simple efecto
+33245	269	Barra de actuadores neumáticos
+33246	269	Actuador sin vástago
+33247	269	Actuador sin vástago magnético
+33248	269	Actuador giro
+33249	269	Pinza doble efecto
+33250	269	Ventosa
+33251	269	Motor neumático
+33252	269	Motor neumático reversible
+33253	215	Pinza simple efecto
+33254	215	Presostato NA
+33255	215	Presostato NA\Presostato NA
+33256	215	Vacuostato NA
+33257	173	Vacuostato NC
+33258	291	Actuador lineal eléctrico
+33259	291	Relé estado sólido SSR DC
+33260	291	Relé estado sólido SSR AC
+33261	291	Contactor de estado sólido
+33263	183	Control inversor electrónico c.a..
+33266	291	Relés electrónicos
+33267	291	Relé de falta de fase + N
+33271	291	Relé de falta  y secuencia de fase
+33272	242	Relé de secuencia de fase + N
+33273	242	Entrada digital PLC
+33274	242	Salida digital PLC
+33275	242	CPU PLC
+33276	242	Alimentación I/O digital PLC
+33277	226,292	Alimentación I/O digital PLC
+33278	189	Contador ascendente-descendente
+33279	167	Botón pulsador
+33292	226	First Scan
+33293	226	Contador 4 bits 
+33294	226	Contador 4 bits 
+33295	173	Decodificador 7 segmentos
+33296	173	Motor paso a paso unipolar
+33297	213	Motor paso a paso bipolar
+33298	213	Controlador motor paso a paso
+33299	213	Controlador motor paso a paso 2 CLK
+33300	226	Controlador motor paso a paso CLK/DIR
+33301	226	Temporizador pulso conexión
+33302	226	Contador 4 bits ASC/DES 
+33310	167	Símbolos 3D
+33311	301	Símbolos 2D
+33312	307	Motor trifásico
+33313	301	Motor trifásico
+33314	301	Rele zócalo
+33315	307	Rele temporizado zócalo
+33316	307	Rele zócalo
+33317	301	Rele temporizado zócalo
+33318	301	Pulsador
+33319	301	Piloto
+33320	307	Borna
+33321	307	Pulsador
+33322	307	Piloto
+33323	301,307	Borna
+33324	242	Botonera
+33326	242	Arduino Mega
+33328	242	Arduino I/0
+33334	242	ET200 DI
+33335	242	ET-200 8DI
+33336	242	ET-200 8DO
+33337	242	LOGO  4DI/4DO
+33338	301	S7-1200 8DI/8DO
+33339	301	Contactor
+33340	301	Disyuntor
+33341	307	Relé térmico
+33342	307	Contactor
+33343	307	Disyuntor
+33344	291	Relé térmico
+33345	291	Proteccion contra sobretensiones permanentes
+33346	215	proteccion contra sobretensiones permanentes
+33347	215	Termostato NA
+33348	187	Termostato NC
+33349	187	Espesor 1
+33350	187	Espesor 2
+33351	187	Espesor 3
+33352	301	Espesor 4
+33354	301	Interruptor diferencial
+33357	307	Interruptor automático
+33359	128	Visualiza símbolo componente
+33360	128	Visualiza componente 2D
+33361	128	Visualiza componente 3D
+33364	301,307	Componente tamaño pequeño
+33365	301,307	Componente tamaño medio
+33371	301	Relé 1 canal\Relé 1 canal
+33372	291	Diodo LED
+33373	291	Relé SPST\Relé SPST
+33374	301	Relé SPDT\Relé SPDT
+33375	307	Relé de 1 canal
+33376	307	Diodo led
+33381	301	Contactos auxiliares
+33382	301	Contactos auxiliares ON delay
+33383	307	Contactos auxiliares OFF delay
+33384	307	Contactos auxiliares
+33385	307	Contactos auxiliares ON delay
+33386	301	Contactos auxiliares OFF delay
+33387	307	Interruptor
+33391	307	Seccionador
+33392	175	Seccionador
+33393	301	Enclavamiento
+33394	307	Motor trifásico YD
+57601	128	Nuevo
+57603	128	Cerrar
+57607	128	Configurar impresora
+57634	128	Borra todo
+57635	128	Copiar
+57637	128	Buscaa el texto especificado
+57643	128	Selecciona todo el documento
+57644	128	Deshacer

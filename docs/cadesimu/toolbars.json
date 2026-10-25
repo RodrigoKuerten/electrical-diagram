@@ -1,0 +1,3598 @@
+{
+ "128": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\128_1033.bin",
+  "version": 1,
+  "width": 17,
+  "height": 15,
+  "count": 36,
+  "items": [
+   57600,
+   57601,
+   57603,
+   57607,
+   0,
+   57635,
+   57634,
+   57637,
+   0,
+   32773,
+   32778,
+   32775,
+   32776,
+   32771,
+   32777,
+   0,
+   57643,
+   57644,
+   0,
+   32904,
+   32905,
+   32908,
+   32907,
+   0,
+   32971,
+   32972,
+   32974,
+   32975,
+   33105,
+   33106,
+   0,
+   33361,
+   33359,
+   33360,
+   0,
+   57664
+  ],
+  "buttons": [
+   {
+    "command": 57600,
+    "id": 57600,
+    "text": "",
+    "hex": "0xe100"
+   },
+   {
+    "command": 57601,
+    "id": 57601,
+    "text": "Nuevo\nNuevo",
+    "hex": "0xe101"
+   },
+   {
+    "command": 57603,
+    "id": 57603,
+    "text": "Cerrar\nCerar",
+    "hex": "0xe103"
+   },
+   {
+    "command": 57607,
+    "id": 57607,
+    "text": "Configurar impresora\nConfigurar impresora",
+    "hex": "0xe107"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 57635,
+    "id": 57635,
+    "text": "Copiar\nCopiar",
+    "hex": "0xe123"
+   },
+   {
+    "command": 57634,
+    "id": 57634,
+    "text": "Borra todo\nBorrar todo",
+    "hex": "0xe122"
+   },
+   {
+    "command": 57637,
+    "id": 57637,
+    "text": "Buscaa el texto especificado\nBuscar",
+    "hex": "0xe125"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32773,
+    "id": 32773,
+    "text": "Zoom Normal\nZoom Normal",
+    "hex": "0x8005"
+   },
+   {
+    "command": 32778,
+    "id": 32778,
+    "text": "Rejilla\nRejilla",
+    "hex": "0x800a"
+   },
+   {
+    "command": 32775,
+    "id": 32775,
+    "text": "",
+    "hex": "0x8007"
+   },
+   {
+    "command": 32776,
+    "id": 32776,
+    "text": "Zoom Ventana\nZoom ventana",
+    "hex": "0x8008"
+   },
+   {
+    "command": 32771,
+    "id": 32771,
+    "text": "",
+    "hex": "0x8003"
+   },
+   {
+    "command": 32777,
+    "id": 32777,
+    "text": "Zoom todo\nZoom todo",
+    "hex": "0x8009"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 57643,
+    "id": 57643,
+    "text": "Selecciona todo el documento\nSeleccionar todo",
+    "hex": "0xe12b"
+   },
+   {
+    "command": 57644,
+    "id": 57644,
+    "text": "Deshacer\nDeshacer",
+    "hex": "0xe12c"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32904,
+    "id": 32904,
+    "text": "",
+    "hex": "0x8088"
+   },
+   {
+    "command": 32905,
+    "id": 32905,
+    "text": "Girar a la izquierda\nGirar a la izquierda",
+    "hex": "0x8089"
+   },
+   {
+    "command": 32908,
+    "id": 32908,
+    "text": "Espejo horizontal\nespejo horizontal",
+    "hex": "0x808c"
+   },
+   {
+    "command": 32907,
+    "id": 32907,
+    "text": "Alimentación Fase + Neutro + Protección\nAlimentación F+N+PE",
+    "hex": "0x808b"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32971,
+    "id": 32971,
+    "text": "Conexión de entrada\nConexión de entrada",
+    "hex": "0x80cb"
+   },
+   {
+    "command": 32972,
+    "id": 32972,
+    "text": "Simulacion\nSimulacion",
+    "hex": "0x80cc"
+   },
+   {
+    "command": 32974,
+    "id": 32974,
+    "text": "Selecionar todo\nSelecionar todo",
+    "hex": "0x80ce"
+   },
+   {
+    "command": 32975,
+    "id": 32975,
+    "text": "Pausa\nPausa",
+    "hex": "0x80cf"
+   },
+   {
+    "command": 33105,
+    "id": 33105,
+    "text": "Freno\nFreno",
+    "hex": "0x8151"
+   },
+   {
+    "command": 33106,
+    "id": 33106,
+    "text": "Simular documento\nSimular documento",
+    "hex": "0x8152"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33361,
+    "id": 33361,
+    "text": "Visualiza componente 3D\nVisualiza componente 3D",
+    "hex": "0x8251"
+   },
+   {
+    "command": 33359,
+    "id": 33359,
+    "text": "Visualiza símbolo componente\nVisualiza símbolo componente",
+    "hex": "0x824f"
+   },
+   {
+    "command": 33360,
+    "id": 33360,
+    "text": "Visualiza componente 2D\nVisualiza componente 2D",
+    "hex": "0x8250"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 57664,
+    "id": 57664,
+    "text": "",
+    "hex": "0xe140"
+   }
+  ]
+ },
+ "159": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\159_1033.bin",
+  "version": 1,
+  "width": 16,
+  "height": 15,
+  "count": 9,
+  "items": [
+   32785,
+   32786,
+   32787,
+   32788,
+   32789,
+   32790,
+   32791,
+   32792,
+   32793
+  ],
+  "buttons": [
+   {
+    "command": 32785,
+    "id": 32785,
+    "text": "Configuraración\nConfigurarción",
+    "hex": "0x8011"
+   },
+   {
+    "command": 32786,
+    "id": 32786,
+    "text": "Redibujar\nRedibujar",
+    "hex": "0x8012"
+   },
+   {
+    "command": 32787,
+    "id": 32787,
+    "text": "Linea\nLinea",
+    "hex": "0x8013"
+   },
+   {
+    "command": 32788,
+    "id": 32788,
+    "text": "Rectángulo\nRectángulo",
+    "hex": "0x8014"
+   },
+   {
+    "command": 32789,
+    "id": 32789,
+    "text": "Elipse\nElipse",
+    "hex": "0x8015"
+   },
+   {
+    "command": 32790,
+    "id": 32790,
+    "text": "Rectángulo cóloreado\nRectángulo cóloreado",
+    "hex": "0x8016"
+   },
+   {
+    "command": 32791,
+    "id": 32791,
+    "text": "Elipse coloreada\nElipse coloreada",
+    "hex": "0x8017"
+   },
+   {
+    "command": 32792,
+    "id": 32792,
+    "text": "Rellenar color\nRellenar color",
+    "hex": "0x8018"
+   },
+   {
+    "command": 32793,
+    "id": 32793,
+    "text": "Color\nColor",
+    "hex": "0x8019"
+   }
+  ]
+ },
+ "167": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\167_1033.bin",
+  "version": 1,
+  "width": 16,
+  "height": 15,
+  "count": 23,
+  "items": [
+   32868,
+   32856,
+   32857,
+   32824,
+   32809,
+   33001,
+   0,
+   32825,
+   32931,
+   33030,
+   32826,
+   33265,
+   0,
+   33068,
+   33279,
+   33081,
+   33107,
+   33241,
+   0,
+   33310,
+   33309,
+   0,
+   32886
+  ],
+  "buttons": [
+   {
+    "command": 32868,
+    "id": 32868,
+    "text": "Disyuntor III\nDisyuntor III",
+    "hex": "0x8064"
+   },
+   {
+    "command": 32856,
+    "id": 32856,
+    "text": "",
+    "hex": "0x8058"
+   },
+   {
+    "command": 32857,
+    "id": 32857,
+    "text": "Fusibles, Seccionadores\nFusibles, Seccionadores",
+    "hex": "0x8059"
+   },
+   {
+    "command": 32824,
+    "id": 32824,
+    "text": "Color\nColor",
+    "hex": "0x8038"
+   },
+   {
+    "command": 32809,
+    "id": 32809,
+    "text": "",
+    "hex": "0x8029"
+   },
+   {
+    "command": 33001,
+    "id": 33001,
+    "text": "Motor cc. de independiente\nMotor cc. Indep.",
+    "hex": "0x80e9"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32825,
+    "id": 32825,
+    "text": "Contactores, Interruptores\nContactores, Interruptores",
+    "hex": "0x8039"
+   },
+   {
+    "command": 32931,
+    "id": 32931,
+    "text": "Contacto auxiliar relé térmico CON\nTérmico CON",
+    "hex": "0x80a3"
+   },
+   {
+    "command": 33030,
+    "id": 33030,
+    "text": "Barra de detectores\nBarra de detectores",
+    "hex": "0x8106"
+   },
+   {
+    "command": 32826,
+    "id": 32826,
+    "text": "Contactos auxiliares, Contactos temporizados\nContactos",
+    "hex": "0x803a"
+   },
+   {
+    "command": 33265,
+    "id": 33265,
+    "text": "",
+    "hex": "0x81f1"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33068,
+    "id": 33068,
+    "text": "Asignar\nAsignar",
+    "hex": "0x812c"
+   },
+   {
+    "command": 33279,
+    "id": 33279,
+    "text": "Botón pulsador\nBotón pulsador",
+    "hex": "0x81ff"
+   },
+   {
+    "command": 33081,
+    "id": 33081,
+    "text": "Visualiza\nVisualiza",
+    "hex": "0x8139"
+   },
+   {
+    "command": 33107,
+    "id": 33107,
+    "text": "Simular todos los documentos\nSimular todos los documentos",
+    "hex": "0x8153"
+   },
+   {
+    "command": 33241,
+    "id": 33241,
+    "text": "PLC S7-1200\nPLC S7-1200",
+    "hex": "0x81d9"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33310,
+    "id": 33310,
+    "text": "Símbolos 3D\nSímbolos 3D",
+    "hex": "0x821e"
+   },
+   {
+    "command": 33309,
+    "id": 33309,
+    "text": "",
+    "hex": "0x821d"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32886,
+    "id": 32886,
+    "text": "Manguera\nManguera",
+    "hex": "0x8076"
+   }
+  ]
+ },
+ "171": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\171_1033.bin",
+  "version": 1,
+  "width": 16,
+  "height": 15,
+  "count": 19,
+  "items": [
+   32811,
+   32812,
+   32813,
+   32814,
+   32815,
+   32816,
+   0,
+   32817,
+   32818,
+   32819,
+   32820,
+   32821,
+   32822,
+   32823,
+   0,
+   33231,
+   33232,
+   33233,
+   33234
+  ],
+  "buttons": [
+   {
+    "command": 32811,
+    "id": 32811,
+    "text": "",
+    "hex": "0x802b"
+   },
+   {
+    "command": 32812,
+    "id": 32812,
+    "text": "Negro\nNegro",
+    "hex": "0x802c"
+   },
+   {
+    "command": 32813,
+    "id": 32813,
+    "text": "Blanco\nBlanco",
+    "hex": "0x802d"
+   },
+   {
+    "command": 32814,
+    "id": 32814,
+    "text": "Gris\nGris",
+    "hex": "0x802e"
+   },
+   {
+    "command": 32815,
+    "id": 32815,
+    "text": "Gris claro\nGris claro",
+    "hex": "0x802f"
+   },
+   {
+    "command": 32816,
+    "id": 32816,
+    "text": "Granate\\Granate",
+    "hex": "0x8030"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32817,
+    "id": 32817,
+    "text": "Rojo\nRojo",
+    "hex": "0x8031"
+   },
+   {
+    "command": 32818,
+    "id": 32818,
+    "text": "Marron\nMarron",
+    "hex": "0x8032"
+   },
+   {
+    "command": 32819,
+    "id": 32819,
+    "text": "Amarillo\nAmarillo",
+    "hex": "0x8033"
+   },
+   {
+    "command": 32820,
+    "id": 32820,
+    "text": "Verde\nVerde",
+    "hex": "0x8034"
+   },
+   {
+    "command": 32821,
+    "id": 32821,
+    "text": "Verde claro\nVerde claro",
+    "hex": "0x8035"
+   },
+   {
+    "command": 32822,
+    "id": 32822,
+    "text": "Verde azul\nVerde azul",
+    "hex": "0x8036"
+   },
+   {
+    "command": 32823,
+    "id": 32823,
+    "text": "Azul claro\nAzul claro",
+    "hex": "0x8037"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33231,
+    "id": 33231,
+    "text": "",
+    "hex": "0x81cf"
+   },
+   {
+    "command": 33232,
+    "id": 33232,
+    "text": "Espesor 1\nEspesor 1",
+    "hex": "0x81d0"
+   },
+   {
+    "command": 33233,
+    "id": 33233,
+    "text": "Espesor 2\nEspesor 2",
+    "hex": "0x81d1"
+   },
+   {
+    "command": 33234,
+    "id": 33234,
+    "text": "Espesor 3\nEspesor 3",
+    "hex": "0x81d2"
+   }
+  ]
+ },
+ "173": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\173_1033.bin",
+  "version": 1,
+  "width": 21,
+  "height": 21,
+  "count": 19,
+  "items": [
+   32828,
+   32829,
+   0,
+   32830,
+   33103,
+   33237,
+   32831,
+   32994,
+   32832,
+   0,
+   32999,
+   33000,
+   0,
+   33295,
+   33296,
+   0,
+   33104,
+   0,
+   33257
+  ],
+  "buttons": [
+   {
+    "command": 32828,
+    "id": 32828,
+    "text": "Aparatos de medida\nAparatos de medida",
+    "hex": "0x803c"
+   },
+   {
+    "command": 32829,
+    "id": 32829,
+    "text": "Motor trifásico\nMotor trifásico",
+    "hex": "0x803d"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32830,
+    "id": 32830,
+    "text": "Motor trifásico YD\nMotor trifásico YD",
+    "hex": "0x803e"
+   },
+   {
+    "command": 33103,
+    "id": 33103,
+    "text": "\"Y\"\n\"Y\"",
+    "hex": "0x814f"
+   },
+   {
+    "command": 33237,
+    "id": 33237,
+    "text": "Contador de pulsos\nContador de pulsos",
+    "hex": "0x81d5"
+   },
+   {
+    "command": 32831,
+    "id": 32831,
+    "text": "Motor monofásico\nMotor monofásico",
+    "hex": "0x803f"
+   },
+   {
+    "command": 32994,
+    "id": 32994,
+    "text": "3 Bornes redondos\n3 Bornes redondos",
+    "hex": "0x80e2"
+   },
+   {
+    "command": 32832,
+    "id": 32832,
+    "text": "Motor Dahalander\nMotor Dahalander",
+    "hex": "0x8040"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32999,
+    "id": 32999,
+    "text": "Fuente de alimentación\nFuente de alimentación",
+    "hex": "0x80e7"
+   },
+   {
+    "command": 33000,
+    "id": 33000,
+    "text": "Motor cc. de imán permanente\nMotor cc. Iman P.",
+    "hex": "0x80e8"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33295,
+    "id": 33295,
+    "text": "Decodificador 7 segmentos\nDecodificador 7 segmentos",
+    "hex": "0x820f"
+   },
+   {
+    "command": 33296,
+    "id": 33296,
+    "text": "Motor paso a paso unipolar\n Motor paso a paso unipolar",
+    "hex": "0x8210"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33104,
+    "id": 33104,
+    "text": "Motor monofásico\nMotor monofásico",
+    "hex": "0x8150"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33257,
+    "id": 33257,
+    "text": "Vacuostato NC\nVacuostato NC",
+    "hex": "0x81e9"
+   }
+  ]
+ },
+ "175": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\175_1033.bin",
+  "version": 1,
+  "width": 26,
+  "height": 21,
+  "count": 13,
+  "items": [
+   32899,
+   32834,
+   32833,
+   32835,
+   0,
+   33219,
+   0,
+   32900,
+   32836,
+   32837,
+   32838,
+   0,
+   33392
+  ],
+  "buttons": [
+   {
+    "command": 32899,
+    "id": 32899,
+    "text": "Disyuntor I\nDisyuntor I",
+    "hex": "0x8083"
+   },
+   {
+    "command": 32834,
+    "id": 32834,
+    "text": "Contactor III\nContactor III",
+    "hex": "0x8042"
+   },
+   {
+    "command": 32833,
+    "id": 32833,
+    "text": "Motor trifásico rotor bobinado\nMotor rotor bobinado",
+    "hex": "0x8041"
+   },
+   {
+    "command": 32835,
+    "id": 32835,
+    "text": "Contactor II\nContactor II",
+    "hex": "0x8043"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33219,
+    "id": 33219,
+    "text": "",
+    "hex": "0x81c3"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32900,
+    "id": 32900,
+    "text": "Contactor I\nContactor I",
+    "hex": "0x8084"
+   },
+   {
+    "command": 32836,
+    "id": 32836,
+    "text": "Contactor IIII\nContactor IIII",
+    "hex": "0x8044"
+   },
+   {
+    "command": 32837,
+    "id": 32837,
+    "text": "Interruptor II\nInterruptor II",
+    "hex": "0x8045"
+   },
+   {
+    "command": 32838,
+    "id": 32838,
+    "text": "Interruptor III\nInterruptor III",
+    "hex": "0x8046"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33392,
+    "id": 33392,
+    "text": "Seccionador\nSeccionador",
+    "hex": "0x8270"
+   }
+  ]
+ },
+ "177": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\177_1033.bin",
+  "version": 1,
+  "width": 32,
+  "height": 21,
+  "count": 11,
+  "items": [
+   32853,
+   32842,
+   32839,
+   32840,
+   32841,
+   0,
+   32854,
+   32843,
+   32844,
+   32845,
+   32848
+  ],
+  "buttons": [
+   {
+    "command": 32853,
+    "id": 32853,
+    "text": "",
+    "hex": "0x8055"
+   },
+   {
+    "command": 32842,
+    "id": 32842,
+    "text": "Fusible IIIN\nFusible IIIN",
+    "hex": "0x804a"
+   },
+   {
+    "command": 32839,
+    "id": 32839,
+    "text": "Interruptor IIII\nInterruptor IIII",
+    "hex": "0x8047"
+   },
+   {
+    "command": 32840,
+    "id": 32840,
+    "text": "Fusible II\nFusible II",
+    "hex": "0x8048"
+   },
+   {
+    "command": 32841,
+    "id": 32841,
+    "text": "Fusible III\nFusible III",
+    "hex": "0x8049"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32854,
+    "id": 32854,
+    "text": "Fusible I\nFusible I",
+    "hex": "0x8056"
+   },
+   {
+    "command": 32843,
+    "id": 32843,
+    "text": "Fusible IN\nFusible IN",
+    "hex": "0x804b"
+   },
+   {
+    "command": 32844,
+    "id": 32844,
+    "text": "Fusible seccionable IN\nFusible seccionable IN",
+    "hex": "0x804c"
+   },
+   {
+    "command": 32845,
+    "id": 32845,
+    "text": "Fusible seccionable II\nFusible seccionable II",
+    "hex": "0x804d"
+   },
+   {
+    "command": 32848,
+    "id": 32848,
+    "text": "",
+    "hex": "0x8050"
+   }
+  ]
+ },
+ "179": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\179_1033.bin",
+  "version": 1,
+  "width": 37,
+  "height": 21,
+  "count": 19,
+  "items": [
+   32858,
+   32859,
+   32860,
+   32861,
+   32862,
+   0,
+   32863,
+   32864,
+   0,
+   32865,
+   0,
+   32898,
+   33050,
+   32866,
+   32867,
+   33052,
+   0,
+   33054,
+   33055
+  ],
+  "buttons": [
+   {
+    "command": 32858,
+    "id": 32858,
+    "text": "Automáticos, Diferenciales, Relés Térmicos, Disyuntores\nAutomáticos, Disyuntores",
+    "hex": "0x805a"
+   },
+   {
+    "command": 32859,
+    "id": 32859,
+    "text": "Interruptor automático I\nAutomático I",
+    "hex": "0x805b"
+   },
+   {
+    "command": 32860,
+    "id": 32860,
+    "text": "Interruptor automático IN\nAutomático IN",
+    "hex": "0x805c"
+   },
+   {
+    "command": 32861,
+    "id": 32861,
+    "text": "Interruptor automático II\nAutomático II",
+    "hex": "0x805d"
+   },
+   {
+    "command": 32862,
+    "id": 32862,
+    "text": "Interruptor automático III\nAutomático III",
+    "hex": "0x805e"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32863,
+    "id": 32863,
+    "text": "Interruptor automático IIIN\nAutomático IIIN",
+    "hex": "0x805f"
+   },
+   {
+    "command": 32864,
+    "id": 32864,
+    "text": "Interruptor diferencial IN\nDiferencial IN",
+    "hex": "0x8060"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32865,
+    "id": 32865,
+    "text": "Interruptor diferencial IIIN\nDiferencial IIIN",
+    "hex": "0x8061"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32898,
+    "id": 32898,
+    "text": "Conexión de salida\nConexión de salida",
+    "hex": "0x8082"
+   },
+   {
+    "command": 33050,
+    "id": 33050,
+    "text": "Conmutador cruce\nConmutador cruce",
+    "hex": "0x811a"
+   },
+   {
+    "command": 32866,
+    "id": 32866,
+    "text": "Relé térmico\nRelé Térmico",
+    "hex": "0x8062"
+   },
+   {
+    "command": 32867,
+    "id": 32867,
+    "text": "Disyuntor II\nDisyuntor II",
+    "hex": "0x8063"
+   },
+   {
+    "command": 33052,
+    "id": 33052,
+    "text": "",
+    "hex": "0x811c"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33054,
+    "id": 33054,
+    "text": "",
+    "hex": "0x811e"
+   },
+   {
+    "command": 33055,
+    "id": 33055,
+    "text": "Limitador sobretensiones IN\nLimitador sobretensiones IN",
+    "hex": "0x811f"
+   }
+  ]
+ },
+ "183": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\183_1033.bin",
+  "version": 1,
+  "width": 31,
+  "height": 21,
+  "count": 30,
+  "items": [
+   32873,
+   32874,
+   32883,
+   0,
+   32872,
+   32906,
+   0,
+   32870,
+   32879,
+   0,
+   32869,
+   32882,
+   0,
+   32876,
+   0,
+   32877,
+   0,
+   32875,
+   0,
+   33042,
+   0,
+   32995,
+   33045,
+   33043,
+   32997,
+   32998,
+   33044,
+   33046,
+   0,
+   33263
+  ],
+  "buttons": [
+   {
+    "command": 32873,
+    "id": 32873,
+    "text": "Alimentación Fase + Neutro\nAlimentación F+N",
+    "hex": "0x8069"
+   },
+   {
+    "command": 32874,
+    "id": 32874,
+    "text": "Alimentación Fase\nAlimentación Fase",
+    "hex": "0x806a"
+   },
+   {
+    "command": 32883,
+    "id": 32883,
+    "text": "Alimentación L1 + L2 + L3 + N + PE\nAlimentación L1+L2+L3+N+PE",
+    "hex": "0x8073"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32872,
+    "id": 32872,
+    "text": "",
+    "hex": "0x8068"
+   },
+   {
+    "command": 32906,
+    "id": 32906,
+    "text": "Girar a la derecha\nGirar a la derecha",
+    "hex": "0x808a"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32870,
+    "id": 32870,
+    "text": "Alimentación L1 + L2 + L3 + N\nAlimentación L1+L2+L3+N",
+    "hex": "0x8066"
+   },
+   {
+    "command": 32879,
+    "id": 32879,
+    "text": "",
+    "hex": "0x806f"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32869,
+    "id": 32869,
+    "text": "Alimentaciones\nAlimentaciones",
+    "hex": "0x8065"
+   },
+   {
+    "command": 32882,
+    "id": 32882,
+    "text": "",
+    "hex": "0x8072"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32876,
+    "id": 32876,
+    "text": "Alimentación +-\nAlimentación +-",
+    "hex": "0x806c"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32877,
+    "id": 32877,
+    "text": "Alimentación Positivo\nAlimentación +",
+    "hex": "0x806d"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32875,
+    "id": 32875,
+    "text": "Alimentación Neutro\nAlimentación Neutro",
+    "hex": "0x806b"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33042,
+    "id": 33042,
+    "text": "Exportar imagen\nExportar imagen",
+    "hex": "0x8112"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32995,
+    "id": 32995,
+    "text": "Motor II Veloc\nMotor Dos velocidades",
+    "hex": "0x80e3"
+   },
+   {
+    "command": 33045,
+    "id": 33045,
+    "text": "Fuente de alimentación III\nFuente de alimentación III",
+    "hex": "0x8115"
+   },
+   {
+    "command": 33043,
+    "id": 33043,
+    "text": "Alimentación Protección\nAlimentación Protección",
+    "hex": "0x8113"
+   },
+   {
+    "command": 32997,
+    "id": 32997,
+    "text": "",
+    "hex": "0x80e5"
+   },
+   {
+    "command": 32998,
+    "id": 32998,
+    "text": "Rectificador\nRectificador",
+    "hex": "0x80e6"
+   },
+   {
+    "command": 33044,
+    "id": 33044,
+    "text": "Diodo\nDiodo",
+    "hex": "0x8114"
+   },
+   {
+    "command": 33046,
+    "id": 33046,
+    "text": "Transformador III\nTransformador III",
+    "hex": "0x8116"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33263,
+    "id": 33263,
+    "text": "Control inversor electrónico c.a..\nControl inversor electrónico c.a.",
+    "hex": "0x81ef"
+   }
+  ]
+ },
+ "187": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\187_1033.bin",
+  "version": 1,
+  "width": 23,
+  "height": 21,
+  "count": 34,
+  "items": [
+   33348,
+   33349,
+   33350,
+   33351,
+   0,
+   32884,
+   32895,
+   32896,
+   0,
+   33035,
+   33037,
+   0,
+   33229,
+   0,
+   32889,
+   0,
+   32893,
+   32891,
+   0,
+   32894,
+   32892,
+   0,
+   32885,
+   32888,
+   32890,
+   0,
+   32968,
+   32969,
+   32991,
+   32992,
+   32993,
+   0,
+   32897,
+   32970
+  ],
+  "buttons": [
+   {
+    "command": 33348,
+    "id": 33348,
+    "text": "Termostato NC\nTermostato NC",
+    "hex": "0x8244"
+   },
+   {
+    "command": 33349,
+    "id": 33349,
+    "text": "Espesor 1\nEspesor 1",
+    "hex": "0x8245"
+   },
+   {
+    "command": 33350,
+    "id": 33350,
+    "text": "Espesor 2\nEspesor 2",
+    "hex": "0x8246"
+   },
+   {
+    "command": 33351,
+    "id": 33351,
+    "text": "Espesor 3\nEspesor 3",
+    "hex": "0x8247"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32884,
+    "id": 32884,
+    "text": "Alimentación Protección\nAlimentación Protección",
+    "hex": "0x8074"
+   },
+   {
+    "command": 32895,
+    "id": 32895,
+    "text": "Cable III horizontal\nCable III",
+    "hex": "0x807f"
+   },
+   {
+    "command": 32896,
+    "id": 32896,
+    "text": "Cable neutro\nCable neutro",
+    "hex": "0x8080"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33035,
+    "id": 33035,
+    "text": "Barrera receptor NA\nBarrera receptor NA",
+    "hex": "0x810b"
+   },
+   {
+    "command": 33037,
+    "id": 33037,
+    "text": "Cable negativo\nCable negativo",
+    "hex": "0x810d"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33229,
+    "id": 33229,
+    "text": "",
+    "hex": "0x81cd"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32889,
+    "id": 32889,
+    "text": "Entrada mangueral\nEntrada manguera",
+    "hex": "0x8079"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32893,
+    "id": 32893,
+    "text": "Cable III horizontal\nCable III",
+    "hex": "0x807d"
+   },
+   {
+    "command": 32891,
+    "id": 32891,
+    "text": "Entrada mangueral\nEntrada manguera",
+    "hex": "0x807b"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32894,
+    "id": 32894,
+    "text": "Cable III vertical\nCable III",
+    "hex": "0x807e"
+   },
+   {
+    "command": 32892,
+    "id": 32892,
+    "text": "Cable III vertical\nCable III",
+    "hex": "0x807c"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32885,
+    "id": 32885,
+    "text": "Cable fase\nCable fase",
+    "hex": "0x8075"
+   },
+   {
+    "command": 32888,
+    "id": 32888,
+    "text": "",
+    "hex": "0x8078"
+   },
+   {
+    "command": 32890,
+    "id": 32890,
+    "text": "Conexión\nConexión",
+    "hex": "0x807a"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32968,
+    "id": 32968,
+    "text": "",
+    "hex": "0x80c8"
+   },
+   {
+    "command": 32969,
+    "id": 32969,
+    "text": "Borne cuadrado\nBorne cuadrado",
+    "hex": "0x80c9"
+   },
+   {
+    "command": 32991,
+    "id": 32991,
+    "text": "",
+    "hex": "0x80df"
+   },
+   {
+    "command": 32992,
+    "id": 32992,
+    "text": "2 Bornes redondos\n2 Bornes redondos",
+    "hex": "0x80e0"
+   },
+   {
+    "command": 32993,
+    "id": 32993,
+    "text": "3 Bornes redondos\n3 Bornes redondos",
+    "hex": "0x80e1"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32897,
+    "id": 32897,
+    "text": "Cable protección\nCable protección",
+    "hex": "0x8081"
+   },
+   {
+    "command": 32970,
+    "id": 32970,
+    "text": "Borne redondo\nBorne redondo",
+    "hex": "0x80ca"
+   }
+  ]
+ },
+ "189": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\189_1033.bin",
+  "version": 1,
+  "width": 16,
+  "height": 21,
+  "count": 29,
+  "items": [
+   33278,
+   0,
+   32909,
+   32910,
+   32912,
+   32913,
+   0,
+   32914,
+   32915,
+   32917,
+   32918,
+   0,
+   32919,
+   32920,
+   32921,
+   32922,
+   33047,
+   33048,
+   33049,
+   0,
+   32923,
+   32924,
+   32925,
+   32926,
+   0,
+   32927,
+   32928,
+   32929,
+   32930
+  ],
+  "buttons": [
+   {
+    "command": 33278,
+    "id": 33278,
+    "text": "Contador ascendente-descendente\nContador ascendente-descendente",
+    "hex": "0x81fe"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32909,
+    "id": 32909,
+    "text": "Espejo vertical\nEspejo vertical",
+    "hex": "0x808d"
+   },
+   {
+    "command": 32910,
+    "id": 32910,
+    "text": "Pulsador NA\nPulsador NA",
+    "hex": "0x808e"
+   },
+   {
+    "command": 32912,
+    "id": 32912,
+    "text": "",
+    "hex": "0x8090"
+   },
+   {
+    "command": 32913,
+    "id": 32913,
+    "text": "Pulsador NA-NC\nPulsador NA-NC",
+    "hex": "0x8091"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32914,
+    "id": 32914,
+    "text": "Pulsador CON\nPulsador CON",
+    "hex": "0x8092"
+   },
+   {
+    "command": 32915,
+    "id": 32915,
+    "text": "Pulsador seta NA\nPulsador seta NA",
+    "hex": "0x8093"
+   },
+   {
+    "command": 32917,
+    "id": 32917,
+    "text": "",
+    "hex": "0x8095"
+   },
+   {
+    "command": 32918,
+    "id": 32918,
+    "text": "Pulsador seta NA-NC\nPulsador seta NA-NC",
+    "hex": "0x8096"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32919,
+    "id": 32919,
+    "text": "Pulsador seta CON\nPulsador seta CON",
+    "hex": "0x8097"
+   },
+   {
+    "command": 32920,
+    "id": 32920,
+    "text": "Interruptor NA\nInterruptor NA",
+    "hex": "0x8098"
+   },
+   {
+    "command": 32921,
+    "id": 32921,
+    "text": "Interruptor NC\nInterruptor NC",
+    "hex": "0x8099"
+   },
+   {
+    "command": 32922,
+    "id": 32922,
+    "text": "Interruptor NA-NC\nInterruptor NA-NC",
+    "hex": "0x809a"
+   },
+   {
+    "command": 33047,
+    "id": 33047,
+    "text": "Bateria\nBateria",
+    "hex": "0x8117"
+   },
+   {
+    "command": 33048,
+    "id": 33048,
+    "text": "Conmutador I-0-II\nConmutador I-0-II",
+    "hex": "0x8118"
+   },
+   {
+    "command": 33049,
+    "id": 33049,
+    "text": "Conmutador I-II-III\nConmutador I-II-III",
+    "hex": "0x8119"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32923,
+    "id": 32923,
+    "text": "Interruptor CON\nInterruptor CON",
+    "hex": "0x809b"
+   },
+   {
+    "command": 32924,
+    "id": 32924,
+    "text": "Final de carrera NA\nFinal de carrera NA",
+    "hex": "0x809c"
+   },
+   {
+    "command": 32925,
+    "id": 32925,
+    "text": "Final de carrera NC\nFinal de carrera NC",
+    "hex": "0x809d"
+   },
+   {
+    "command": 32926,
+    "id": 32926,
+    "text": "Final de carrera NA-NC\nFinal de carrera NA-NC",
+    "hex": "0x809e"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32927,
+    "id": 32927,
+    "text": "Final de carrera COM\nFinal de carrera COM",
+    "hex": "0x809f"
+   },
+   {
+    "command": 32928,
+    "id": 32928,
+    "text": "Contacto auxiliar relé térmico NA\nTérmico NA",
+    "hex": "0x80a0"
+   },
+   {
+    "command": 32929,
+    "id": 32929,
+    "text": "Contacto auxiliar relé térmico NC\nTérmico NC",
+    "hex": "0x80a1"
+   },
+   {
+    "command": 32930,
+    "id": 32930,
+    "text": "Contacto auxiliar relé térmico NA-NC\nTérmico NA-NC",
+    "hex": "0x80a2"
+   }
+  ]
+ },
+ "191": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\191_1033.bin",
+  "version": 1,
+  "width": 16,
+  "height": 21,
+  "count": 19,
+  "items": [
+   32937,
+   32938,
+   32939,
+   32940,
+   0,
+   32933,
+   32934,
+   32935,
+   32936,
+   0,
+   32941,
+   32942,
+   32943,
+   32944,
+   0,
+   32945,
+   32946,
+   32947,
+   32948
+  ],
+  "buttons": [
+   {
+    "command": 32937,
+    "id": 32937,
+    "text": "Contacto temporizado a la conexión CON\nCon. Conexión CON",
+    "hex": "0x80a9"
+   },
+   {
+    "command": 32938,
+    "id": 32938,
+    "text": "Contacto NA\nContacto NA",
+    "hex": "0x80aa"
+   },
+   {
+    "command": 32939,
+    "id": 32939,
+    "text": "Contacto NC\nContacto NC",
+    "hex": "0x80ab"
+   },
+   {
+    "command": 32940,
+    "id": 32940,
+    "text": "Contacto NA+NC\nContacto NA+NC",
+    "hex": "0x80ac"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32933,
+    "id": 32933,
+    "text": "",
+    "hex": "0x80a5"
+   },
+   {
+    "command": 32934,
+    "id": 32934,
+    "text": "Contacto temporizado a la conexión NA\nCon. Conexión NA",
+    "hex": "0x80a6"
+   },
+   {
+    "command": 32935,
+    "id": 32935,
+    "text": "Contacto temporizado a la conexión NC\nCon. Conexión NC",
+    "hex": "0x80a7"
+   },
+   {
+    "command": 32936,
+    "id": 32936,
+    "text": "Contacto temporizado a la conexión NA+NC\nCon. Conexión NA+NC",
+    "hex": "0x80a8"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32941,
+    "id": 32941,
+    "text": "Contacto CON\nContacto CON",
+    "hex": "0x80ad"
+   },
+   {
+    "command": 32942,
+    "id": 32942,
+    "text": "Contacto temporizado a la deconexión NA\nCon. Desconexión NA",
+    "hex": "0x80ae"
+   },
+   {
+    "command": 32943,
+    "id": 32943,
+    "text": "Contacto temporizado a la deconexión NC\nCon. Desconexión NC",
+    "hex": "0x80af"
+   },
+   {
+    "command": 32944,
+    "id": 32944,
+    "text": "Contacto temporizado a la deconexión NA+NC\nCon. Desconexión NA+NC",
+    "hex": "0x80b0"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32945,
+    "id": 32945,
+    "text": "Contacto temporizado a la deconexión CON\nCon. Desconexión CON",
+    "hex": "0x80b1"
+   },
+   {
+    "command": 32946,
+    "id": 32946,
+    "text": "Contacto temporizado a la conexión deconexión NA\nConexión Desconexión NA",
+    "hex": "0x80b2"
+   },
+   {
+    "command": 32947,
+    "id": 32947,
+    "text": "Contacto temporizado a la conexión deconexión NC\nConexión Desconexión NC",
+    "hex": "0x80b3"
+   },
+   {
+    "command": 32948,
+    "id": 32948,
+    "text": "Contacto temporizado a la conexión deconexión NA+NC\nConexión Desconexión NA+NC",
+    "hex": "0x80b4"
+   }
+  ]
+ },
+ "193": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\193_1033.bin",
+  "version": 1,
+  "width": 13,
+  "height": 21,
+  "count": 22,
+  "items": [
+   32949,
+   32956,
+   32964,
+   0,
+   32951,
+   0,
+   32952,
+   32953,
+   32954,
+   32955,
+   33223,
+   33098,
+   0,
+   33236,
+   0,
+   32957,
+   32958,
+   0,
+   32961,
+   32962,
+   32960,
+   32959
+  ],
+  "buttons": [
+   {
+    "command": 32949,
+    "id": 32949,
+    "text": "Contacto temporizado a la conexión deconexión CON\nConexión Desconexión CON",
+    "hex": "0x80b5"
+   },
+   {
+    "command": 32956,
+    "id": 32956,
+    "text": "Relé intermitente\nRelé intermitente",
+    "hex": "0x80bc"
+   },
+   {
+    "command": 32964,
+    "id": 32964,
+    "text": "Detectores\nDetectores",
+    "hex": "0x80c4"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32951,
+    "id": 32951,
+    "text": "",
+    "hex": "0x80b7"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32952,
+    "id": 32952,
+    "text": "Bobina electroválvula\nBobina electroválvula",
+    "hex": "0x80b8"
+   },
+   {
+    "command": 32953,
+    "id": 32953,
+    "text": "Temporizador a la conexión\nTemp. conexión",
+    "hex": "0x80b9"
+   },
+   {
+    "command": 32954,
+    "id": 32954,
+    "text": "Temporizador a la desconexión\nTemp. desconexión",
+    "hex": "0x80ba"
+   },
+   {
+    "command": 32955,
+    "id": 32955,
+    "text": "Temporizador a la conexión desconexión\nTemp. conexión desconexión",
+    "hex": "0x80bb"
+   },
+   {
+    "command": 33223,
+    "id": 33223,
+    "text": "",
+    "hex": "0x81c7"
+   },
+   {
+    "command": 33098,
+    "id": 33098,
+    "text": "Contador\nContador",
+    "hex": "0x814a"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33236,
+    "id": 33236,
+    "text": "",
+    "hex": "0x81d4"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32957,
+    "id": 32957,
+    "text": "Bobina biestable contactor, relé\nBobina biestable",
+    "hex": "0x80bd"
+   },
+   {
+    "command": 32958,
+    "id": 32958,
+    "text": "Piloto señalización\nPiloto señalización",
+    "hex": "0x80be"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32961,
+    "id": 32961,
+    "text": "Sirena\nSirena",
+    "hex": "0x80c1"
+   },
+   {
+    "command": 32962,
+    "id": 32962,
+    "text": "Timbre\nTimbre",
+    "hex": "0x80c2"
+   },
+   {
+    "command": 32960,
+    "id": 32960,
+    "text": "Bocina\nBocina",
+    "hex": "0x80c0"
+   },
+   {
+    "command": 32959,
+    "id": 32959,
+    "text": "Piloto señalización intermitente\nPiloto intermitente",
+    "hex": "0x80bf"
+   }
+  ]
+ },
+ "213": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\213_1033.bin",
+  "version": 1,
+  "width": 20,
+  "height": 21,
+  "count": 20,
+  "items": [
+   33002,
+   33003,
+   33004,
+   0,
+   33005,
+   33089,
+   0,
+   33006,
+   33007,
+   33011,
+   0,
+   33015,
+   33016,
+   33018,
+   33017,
+   33012,
+   0,
+   33297,
+   33298,
+   33299
+  ],
+  "buttons": [
+   {
+    "command": 33002,
+    "id": 33002,
+    "text": "Potencia\nPotencia",
+    "hex": "0x80ea"
+   },
+   {
+    "command": 33003,
+    "id": 33003,
+    "text": "Resistencia I\nResistencia I",
+    "hex": "0x80eb"
+   },
+   {
+    "command": 33004,
+    "id": 33004,
+    "text": "Resistencia III\nResistencia III",
+    "hex": "0x80ec"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33005,
+    "id": 33005,
+    "text": "Autotransformador III\nAutotransformador III",
+    "hex": "0x80ed"
+   },
+   {
+    "command": 33089,
+    "id": 33089,
+    "text": "Etapa inicial\nEtapa inicial",
+    "hex": "0x8141"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33006,
+    "id": 33006,
+    "text": "Arrancador electónico c.a.\nArrancador electrónico c.a.",
+    "hex": "0x80ee"
+   },
+   {
+    "command": 33007,
+    "id": 33007,
+    "text": "Variador velocidad c.a. II\nVariador velocidad c.a. II",
+    "hex": "0x80ef"
+   },
+   {
+    "command": 33011,
+    "id": 33011,
+    "text": "Barra de potencia\nBarra de potencia",
+    "hex": "0x80f3"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33015,
+    "id": 33015,
+    "text": "",
+    "hex": "0x80f7"
+   },
+   {
+    "command": 33016,
+    "id": 33016,
+    "text": "Variador velocidad c.c. II\nVariador velocidad c.c. II",
+    "hex": "0x80f8"
+   },
+   {
+    "command": 33018,
+    "id": 33018,
+    "text": "Variador velocidad c.c. III\nVariador velocidad c.c. III",
+    "hex": "0x80fa"
+   },
+   {
+    "command": 33017,
+    "id": 33017,
+    "text": "Variador velocidad c.c. II\nVariador velocidad c.c. II",
+    "hex": "0x80f9"
+   },
+   {
+    "command": 33012,
+    "id": 33012,
+    "text": "Control Variador velocidad c.a.\nControl Variador velocidad c.a.",
+    "hex": "0x80f4"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33297,
+    "id": 33297,
+    "text": "Motor paso a paso bipolar\nMotor paso a paso bipolar",
+    "hex": "0x8211"
+   },
+   {
+    "command": 33298,
+    "id": 33298,
+    "text": "Controlador motor paso a paso\nControlador motor paso a paso",
+    "hex": "0x8212"
+   },
+   {
+    "command": 33299,
+    "id": 33299,
+    "text": "Controlador motor paso a paso 2 CLK\nControlador motor paso a paso 2 CLK",
+    "hex": "0x8213"
+   }
+  ]
+ },
+ "215": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\215_1033.bin",
+  "version": 1,
+  "width": 23,
+  "height": 21,
+  "count": 19,
+  "items": [
+   33032,
+   33020,
+   33021,
+   33022,
+   33023,
+   33024,
+   0,
+   33025,
+   33027,
+   33034,
+   33033,
+   0,
+   33253,
+   33254,
+   33255,
+   33256,
+   0,
+   33346,
+   33347
+  ],
+  "buttons": [
+   {
+    "command": 33032,
+    "id": 33032,
+    "text": "",
+    "hex": "0x8108"
+   },
+   {
+    "command": 33020,
+    "id": 33020,
+    "text": "",
+    "hex": "0x80fc"
+   },
+   {
+    "command": 33021,
+    "id": 33021,
+    "text": "Det. inductivo NC\nDet. inductivo NC",
+    "hex": "0x80fd"
+   },
+   {
+    "command": 33022,
+    "id": 33022,
+    "text": "Det. capacitivo NA\nDet. capacitivo NA",
+    "hex": "0x80fe"
+   },
+   {
+    "command": 33023,
+    "id": 33023,
+    "text": "Det. capacitivo NC\nDet. capacitivo NC",
+    "hex": "0x80ff"
+   },
+   {
+    "command": 33024,
+    "id": 33024,
+    "text": "Det. magnético NA\nDet. magnético NA",
+    "hex": "0x8100"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33025,
+    "id": 33025,
+    "text": "Det. magnético NC\nDet. magnético NC",
+    "hex": "0x8101"
+   },
+   {
+    "command": 33027,
+    "id": 33027,
+    "text": "",
+    "hex": "0x8103"
+   },
+   {
+    "command": 33034,
+    "id": 33034,
+    "text": "Barrera receptor NC\nBarrera receptor NC",
+    "hex": "0x810a"
+   },
+   {
+    "command": 33033,
+    "id": 33033,
+    "text": "Det. inductivo NA\nDet. inductivo NA",
+    "hex": "0x8109"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33253,
+    "id": 33253,
+    "text": "Pinza simple efecto\nPinza simple efecto",
+    "hex": "0x81e5"
+   },
+   {
+    "command": 33254,
+    "id": 33254,
+    "text": "Presostato NA\nPresostato NA",
+    "hex": "0x81e6"
+   },
+   {
+    "command": 33255,
+    "id": 33255,
+    "text": "Presostato NA\\Presostato NA",
+    "hex": "0x81e7"
+   },
+   {
+    "command": 33256,
+    "id": 33256,
+    "text": "Vacuostato NA\nVacuostato NA",
+    "hex": "0x81e8"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33346,
+    "id": 33346,
+    "text": "proteccion contra sobretensiones permanentes\nproteccion contra sobretensiones permanentes",
+    "hex": "0x8242"
+   },
+   {
+    "command": 33347,
+    "id": 33347,
+    "text": "Termostato NA\nTermostato NA",
+    "hex": "0x8243"
+   }
+  ]
+ },
+ "226": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\226_1033.bin",
+  "version": 1,
+  "width": 16,
+  "height": 21,
+  "count": 33,
+  "items": [
+   33056,
+   33057,
+   33058,
+   33059,
+   33060,
+   33061,
+   0,
+   33100,
+   33111,
+   0,
+   33099,
+   33300,
+   33112,
+   33114,
+   33226,
+   33097,
+   33277,
+   0,
+   33292,
+   33293,
+   33301,
+   33302,
+   0,
+   33079,
+   33080,
+   0,
+   33294,
+   33115,
+   33116,
+   33117,
+   0,
+   33035,
+   32889
+  ],
+  "buttons": [
+   {
+    "command": 33056,
+    "id": 33056,
+    "text": "Limitador sobretensiones IIIN\nLimitador sobretensiones IIIN",
+    "hex": "0x8120"
+   },
+   {
+    "command": 33057,
+    "id": 33057,
+    "text": "AND\nAND",
+    "hex": "0x8121"
+   },
+   {
+    "command": 33058,
+    "id": 33058,
+    "text": "OR\nOR",
+    "hex": "0x8122"
+   },
+   {
+    "command": 33059,
+    "id": 33059,
+    "text": "INV\nINV",
+    "hex": "0x8123"
+   },
+   {
+    "command": 33060,
+    "id": 33060,
+    "text": "EXOR\nEXOR",
+    "hex": "0x8124"
+   },
+   {
+    "command": 33061,
+    "id": 33061,
+    "text": "NAND\nNAND",
+    "hex": "0x8125"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33100,
+    "id": 33100,
+    "text": "Temporizador conexión\nTemporizador conexión",
+    "hex": "0x814c"
+   },
+   {
+    "command": 33111,
+    "id": 33111,
+    "text": "Barra Entrada/Salida\nBarra Entrada/Salida",
+    "hex": "0x8157"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33099,
+    "id": 33099,
+    "text": "Interruptor horario\nInterruptor horario",
+    "hex": "0x814b"
+   },
+   {
+    "command": 33300,
+    "id": 33300,
+    "text": "Controlador motor paso a paso CLK/DIR\nControlador motor paso a paso CLK/DIR",
+    "hex": "0x8214"
+   },
+   {
+    "command": 33112,
+    "id": 33112,
+    "text": "Divisor Binario\nDivisor Binario",
+    "hex": "0x8158"
+   },
+   {
+    "command": 33114,
+    "id": 33114,
+    "text": "",
+    "hex": "0x815a"
+   },
+   {
+    "command": 33226,
+    "id": 33226,
+    "text": "",
+    "hex": "0x81ca"
+   },
+   {
+    "command": 33097,
+    "id": 33097,
+    "text": "Macro etapa\nMacro etapa",
+    "hex": "0x8149"
+   },
+   {
+    "command": 33277,
+    "id": 33277,
+    "text": "Alimentación I/O digital PLC\nAlimentación I/O digital PLC",
+    "hex": "0x81fd"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33292,
+    "id": 33292,
+    "text": "First Scan\nFirst Scan",
+    "hex": "0x820c"
+   },
+   {
+    "command": 33293,
+    "id": 33293,
+    "text": "Contador 4 bits \nContador 4 bits",
+    "hex": "0x820d"
+   },
+   {
+    "command": 33301,
+    "id": 33301,
+    "text": "Temporizador pulso conexión\nTemporizador pulso conexión",
+    "hex": "0x8215"
+   },
+   {
+    "command": 33302,
+    "id": 33302,
+    "text": "Contador 4 bits ASC/DES \nContador 4 bits ASC/DES",
+    "hex": "0x8216"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33079,
+    "id": 33079,
+    "text": "Preselector BCD\nPreselector BCD",
+    "hex": "0x8137"
+   },
+   {
+    "command": 33080,
+    "id": 33080,
+    "text": "Prueba\n Prueba",
+    "hex": "0x8138"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33294,
+    "id": 33294,
+    "text": "Contador 4 bits \nContador 4 bits",
+    "hex": "0x820e"
+   },
+   {
+    "command": 33115,
+    "id": 33115,
+    "text": "Temporizador intermitente\nTemporizador intermitente",
+    "hex": "0x815b"
+   },
+   {
+    "command": 33116,
+    "id": 33116,
+    "text": "Display BCD\n Display BCD",
+    "hex": "0x815c"
+   },
+   {
+    "command": 33117,
+    "id": 33117,
+    "text": "Display 7 Seg.\nDisplay 7 Seg.",
+    "hex": "0x815d"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33035,
+    "id": 33035,
+    "text": "Barrera receptor NA\nBarrera receptor NA",
+    "hex": "0x810b"
+   },
+   {
+    "command": 32889,
+    "id": 32889,
+    "text": "Entrada mangueral\nEntrada manguera",
+    "hex": "0x8079"
+   }
+  ]
+ },
+ "228": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\228_1033.bin",
+  "version": 1,
+  "width": 17,
+  "height": 21,
+  "count": 18,
+  "items": [
+   33088,
+   33083,
+   33084,
+   33085,
+   0,
+   33101,
+   33094,
+   33095,
+   0,
+   33102,
+   33086,
+   33093,
+   0,
+   33092,
+   33090,
+   33091,
+   0,
+   33096
+  ],
+  "buttons": [
+   {
+    "command": 33088,
+    "id": 33088,
+    "text": "Barra Grafcet\nBarra Grafcet",
+    "hex": "0x8140"
+   },
+   {
+    "command": 33083,
+    "id": 33083,
+    "text": "Etapa inicial\nEtapa inicial",
+    "hex": "0x813b"
+   },
+   {
+    "command": 33084,
+    "id": 33084,
+    "text": "Etapa\nEtapa",
+    "hex": "0x813c"
+   },
+   {
+    "command": 33085,
+    "id": 33085,
+    "text": "Transición\nTransición",
+    "hex": "0x813d"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33101,
+    "id": 33101,
+    "text": "Biestable\nBiestable",
+    "hex": "0x814d"
+   },
+   {
+    "command": 33094,
+    "id": 33094,
+    "text": "Convergencia en \"Y\"\nConvergencia en \"Y\"",
+    "hex": "0x8146"
+   },
+   {
+    "command": 33095,
+    "id": 33095,
+    "text": "Divergencia en \"O\"\nDivergencia en \"O\"",
+    "hex": "0x8147"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33102,
+    "id": 33102,
+    "text": "\"0\"\n\"0\"",
+    "hex": "0x814e"
+   },
+   {
+    "command": 33086,
+    "id": 33086,
+    "text": "Acción\nAcción",
+    "hex": "0x813e"
+   },
+   {
+    "command": 33093,
+    "id": 33093,
+    "text": "Línea enlace\nLínea enlace",
+    "hex": "0x8145"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33092,
+    "id": 33092,
+    "text": "Enlace de salida\n Enlace de salida",
+    "hex": "0x8144"
+   },
+   {
+    "command": 33090,
+    "id": 33090,
+    "text": "Control arrancador electrónico c.a..\nControl arrancador electrónico c.a.",
+    "hex": "0x8142"
+   },
+   {
+    "command": 33091,
+    "id": 33091,
+    "text": "Enlace de entrada\nEnlace de entrada",
+    "hex": "0x8143"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33096,
+    "id": 33096,
+    "text": "Convergencia en \"O\"\nConvergencia en \"O\"",
+    "hex": "0x8148"
+   }
+  ]
+ },
+ "242": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\242_1033.bin",
+  "version": 1,
+  "width": 28,
+  "height": 21,
+  "count": 23,
+  "items": [
+   33108,
+   33109,
+   0,
+   33238,
+   33336,
+   0,
+   33240,
+   33337,
+   0,
+   33326,
+   33328,
+   0,
+   33334,
+   33334,
+   33335,
+   0,
+   33272,
+   33273,
+   33274,
+   33275,
+   33276,
+   0,
+   33324
+  ],
+  "buttons": [
+   {
+    "command": 33108,
+    "id": 33108,
+    "text": "Entrada/Salida\nEntrada/Salida",
+    "hex": "0x8154"
+   },
+   {
+    "command": 33109,
+    "id": 33109,
+    "text": "Intercambio entradas PC_SIMU\nIntercambio entradas PC_SIMU",
+    "hex": "0x8155"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33238,
+    "id": 33238,
+    "text": "Motor trifásico como monofásico\nMotor trifásico como monofásico",
+    "hex": "0x81d6"
+   },
+   {
+    "command": 33336,
+    "id": 33336,
+    "text": "ET-200 8DO\nET-200 8DO",
+    "hex": "0x8238"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33240,
+    "id": 33240,
+    "text": "",
+    "hex": "0x81d8"
+   },
+   {
+    "command": 33337,
+    "id": 33337,
+    "text": "LOGO  4DI/4DO\nLOGO 4DI/4DO",
+    "hex": "0x8239"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33326,
+    "id": 33326,
+    "text": "Arduino Mega\nArduino Mega",
+    "hex": "0x822e"
+   },
+   {
+    "command": 33328,
+    "id": 33328,
+    "text": "Arduino I/0\nArduino I/0",
+    "hex": "0x8230"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33334,
+    "id": 33334,
+    "text": "ET200 DI\nET 200 DI",
+    "hex": "0x8236"
+   },
+   {
+    "command": 33334,
+    "id": 33334,
+    "text": "ET200 DI\nET 200 DI",
+    "hex": "0x8236"
+   },
+   {
+    "command": 33335,
+    "id": 33335,
+    "text": "ET-200 8DI\nET-200 8DI",
+    "hex": "0x8237"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33272,
+    "id": 33272,
+    "text": "Relé de secuencia de fase + N\nRelé de secuencia de fase + N",
+    "hex": "0x81f8"
+   },
+   {
+    "command": 33273,
+    "id": 33273,
+    "text": "Entrada digital PLC\nEntrada digital PLC",
+    "hex": "0x81f9"
+   },
+   {
+    "command": 33274,
+    "id": 33274,
+    "text": "Salida digital PLC\nSalida digital PLC",
+    "hex": "0x81fa"
+   },
+   {
+    "command": 33275,
+    "id": 33275,
+    "text": "CPU PLC\nCPU PLC",
+    "hex": "0x81fb"
+   },
+   {
+    "command": 33276,
+    "id": 33276,
+    "text": "Alimentación I/O digital PLC\nAlimentación I/O digital PLC",
+    "hex": "0x81fc"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33324,
+    "id": 33324,
+    "text": "Botonera\nBotonera",
+    "hex": "0x822c"
+   }
+  ]
+ },
+ "269": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\269_1033.bin",
+  "version": 1,
+  "width": 20,
+  "height": 21,
+  "count": 10,
+  "items": [
+   33242,
+   33243,
+   33245,
+   33246,
+   33247,
+   33252,
+   33248,
+   33249,
+   33250,
+   33251
+  ],
+  "buttons": [
+   {
+    "command": 33242,
+    "id": 33242,
+    "text": "Actuadores neumáticos\nActuadores neumáticos",
+    "hex": "0x81da"
+   },
+   {
+    "command": 33243,
+    "id": 33243,
+    "text": "Actuador simple efecto\nActuador simple efecto",
+    "hex": "0x81db"
+   },
+   {
+    "command": 33245,
+    "id": 33245,
+    "text": "Barra de actuadores neumáticos\nBarra de actuadores neumáticos",
+    "hex": "0x81dd"
+   },
+   {
+    "command": 33246,
+    "id": 33246,
+    "text": "Actuador sin vástago\nActuador sin vástago",
+    "hex": "0x81de"
+   },
+   {
+    "command": 33247,
+    "id": 33247,
+    "text": "Actuador sin vástago magnético\nActuador sin vástago magnético",
+    "hex": "0x81df"
+   },
+   {
+    "command": 33252,
+    "id": 33252,
+    "text": "Motor neumático reversible\nMotor neumático reversible",
+    "hex": "0x81e4"
+   },
+   {
+    "command": 33248,
+    "id": 33248,
+    "text": "Actuador giro\nActuador giro",
+    "hex": "0x81e0"
+   },
+   {
+    "command": 33249,
+    "id": 33249,
+    "text": "Pinza doble efecto\nPinza doble efecto",
+    "hex": "0x81e1"
+   },
+   {
+    "command": 33250,
+    "id": 33250,
+    "text": "Ventosa\nVentosa",
+    "hex": "0x81e2"
+   },
+   {
+    "command": 33251,
+    "id": 33251,
+    "text": "Motor neumático\nMotor neumático",
+    "hex": "0x81e3"
+   }
+  ]
+ },
+ "291": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\291_1033.bin",
+  "version": 1,
+  "width": 37,
+  "height": 21,
+  "count": 15,
+  "items": [
+   33258,
+   33259,
+   33260,
+   33261,
+   0,
+   33266,
+   33267,
+   33271,
+   33269,
+   0,
+   33344,
+   33345,
+   0,
+   33372,
+   33373
+  ],
+  "buttons": [
+   {
+    "command": 33258,
+    "id": 33258,
+    "text": "Actuador lineal eléctrico\nActuador lineal eléctrico",
+    "hex": "0x81ea"
+   },
+   {
+    "command": 33259,
+    "id": 33259,
+    "text": "Relé estado sólido SSR DC\nRelé estado sólido SSR DC",
+    "hex": "0x81eb"
+   },
+   {
+    "command": 33260,
+    "id": 33260,
+    "text": "Relé estado sólido SSR AC\nRelé estado sólido SSR AC",
+    "hex": "0x81ec"
+   },
+   {
+    "command": 33261,
+    "id": 33261,
+    "text": "Contactor de estado sólido\nContactor de estado sólido",
+    "hex": "0x81ed"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33266,
+    "id": 33266,
+    "text": "Relés electrónicos\nRelés electrónicos",
+    "hex": "0x81f2"
+   },
+   {
+    "command": 33267,
+    "id": 33267,
+    "text": "Relé de falta de fase + N\nRelé de falta de fase + N",
+    "hex": "0x81f3"
+   },
+   {
+    "command": 33271,
+    "id": 33271,
+    "text": "Relé de falta  y secuencia de fase\nRelé de falta y secuencia de fase",
+    "hex": "0x81f7"
+   },
+   {
+    "command": 33269,
+    "id": 33269,
+    "text": "",
+    "hex": "0x81f5"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33344,
+    "id": 33344,
+    "text": "Relé térmico\nRelé térmico",
+    "hex": "0x8240"
+   },
+   {
+    "command": 33345,
+    "id": 33345,
+    "text": "Proteccion contra sobretensiones permanentes\nProteccion contra sobretensiones permanentes",
+    "hex": "0x8241"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33372,
+    "id": 33372,
+    "text": "Diodo LED\nDiodo LED",
+    "hex": "0x825c"
+   },
+   {
+    "command": 33373,
+    "id": 33373,
+    "text": "Relé SPST\\Relé SPST",
+    "hex": "0x825d"
+   }
+  ]
+ },
+ "292": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\292_1033.bin",
+  "version": 1,
+  "width": 16,
+  "height": 21,
+  "count": 23,
+  "items": [
+   33062,
+   33063,
+   33065,
+   33066,
+   33291,
+   0,
+   33067,
+   33069,
+   33070,
+   0,
+   33100,
+   33111,
+   33099,
+   33112,
+   33114,
+   33226,
+   33097,
+   33277,
+   0,
+   32876,
+   32877,
+   33035,
+   33037
+  ],
+  "buttons": [
+   {
+    "command": 33062,
+    "id": 33062,
+    "text": "NOR\nNOR",
+    "hex": "0x8126"
+   },
+   {
+    "command": 33063,
+    "id": 33063,
+    "text": "NA\nNA",
+    "hex": "0x8127"
+   },
+   {
+    "command": 33065,
+    "id": 33065,
+    "text": "",
+    "hex": "0x8129"
+   },
+   {
+    "command": 33066,
+    "id": 33066,
+    "text": "Flanco ascendente\nFlanco ascendente",
+    "hex": "0x812a"
+   },
+   {
+    "command": 33291,
+    "id": 33291,
+    "text": "",
+    "hex": "0x820b"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33067,
+    "id": 33067,
+    "text": "Flanco descendente\nFlanco descendente",
+    "hex": "0x812b"
+   },
+   {
+    "command": 33069,
+    "id": 33069,
+    "text": "Lógica\nLógica",
+    "hex": "0x812d"
+   },
+   {
+    "command": 33070,
+    "id": 33070,
+    "text": "Set\nSet",
+    "hex": "0x812e"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33100,
+    "id": 33100,
+    "text": "Temporizador conexión\nTemporizador conexión",
+    "hex": "0x814c"
+   },
+   {
+    "command": 33111,
+    "id": 33111,
+    "text": "Barra Entrada/Salida\nBarra Entrada/Salida",
+    "hex": "0x8157"
+   },
+   {
+    "command": 33099,
+    "id": 33099,
+    "text": "Interruptor horario\nInterruptor horario",
+    "hex": "0x814b"
+   },
+   {
+    "command": 33112,
+    "id": 33112,
+    "text": "Divisor Binario\nDivisor Binario",
+    "hex": "0x8158"
+   },
+   {
+    "command": 33114,
+    "id": 33114,
+    "text": "",
+    "hex": "0x815a"
+   },
+   {
+    "command": 33226,
+    "id": 33226,
+    "text": "",
+    "hex": "0x81ca"
+   },
+   {
+    "command": 33097,
+    "id": 33097,
+    "text": "Macro etapa\nMacro etapa",
+    "hex": "0x8149"
+   },
+   {
+    "command": 33277,
+    "id": 33277,
+    "text": "Alimentación I/O digital PLC\nAlimentación I/O digital PLC",
+    "hex": "0x81fd"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 32876,
+    "id": 32876,
+    "text": "Alimentación +-\nAlimentación +-",
+    "hex": "0x806c"
+   },
+   {
+    "command": 32877,
+    "id": 32877,
+    "text": "Alimentación Positivo\nAlimentación +",
+    "hex": "0x806d"
+   },
+   {
+    "command": 33035,
+    "id": 33035,
+    "text": "Barrera receptor NA\nBarrera receptor NA",
+    "hex": "0x810b"
+   },
+   {
+    "command": 33037,
+    "id": 33037,
+    "text": "Cable negativo\nCable negativo",
+    "hex": "0x810d"
+   }
+  ]
+ },
+ "301": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\301_3082.bin",
+  "version": 1,
+  "width": 21,
+  "height": 21,
+  "count": 31,
+  "items": [
+   33311,
+   33393,
+   0,
+   33352,
+   33354,
+   33339,
+   33340,
+   0,
+   33386,
+   33390,
+   0,
+   33338,
+   33380,
+   33381,
+   33382,
+   0,
+   33313,
+   33314,
+   33374,
+   0,
+   33317,
+   33318,
+   33371,
+   0,
+   33323,
+   0,
+   33319,
+   0,
+   33363,
+   33364,
+   33365
+  ],
+  "buttons": [
+   {
+    "command": 33311,
+    "id": 33311,
+    "text": "Símbolos 2D\nSímbolos 2D",
+    "hex": "0x821f"
+   },
+   {
+    "command": 33393,
+    "id": 33393,
+    "text": "Enclavamiento\nEnclavamiento",
+    "hex": "0x8271"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33352,
+    "id": 33352,
+    "text": "Espesor 4\nEspesor 4",
+    "hex": "0x8248"
+   },
+   {
+    "command": 33354,
+    "id": 33354,
+    "text": "Interruptor diferencial\nInterruptor diferencial",
+    "hex": "0x824a"
+   },
+   {
+    "command": 33339,
+    "id": 33339,
+    "text": "Contactor\nContactor",
+    "hex": "0x823b"
+   },
+   {
+    "command": 33340,
+    "id": 33340,
+    "text": "Disyuntor\nDisyuntor",
+    "hex": "0x823c"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33386,
+    "id": 33386,
+    "text": "Contactos auxiliares OFF delay\nContactos auxiliares OFF delay",
+    "hex": "0x826a"
+   },
+   {
+    "command": 33390,
+    "id": 33390,
+    "text": "",
+    "hex": "0x826e"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33338,
+    "id": 33338,
+    "text": "S7-1200 8DI/8DO\nS7-1200 8DI/8DO",
+    "hex": "0x823a"
+   },
+   {
+    "command": 33380,
+    "id": 33380,
+    "text": "",
+    "hex": "0x8264"
+   },
+   {
+    "command": 33381,
+    "id": 33381,
+    "text": "Contactos auxiliares\nContactos auxiliares",
+    "hex": "0x8265"
+   },
+   {
+    "command": 33382,
+    "id": 33382,
+    "text": "Contactos auxiliares ON delay\nContactos auxiliares ON delay",
+    "hex": "0x8266"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33313,
+    "id": 33313,
+    "text": "Motor trifásico\nMotor trifásico",
+    "hex": "0x8221"
+   },
+   {
+    "command": 33314,
+    "id": 33314,
+    "text": "Rele zócalo\nRele zócalo",
+    "hex": "0x8222"
+   },
+   {
+    "command": 33374,
+    "id": 33374,
+    "text": "Relé SPDT\\Relé SPDT",
+    "hex": "0x825e"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33317,
+    "id": 33317,
+    "text": "Rele temporizado zócalo\nRele temporizado zócalo",
+    "hex": "0x8225"
+   },
+   {
+    "command": 33318,
+    "id": 33318,
+    "text": "Pulsador\nPulsador",
+    "hex": "0x8226"
+   },
+   {
+    "command": 33371,
+    "id": 33371,
+    "text": "Relé 1 canal\\Relé 1 canal",
+    "hex": "0x825b"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33323,
+    "id": 33323,
+    "text": "Borna\nBorna",
+    "hex": "0x822b"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33319,
+    "id": 33319,
+    "text": "Piloto\nPiloto",
+    "hex": "0x8227"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33363,
+    "id": 33363,
+    "text": "",
+    "hex": "0x8253"
+   },
+   {
+    "command": 33364,
+    "id": 33364,
+    "text": "Componente tamaño pequeño\nComponente tamaño pequeño",
+    "hex": "0x8254"
+   },
+   {
+    "command": 33365,
+    "id": 33365,
+    "text": "Componente tamaño medio\nComponente tamaño medio",
+    "hex": "0x8255"
+   }
+  ]
+ },
+ "307": {
+  "file": "C:\\Users\\rodri\\Documents\\eletric-diagram\\docs\\cadesimu\\resources\\241_241\\307_3082.bin",
+  "version": 1,
+  "width": 25,
+  "height": 21,
+  "count": 32,
+  "items": [
+   33312,
+   33394,
+   0,
+   33356,
+   33357,
+   33342,
+   33343,
+   0,
+   33387,
+   33391,
+   0,
+   33341,
+   33383,
+   0,
+   33384,
+   33385,
+   0,
+   33315,
+   33316,
+   33376,
+   0,
+   33320,
+   33321,
+   33375,
+   0,
+   33323,
+   0,
+   33322,
+   0,
+   33363,
+   33364,
+   33365
+  ],
+  "buttons": [
+   {
+    "command": 33312,
+    "id": 33312,
+    "text": "Motor trifásico\nMotor trifásico",
+    "hex": "0x8220"
+   },
+   {
+    "command": 33394,
+    "id": 33394,
+    "text": "Motor trifásico YD\nMotor trifásico YD",
+    "hex": "0x8272"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33356,
+    "id": 33356,
+    "text": "",
+    "hex": "0x824c"
+   },
+   {
+    "command": 33357,
+    "id": 33357,
+    "text": "Interruptor automático\nInterruptor automático",
+    "hex": "0x824d"
+   },
+   {
+    "command": 33342,
+    "id": 33342,
+    "text": "Contactor\nContactor",
+    "hex": "0x823e"
+   },
+   {
+    "command": 33343,
+    "id": 33343,
+    "text": "Disyuntor\nDisyuntor",
+    "hex": "0x823f"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33387,
+    "id": 33387,
+    "text": "Interruptor\nInterruptor",
+    "hex": "0x826b"
+   },
+   {
+    "command": 33391,
+    "id": 33391,
+    "text": "Seccionador\nSeccionador",
+    "hex": "0x826f"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33341,
+    "id": 33341,
+    "text": "Relé térmico\nRelé térmico",
+    "hex": "0x823d"
+   },
+   {
+    "command": 33383,
+    "id": 33383,
+    "text": "Contactos auxiliares OFF delay\nContactos auxiliares OFF delay",
+    "hex": "0x8267"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33384,
+    "id": 33384,
+    "text": "Contactos auxiliares\nContactos auxiliares",
+    "hex": "0x8268"
+   },
+   {
+    "command": 33385,
+    "id": 33385,
+    "text": "Contactos auxiliares ON delay\nContactos auxiliares ON delay",
+    "hex": "0x8269"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33315,
+    "id": 33315,
+    "text": "Rele temporizado zócalo\nRele temporizado zócalo",
+    "hex": "0x8223"
+   },
+   {
+    "command": 33316,
+    "id": 33316,
+    "text": "Rele zócalo\nRele zócalo",
+    "hex": "0x8224"
+   },
+   {
+    "command": 33376,
+    "id": 33376,
+    "text": "Diodo led\nDiodo led",
+    "hex": "0x8260"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33320,
+    "id": 33320,
+    "text": "Borna\nBorna",
+    "hex": "0x8228"
+   },
+   {
+    "command": 33321,
+    "id": 33321,
+    "text": "Pulsador\nPulsador",
+    "hex": "0x8229"
+   },
+   {
+    "command": 33375,
+    "id": 33375,
+    "text": "Relé de 1 canal\nRelé de 1 canal",
+    "hex": "0x825f"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33323,
+    "id": 33323,
+    "text": "Borna\nBorna",
+    "hex": "0x822b"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33322,
+    "id": 33322,
+    "text": "Piloto\nPiloto",
+    "hex": "0x822a"
+   },
+   {
+    "command": 0,
+    "text": ""
+   },
+   {
+    "command": 33363,
+    "id": 33363,
+    "text": "",
+    "hex": "0x8253"
+   },
+   {
+    "command": 33364,
+    "id": 33364,
+    "text": "Componente tamaño pequeño\nComponente tamaño pequeño",
+    "hex": "0x8254"
+   },
+   {
+    "command": 33365,
+    "id": 33365,
+    "text": "Componente tamaño medio\nComponente tamaño medio",
+    "hex": "0x8255"
+   }
+  ]
+ }
+}

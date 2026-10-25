@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.39999999999998 22" width="14.7616mm" height="9.72321mm">
+<ellipse cx="5.00" cy="15.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 17 L 5 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="1" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">L1</text>
+<ellipse cx="17.00" cy="15.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 17 L 17 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="13" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">L2</text>
+<ellipse cx="29.00" cy="15.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 29 17 L 29 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="25" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">L3</text>
+</svg>

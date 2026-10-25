@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 57" width="14.1429mm" height="25.192mm">
+<text x="9" y="55" fill="#1f2933" font-family="Arial" font-size="6">a</text>
+<text x="15" y="55" fill="#1f2933" font-family="Arial" font-size="6">b</text>
+<text x="21" y="55" fill="#1f2933" font-family="Arial" font-size="6">c</text>
+<text x="27" y="55" fill="#1f2933" font-family="Arial" font-size="6">d</text>
+<text x="9" y="7" fill="#1f2933" font-family="Arial" font-size="6">e</text>
+<text x="15" y="7" fill="#1f2933" font-family="Arial" font-size="6">f</text>
+<text x="21" y="7" fill="#1f2933" font-family="Arial" font-size="6">g</text>
+<text x="27" y="7" fill="#1f2933" font-family="Arial" font-size="6">.</text>
+<path d="M 1 13 L 31 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 13 L 31 49" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 49 L 1 49" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 49 L 1 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 7 L 7 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 7 L 13 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 7 L 19 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 7 L 25 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 49 L 7 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 49 L 13 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 49 L 19 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 49 L 25 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="10,17 21,17 21,20 10,20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="22,20 25,20 25,29 22,29" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="22,32 25,32 25,41 22,41" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="10,29 21,29 21,32 10,32" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="7,32 9,32 9,41 7,41" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="7,20 9,20 9,29 7,29" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="10,41 21,41 21,44 10,44" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="27.50" cy="44.50" rx="1.50" ry="1.50" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

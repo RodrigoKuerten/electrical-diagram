@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.399999999999977 50" width="12.9937mm" height="22.0982mm">
+<text x="23" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="23" y="43" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<path d="M 15 13 L 21 25" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 7 L 21 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 25 L 21 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 43 L 21 49" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 31 L 21 32" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 32 L 23 32" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 32 L 23 35" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 35 L 21 35" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 35 L 21 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="21" y="37" fill="#1f2933" font-family="Arial" font-size="6">I></text>
+<path d="M 15 31 L 27 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 15 37 L 27 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 15 43 L 27 43 L 15 43" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 27 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 15 L 1 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 19 L 5 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 15 L 5 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 15 L 9 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 15 L 13 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 19 L 13 19 L 13 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 19 L 17 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 23 L 9 25" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 27 L 9 29" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 31 L 9 35" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 33 L 11 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 33 L 15 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 37 L 9 39" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 39 L 11 39" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 39 L 15 39" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

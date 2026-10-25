@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.399999999999977 32" width="10.342mm" height="14.1429mm">
+<text x="15" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">11</text>
+<text x="15" y="25" fill="#1f5f9e" font-family="Arial" font-size="6">12</text>
+<path d="M 13 7 L 13 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 25 L 13 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 13 L 13 25" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 14 L 20 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 13 L 13 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 19 L 5 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 19 L 11 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 19 L 16 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 15 L 1 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

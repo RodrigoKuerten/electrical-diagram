@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 124" width="34.4732mm" height="54.8036mm">
+<path d="M 29 15 L 29 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 35 15 L 35 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 53 15 L 77 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 77 15 L 77 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 77 21 L 71 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 71 21 L 65 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 65 19 L 59 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 59 21 L 53 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 53 33 L 77 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 77 33 L 77 27" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 77 27 L 71 27" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 71 27 L 65 29" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 65 29 L 59 27" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 59 27 L 53 27" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 35 33 L 38 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 38 15 L 42 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 42 33 L 45 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 45 15 L 49 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 49 33 L 53 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 15 L 53 33 L 17 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 33 L 17 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 33 L 23 29" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 29 L 25 33" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 47 33 L 47 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 45 37 L 47 41" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 47 41 L 49 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 33 L 23 93" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 59 L 27 49" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="24,50 27,47 26,51 24,50" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="22.50" cy="46.50" rx="0.50" ry="0.50" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="22.50" cy="61.00" rx="0.50" ry="1.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 57 L 28 53 L 33 53" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="31.00" cy="54.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 47 L 31 47" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 47 L 31 53" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 61 L 31 61" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 55" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 45 L 35 45" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 35 45 L 35 63" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 35 63 L 17 63" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 63 L 17 45" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="37" y="51" fill="#1f2933" font-family="Arial" font-size="6">50%</text>
+<path d="M 19 83 L 27 73" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="24,74 27,71 26,75 24,74" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="22.50" cy="70.50" rx="0.50" ry="0.50" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="22.50" cy="85.00" rx="0.50" ry="1.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 75 L 28 79 L 33 79" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="31.00" cy="78.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 71 L 31 71" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 71 L 31 77" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 85 L 31 85" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 79" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 69 L 35 69" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 35 69 L 35 87" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 35 87 L 17 87" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 87 L 17 69" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="37" y="75" fill="#1f2933" font-family="Arial" font-size="6">50%</text>
+<path d="M 22 1 L 29 1" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 29 1 L 29 9 L 22 9" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 22 9" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 5 L 26 2" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 26 2 L 29 5" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 29 5 L 26 8" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 26 8 L 23 5" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 3 L 24 7" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 27 3 L 27 7" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 40 1 L 47 1" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 47 1 L 47 9 L 40 9" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 40 9" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 41 5 L 44 2" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 44 2 L 47 5" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 47 5 L 44 8" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 44 8 L 41 5" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 42 3 L 42 7" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 45 3 L 45 7" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="26" y="105" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="26" y="87" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="36" y="105" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<path d="M 23 105 L 23 117" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 117 L 27 123" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 27 123 L 19 123" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 123" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 105 L 31 111" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 29 111 L 33 111" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 33 111 L 31 115" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 115 L 29 111" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 93 L 33 93" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 33 93 L 33 105" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 33 105 L 21 105" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 105 L 21 93" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 93 L 9 105" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 105 L 9 93" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="31,105 28,103 30,101 30,101" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 23 103 L 23 105" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 21 103 L 24 103" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 11 105 L 11 93" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="11,93 9,95 12,95 12,95" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 105 L 19 103" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 103 L 20 103" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 96 L 9 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 101 L 9 101 L 1 101" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 3 101 L 7 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 33 96 L 41 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 33 101 L 41 101" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 41 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 35 101 L 39 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

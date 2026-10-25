@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.69999999999999 29" width="16.6621mm" height="12.817mm">
+<text x="3" y="10" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="3" y="22" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="33" y="22" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<path d="M 1 10 L 7 10" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 22 L 7 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 29 22 L 31 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="7,4 25,4 25,28 7,28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="27.00" cy="22.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 4 L 25 4" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 4 L 25 28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 25 28 L 7 28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 28 L 7 4" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="11" y="7" fill="#1f2933" font-family="Arial" font-size="6">&</text>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.399999999999977 32" width="5.03839mm" height="14.1429mm">
+<text x="3" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">X1</text>
+<text x="3" y="25" fill="#1f5f9e" font-family="Arial" font-size="6">X2</text>
+<path d="M 1 7 L 1 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 25 L 1 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 13 L 1 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 15 L 9 15" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 23 L 9 23 L 1 25" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 9 13 L 9 25" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

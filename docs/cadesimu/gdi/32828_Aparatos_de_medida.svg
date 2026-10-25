@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.39999999999998 50" width="23.6009mm" height="22.0982mm">
+<text x="9" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">U1</text>
+<text x="21" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">V1</text>
+<text x="33" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">W1</text>
+<text x="45" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">PE</text>
+<ellipse cx="19.00" cy="31.00" rx="18.00" ry="18.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 7 7 L 7 17" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 7 L 19 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 31 7 L 31 17" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 43 7 L 43 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 43 31 L 39 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="17" y="23" fill="#1f2933" font-family="Arial" font-size="6">M</text>
+<text x="11" y="31" fill="#1f2933" font-family="Arial" font-size="6">3</text>
+</svg>

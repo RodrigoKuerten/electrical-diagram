@@ -1,0 +1,852 @@
+{
+  "arduino_mega": {
+    "command": 33326,
+    "name": "Arduino Mega",
+    "confidence": 1.0
+  },
+  "autotransformer_3p": {
+    "command": 33005,
+    "name": "Autotransformador III",
+    "confidence": 1.0
+  },
+  "bell": {
+    "command": 32962,
+    "name": "Timbre",
+    "confidence": 1.0
+  },
+  "breaker_1p": {
+    "command": 32899,
+    "name": "Disyuntor I",
+    "confidence": 1.0
+  },
+  "breaker_1pn": {
+    "command": 32860,
+    "name": "Interruptor automático IN",
+    "confidence": 1.0
+  },
+  "breaker_2p": {
+    "command": 32867,
+    "name": "Disyuntor II",
+    "confidence": 1.0
+  },
+  "breaker_3p": {
+    "command": 32868,
+    "name": "Disyuntor III",
+    "confidence": 1.0
+  },
+  "breaker_3pn": {
+    "command": 32863,
+    "name": "Interruptor automático IIIN",
+    "confidence": 1.0
+  },
+  "button_station": {
+    "command": 33324,
+    "name": "Botonera",
+    "confidence": 1.0
+  },
+  "buzzer": {
+    "command": 32960,
+    "name": "Bocina",
+    "confidence": 1.0
+  },
+  "cable_1": {
+    "command": 32885,
+    "name": "Cable fase",
+    "confidence": 1.0
+  },
+  "cable_pe": {
+    "command": 32897,
+    "name": "Cable protección",
+    "confidence": 1.0
+  },
+  "connector_out": {
+    "command": 32898,
+    "name": "Conexión de salida",
+    "confidence": 1.0
+  },
+  "contactor_1p": {
+    "command": 32900,
+    "name": "Contactor I",
+    "confidence": 1.0
+  },
+  "contactor_2p": {
+    "command": 32835,
+    "name": "Contactor II",
+    "confidence": 1.0
+  },
+  "contactor_3p": {
+    "command": 32834,
+    "name": "Contactor III",
+    "confidence": 1.0
+  },
+  "contactor_4p": {
+    "command": 32836,
+    "name": "Contactor IIII",
+    "confidence": 1.0
+  },
+  "contactor_aux_co": {
+    "command": 32941,
+    "name": "Contacto CON",
+    "confidence": 1.0
+  },
+  "contactor_coil_bistable": {
+    "command": 32957,
+    "name": "Bobina biestable contactor, relé",
+    "confidence": 1.0
+  },
+  "contact_co": {
+    "command": 32941,
+    "name": "Contacto CON",
+    "confidence": 1.0
+  },
+  "contact_nc": {
+    "command": 32939,
+    "name": "Contacto NC",
+    "confidence": 1.0
+  },
+  "contact_no": {
+    "command": 32938,
+    "name": "Contacto NA",
+    "confidence": 1.0
+  },
+  "contact_thermal_co": {
+    "command": 32931,
+    "name": "Contacto auxiliar relé térmico CON",
+    "confidence": 1.0
+  },
+  "contact_thermal_nc": {
+    "command": 32929,
+    "name": "Contacto auxiliar relé térmico NC",
+    "confidence": 1.0
+  },
+  "contact_thermal_no": {
+    "command": 32928,
+    "name": "Contacto auxiliar relé térmico NA",
+    "confidence": 1.0
+  },
+  "contact_timed_off_nc": {
+    "command": 32943,
+    "name": "Contacto temporizado a la deconexión NC",
+    "confidence": 1.0
+  },
+  "contact_timed_off_no": {
+    "command": 32942,
+    "name": "Contacto temporizado a la deconexión NA",
+    "confidence": 1.0
+  },
+  "contact_timed_onoff_no": {
+    "command": 32946,
+    "name": "Contacto temporizado a la conexión deconexión NA",
+    "confidence": 1.0
+  },
+  "contact_timed_on_nc": {
+    "command": 32935,
+    "name": "Contacto temporizado a la conexión NC",
+    "confidence": 1.0
+  },
+  "contact_timed_on_no": {
+    "command": 32934,
+    "name": "Contacto temporizado a la conexión NA",
+    "confidence": 1.0
+  },
+  "counter": {
+    "command": 33098,
+    "name": "Contador",
+    "confidence": 1.0
+  },
+  "counter_updown": {
+    "command": 33278,
+    "name": "Contador ascendente-descendente",
+    "confidence": 1.0
+  },
+  "diode": {
+    "command": 33044,
+    "name": "Diodo",
+    "confidence": 1.0
+  },
+  "disconnector_1p": {
+    "command": 32899,
+    "name": "Disyuntor I",
+    "confidence": 1.0
+  },
+  "disconnector_1pn": {
+    "command": 32860,
+    "name": "Interruptor automático IN",
+    "confidence": 1.0
+  },
+  "disconnector_2p": {
+    "command": 32867,
+    "name": "Disyuntor II",
+    "confidence": 1.0
+  },
+  "disconnector_3p": {
+    "command": 33392,
+    "name": "Seccionador",
+    "confidence": 1.0
+  },
+  "disconnector_3pn": {
+    "command": 32863,
+    "name": "Interruptor automático IIIN",
+    "confidence": 1.0
+  },
+  "display_7seg": {
+    "command": 33117,
+    "name": "Display 7 Seg.",
+    "confidence": 1.0
+  },
+  "flasher": {
+    "command": 32956,
+    "name": "Relé intermitente",
+    "confidence": 1.0
+  },
+  "fuse_1p": {
+    "command": 32854,
+    "name": "Fusible I",
+    "confidence": 1.0
+  },
+  "fuse_2p": {
+    "command": 32840,
+    "name": "Fusible II",
+    "confidence": 1.0
+  },
+  "fuse_3p": {
+    "command": 32841,
+    "name": "Fusible III",
+    "confidence": 1.0
+  },
+  "fuse_3pn": {
+    "command": 32842,
+    "name": "Fusible IIIN",
+    "confidence": 1.0
+  },
+  "fuse_switch_1pn": {
+    "command": 32844,
+    "name": "Fusible seccionable IN",
+    "confidence": 1.0
+  },
+  "fuse_switch_2p": {
+    "command": 32845,
+    "name": "Fusible seccionable II",
+    "confidence": 1.0
+  },
+  "fuse_switch_3p": {
+    "command": 32845,
+    "name": "Fusible seccionable II",
+    "confidence": 1.0
+  },
+  "fuse_switch_3pn": {
+    "command": 32843,
+    "name": "Fusible IN",
+    "confidence": 1.0
+  },
+  "grafcet_action": {
+    "command": 33086,
+    "name": "Acción",
+    "confidence": 1.0
+  },
+  "grafcet_divergence": {
+    "command": 33095,
+    "name": "Divergencia en \"O\"",
+    "confidence": 1.0
+  },
+  "grafcet_link": {
+    "command": 33093,
+    "name": "Línea enlace",
+    "confidence": 1.0
+  },
+  "grafcet_step": {
+    "command": 33084,
+    "name": "Etapa",
+    "confidence": 1.0
+  },
+  "grafcet_step_initial": {
+    "command": 33083,
+    "name": "Etapa inicial",
+    "confidence": 1.0
+  },
+  "grafcet_transition": {
+    "command": 33085,
+    "name": "Transición",
+    "confidence": 1.0
+  },
+  "hmi_panel": {
+    "command": 33324,
+    "name": "Botonera",
+    "confidence": 1.0
+  },
+  "horn": {
+    "command": 32960,
+    "name": "Bocina",
+    "confidence": 1.0
+  },
+  "hose_entry": {
+    "command": 32891,
+    "name": "Entrada mangueral",
+    "confidence": 1.0
+  },
+  "junction": {
+    "command": 32890,
+    "name": "Conexión",
+    "confidence": 1.0
+  },
+  "lamp_flashing": {
+    "command": 32959,
+    "name": "Piloto señalización intermitente",
+    "confidence": 1.0
+  },
+  "led": {
+    "command": 33372,
+    "name": "Diodo LED",
+    "confidence": 1.0
+  },
+  "limit_co": {
+    "command": 32927,
+    "name": "Final de carrera COM",
+    "confidence": 1.0
+  },
+  "limit_nc": {
+    "command": 32925,
+    "name": "Final de carrera NC",
+    "confidence": 1.0
+  },
+  "limit_no": {
+    "command": 32924,
+    "name": "Final de carrera NA",
+    "confidence": 1.0
+  },
+  "linear_actuator": {
+    "command": 33258,
+    "name": "Actuador lineal eléctrico",
+    "confidence": 1.0
+  },
+  "logic_and": {
+    "command": 33057,
+    "name": "AND",
+    "confidence": 1.0
+  },
+  "logic_counter": {
+    "command": 33098,
+    "name": "Contador",
+    "confidence": 1.0
+  },
+  "logic_divider": {
+    "command": 33112,
+    "name": "Divisor Binario",
+    "confidence": 1.0
+  },
+  "logic_edge_down": {
+    "command": 33067,
+    "name": "Flanco descendente",
+    "confidence": 1.0
+  },
+  "logic_edge_up": {
+    "command": 33066,
+    "name": "Flanco ascendente",
+    "confidence": 1.0
+  },
+  "logic_nand": {
+    "command": 33061,
+    "name": "NAND",
+    "confidence": 1.0
+  },
+  "logic_nor": {
+    "command": 33062,
+    "name": "NOR",
+    "confidence": 1.0
+  },
+  "logic_not": {
+    "command": 33059,
+    "name": "INV",
+    "confidence": 1.0
+  },
+  "logic_or": {
+    "command": 33058,
+    "name": "OR",
+    "confidence": 1.0
+  },
+  "logic_sr": {
+    "command": 33101,
+    "name": "Biestable",
+    "confidence": 1.0
+  },
+  "logic_timer_on": {
+    "command": 33100,
+    "name": "Temporizador conexión",
+    "confidence": 1.0
+  },
+  "logic_xor": {
+    "command": 33060,
+    "name": "EXOR",
+    "confidence": 1.0
+  },
+  "motor_1ph": {
+    "command": 33104,
+    "name": "Motor monofásico",
+    "confidence": 1.0
+  },
+  "motor_2speed": {
+    "command": 32995,
+    "name": "Motor II Veloc",
+    "confidence": 1.0
+  },
+  "motor_3ph_1ph": {
+    "command": 33238,
+    "name": "Motor trifásico como monofásico",
+    "confidence": 1.0
+  },
+  "motor_3ph_6": {
+    "command": 32829,
+    "name": "Motor trifásico",
+    "confidence": 1.0
+  },
+  "motor_3ph_yd": {
+    "command": 32830,
+    "name": "Motor trifásico YD",
+    "confidence": 1.0
+  },
+  "motor_dahlander": {
+    "command": 32832,
+    "name": "Motor Dahalander",
+    "confidence": 1.0
+  },
+  "motor_dc_indep": {
+    "command": 33001,
+    "name": "Motor cc. de independiente",
+    "confidence": 1.0
+  },
+  "motor_dc_pm": {
+    "command": 33000,
+    "name": "Motor cc. de imán permanente",
+    "confidence": 1.0
+  },
+  "motor_wound_rotor": {
+    "command": 32833,
+    "name": "Motor trifásico rotor bobinado",
+    "confidence": 1.0
+  },
+  "mushroom_co": {
+    "command": 32919,
+    "name": "Pulsador seta CON",
+    "confidence": 1.0
+  },
+  "mushroom_nc": {
+    "command": 32913,
+    "name": "Pulsador NA-NC",
+    "confidence": 1.0
+  },
+  "mushroom_no": {
+    "command": 32915,
+    "name": "Pulsador seta NA",
+    "confidence": 1.0
+  },
+  "overvoltage_relay": {
+    "command": 33346,
+    "name": "proteccion contra sobretensiones permanentes",
+    "confidence": 1.0
+  },
+  "plc_cpu": {
+    "command": 33275,
+    "name": "CPU PLC",
+    "confidence": 1.0
+  },
+  "plc_di": {
+    "command": 33273,
+    "name": "Entrada digital PLC",
+    "confidence": 1.0
+  },
+  "plc_do": {
+    "command": 33274,
+    "name": "Salida digital PLC",
+    "confidence": 1.0
+  },
+  "plc_et200_di": {
+    "command": 33335,
+    "name": "ET-200 8DI",
+    "confidence": 1.0
+  },
+  "plc_et200_do": {
+    "command": 33336,
+    "name": "ET-200 8DO",
+    "confidence": 1.0
+  },
+  "plc_logo": {
+    "command": 33337,
+    "name": "LOGO  4DI/4DO",
+    "confidence": 1.0
+  },
+  "plc_power": {
+    "command": 33276,
+    "name": "Alimentación I/O digital PLC",
+    "confidence": 1.0
+  },
+  "pneumatic_cylinder_double": {
+    "command": 33243,
+    "name": "Actuador simple efecto",
+    "confidence": 1.0
+  },
+  "pneumatic_cylinder_rodless": {
+    "command": 33246,
+    "name": "Actuador sin vástago",
+    "confidence": 1.0
+  },
+  "pneumatic_cylinder_single": {
+    "command": 33243,
+    "name": "Actuador simple efecto",
+    "confidence": 1.0
+  },
+  "pneumatic_gripper": {
+    "command": 33249,
+    "name": "Pinza doble efecto",
+    "confidence": 1.0
+  },
+  "pneumatic_hose": {
+    "command": 32886,
+    "name": "Manguera",
+    "confidence": 1.0
+  },
+  "pneumatic_motor": {
+    "command": 33251,
+    "name": "Motor neumático",
+    "confidence": 1.0
+  },
+  "pneumatic_motor_reversible": {
+    "command": 33252,
+    "name": "Motor neumático reversible",
+    "confidence": 1.0
+  },
+  "pneumatic_rotary": {
+    "command": 33248,
+    "name": "Actuador giro",
+    "confidence": 1.0
+  },
+  "pneumatic_vacuum": {
+    "command": 33250,
+    "name": "Ventosa",
+    "confidence": 1.0
+  },
+  "power_supply": {
+    "command": 32999,
+    "name": "Fuente de alimentación",
+    "confidence": 1.0
+  },
+  "pressure_switch_nc": {
+    "command": 33255,
+    "name": "Presostato NA\\Presostato NA",
+    "confidence": 1.0
+  },
+  "pressure_switch_no": {
+    "command": 33254,
+    "name": "Presostato NA",
+    "confidence": 1.0
+  },
+  "rcd_2p": {
+    "command": 32864,
+    "name": "Interruptor diferencial IN",
+    "confidence": 1.0
+  },
+  "rcd_4p": {
+    "command": 32865,
+    "name": "Interruptor diferencial IIIN",
+    "confidence": 1.0
+  },
+  "rectifier_bridge": {
+    "command": 32998,
+    "name": "Rectificador",
+    "confidence": 1.0
+  },
+  "relay_contact_co": {
+    "command": 32941,
+    "name": "Contacto CON",
+    "confidence": 1.0
+  },
+  "relay_contact_nc": {
+    "command": 32939,
+    "name": "Contacto NC",
+    "confidence": 1.0
+  },
+  "relay_contact_no": {
+    "command": 32938,
+    "name": "Contacto NA",
+    "confidence": 1.0
+  },
+  "resistor_1p": {
+    "command": 33003,
+    "name": "Resistencia I",
+    "confidence": 1.0
+  },
+  "resistor_3p": {
+    "command": 33004,
+    "name": "Resistencia III",
+    "confidence": 1.0
+  },
+  "selector_2pos": {
+    "command": 33048,
+    "name": "Conmutador I-0-II",
+    "confidence": 1.0
+  },
+  "selector_3pos": {
+    "command": 33049,
+    "name": "Conmutador I-II-III",
+    "confidence": 1.0
+  },
+  "selector_changeover": {
+    "command": 33050,
+    "name": "Conmutador cruce",
+    "confidence": 1.0
+  },
+  "sensor_capacitive_nc": {
+    "command": 33023,
+    "name": "Det. capacitivo NC",
+    "confidence": 1.0
+  },
+  "sensor_capacitive_no": {
+    "command": 33022,
+    "name": "Det. capacitivo NA",
+    "confidence": 1.0
+  },
+  "sensor_inductive_nc": {
+    "command": 33021,
+    "name": "Det. inductivo NC",
+    "confidence": 1.0
+  },
+  "sensor_inductive_no": {
+    "command": 33033,
+    "name": "Det. inductivo NA",
+    "confidence": 1.0
+  },
+  "sensor_magnetic_nc": {
+    "command": 33025,
+    "name": "Det. magnético NC",
+    "confidence": 1.0
+  },
+  "sensor_magnetic_no": {
+    "command": 33024,
+    "name": "Det. magnético NA",
+    "confidence": 1.0
+  },
+  "sensor_photoelectric_nc": {
+    "command": 33034,
+    "name": "Barrera receptor NC",
+    "confidence": 1.0
+  },
+  "sensor_photoelectric_no": {
+    "command": 33035,
+    "name": "Barrera receptor NA",
+    "confidence": 1.0
+  },
+  "siren": {
+    "command": 32961,
+    "name": "Sirena",
+    "confidence": 1.0
+  },
+  "soft_starter": {
+    "command": 33006,
+    "name": "Arrancador electónico c.a.",
+    "confidence": 1.0
+  },
+  "solenoid_valve": {
+    "command": 32952,
+    "name": "Bobina electroválvula",
+    "confidence": 0.909
+  },
+  "solid_state_contactor": {
+    "command": 33261,
+    "name": "Contactor de estado sólido",
+    "confidence": 1.0
+  },
+  "solid_state_relay_ac": {
+    "command": 33260,
+    "name": "Relé estado sólido SSR AC",
+    "confidence": 1.0
+  },
+  "solid_state_relay_dc": {
+    "command": 33259,
+    "name": "Relé estado sólido SSR DC",
+    "confidence": 1.0
+  },
+  "stepper_bipolar": {
+    "command": 33297,
+    "name": "Motor paso a paso bipolar",
+    "confidence": 1.0
+  },
+  "stepper_unipolar": {
+    "command": 33296,
+    "name": "Motor paso a paso unipolar",
+    "confidence": 1.0
+  },
+  "supply_ac1_pe": {
+    "command": 32873,
+    "name": "Alimentación Fase + Neutro",
+    "confidence": 1.0
+  },
+  "supply_ac3_n": {
+    "command": 32870,
+    "name": "Alimentación L1 + L2 + L3 + N",
+    "confidence": 1.0
+  },
+  "supply_ac3_n_pe": {
+    "command": 32883,
+    "name": "Alimentación L1 + L2 + L3 + N + PE",
+    "confidence": 1.0
+  },
+  "supply_ac3_pe": {
+    "command": 32883,
+    "name": "Alimentación L1 + L2 + L3 + N + PE",
+    "confidence": 1.0
+  },
+  "supply_battery": {
+    "command": 33047,
+    "name": "Bateria",
+    "confidence": 1.0
+  },
+  "supply_dc_pos": {
+    "command": 32877,
+    "name": "Alimentación Positivo",
+    "confidence": 1.0
+  },
+  "supply_earth": {
+    "command": 33043,
+    "name": "Alimentación Protección",
+    "confidence": 1.0
+  },
+  "supply_neutral": {
+    "command": 32875,
+    "name": "Alimentación Neutro",
+    "confidence": 1.0
+  },
+  "supply_rectifier": {
+    "command": 32998,
+    "name": "Rectificador",
+    "confidence": 1.0
+  },
+  "supply_transformer3": {
+    "command": 33046,
+    "name": "Transformador III",
+    "confidence": 1.0
+  },
+  "surge_1pn": {
+    "command": 33055,
+    "name": "Limitador sobretensiones IN",
+    "confidence": 1.0
+  },
+  "surge_3pn": {
+    "command": 33056,
+    "name": "Limitador sobretensiones IIIN",
+    "confidence": 1.0
+  },
+  "switch_co": {
+    "command": 32923,
+    "name": "Interruptor CON",
+    "confidence": 1.0
+  },
+  "switch_nc": {
+    "command": 32921,
+    "name": "Interruptor NC",
+    "confidence": 1.0
+  },
+  "switch_no": {
+    "command": 32920,
+    "name": "Interruptor NA",
+    "confidence": 1.0
+  },
+  "switch_power_1p": {
+    "command": 32837,
+    "name": "Interruptor II",
+    "confidence": 0.963
+  },
+  "switch_power_2p": {
+    "command": 32837,
+    "name": "Interruptor II",
+    "confidence": 1.0
+  },
+  "switch_power_3p": {
+    "command": 32838,
+    "name": "Interruptor III",
+    "confidence": 1.0
+  },
+  "switch_power_4p": {
+    "command": 32839,
+    "name": "Interruptor IIII",
+    "confidence": 1.0
+  },
+  "terminal_2": {
+    "command": 32992,
+    "name": "2 Bornes redondos",
+    "confidence": 1.0
+  },
+  "terminal_3": {
+    "command": 32992,
+    "name": "2 Bornes redondos",
+    "confidence": 1.0
+  },
+  "terminal_4": {
+    "command": 32993,
+    "name": "3 Bornes redondos",
+    "confidence": 1.0
+  },
+  "terminal_round": {
+    "command": 32970,
+    "name": "Borne redondo",
+    "confidence": 1.0
+  },
+  "terminal_square": {
+    "command": 32969,
+    "name": "Borne cuadrado",
+    "confidence": 1.0
+  },
+  "thermostat_nc": {
+    "command": 33348,
+    "name": "Termostato NC",
+    "confidence": 1.0
+  },
+  "thermostat_no": {
+    "command": 33347,
+    "name": "Termostato NA",
+    "confidence": 1.0
+  },
+  "timer_on_off": {
+    "command": 32955,
+    "name": "Temporizador a la conexión desconexión",
+    "confidence": 1.0
+  },
+  "timer_pulse": {
+    "command": 33301,
+    "name": "Temporizador pulso conexión",
+    "confidence": 1.0
+  },
+  "time_switch": {
+    "command": 33099,
+    "name": "Interruptor horario",
+    "confidence": 1.0
+  },
+  "transformer_3p": {
+    "command": 33046,
+    "name": "Transformador III",
+    "confidence": 1.0
+  },
+  "vacuum_switch_no": {
+    "command": 33256,
+    "name": "Vacuostato NA",
+    "confidence": 1.0
+  },
+  "vfd_ac_2p": {
+    "command": 33007,
+    "name": "Variador velocidad c.a. II",
+    "confidence": 1.0
+  },
+  "vfd_ac_3p": {
+    "command": 33007,
+    "name": "Variador velocidad c.a. II",
+    "confidence": 1.0
+  },
+  "vfd_dc_2p": {
+    "command": 33017,
+    "name": "Variador velocidad c.c. II",
+    "confidence": 1.0
+  },
+  "vfd_dc_3p": {
+    "command": 33018,
+    "name": "Variador velocidad c.c. III",
+    "confidence": 1.0
+  }
+}

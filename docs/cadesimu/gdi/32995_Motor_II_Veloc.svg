@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.69999999999999 38" width="11.3585mm" height="16.7946mm">
+<text x="3" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="21" y="7" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="3" y="31" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<text x="21" y="31" fill="#1f5f9e" font-family="Arial" font-size="6">4</text>
+<path d="M 1 7 L 1 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 7 L 19 13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 31 L 1 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 19 31 L 19 37" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 21 L 19 21" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 23 L 19 23" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="1,13 19,13 19,19 1,19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="1,25 19,25 19,31 1,31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

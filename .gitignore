@@ -10,6 +10,8 @@ cmake-build-*/
 *.user
 *.user.*
 compile_commands.json
+__pycache__/
+*.pyc
 
 # Qt generated
 *.qm
