@@ -41,6 +41,11 @@ test-results/
 .autosave/
 recovery/
 
+# Local reverse-engineering dumps (the processed traces and reports are committed)
+docs/cadesimu/handdrawn/
+docs/cadesimu/resources/
+docs/cadesimu/rea_evidence.json
+
 # OS
 .DS_Store
 Thumbs.db
