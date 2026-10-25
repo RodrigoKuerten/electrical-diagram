@@ -1,0 +1,40 @@
+{
+  "symbol_version": 1,
+  "type": "grafcet_divergence",
+  "display_name": "OR divergence",
+  "display_name_pt": "Divergência em O",
+  "category": "legacy",
+  "size": [
+    42,
+    36
+  ],
+  "pins": [
+    {
+      "name": "IN",
+      "role": "signal_in",
+      "x": 8,
+      "y": 18,
+      "required": false
+    },
+    {
+      "name": "OUT1",
+      "role": "signal_out",
+      "x": 34,
+      "y": 6,
+      "required": false
+    },
+    {
+      "name": "OUT2",
+      "role": "signal_out",
+      "x": 34,
+      "y": 30,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

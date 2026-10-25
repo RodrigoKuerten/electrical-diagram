@@ -1,0 +1,26 @@
+{
+  "symbol_version": 1,
+  "type": "supply_dc_pos",
+  "display_name": "Supply +",
+  "display_name_pt": "Alimentação +",
+  "category": "legacy",
+  "size": [
+    22,
+    34
+  ],
+  "pins": [
+    {
+      "name": "+",
+      "role": "supply_in",
+      "x": 11,
+      "y": 4,
+      "required": true
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

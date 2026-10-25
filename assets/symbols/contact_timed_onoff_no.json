@@ -1,0 +1,64 @@
+{
+  "symbol_version": 1,
+  "type": "contact_timed_onoff_no",
+  "display_name": "Timed contact ON/OFF NO",
+  "display_name_pt": "Contato temporizado conexão/desconexão NA",
+  "category": "contacts",
+  "size": [
+    10.342,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "55",
+      "role": "terminal",
+      "x": 6.188,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "56",
+      "role": "terminal",
+      "x": 6.188,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "delay_on_ms": 1000,
+    "delay_off_ms": 1000,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "delay_on_ms",
+      "type": "int",
+      "label": "ON delay",
+      "label_pt": "Tempo de conexão",
+      "unit": "ms",
+      "min": 0
+    },
+    {
+      "key": "delay_off_ms",
+      "type": "int",
+      "label": "OFF delay",
+      "label_pt": "Tempo de desconexão",
+      "unit": "ms",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "contact_timed_onoff_no_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32946,
+  "geometry_clean": true
+}

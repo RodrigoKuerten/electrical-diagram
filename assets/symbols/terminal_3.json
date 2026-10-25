@@ -1,0 +1,41 @@
+{
+  "symbol_version": 1,
+  "type": "terminal_3",
+  "display_name": "3 round terminals",
+  "display_name_pt": "3 bornes redondos",
+  "category": "terminals",
+  "size": [
+    12.375,
+    1.768
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 0.884,
+      "y": 0.884,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 6.188,
+      "y": 0.884,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 11.491,
+      "y": 0.884,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32992,
+  "geometry_clean": true
+}

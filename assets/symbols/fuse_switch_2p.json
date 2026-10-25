@@ -1,0 +1,83 @@
+{
+  "symbol_version": 1,
+  "type": "fuse_switch_2p",
+  "display_name": "Fuse switch II",
+  "display_name_pt": "Fusível seccionável II",
+  "category": "protection",
+  "size": [
+    16.662,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 1.768,
+      "y": 4.862,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 12.375,
+      "y": 4.862,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 3.536,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_current": 25,
+    "closed": true
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_current",
+      "type": "int",
+      "label": "Rated current",
+      "label_pt": "Corrente nominal",
+      "unit": "A",
+      "min": 0
+    },
+    {
+      "key": "closed",
+      "type": "bool",
+      "label": "Closed",
+      "label_pt": "closed",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "blown": "fuse_switch_2p_blown.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32845,
+  "geometry_clean": true
+}

@@ -1,0 +1,34 @@
+{
+  "symbol_version": 1,
+  "type": "reed_nc",
+  "display_name": "Reed switch NC",
+  "display_name_pt": "Sensor reed NF",
+  "category": "legacy",
+  "size": [
+    28,
+    40
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 14,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 14,
+      "y": 36,
+      "required": true
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "reed_nc_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

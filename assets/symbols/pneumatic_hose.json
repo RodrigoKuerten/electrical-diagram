@@ -1,0 +1,33 @@
+{
+  "symbol_version": 1,
+  "type": "pneumatic_hose",
+  "display_name": "Hose",
+  "display_name_pt": "Manguera",
+  "category": "legacy",
+  "size": [
+    42,
+    16
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 4,
+      "y": 8,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 38,
+      "y": 8,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

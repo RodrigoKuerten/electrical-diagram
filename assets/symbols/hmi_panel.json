@@ -1,0 +1,41 @@
+{
+  "symbol_version": 1,
+  "type": "hmi_panel",
+  "display_name": "Operator panel",
+  "display_name_pt": "Botonera",
+  "category": "legacy",
+  "size": [
+    68.946,
+    58.339
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 8.896,
+      "y": 4.667,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 24.465,
+      "y": 4.667,
+      "required": false
+    },
+    {
+      "name": "COM",
+      "role": "signal_in",
+      "x": 51.154,
+      "y": 53.672,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33324
+}

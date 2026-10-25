@@ -1,0 +1,41 @@
+{
+  "symbol_version": 1,
+  "type": "pneumatic_motor_reversible",
+  "display_name": "Reversible pneumatic motor",
+  "display_name_pt": "Motor pneumático reversível",
+  "category": "pneumatic",
+  "size": [
+    33.589,
+    53.92
+  ],
+  "pins": [
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 40.661,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 12.375,
+      "y": 48.616,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 48.616,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33252,
+  "geometry_clean": true
+}

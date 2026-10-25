@@ -1,0 +1,36 @@
+{
+  "symbol_version": 1,
+  "type": "logic_or",
+  "display_name": "Logic OR",
+  "display_name_pt": "Função lógica OR",
+  "category": "logic",
+  "size": [
+    15.778,
+    5.304
+  ],
+  "pins": [
+    {
+      "name": "IN1",
+      "role": "signal_in",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "OUT",
+      "role": "signal_out",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "logic_or_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33058,
+  "geometry_clean": true
+}

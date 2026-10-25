@@ -1,0 +1,63 @@
+{
+  "symbol_version": 1,
+  "type": "supply_transformer3",
+  "display_name": "Transformer III",
+  "display_name_pt": "Transformador III",
+  "category": "legacy",
+  "size": [
+    5.304,
+    7.955
+  ],
+  "pins": [
+    {
+      "name": "L1",
+      "role": "supply_in",
+      "x": 0.707,
+      "y": 0.589,
+      "required": false
+    },
+    {
+      "name": "L2",
+      "role": "supply_in",
+      "x": 1.945,
+      "y": 0.589,
+      "required": false
+    },
+    {
+      "name": "L3",
+      "role": "supply_in",
+      "x": 3.182,
+      "y": 0.589,
+      "required": false
+    },
+    {
+      "name": "l1",
+      "role": "supply_in",
+      "x": 0.707,
+      "y": 7.366,
+      "required": false
+    },
+    {
+      "name": "l2",
+      "role": "supply_in",
+      "x": 1.945,
+      "y": 7.366,
+      "required": false
+    },
+    {
+      "name": "l3",
+      "role": "supply_in",
+      "x": 3.182,
+      "y": 7.366,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33046,
+  "geometry_clean": true,
+  "library_hidden": true
+}

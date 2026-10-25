@@ -1,0 +1,43 @@
+{
+  "symbol_version": 1,
+  "type": "display_7seg",
+  "display_name": "7-segment display",
+  "display_name_pt": "Display 7 segmentos",
+  "category": "logic",
+  "size": [
+    13.259,
+    24.308
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 23.866,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 23.866,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 10.607,
+      "y": 23.866,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "display_7seg_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33117,
+  "geometry_clean": true
+}

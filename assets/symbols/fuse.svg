@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 40" width="20mm" height="40mm" stroke="#1f2933" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="10" y1="0" x2="10" y2="2.5"/>
-  <line x1="10" y1="2.5" x2="10" y2="12"/>
-  <g id="fuse_element">
-    <rect x="5" y="12" width="10" height="16"/>
-    <line x1="10" y1="12" x2="10" y2="28"/>
-  </g>
-  <line x1="10" y1="28" x2="10" y2="37.5"/>
-  <line x1="10" y1="37.5" x2="10" y2="40"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 44" width="20mm" height="44mm">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="10.00" y1="4.00" x2="10.00" y2="15.00" stroke="#1f2933" stroke-width="0.8"/><line x1="10.00" y1="29.00" x2="10.00" y2="40.00" stroke="#1f2933" stroke-width="0.8"/><rect x="7.00" y="15.00" width="6.00" height="14.00" rx="0" stroke="#1f2933" stroke-width="0.8" fill="none"/><line x1="10.00" y1="15.00" x2="10.00" y2="29.00" stroke="#1f2933" stroke-width="0.8"/><text x="11.60" y="3.40" fill="#1f5f9e" font-family="Arial" font-size="2.4" text-anchor="start" font-weight="normal">1</text><text x="11.60" y="41.80" fill="#1f5f9e" font-family="Arial" font-size="2.4" text-anchor="start" font-weight="normal">2</text>
+</g>
 </svg>

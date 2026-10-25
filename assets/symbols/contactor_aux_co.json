@@ -1,0 +1,36 @@
+{
+  "symbol_version": 1,
+  "type": "contactor_aux_co",
+  "display_name": "Auxiliary changeover contact",
+  "display_name_pt": "Contato auxiliar comutado",
+  "category": "contactors",
+  "size": [
+    9.458,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "67",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "68",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "contactor_aux_co_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32941,
+  "geometry_clean": true
+}

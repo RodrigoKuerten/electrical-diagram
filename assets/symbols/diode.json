@@ -1,0 +1,69 @@
+{
+  "symbol_version": 1,
+  "type": "diode",
+  "display_name": "Diode",
+  "display_name_pt": "Diodo",
+  "category": "power",
+  "size": [
+    20.065,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "PE",
+      "role": "terminal",
+      "x": 18.562,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "+",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 15.911,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 10.607,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33044,
+  "geometry_clean": true
+}

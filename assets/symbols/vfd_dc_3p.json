@@ -1,0 +1,62 @@
+{
+  "symbol_version": 1,
+  "type": "vfd_dc_3p",
+  "display_name": "DC drive III",
+  "display_name_pt": "Variador de velocidade CC III",
+  "category": "power",
+  "size": [
+    22.717,
+    29.17
+  ],
+  "pins": [
+    {
+      "name": "L1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "L2",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "L3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "terminal",
+      "x": 18.562,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "M1",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 29.17,
+      "required": false
+    },
+    {
+      "name": "M2",
+      "role": "terminal",
+      "x": 15.911,
+      "y": 29.17,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33018,
+  "geometry_clean": true
+}

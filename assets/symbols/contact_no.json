@@ -1,0 +1,36 @@
+{
+  "symbol_version": 1,
+  "type": "contact_no",
+  "display_name": "Contact NO",
+  "display_name_pt": "Contato NA",
+  "category": "contacts",
+  "size": [
+    4.154,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "11",
+      "role": "contact_common",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "12",
+      "role": "contact_no",
+      "x": 0.0,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "contact_no_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32938,
+  "geometry_clean": true
+}

@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "sensor_photoelectric_nc",
+  "display_name": "Photoelectric sensor NF",
+  "display_name_pt": "Sensor fotoelétrico NF",
+  "category": "sensors",
+  "size": [
+    12.817,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 7.513,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 7.513,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "momentary"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "sensor_photoelectric_nc_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33034,
+  "geometry_clean": true
+}

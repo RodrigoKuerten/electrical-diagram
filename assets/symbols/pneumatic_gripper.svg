@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94.00 108.00" width="41.5446mm" height="47.7321mm">
+<path d="M 66 0 L 84 0" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 84 0 L 84 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 84 12 L 66 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 66 12 L 66 0" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="74.50" cy="5.50" rx="0.50" ry="0.50" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 90 4 L 94 6" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 94 6 L 90 8" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 90 8 L 90 4" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 66 42 L 84 42" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 84 42 L 84 48 L 66 48" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 66 48" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 84 48 L 90 54" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 90 54 L 60 54" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 60 54" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 6 L 24 78 L 90 6" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 74 6 L 74 42" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 59 22 L 66 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 66 22 L 66 30 L 59 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 66 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="56" y="23" fill="#1f5f9e" font-family="Arial" font-size="6">V</text>
+<path d="M 66 26 L 74 26" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<ellipse cx="74.50" cy="26.00" rx="0.50" ry="1.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="27" y="90" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="27" y="72" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="37" y="90" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<path d="M 24 90 L 24 102" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 102 L 28 108" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 28 108 L 20 108" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 108" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 32 90 L 32 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 30 96 L 34 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 34 96 L 32 100" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 32 100 L 30 96" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 22 78 L 34 78" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 34 78 L 34 90" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 34 90 L 22 90" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 22 90 L 22 78" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 10 78 L 10 90" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 10 90 L 10 78" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="32,90 29,88 31,86 31,86" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 88 L 24 90" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 22 88 L 25 88" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 12 90 L 12 78" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="12,78 10,80 13,80 13,80" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 90 L 20 88" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 18 88 L 21 88" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 81 L 10 81" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 86 L 10 86 L 2 86" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 4 86 L 8 81" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="0" y="92" fill="#1f2933" font-family="Arial" font-size="6">V+</text>
+<path d="M 34 81 L 42 81" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 34 86 L 42 86" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 42 81" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 36 86 L 40 81" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="64" y="92" fill="#1f2933" font-family="Arial" font-size="6">V-</text>
+</svg>

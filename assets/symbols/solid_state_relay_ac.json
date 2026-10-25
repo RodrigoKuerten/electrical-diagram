@@ -1,0 +1,83 @@
+{
+  "symbol_version": 1,
+  "type": "solid_state_relay_ac",
+  "display_name": "Solid-state relay AC",
+  "display_name_pt": "Relé de estado sólido AC",
+  "category": "legacy",
+  "size": [
+    22.717,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "SSR",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "A1",
+      "role": "terminal",
+      "x": 21.214,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "terminal",
+      "x": 21.214,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33260
+}

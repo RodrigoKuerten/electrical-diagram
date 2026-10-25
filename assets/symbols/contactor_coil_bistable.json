@@ -1,0 +1,55 @@
+{
+  "symbol_version": 1,
+  "type": "contactor_coil_bistable",
+  "display_name": "Bistable contactor coil",
+  "display_name_pt": "Bobina biestável de contator",
+  "category": "contactors",
+  "size": [
+    6.806,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "X1",
+      "role": "coil_input",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "X2",
+      "role": "coil_output",
+      "x": 2.652,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_voltage": 220,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "contactor_coil_bistable_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32957,
+  "geometry_clean": true
+}

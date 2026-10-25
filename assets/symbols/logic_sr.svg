@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 40" width="42mm" height="40mm">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="4.00" y="5.00" width="34.00" height="28.00" rx="0" stroke="#1f2933" stroke-width="0.8" fill="none"/><text x="9.00" y="14.00" fill="#1f5f9e" font-family="Arial" font-size="3.2" text-anchor="start" font-weight="normal">S</text><text x="9.00" y="30.00" fill="#1f5f9e" font-family="Arial" font-size="3.2" text-anchor="start" font-weight="normal">R</text><text x="33.00" y="14.00" fill="#1f5f9e" font-family="Arial" font-size="3.2" text-anchor="end" font-weight="normal">Q</text><text x="33.00" y="30.00" fill="#1f5f9e" font-family="Arial" font-size="3.2" text-anchor="end" font-weight="normal">Qn</text><text x="23.00" y="22.00" fill="#1f2933" font-family="Arial" font-size="3.2" text-anchor="middle" font-weight="normal">SR</text>
+</g>
+</svg>

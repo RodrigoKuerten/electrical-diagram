@@ -1,0 +1,55 @@
+{
+  "symbol_version": 1,
+  "type": "surge_1pn",
+  "display_name": "Surge arrester IN",
+  "display_name_pt": "Limitador sobretensões IN",
+  "category": "protection",
+  "size": [
+    21.214,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 21.214,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33055,
+  "geometry_clean": true
+}

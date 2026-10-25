@@ -1,0 +1,42 @@
+{
+  "symbol_version": 1,
+  "type": "grafcet_step_initial",
+  "display_name": "Initial step",
+  "display_name_pt": "Etapa inicial GRAFCET",
+  "category": "legacy",
+  "size": [
+    13.126,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 10.607,
+      "y": 7.955,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33083,
+  "geometry_clean": true,
+  "library_hidden": true
+}

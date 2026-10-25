@@ -1,0 +1,58 @@
+{
+  "symbol_version": 1,
+  "type": "time_switch",
+  "display_name": "Time switch",
+  "display_name_pt": "Interruptor horário",
+  "category": "legacy",
+  "size": [
+    46,
+    44
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 8,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 8,
+      "y": 40,
+      "required": true
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 34,
+      "y": 40,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "on_time": "08:00",
+    "off_time": "18:00"
+  },
+  "parameter_schema": [
+    {
+      "key": "on_time",
+      "type": "string",
+      "label": "On Time",
+      "label_pt": "on_time",
+      "unit": ""
+    },
+    {
+      "key": "off_time",
+      "type": "string",
+      "label": "Off Time",
+      "label_pt": "off_time",
+      "unit": ""
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

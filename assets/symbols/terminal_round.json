@@ -1,0 +1,27 @@
+{
+  "symbol_version": 1,
+  "type": "terminal_round",
+  "display_name": "Round terminal",
+  "display_name_pt": "Borne redondo",
+  "category": "terminals",
+  "size": [
+    7.955,
+    2.21
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 1.326,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32970,
+  "geometry_clean": true
+}

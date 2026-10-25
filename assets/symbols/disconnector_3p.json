@@ -1,0 +1,74 @@
+{
+  "symbol_version": 1,
+  "type": "disconnector_3p",
+  "display_name": "Disconnector III",
+  "display_name_pt": "Seccionador III",
+  "category": "legacy",
+  "size": [
+    18.562,
+    3.536
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 4.42,
+      "y": 0.321,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 4.42,
+      "y": 3.214,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 9.281,
+      "y": 0.321,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 9.281,
+      "y": 3.214,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 0.321,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 3.214,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "closed": true
+  },
+  "parameter_schema": [
+    {
+      "key": "closed",
+      "type": "bool",
+      "label": "Closed",
+      "label_pt": "closed",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "disconnector_3p_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33392
+}

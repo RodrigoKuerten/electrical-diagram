@@ -1,0 +1,18 @@
+{
+  "symbol_version": 1,
+  "type": "grafcet_link",
+  "display_name": "Link line",
+  "display_name_pt": "Linha de enlace GRAFCET",
+  "category": "legacy",
+  "size": [
+    20,
+    20
+  ],
+  "pins": [],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

@@ -1,0 +1,48 @@
+{
+  "symbol_version": 1,
+  "type": "breaker_1p",
+  "display_name": "Breaker I",
+  "display_name_pt": "Disjuntor I",
+  "category": "protection",
+  "size": [
+    5.171,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_current": 16,
+    "tripped": false
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_current",
+      "type": "number",
+      "label": "Rated current",
+      "label_pt": "Corrente nominal",
+      "unit": "A",
+      "min": 0
+    }
+  ],
+  "states": {
+    "tripped": "breaker_1p_tripped.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32899,
+  "geometry_clean": true
+}

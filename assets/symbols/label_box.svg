@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 20" width="60mm" height="20mm" stroke="#1f2933" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 20" width="60mm" height="20mm">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="1.00" y="1.00" width="58.00" height="18.00" rx="0" stroke="#1f2933" stroke-width="0.5" fill="none" stroke-dasharray="2 2"/><text x="30.00" y="12.00" fill="#1f2933" font-family="Arial" font-size="4" text-anchor="middle" font-weight="normal">Label</text>
+</g>
 </svg>

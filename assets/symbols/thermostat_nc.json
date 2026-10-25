@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "thermostat_nc",
+  "display_name": "Thermostat NC",
+  "display_name_pt": "Termostato NF",
+  "category": "legacy",
+  "size": [
+    32,
+    44
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 11,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 11,
+      "y": 40,
+      "required": true
+    }
+  ],
+  "default_parameters": {
+    "setpoint": 60
+  },
+  "parameter_schema": [
+    {
+      "key": "setpoint",
+      "type": "int",
+      "label": "Setpoint",
+      "label_pt": "Setpoint",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "thermostat_nc_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

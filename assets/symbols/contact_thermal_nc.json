@@ -1,0 +1,60 @@
+{
+  "symbol_version": 1,
+  "type": "contact_thermal_nc",
+  "display_name": "Thermal relay contact NC",
+  "display_name_pt": "Contato auxiliar térmico NF",
+  "category": "protection",
+  "size": [
+    17.679,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "95",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "97",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "96",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "98",
+      "role": "terminal",
+      "x": 16.353,
+      "y": 9.723,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "contact_thermal_nc_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32929,
+  "geometry_clean": true
+}

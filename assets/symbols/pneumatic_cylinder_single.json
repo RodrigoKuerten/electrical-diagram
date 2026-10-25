@@ -1,0 +1,66 @@
+{
+  "symbol_version": 1,
+  "type": "pneumatic_cylinder_single",
+  "display_name": "Single-acting cylinder",
+  "display_name_pt": "Atuador simples efeito",
+  "category": "pneumatic",
+  "size": [
+    40.263,
+    51.268
+  ],
+  "pins": [
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 38.009,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 17.679,
+      "y": 38.009,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 45.964,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 15.027,
+      "y": 45.964,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 17.679,
+      "y": 45.964,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "stroke_mm": 100
+  },
+  "parameter_schema": [
+    {
+      "key": "stroke_mm",
+      "type": "int",
+      "label": "Stroke",
+      "label_pt": "Curso",
+      "unit": "mm",
+      "min": 0
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33243,
+  "geometry_clean": true
+}

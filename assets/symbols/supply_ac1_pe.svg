@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.00 20.00" width="1.76786mm" height="8.83929mm">
+<ellipse cx="2.00" cy="14.00" rx="2.00" ry="2.00" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 16 L 2 20" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="0" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">L</text>
+</svg>

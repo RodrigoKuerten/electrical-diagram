@@ -1,0 +1,35 @@
+{
+  "symbol_version": 1,
+  "type": "grafcet_step",
+  "display_name": "Step",
+  "display_name_pt": "Etapa GRAFCET",
+  "category": "legacy",
+  "size": [
+    3.403,
+    7.955
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 0.884,
+      "y": 7.955,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33084,
+  "geometry_clean": true,
+  "library_hidden": true
+}

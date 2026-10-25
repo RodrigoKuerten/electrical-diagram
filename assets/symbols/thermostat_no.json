@@ -1,0 +1,54 @@
+{
+  "symbol_version": 1,
+  "type": "thermostat_no",
+  "display_name": "Thermostat NO",
+  "display_name_pt": "Termostato NA",
+  "category": "legacy",
+  "size": [
+    10.607,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "T",
+      "role": "contact_no",
+      "x": 5.304,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "setpoint": 60
+  },
+  "parameter_schema": [
+    {
+      "key": "setpoint",
+      "type": "int",
+      "label": "Setpoint",
+      "label_pt": "Setpoint",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "thermostat_no_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33347
+}

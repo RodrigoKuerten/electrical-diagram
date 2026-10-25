@@ -1,0 +1,72 @@
+{
+  "symbol_version": 1,
+  "type": "motor_1ph",
+  "display_name": "Single-phase motor",
+  "display_name_pt": "Motor monofásico",
+  "category": "machines",
+  "size": [
+    21.214,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "U1",
+      "role": "supply_in",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "V1",
+      "role": "supply_in",
+      "x": 10.607,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 15.911,
+      "y": 2.652,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "power_kw": 1.5,
+    "rated_voltage": 380,
+    "min_live_phases": 2
+  },
+  "parameter_schema": [
+    {
+      "key": "power_kw",
+      "type": "number",
+      "label": "Power",
+      "label_pt": "Potência",
+      "unit": "kW",
+      "min": 0
+    },
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "min_live_phases",
+      "type": "int",
+      "label": "Minimum live phases",
+      "label_pt": "Fases mínimas",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "motor_1ph_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33104,
+  "geometry_clean": true
+}

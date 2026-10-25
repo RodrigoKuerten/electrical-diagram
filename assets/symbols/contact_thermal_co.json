@@ -1,0 +1,42 @@
+{
+  "symbol_version": 1,
+  "type": "contact_thermal_co",
+  "display_name": "Thermal relay changeover contact",
+  "display_name_pt": "Contato auxiliar térmico comutado",
+  "category": "legacy",
+  "size": [
+    32,
+    44
+  ],
+  "pins": [
+    {
+      "name": "95",
+      "role": "contact_common",
+      "x": 12,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "96",
+      "role": "contact_nc",
+      "x": 24,
+      "y": 40,
+      "required": false
+    },
+    {
+      "name": "98",
+      "role": "contact_no",
+      "x": 6,
+      "y": 40,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "contact_thermal_co_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

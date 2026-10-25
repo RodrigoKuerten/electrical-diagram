@@ -1,0 +1,54 @@
+{
+  "symbol_version": 1,
+  "type": "pressure_switch_nc",
+  "display_name": "Pressure switch NC",
+  "display_name_pt": "Presostato NF",
+  "category": "sensors",
+  "size": [
+    10.607,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "V",
+      "role": "contact_nc",
+      "x": 7.955,
+      "y": 7.071,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "threshold": 0.5
+  },
+  "parameter_schema": [
+    {
+      "key": "threshold",
+      "type": "number",
+      "label": "Threshold",
+      "label_pt": "Limiar",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "pressure_switch_nc_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33255,
+  "geometry_clean": true
+}

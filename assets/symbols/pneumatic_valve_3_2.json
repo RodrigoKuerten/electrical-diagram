@@ -1,0 +1,56 @@
+{
+  "symbol_version": 1,
+  "type": "pneumatic_valve_3_2",
+  "display_name": "3/2 valve",
+  "display_name_pt": "Válvula 3/2",
+  "category": "legacy",
+  "size": [
+    52,
+    46
+  ],
+  "pins": [
+    {
+      "name": "P",
+      "role": "terminal",
+      "x": 8,
+      "y": 8,
+      "required": false
+    },
+    {
+      "name": "A",
+      "role": "terminal",
+      "x": 44,
+      "y": 8,
+      "required": false
+    },
+    {
+      "name": "R",
+      "role": "terminal",
+      "x": 8,
+      "y": 38,
+      "required": false
+    },
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 20,
+      "y": 42,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "spring_return": true
+  },
+  "parameter_schema": [
+    {
+      "key": "spring_return",
+      "type": "bool",
+      "label": "Spring return",
+      "label_pt": "Retorno por mola",
+      "unit": ""
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

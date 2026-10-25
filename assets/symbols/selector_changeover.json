@@ -1,0 +1,61 @@
+{
+  "symbol_version": 1,
+  "type": "selector_changeover",
+  "display_name": "Changeover selector",
+  "display_name_pt": "Comutador de cruzamento",
+  "category": "control",
+  "size": [
+    16.662,
+    21.214
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 8.839,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "contact_no",
+      "x": 14.143,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 8.839,
+      "y": 21.214,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "contact_no",
+      "x": 14.143,
+      "y": 21.214,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "positions": 2
+  },
+  "parameter_schema": [
+    {
+      "key": "positions",
+      "type": "int",
+      "label": "Positions",
+      "label_pt": "Posições",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "selector_changeover_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33050,
+  "geometry_clean": true
+}

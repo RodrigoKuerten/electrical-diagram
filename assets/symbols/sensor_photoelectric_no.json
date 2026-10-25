@@ -1,0 +1,52 @@
+{
+  "symbol_version": 1,
+  "type": "sensor_photoelectric_no",
+  "display_name": "Photoelectric sensor NA",
+  "display_name_pt": "Sensor fotoelétrico NA",
+  "category": "legacy",
+  "size": [
+    32,
+    44
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 8,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 22,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 15,
+      "y": 40,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "momentary"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "sensor_photoelectric_no_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

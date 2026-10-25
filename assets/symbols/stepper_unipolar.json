@@ -1,0 +1,55 @@
+{
+  "symbol_version": 1,
+  "type": "stepper_unipolar",
+  "display_name": "Unipolar stepper motor",
+  "display_name_pt": "Motor passo a passo unipolar",
+  "category": "legacy",
+  "size": [
+    21.656,
+    19.004
+  ],
+  "pins": [
+    {
+      "name": "A",
+      "role": "terminal",
+      "x": 3.867,
+      "y": 1.357,
+      "required": false
+    },
+    {
+      "name": "B",
+      "role": "terminal",
+      "x": 8.508,
+      "y": 1.357,
+      "required": false
+    },
+    {
+      "name": "C",
+      "role": "terminal",
+      "x": 13.148,
+      "y": 1.357,
+      "required": false
+    },
+    {
+      "name": "D",
+      "role": "terminal",
+      "x": 17.789,
+      "y": 1.357,
+      "required": false
+    },
+    {
+      "name": "COM",
+      "role": "terminal",
+      "x": 10.828,
+      "y": 17.647,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33296
+}

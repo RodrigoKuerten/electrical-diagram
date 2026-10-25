@@ -1,0 +1,35 @@
+{
+  "symbol_version": 1,
+  "type": "terminal_2",
+  "display_name": "2 round terminals",
+  "display_name_pt": "2 bornes redondos",
+  "category": "legacy",
+  "size": [
+    12.375,
+    1.768
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 3.3,
+      "y": 0.884,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 9.075,
+      "y": 0.884,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32992,
+  "geometry_clean": true,
+  "library_hidden": true
+}

@@ -1,0 +1,92 @@
+{
+  "symbol_version": 1,
+  "type": "motor_dc_indep",
+  "display_name": "DC motor independent excitation",
+  "display_name_pt": "Motor CC excitação independente",
+  "category": "legacy",
+  "size": [
+    60,
+    60
+  ],
+  "pins": [
+    {
+      "name": "U1",
+      "role": "supply_in",
+      "x": 12,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "V1",
+      "role": "supply_in",
+      "x": 28,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "W1",
+      "role": "supply_in",
+      "x": 44,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 52,
+      "y": 30,
+      "required": false
+    },
+    {
+      "name": "F1",
+      "role": "terminal",
+      "x": 40,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "F2",
+      "role": "terminal",
+      "x": 40,
+      "y": 52,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "power_kw": 1.5,
+    "rated_voltage": 380,
+    "min_live_phases": 2
+  },
+  "parameter_schema": [
+    {
+      "key": "power_kw",
+      "type": "number",
+      "label": "Power",
+      "label_pt": "Potência",
+      "unit": "kW",
+      "min": 0
+    },
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "min_live_phases",
+      "type": "int",
+      "label": "Minimum live phases",
+      "label_pt": "Fases mínimas",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "motor_dc_indep_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

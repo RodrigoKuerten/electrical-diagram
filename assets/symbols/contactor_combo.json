@@ -1,0 +1,123 @@
+{
+  "symbol_version": 1,
+  "type": "contactor_combo",
+  "display_name": "Contactor with coil and auxiliary contacts",
+  "display_name_pt": "Contator com bobina e contatos auxiliares",
+  "category": "legacy",
+  "size": [
+    74,
+    66
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 8,
+      "y": 10,
+      "required": true
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 8,
+      "y": 54,
+      "required": true
+    },
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 26,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 26,
+      "y": 62,
+      "required": true
+    },
+    {
+      "name": "3",
+      "role": "contact_common",
+      "x": 40,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "4",
+      "role": "contact_no",
+      "x": 40,
+      "y": 62,
+      "required": true
+    },
+    {
+      "name": "5",
+      "role": "contact_common",
+      "x": 54,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "6",
+      "role": "contact_no",
+      "x": 54,
+      "y": 62,
+      "required": true
+    },
+    {
+      "name": "13",
+      "role": "contact_common",
+      "x": 66,
+      "y": 20,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "contact_no",
+      "x": 66,
+      "y": 32,
+      "required": false
+    },
+    {
+      "name": "21",
+      "role": "contact_common",
+      "x": 66,
+      "y": 42,
+      "required": false
+    },
+    {
+      "name": "22",
+      "role": "contact_nc",
+      "x": 66,
+      "y": 54,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_voltage": 220,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "contactor_combo_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

@@ -1,0 +1,60 @@
+{
+  "symbol_version": 1,
+  "type": "flasher",
+  "display_name": "Flasher relay",
+  "display_name_pt": "Relé intermitente",
+  "category": "timers",
+  "size": [
+    10.342,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 0.884,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "B1",
+      "role": "coil_input",
+      "x": 6.188,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 3.536,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "period_ms": 1000,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "period_ms",
+      "type": "int",
+      "label": "Period",
+      "label_pt": "Período",
+      "unit": "ms",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32956,
+  "geometry_clean": true
+}

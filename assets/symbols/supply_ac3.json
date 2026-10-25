@@ -1,23 +1,53 @@
 {
   "symbol_version": 1,
   "type": "supply_ac3",
-  "display_name": "Three-phase supply",
-  "display_name_pt": "Alimentação trifásica",
-  "category": "supplies",
-  "size": [40, 60],
+  "display_name": "Supply L1 + L2 + L3 + N + PE",
+  "display_name_pt": "Alimentação L1 + L2 + L3 + N + PE",
+  "category": "legacy",
+  "size": [
+    66,
+    48
+  ],
   "pins": [
-    {"name": "L1", "role": "supply_in", "x": 40, "y": 10, "required": true},
-    {"name": "L2", "role": "supply_in", "x": 40, "y": 22, "required": true},
-    {"name": "L3", "role": "supply_in", "x": 40, "y": 34, "required": true},
-    {"name": "N", "role": "neutral", "x": 40, "y": 46, "required": false},
-    {"name": "PE", "role": "earth", "x": 40, "y": 56, "required": false}
+    {
+      "name": "L1",
+      "role": "supply_in",
+      "x": 8,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "L2",
+      "role": "supply_in",
+      "x": 20,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "L3",
+      "role": "supply_in",
+      "x": 32,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 44,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 56,
+      "y": 44,
+      "required": false
+    }
   ],
-  "default_parameters": {"rated_voltage": 380, "frequency": 60, "neutral": true, "earth": true},
-  "parameter_schema": [
-    {"key": "rated_voltage", "type": "number", "label": "Rated voltage", "label_pt": "Tensão nominal", "unit": "V", "min": 0},
-    {"key": "frequency", "type": "number", "label": "Frequency", "label_pt": "Frequência", "unit": "Hz", "min": 0},
-    {"key": "neutral", "type": "bool", "label": "Neutral conductor", "label_pt": "Condutor neutro"},
-    {"key": "earth", "type": "bool", "label": "Protective earth", "label_pt": "Condutor de proteção"}
-  ],
-  "states": {}
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
 }

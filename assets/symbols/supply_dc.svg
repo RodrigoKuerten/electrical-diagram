@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 26" width="30mm" height="26mm" stroke="#1f2933" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="6" y="3.5" width="14" height="19" rx="1.5"/>
-  <line x1="30" y1="8" x2="20" y2="8"/>
-  <line x1="30" y1="18" x2="20" y2="18"/>
-  <text x="13" y="15" font-family="sans-serif" font-size="3.5" fill="#1f2933" stroke="none" text-anchor="middle">DC</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 44" width="34mm" height="44mm">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="8.00" y1="14.00" x2="22.00" y2="14.00" stroke="#1f2933" stroke-width="1.0"/><line x1="8.00" y1="4.00" x2="8.00" y2="22.00" stroke="#1f2933" stroke-width="0.8"/><circle cx="8.00" cy="22.00" r="2.00" stroke="#1f2933" stroke-width="0.8" fill="none"/><text x="8.00" y="2.00" fill="#1f5f9e" font-family="Arial" font-size="2.8" text-anchor="middle" font-weight="normal">+</text><line x1="22.00" y1="4.00" x2="22.00" y2="22.00" stroke="#1f2933" stroke-width="0.8"/><circle cx="22.00" cy="22.00" r="2.00" stroke="#1f2933" stroke-width="0.8" fill="none"/><text x="22.00" y="2.00" fill="#1f5f9e" font-family="Arial" font-size="2.6" text-anchor="middle" font-weight="normal">-</text>
+</g>
 </svg>

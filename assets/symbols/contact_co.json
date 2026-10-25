@@ -1,0 +1,36 @@
+{
+  "symbol_version": 1,
+  "type": "contact_co",
+  "display_name": "Changeover contact",
+  "display_name_pt": "Contato comutado",
+  "category": "contacts",
+  "size": [
+    9.458,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "67",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "68",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "contact_co_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32941,
+  "geometry_clean": true
+}

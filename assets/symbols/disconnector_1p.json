@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "disconnector_1p",
+  "display_name": "Disconnector I",
+  "display_name_pt": "Seccionador I",
+  "category": "protection",
+  "size": [
+    5.171,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "closed": true
+  },
+  "parameter_schema": [
+    {
+      "key": "closed",
+      "type": "bool",
+      "label": "Closed",
+      "label_pt": "closed",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "disconnector_1p_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32899,
+  "geometry_clean": true
+}

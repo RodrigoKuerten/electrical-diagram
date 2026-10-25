@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.40 30.00" width="7.69018mm" height="13.2589mm">
+<text x="10" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">A1</text>
+<text x="10" y="24" fill="#1f5f9e" font-family="Arial" font-size="6">A2</text>
+<path d="M 8 6 L 8 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 24 L 8 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 12 L 8 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 22 L 8 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 0 14 L 16 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 0 22 L 16 22 L 0 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 16 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 6 14 L 6 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 1 19 L 2 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 19 L 2 16" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 16 L 4 16" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 4 16 L 4 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 4 19 L 5 19" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

@@ -1,0 +1,34 @@
+{
+  "symbol_version": 1,
+  "type": "heater_1p",
+  "display_name": "Heater I",
+  "display_name_pt": "Resistência de aquecimento I",
+  "category": "legacy",
+  "size": [
+    20.0,
+    44.0
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 10.0,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 10.0,
+      "y": 40,
+      "required": true
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "heater_1p_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

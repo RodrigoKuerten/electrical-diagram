@@ -1,0 +1,26 @@
+{
+  "symbol_version": 1,
+  "type": "grafcet_action",
+  "display_name": "Action",
+  "display_name_pt": "Ação GRAFCET",
+  "category": "legacy",
+  "size": [
+    42,
+    36
+  ],
+  "pins": [
+    {
+      "name": "IN",
+      "role": "signal_in",
+      "x": 8,
+      "y": 32,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

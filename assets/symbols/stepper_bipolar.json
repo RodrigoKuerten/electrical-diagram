@@ -1,0 +1,83 @@
+{
+  "symbol_version": 1,
+  "type": "stepper_bipolar",
+  "display_name": "Bipolar stepper motor",
+  "display_name_pt": "Motor passo a passo bipolar",
+  "category": "legacy",
+  "size": [
+    33.324,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "LAR",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 15.911,
+      "required": false
+    },
+    {
+      "name": "I1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "I2",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "I3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "I4",
+      "role": "terminal",
+      "x": 18.562,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "Q1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "Q2",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "Q3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "Q4",
+      "role": "terminal",
+      "x": 18.562,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33297
+}

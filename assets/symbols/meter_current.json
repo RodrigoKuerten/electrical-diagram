@@ -1,0 +1,32 @@
+{
+  "symbol_version": 1,
+  "type": "meter_current",
+  "display_name": "Ammeter",
+  "display_name_pt": "Amperímetro",
+  "category": "legacy",
+  "size": [
+    38,
+    38
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 8,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 8,
+      "y": 34,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

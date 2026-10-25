@@ -1,0 +1,81 @@
+{
+  "symbol_version": 1,
+  "type": "motor_breaker_3p",
+  "display_name": "Motor circuit breaker III",
+  "display_name_pt": "Disjuntor-motor III",
+  "category": "legacy",
+  "size": [
+    42.0,
+    44.0
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 10.0,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 10.0,
+      "y": 40,
+      "required": true
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 21.0,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 21.0,
+      "y": 40,
+      "required": true
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 32.0,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 32.0,
+      "y": 40,
+      "required": true
+    }
+  ],
+  "default_parameters": {
+    "trip_current": 10,
+    "tripped": false
+  },
+  "parameter_schema": [
+    {
+      "key": "trip_current",
+      "type": "int",
+      "label": "Trip current",
+      "label_pt": "Corrente de disparo",
+      "unit": "A",
+      "min": 0
+    },
+    {
+      "key": "tripped",
+      "type": "bool",
+      "label": "Tripped",
+      "label_pt": "tripped",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "tripped": "motor_breaker_3p_tripped.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

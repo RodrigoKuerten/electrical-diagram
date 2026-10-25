@@ -1,0 +1,96 @@
+{
+  "symbol_version": 1,
+  "type": "switch_power_3p",
+  "display_name": "Power switch III",
+  "display_name_pt": "Interruptor III",
+  "category": "control",
+  "size": [
+    26.385,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "contact_no",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "contact_no",
+      "x": 21.214,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "7",
+      "role": "contact_no",
+      "x": 23.866,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 7.955,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "contact_no",
+      "x": 13.259,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "contact_no",
+      "x": 18.562,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "8",
+      "role": "contact_no",
+      "x": 23.866,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "closed": true,
+    "mode": "maintained"
+  },
+  "parameter_schema": [
+    {
+      "key": "closed",
+      "type": "bool",
+      "label": "Closed",
+      "label_pt": "closed",
+      "unit": ""
+    },
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "switch_power_3p_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32838,
+  "geometry_clean": true
+}

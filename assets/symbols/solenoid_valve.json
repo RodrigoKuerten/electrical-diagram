@@ -1,0 +1,55 @@
+{
+  "symbol_version": 1,
+  "type": "solenoid_valve",
+  "display_name": "Solenoid valve coil",
+  "display_name_pt": "Bobina de eletroválvula",
+  "category": "pneumatic",
+  "size": [
+    7.69,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 3.536,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 3.536,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_voltage": 24,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "solenoid_valve_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32952,
+  "geometry_clean": true
+}

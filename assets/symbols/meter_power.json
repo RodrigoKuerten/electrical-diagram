@@ -1,0 +1,39 @@
+{
+  "symbol_version": 1,
+  "type": "meter_power",
+  "display_name": "Wattmeter",
+  "display_name_pt": "Wattímetro",
+  "category": "legacy",
+  "size": [
+    46,
+    38
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "signal_in",
+      "x": 8,
+      "y": 34,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "signal_in",
+      "x": 22,
+      "y": 34,
+      "required": false
+    },
+    {
+      "name": "I",
+      "role": "terminal",
+      "x": 40,
+      "y": 19,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

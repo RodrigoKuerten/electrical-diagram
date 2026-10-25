@@ -3,18 +3,60 @@
   "type": "breaker",
   "display_name": "Circuit breaker",
   "display_name_pt": "Disjuntor",
-  "category": "protection",
-  "size": [24, 44],
+  "category": "legacy",
+  "size": [
+    20.0,
+    44.0
+  ],
   "pins": [
-    {"name": "1", "role": "contact_common", "x": 12, "y": 0, "required": true},
-    {"name": "2", "role": "contact_common", "x": 12, "y": 44, "required": true}
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 10.0,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_common",
+      "x": 10.0,
+      "y": 40,
+      "required": true
+    }
   ],
-  "default_parameters": {"rated_current": 16, "poles": 3, "tripped": false},
+  "default_parameters": {
+    "rated_current": 16,
+    "poles": 1,
+    "tripped": false
+  },
   "parameter_schema": [
-    {"key": "rated_current", "type": "number", "label": "Rated current", "label_pt": "Corrente nominal", "unit": "A", "min": 0},
-    {"key": "poles", "type": "int", "label": "Poles", "label_pt": "Polos", "min": 1, "max": 4},
-    {"key": "tripped", "type": "bool", "label": "Tripped", "label_pt": "Disparado"}
+    {
+      "key": "rated_current",
+      "type": "int",
+      "label": "Rated current",
+      "label_pt": "Corrente nominal",
+      "unit": "A",
+      "min": 0
+    },
+    {
+      "key": "poles",
+      "type": "int",
+      "label": "Poles",
+      "label_pt": "poles",
+      "unit": "",
+      "min": 0
+    },
+    {
+      "key": "tripped",
+      "type": "bool",
+      "label": "Tripped",
+      "label_pt": "tripped",
+      "unit": ""
+    }
   ],
-  "states": {"tripped": "breaker_tripped.svg"},
-  "element_ids": {"tripped": ["breaker_blade", "trip_square"]}
+  "states": {
+    "tripped": "breaker_tripped.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
 }

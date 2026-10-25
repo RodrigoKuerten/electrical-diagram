@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 80" width="62mm" height="80mm">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="4.00" y="4.00" width="54.00" height="72.00" rx="0" stroke="#1f2933" stroke-width="1.0" fill="none"/><rect x="8.00" y="8.00" width="46.00" height="12.00" rx="0" stroke="#1f2933" stroke-width="0.6" fill="none"/><text x="31.00" y="17.00" fill="#1f2933" font-family="Arial" font-size="3.2" text-anchor="middle" font-weight="bold">CPU</text><line x1="8.00" y1="24.00" x2="54.00" y2="24.00" stroke="#1f2933" stroke-width="0.5" stroke-dasharray="2 2"/><text x="9.50" y="74.50" fill="#1f5f9e" font-family="Arial" font-size="2.1" text-anchor="start" font-weight="normal">RUN</text><text x="23.50" y="74.50" fill="#1f5f9e" font-family="Arial" font-size="2.1" text-anchor="start" font-weight="normal">ERR</text>
+</g>
+</svg>

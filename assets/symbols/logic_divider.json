@@ -1,0 +1,35 @@
+{
+  "symbol_version": 1,
+  "type": "logic_divider",
+  "display_name": "Binary divider",
+  "display_name_pt": "Divisor binário",
+  "category": "legacy",
+  "size": [
+    40,
+    36
+  ],
+  "pins": [
+    {
+      "name": "IN",
+      "role": "signal_in",
+      "x": 6,
+      "y": 18,
+      "required": false
+    },
+    {
+      "name": "OUT",
+      "role": "signal_out",
+      "x": 34,
+      "y": 18,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "logic_divider_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

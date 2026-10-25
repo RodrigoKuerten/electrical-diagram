@@ -1,0 +1,73 @@
+{
+  "symbol_version": 1,
+  "type": "counter_updown",
+  "display_name": "Up/down counter",
+  "display_name_pt": "Contador ascendente-descendente",
+  "category": "legacy",
+  "size": [
+    7.071,
+    7.071
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 1.36,
+      "y": 0.566,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 1.36,
+      "y": 6.506,
+      "required": false
+    },
+    {
+      "name": "UP",
+      "role": "signal_in",
+      "x": 3.808,
+      "y": 0.566,
+      "required": false
+    },
+    {
+      "name": "DN",
+      "role": "signal_in",
+      "x": 5.44,
+      "y": 0.566,
+      "required": false
+    },
+    {
+      "name": "15",
+      "role": "contact_common",
+      "x": 3.808,
+      "y": 6.506,
+      "required": false
+    },
+    {
+      "name": "18",
+      "role": "contact_no",
+      "x": 5.44,
+      "y": 6.506,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "preset": 10
+  },
+  "parameter_schema": [
+    {
+      "key": "preset",
+      "type": "int",
+      "label": "Preset",
+      "label_pt": "Preset",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33278
+}

@@ -1,0 +1,62 @@
+{
+  "symbol_version": 1,
+  "type": "supply_rectifier",
+  "display_name": "Rectifier",
+  "display_name_pt": "Retificador",
+  "category": "supplies",
+  "size": [
+    14.762,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 13.259,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "supply_in",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "supply_in",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "+",
+      "role": "supply_in",
+      "x": 0.0,
+      "y": 15.911,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "supply_in",
+      "x": 2.652,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "supply_in",
+      "x": 7.955,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32998,
+  "geometry_clean": true
+}

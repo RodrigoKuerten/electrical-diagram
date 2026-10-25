@@ -1,0 +1,60 @@
+{
+  "symbol_version": 1,
+  "type": "sensor_magnetic_nc",
+  "display_name": "Magnetic sensor NF",
+  "display_name_pt": "Sensor magnético NF",
+  "category": "sensors",
+  "size": [
+    12.375,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "contact_nc",
+      "x": 2.652,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "contact_nc",
+      "x": 7.955,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "momentary"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "sensor_magnetic_nc_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33025,
+  "geometry_clean": true
+}

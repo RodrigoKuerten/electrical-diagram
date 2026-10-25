@@ -1,0 +1,104 @@
+{
+  "symbol_version": 1,
+  "type": "arduino_mega",
+  "display_name": "Arduino Mega",
+  "display_name_pt": "Arduino Mega",
+  "category": "legacy",
+  "size": [
+    4.906,
+    3.094
+  ],
+  "pins": [
+    {
+      "name": "5V",
+      "role": "supply_out",
+      "x": 0.545,
+      "y": 0.138,
+      "required": false
+    },
+    {
+      "name": "GND",
+      "role": "neutral",
+      "x": 1.499,
+      "y": 0.138,
+      "required": false
+    },
+    {
+      "name": "D0",
+      "role": "signal_in",
+      "x": 0.545,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D1",
+      "role": "signal_in",
+      "x": 0.886,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D2",
+      "role": "signal_in",
+      "x": 1.226,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D3",
+      "role": "signal_in",
+      "x": 1.567,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D4",
+      "role": "signal_in",
+      "x": 1.908,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D5",
+      "role": "signal_in",
+      "x": 2.248,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D6",
+      "role": "signal_in",
+      "x": 2.589,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D7",
+      "role": "signal_in",
+      "x": 2.93,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D8",
+      "role": "signal_in",
+      "x": 3.271,
+      "y": 2.956,
+      "required": false
+    },
+    {
+      "name": "D9",
+      "role": "signal_in",
+      "x": 3.611,
+      "y": 2.956,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33326
+}

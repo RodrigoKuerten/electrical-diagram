@@ -1,0 +1,94 @@
+{
+  "symbol_version": 1,
+  "type": "motor_wound_rotor",
+  "display_name": "Wound-rotor motor",
+  "display_name_pt": "Motor de rotor bobinado",
+  "category": "legacy",
+  "size": [
+    15.778,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "power_kw": 1.5,
+    "rated_voltage": 380,
+    "min_live_phases": 2
+  },
+  "parameter_schema": [
+    {
+      "key": "power_kw",
+      "type": "number",
+      "label": "Power",
+      "label_pt": "Potência",
+      "unit": "kW",
+      "min": 0
+    },
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "min_live_phases",
+      "type": "int",
+      "label": "Minimum live phases",
+      "label_pt": "Fases mínimas",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "motor_wound_rotor_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32833,
+  "geometry_clean": true,
+  "library_hidden": true
+}

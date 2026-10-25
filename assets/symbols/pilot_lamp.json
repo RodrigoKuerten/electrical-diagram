@@ -2,18 +2,52 @@
   "symbol_version": 1,
   "type": "pilot_lamp",
   "display_name": "Pilot lamp",
-  "display_name_pt": "Sinalizador luminoso",
-  "category": "indication",
-  "size": [30, 34],
+  "display_name_pt": "Piloto de sinalização",
+  "category": "legacy",
+  "size": [
+    30,
+    34
+  ],
   "pins": [
-    {"name": "A1", "role": "coil_input", "x": 15, "y": 0, "required": true},
-    {"name": "A2", "role": "coil_output", "x": 15, "y": 34, "required": true}
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 10,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 10,
+      "y": 30,
+      "required": true
+    }
   ],
-  "default_parameters": {"color": "green", "rated_voltage": 220},
+  "default_parameters": {
+    "color": "green",
+    "rated_voltage": 220
+  },
   "parameter_schema": [
-    {"key": "color", "type": "enum", "label": "Color", "label_pt": "Cor", "options": ["green", "red", "yellow", "blue", "white"]},
-    {"key": "rated_voltage", "type": "number", "label": "Rated voltage", "label_pt": "Tensão nominal", "unit": "V", "min": 0}
+    {
+      "key": "color",
+      "type": "string",
+      "label": "Color",
+      "label_pt": "Cor",
+      "unit": ""
+    },
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    }
   ],
-  "states": {"active": "pilot_lamp_active.svg"},
-  "element_ids": {"active": ["lamp_body"]}
+  "states": {
+    "active": "pilot_lamp_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
 }

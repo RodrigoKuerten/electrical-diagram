@@ -1,0 +1,32 @@
+{
+  "symbol_version": 1,
+  "type": "connector_in",
+  "display_name": "Input connector",
+  "display_name_pt": "Conector de entrada",
+  "category": "legacy",
+  "size": [
+    26,
+    20
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 6,
+      "y": 10,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 20,
+      "y": 10,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

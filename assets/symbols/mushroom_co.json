@@ -1,0 +1,54 @@
+{
+  "symbol_version": 1,
+  "type": "mushroom_co",
+  "display_name": "Mushroom changeover pushbutton",
+  "display_name_pt": "Pulsador seta comutado",
+  "category": "control",
+  "size": [
+    10.784,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "13",
+      "role": "contact_common",
+      "x": 6.629,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "contact_no",
+      "x": 6.629,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "color": "red",
+    "mode": "momentary"
+  },
+  "parameter_schema": [
+    {
+      "key": "color",
+      "type": "string",
+      "label": "Color",
+      "label_pt": "Cor",
+      "unit": ""
+    },
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "mushroom_co_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32919,
+  "geometry_clean": true
+}

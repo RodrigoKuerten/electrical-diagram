@@ -1,0 +1,32 @@
+{
+  "symbol_version": 1,
+  "type": "cable_neutral",
+  "display_name": "Neutral cable",
+  "display_name_pt": "Cabo neutro",
+  "category": "legacy",
+  "size": [
+    32,
+    12
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2,
+      "y": 6,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 30,
+      "y": 6,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

@@ -1,0 +1,43 @@
+{
+  "symbol_version": 1,
+  "type": "logic_xor",
+  "display_name": "Logic EXOR",
+  "display_name_pt": "Função lógica EXOR",
+  "category": "logic",
+  "size": [
+    15.778,
+    11.933
+  ],
+  "pins": [
+    {
+      "name": "IN1",
+      "role": "signal_in",
+      "x": 0.0,
+      "y": 3.978,
+      "required": false
+    },
+    {
+      "name": "IN2",
+      "role": "signal_in",
+      "x": 0.0,
+      "y": 9.281,
+      "required": false
+    },
+    {
+      "name": "OUT",
+      "role": "signal_out",
+      "x": 13.259,
+      "y": 9.281,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "logic_xor_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33060,
+  "geometry_clean": true
+}

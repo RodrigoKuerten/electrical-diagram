@@ -1,0 +1,28 @@
+{
+  "symbol_version": 1,
+  "type": "grafcet_transition",
+  "display_name": "Transition",
+  "display_name_pt": "Transição GRAFCET",
+  "category": "legacy",
+  "size": [
+    18.43,
+    8.397
+  ],
+  "pins": [
+    {
+      "name": "0",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 7.955,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33085,
+  "geometry_clean": false,
+  "library_hidden": true
+}

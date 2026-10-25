@@ -3,17 +3,51 @@
   "type": "fuse",
   "display_name": "Fuse",
   "display_name_pt": "Fusível",
-  "category": "protection",
-  "size": [20, 40],
+  "category": "legacy",
+  "size": [
+    20.0,
+    44.0
+  ],
   "pins": [
-    {"name": "1", "role": "contact_common", "x": 10, "y": 0, "required": true},
-    {"name": "2", "role": "contact_common", "x": 10, "y": 40, "required": true}
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 10.0,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_common",
+      "x": 10.0,
+      "y": 40,
+      "required": true
+    }
   ],
-  "default_parameters": {"rated_current": 10, "blown": false},
+  "default_parameters": {
+    "rated_current": 10,
+    "blown": false
+  },
   "parameter_schema": [
-    {"key": "rated_current", "type": "number", "label": "Rated current", "label_pt": "Corrente nominal", "unit": "A", "min": 0},
-    {"key": "blown", "type": "bool", "label": "Blown", "label_pt": "Queimado"}
+    {
+      "key": "rated_current",
+      "type": "int",
+      "label": "Rated current",
+      "label_pt": "Corrente nominal",
+      "unit": "A",
+      "min": 0
+    },
+    {
+      "key": "blown",
+      "type": "bool",
+      "label": "Blown",
+      "label_pt": "blown",
+      "unit": ""
+    }
   ],
-  "states": {"blown": "fuse_blown.svg"},
-  "element_ids": {"blown": ["fuse_element"]}
+  "states": {
+    "blown": "fuse_blown.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
 }

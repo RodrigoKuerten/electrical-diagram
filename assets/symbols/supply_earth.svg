@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.70 30.00" width="4.72902mm" height="13.2589mm">
+<text x="7" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="7" y="24" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<path d="M 5 6 L 5 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 0 22 L 10 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="0,13 10,13 5,22 0,13" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

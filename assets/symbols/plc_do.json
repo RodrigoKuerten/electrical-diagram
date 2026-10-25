@@ -1,0 +1,61 @@
+{
+  "symbol_version": 1,
+  "type": "plc_do",
+  "display_name": "Digital output PLC",
+  "display_name_pt": "Saída digital PLC",
+  "category": "legacy",
+  "size": [
+    54,
+    62
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 8,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 22,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "Q0",
+      "role": "signal_out",
+      "x": 8,
+      "y": 58,
+      "required": false
+    },
+    {
+      "name": "Q1",
+      "role": "signal_out",
+      "x": 17,
+      "y": 58,
+      "required": false
+    },
+    {
+      "name": "Q2",
+      "role": "signal_out",
+      "x": 26,
+      "y": 58,
+      "required": false
+    },
+    {
+      "name": "Q3",
+      "role": "signal_out",
+      "x": 35,
+      "y": 58,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

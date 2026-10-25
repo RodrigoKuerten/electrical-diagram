@@ -1,0 +1,32 @@
+{
+  "symbol_version": 1,
+  "type": "meter_voltage",
+  "display_name": "Voltmeter",
+  "display_name_pt": "Voltímetro",
+  "category": "legacy",
+  "size": [
+    38,
+    38
+  ],
+  "pins": [
+    {
+      "name": "+",
+      "role": "signal_in",
+      "x": 8,
+      "y": 34,
+      "required": false
+    },
+    {
+      "name": "-",
+      "role": "signal_in",
+      "x": 30,
+      "y": 34,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.00 14.00" width="31.8214mm" height="6.1875mm">
+<path d="M 12 12 L 12 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 12 L 24 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 36 12 L 36 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 48 12 L 48 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 60 12 L 60 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 72 12 L 72 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="0" y="6" fill="#1f2933" font-family="Arial" font-size="6">LOGO</text>
+</svg>

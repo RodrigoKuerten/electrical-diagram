@@ -1,0 +1,90 @@
+{
+  "symbol_version": 1,
+  "type": "plc_et200_do",
+  "display_name": "ET-200 8DO",
+  "display_name_pt": "ET-200 8DO",
+  "category": "legacy",
+  "size": [
+    31.821,
+    6.188
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 4.714,
+      "y": 0.399,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 12.964,
+      "y": 0.399,
+      "required": false
+    },
+    {
+      "name": "Q0",
+      "role": "signal_out",
+      "x": 3.536,
+      "y": 5.788,
+      "required": false
+    },
+    {
+      "name": "Q1",
+      "role": "signal_out",
+      "x": 6.482,
+      "y": 5.788,
+      "required": false
+    },
+    {
+      "name": "Q2",
+      "role": "signal_out",
+      "x": 9.429,
+      "y": 5.788,
+      "required": false
+    },
+    {
+      "name": "Q3",
+      "role": "signal_out",
+      "x": 12.375,
+      "y": 5.788,
+      "required": false
+    },
+    {
+      "name": "Q4",
+      "role": "signal_out",
+      "x": 15.321,
+      "y": 5.788,
+      "required": false
+    },
+    {
+      "name": "Q5",
+      "role": "signal_out",
+      "x": 18.268,
+      "y": 5.788,
+      "required": false
+    },
+    {
+      "name": "Q6",
+      "role": "signal_out",
+      "x": 21.214,
+      "y": 5.788,
+      "required": false
+    },
+    {
+      "name": "Q7",
+      "role": "signal_out",
+      "x": 24.161,
+      "y": 5.788,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33336
+}

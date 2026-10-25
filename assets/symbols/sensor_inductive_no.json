@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "sensor_inductive_no",
+  "display_name": "Inductive sensor NA",
+  "display_name_pt": "Sensor indutivo NA",
+  "category": "sensors",
+  "size": [
+    12.817,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 7.513,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 7.513,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "momentary"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "sensor_inductive_no_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33033,
+  "geometry_clean": true
+}

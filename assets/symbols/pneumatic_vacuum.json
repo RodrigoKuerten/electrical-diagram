@@ -1,0 +1,41 @@
+{
+  "symbol_version": 1,
+  "type": "pneumatic_vacuum",
+  "display_name": "Vacuum cup",
+  "display_name_pt": "Ventosa",
+  "category": "pneumatic",
+  "size": [
+    35.357,
+    50.384
+  ],
+  "pins": [
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 37.125,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 12.375,
+      "y": 45.08,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 45.08,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33250,
+  "geometry_clean": true
+}

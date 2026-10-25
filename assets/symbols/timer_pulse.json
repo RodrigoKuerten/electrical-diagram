@@ -1,0 +1,143 @@
+{
+  "symbol_version": 1,
+  "type": "timer_pulse",
+  "display_name": "Pulse timer",
+  "display_name_pt": "Temporizador de pulso",
+  "category": "legacy",
+  "size": [
+    21.833,
+    25.634
+  ],
+  "pins": [
+    {
+      "name": "CLK",
+      "role": "coil_input",
+      "x": 4.862,
+      "y": 15.469,
+      "required": false
+    },
+    {
+      "name": "15",
+      "role": "coil_input",
+      "x": 2.21,
+      "y": 3.978,
+      "required": false
+    },
+    {
+      "name": "10",
+      "role": "coil_input",
+      "x": 2.21,
+      "y": 6.629,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "coil_input",
+      "x": 2.21,
+      "y": 17.237,
+      "required": false
+    },
+    {
+      "name": "13",
+      "role": "coil_input",
+      "x": 20.772,
+      "y": 17.237,
+      "required": false
+    },
+    {
+      "name": "11",
+      "role": "coil_input",
+      "x": 2.21,
+      "y": 22.54,
+      "required": false
+    },
+    {
+      "name": "A",
+      "role": "coil_input",
+      "x": 4.862,
+      "y": 1.326,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "coil_input",
+      "x": 18.121,
+      "y": 1.326,
+      "required": false
+    },
+    {
+      "name": "B",
+      "role": "coil_input",
+      "x": 4.862,
+      "y": 3.978,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "coil_output",
+      "x": 20.772,
+      "y": 3.978,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "coil_input",
+      "x": 20.772,
+      "y": 6.629,
+      "required": false
+    },
+    {
+      "name": "D",
+      "role": "coil_input",
+      "x": 4.862,
+      "y": 9.281,
+      "required": false
+    },
+    {
+      "name": "9",
+      "role": "coil_input",
+      "x": 2.21,
+      "y": 9.281,
+      "required": false
+    },
+    {
+      "name": "7",
+      "role": "coil_input",
+      "x": 20.772,
+      "y": 9.281,
+      "required": false
+    },
+    {
+      "name": "G",
+      "role": "coil_input",
+      "x": 3.536,
+      "y": 17.237,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "coil_input",
+      "x": 2.21,
+      "y": 19.888,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "delay_ms": 500
+  },
+  "parameter_schema": [
+    {
+      "key": "delay_ms",
+      "type": "int",
+      "label": "Delay",
+      "label_pt": "Tempo",
+      "unit": "ms",
+      "min": 0
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33301
+}

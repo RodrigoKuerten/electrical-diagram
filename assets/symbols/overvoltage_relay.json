@@ -1,0 +1,43 @@
+{
+  "symbol_version": 1,
+  "type": "overvoltage_relay",
+  "display_name": "Permanent overvoltage protection",
+  "display_name_pt": "Proteção sobretensões permanentes",
+  "category": "legacy",
+  "size": [
+    10.607,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "T",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 7.071,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "overvoltage_relay_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33346
+}

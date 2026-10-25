@@ -1,0 +1,62 @@
+{
+  "symbol_version": 1,
+  "type": "fuse_3pn",
+  "display_name": "Fuse IIIN",
+  "display_name_pt": "Fusível IIIN",
+  "category": "protection",
+  "size": [
+    9.149,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 1.326,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 6.629,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 1.326,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 6.629,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_current": 10,
+    "blown": false
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_current",
+      "type": "number",
+      "label": "Rated current",
+      "label_pt": "Corrente nominal",
+      "unit": "A",
+      "min": 0
+    }
+  ],
+  "states": {
+    "blown": "fuse_3pn_blown.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32842,
+  "geometry_clean": true
+}

@@ -1,0 +1,60 @@
+{
+  "symbol_version": 1,
+  "type": "led",
+  "display_name": "LED",
+  "display_name_pt": "Diodo LED",
+  "category": "legacy",
+  "size": [
+    15.646,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 3.536,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "13",
+      "role": "terminal",
+      "x": 11.491,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 3.536,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "terminal",
+      "x": 11.491,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "color": "red"
+  },
+  "parameter_schema": [
+    {
+      "key": "color",
+      "type": "string",
+      "label": "Color",
+      "label_pt": "Cor",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "led_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33372
+}

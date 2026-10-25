@@ -1,0 +1,85 @@
+{
+  "symbol_version": 1,
+  "type": "resistor_3p",
+  "display_name": "Resistor III",
+  "display_name_pt": "Resistência III",
+  "category": "power",
+  "size": [
+    17.104,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 1.326,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 6.629,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "7",
+      "role": "terminal",
+      "x": 11.933,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 2.21,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 11.933,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "9",
+      "role": "terminal",
+      "x": 14.585,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 1.326,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 6.629,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "8",
+      "role": "terminal",
+      "x": 11.933,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "resistor_3p_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33004,
+  "geometry_clean": true
+}

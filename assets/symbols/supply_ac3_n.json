@@ -1,0 +1,49 @@
+{
+  "symbol_version": 1,
+  "type": "supply_ac3_n",
+  "display_name": "Supply L1+L2+L3+N",
+  "display_name_pt": "Alimentação L1+L2+L3+N",
+  "category": "legacy",
+  "size": [
+    13.878,
+    8.839
+  ],
+  "pins": [
+    {
+      "name": "L1",
+      "role": "supply_in",
+      "x": 1.983,
+      "y": 0.769,
+      "required": false
+    },
+    {
+      "name": "L2",
+      "role": "supply_in",
+      "x": 4.956,
+      "y": 0.769,
+      "required": false
+    },
+    {
+      "name": "L3",
+      "role": "supply_in",
+      "x": 7.93,
+      "y": 0.769,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 10.904,
+      "y": 8.071,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32870,
+  "geometry_clean": true,
+  "library_hidden": true
+}

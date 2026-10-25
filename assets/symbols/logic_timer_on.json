@@ -1,0 +1,54 @@
+{
+  "symbol_version": 1,
+  "type": "logic_timer_on",
+  "display_name": "Logic timer ON",
+  "display_name_pt": "Temporizador conexão",
+  "category": "legacy",
+  "size": [
+    13.259,
+    11.933
+  ],
+  "pins": [
+    {
+      "name": "IN",
+      "role": "signal_in",
+      "x": 1.894,
+      "y": 3.315,
+      "required": false
+    },
+    {
+      "name": "OUT",
+      "role": "signal_out",
+      "x": 11.365,
+      "y": 7.955,
+      "required": false
+    },
+    {
+      "name": "0V",
+      "role": "signal_in",
+      "x": 6.314,
+      "y": 10.607,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "delay_ms": 1000
+  },
+  "parameter_schema": [
+    {
+      "key": "delay_ms",
+      "type": "int",
+      "label": "Delay",
+      "label_pt": "Tempo",
+      "unit": "ms",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "logic_timer_on_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33100
+}

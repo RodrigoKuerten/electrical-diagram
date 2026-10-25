@@ -1,0 +1,49 @@
+{
+  "symbol_version": 1,
+  "type": "logic_sr",
+  "display_name": "SR latch",
+  "display_name_pt": "Biestável RS",
+  "category": "legacy",
+  "size": [
+    42,
+    40
+  ],
+  "pins": [
+    {
+      "name": "S",
+      "role": "signal_in",
+      "x": 6,
+      "y": 8,
+      "required": false
+    },
+    {
+      "name": "R",
+      "role": "signal_in",
+      "x": 6,
+      "y": 32,
+      "required": false
+    },
+    {
+      "name": "Q",
+      "role": "signal_out",
+      "x": 36,
+      "y": 12,
+      "required": false
+    },
+    {
+      "name": "Qn",
+      "role": "signal_out",
+      "x": 36,
+      "y": 28,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "logic_sr_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

@@ -1,0 +1,28 @@
+{
+  "symbol_version": 1,
+  "type": "terminal_square",
+  "display_name": "Square terminal",
+  "display_name_pt": "Borne quadrado",
+  "category": "legacy",
+  "size": [
+    5.038,
+    3.536
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.519,
+      "y": 1.768,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 32969,
+  "library_hidden": true
+}

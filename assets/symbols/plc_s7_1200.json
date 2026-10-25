@@ -1,0 +1,102 @@
+{
+  "symbol_version": 1,
+  "type": "plc_s7_1200",
+  "display_name": "PLC S7-1200",
+  "display_name_pt": "PLC S7-1200",
+  "category": "legacy",
+  "size": [
+    72,
+    82
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 8,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 22,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "I0",
+      "role": "signal_in",
+      "x": 8,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "I1",
+      "role": "signal_in",
+      "x": 15,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "I2",
+      "role": "signal_in",
+      "x": 22,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "I3",
+      "role": "signal_in",
+      "x": 29,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "I4",
+      "role": "signal_in",
+      "x": 36,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "I5",
+      "role": "signal_in",
+      "x": 43,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "Q0",
+      "role": "signal_out",
+      "x": 54,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "Q1",
+      "role": "signal_out",
+      "x": 57,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "Q2",
+      "role": "signal_out",
+      "x": 60,
+      "y": 78,
+      "required": false
+    },
+    {
+      "name": "Q3",
+      "role": "signal_out",
+      "x": 63,
+      "y": 78,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

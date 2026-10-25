@@ -1,0 +1,33 @@
+{
+  "symbol_version": 1,
+  "type": "cable_1",
+  "display_name": "Phase cable",
+  "display_name_pt": "Cabo fase",
+  "category": "legacy",
+  "size": [
+    32,
+    12
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2,
+      "y": 6,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 30,
+      "y": 6,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

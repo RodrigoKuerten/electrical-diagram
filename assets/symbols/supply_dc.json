@@ -1,17 +1,32 @@
 {
   "symbol_version": 1,
   "type": "supply_dc",
-  "display_name": "DC supply",
-  "display_name_pt": "Alimentação CC",
-  "category": "supplies",
-  "size": [30, 26],
+  "display_name": "Supply + / -",
+  "display_name_pt": "Alimentação + / -",
+  "category": "legacy",
+  "size": [
+    34,
+    44
+  ],
   "pins": [
-    {"name": "+", "role": "supply_in", "x": 30, "y": 8, "required": true},
-    {"name": "-", "role": "supply_out", "x": 30, "y": 18, "required": true}
+    {
+      "name": "+",
+      "role": "supply_in",
+      "x": 8,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "-",
+      "role": "supply_out",
+      "x": 22,
+      "y": 4,
+      "required": true
+    }
   ],
-  "default_parameters": {"voltage": 24},
-  "parameter_schema": [
-    {"key": "voltage", "type": "number", "label": "Voltage", "label_pt": "Tensão", "unit": "V", "min": 0}
-  ],
-  "states": {}
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
 }

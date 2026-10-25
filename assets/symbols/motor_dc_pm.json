@@ -1,0 +1,86 @@
+{
+  "symbol_version": 1,
+  "type": "motor_dc_pm",
+  "display_name": "DC motor permanent magnet",
+  "display_name_pt": "Motor CC ímã permanente",
+  "category": "machines",
+  "size": [
+    20.065,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "F1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "F2",
+      "role": "terminal",
+      "x": 15.911,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "A1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "terminal",
+      "x": 15.911,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 7.955,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "power_kw": 1.5,
+    "rated_voltage": 380,
+    "min_live_phases": 2
+  },
+  "parameter_schema": [
+    {
+      "key": "power_kw",
+      "type": "number",
+      "label": "Power",
+      "label_pt": "Potência",
+      "unit": "kW",
+      "min": 0
+    },
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "min_live_phases",
+      "type": "int",
+      "label": "Minimum live phases",
+      "label_pt": "Fases mínimas",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "motor_dc_pm_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33000,
+  "geometry_clean": true
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.00 72.00" width="45.0804mm" height="31.8214mm">
+<path d="M 24 12 L 24 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 30 12 L 30 72" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 36 12 L 36 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 48 12 L 48 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 54 12 L 54 72" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 60 12 L 60 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 66 12 L 66 72" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 72 12 L 72 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 78 12 L 78 72" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 84 12 L 84 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 90 12 L 90 72" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 96 12 L 96 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 102 12 L 102 72" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="0" y="6" fill="#1f2933" font-family="Arial" font-size="6">PLC</text>
+</svg>

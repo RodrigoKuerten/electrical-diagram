@@ -1,0 +1,39 @@
+{
+  "symbol_version": 1,
+  "type": "meter_multimeter",
+  "display_name": "Multimeter",
+  "display_name_pt": "Multímetro",
+  "category": "legacy",
+  "size": [
+    42,
+    42
+  ],
+  "pins": [
+    {
+      "name": "COM",
+      "role": "signal_in",
+      "x": 10,
+      "y": 38,
+      "required": false
+    },
+    {
+      "name": "V",
+      "role": "signal_in",
+      "x": 22,
+      "y": 38,
+      "required": false
+    },
+    {
+      "name": "A",
+      "role": "signal_in",
+      "x": 34,
+      "y": 38,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

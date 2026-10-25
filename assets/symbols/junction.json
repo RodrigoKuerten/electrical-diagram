@@ -1,0 +1,28 @@
+{
+  "symbol_version": 1,
+  "type": "junction",
+  "display_name": "Junction",
+  "display_name_pt": "Conexão",
+  "category": "legacy",
+  "size": [
+    2.652,
+    2.652
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 1.326,
+      "y": 1.326,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32890,
+  "geometry_clean": true,
+  "library_hidden": true
+}

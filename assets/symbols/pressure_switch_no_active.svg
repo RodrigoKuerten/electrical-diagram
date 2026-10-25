@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.00 30.00" width="10.6071mm" height="13.2589mm">
+<text x="14" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="14" y="24" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<path d="M 12 6 L 12 12" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 12 24 L 12 30" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 0 12 L 24 12" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 24 12 L 24 24" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 24 24 L 0 24" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 0 24 L 0 12" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 20 14 L 20 16" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 20 20 L 20 22" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 22 15 L 20 20" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<path d="M 20 16 L 22 16" stroke="#f2b134" stroke-width="1.1" fill="none"/>
+<text x="12" y="15" fill="#1f2933" font-family="Arial" font-size="6">P</text>
+</svg>

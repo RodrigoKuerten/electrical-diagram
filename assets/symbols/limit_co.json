@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "limit_co",
+  "display_name": "Changeover limit switch",
+  "display_name_pt": "Fim de curso comutado",
+  "category": "sensors",
+  "size": [
+    9.723,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "97",
+      "role": "contact_no",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "98",
+      "role": "contact_no",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "momentary"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "limit_co_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32927,
+  "geometry_clean": true
+}

@@ -1,0 +1,90 @@
+{
+  "symbol_version": 1,
+  "type": "plc_logo",
+  "display_name": "LOGO 4DI/4DO",
+  "display_name_pt": "LOGO 4DI/4DO",
+  "category": "legacy",
+  "size": [
+    45.08,
+    31.821
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 5.817,
+      "y": 1.768,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 15.996,
+      "y": 1.768,
+      "required": false
+    },
+    {
+      "name": "I0",
+      "role": "signal_in",
+      "x": 5.817,
+      "y": 30.054,
+      "required": false
+    },
+    {
+      "name": "I1",
+      "role": "signal_in",
+      "x": 11.634,
+      "y": 30.054,
+      "required": false
+    },
+    {
+      "name": "I2",
+      "role": "signal_in",
+      "x": 17.45,
+      "y": 30.054,
+      "required": false
+    },
+    {
+      "name": "I3",
+      "role": "signal_in",
+      "x": 23.267,
+      "y": 30.054,
+      "required": false
+    },
+    {
+      "name": "Q0",
+      "role": "signal_out",
+      "x": 30.538,
+      "y": 30.054,
+      "required": false
+    },
+    {
+      "name": "Q1",
+      "role": "signal_out",
+      "x": 33.447,
+      "y": 30.054,
+      "required": false
+    },
+    {
+      "name": "Q2",
+      "role": "signal_out",
+      "x": 36.355,
+      "y": 30.054,
+      "required": false
+    },
+    {
+      "name": "Q3",
+      "role": "signal_out",
+      "x": 39.264,
+      "y": 30.054,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33337
+}

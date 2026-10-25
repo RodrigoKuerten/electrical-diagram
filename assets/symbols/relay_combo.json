@@ -1,0 +1,95 @@
+{
+  "symbol_version": 1,
+  "type": "relay_combo",
+  "display_name": "Relay with coil and changeover contacts",
+  "display_name_pt": "Relé com bobina e contatos comutados",
+  "category": "legacy",
+  "size": [
+    62,
+    56
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 8,
+      "y": 10,
+      "required": true
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 8,
+      "y": 46,
+      "required": true
+    },
+    {
+      "name": "11",
+      "role": "contact_common",
+      "x": 42,
+      "y": 10,
+      "required": false
+    },
+    {
+      "name": "12",
+      "role": "contact_nc",
+      "x": 42,
+      "y": 22,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "contact_no",
+      "x": 42,
+      "y": 34,
+      "required": false
+    },
+    {
+      "name": "21",
+      "role": "contact_common",
+      "x": 54,
+      "y": 10,
+      "required": false
+    },
+    {
+      "name": "22",
+      "role": "contact_nc",
+      "x": 54,
+      "y": 22,
+      "required": false
+    },
+    {
+      "name": "24",
+      "role": "contact_no",
+      "x": 54,
+      "y": 34,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_voltage": 24,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "relay_combo_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

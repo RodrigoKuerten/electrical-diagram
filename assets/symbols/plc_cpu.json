@@ -1,0 +1,54 @@
+{
+  "symbol_version": 1,
+  "type": "plc_cpu",
+  "display_name": "PLC CPU",
+  "display_name_pt": "CPU PLC",
+  "category": "legacy",
+  "size": [
+    62,
+    80
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 8,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 22,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 36,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "RUN",
+      "role": "signal_out",
+      "x": 8,
+      "y": 76,
+      "required": false
+    },
+    {
+      "name": "ERR",
+      "role": "signal_out",
+      "x": 22,
+      "y": 76,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true,
+  "geometry_clean": false
+}

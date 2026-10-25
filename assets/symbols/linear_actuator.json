@@ -1,0 +1,73 @@
+{
+  "symbol_version": 1,
+  "type": "linear_actuator",
+  "display_name": "Electric linear actuator",
+  "display_name_pt": "Atuador linear elétrico",
+  "category": "legacy",
+  "size": [
+    12.11,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "SSR",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 10.607,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "+",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 10.607,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "stroke_mm": 100
+  },
+  "parameter_schema": [
+    {
+      "key": "stroke_mm",
+      "type": "int",
+      "label": "Stroke",
+      "label_pt": "Curso",
+      "unit": "mm",
+      "min": 0
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33258
+}

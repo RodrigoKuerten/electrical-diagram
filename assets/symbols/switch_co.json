@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "switch_co",
+  "display_name": "Changeover switch",
+  "display_name_pt": "Interruptor comutado",
+  "category": "control",
+  "size": [
+    10.784,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "13",
+      "role": "contact_common",
+      "x": 6.629,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "contact_no",
+      "x": 6.629,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "maintained"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "switch_co_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32923,
+  "geometry_clean": true
+}

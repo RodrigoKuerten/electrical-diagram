@@ -1,0 +1,48 @@
+{
+  "symbol_version": 1,
+  "type": "pneumatic_gripper",
+  "display_name": "Double-acting gripper",
+  "display_name_pt": "Pinça duplo efeito",
+  "category": "pneumatic",
+  "size": [
+    41.545,
+    47.732
+  ],
+  "pins": [
+    {
+      "name": "V",
+      "role": "terminal",
+      "x": 26.076,
+      "y": 9.723,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 9.723,
+      "y": 34.473,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 42.429,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 42.429,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33249,
+  "geometry_clean": true
+}

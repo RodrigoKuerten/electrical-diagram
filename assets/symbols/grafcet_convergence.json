@@ -1,0 +1,39 @@
+{
+  "symbol_version": 1,
+  "type": "grafcet_convergence",
+  "display_name": "AND convergence",
+  "display_name_pt": "Convergência em Y",
+  "category": "legacy",
+  "size": [
+    42,
+    36
+  ],
+  "pins": [
+    {
+      "name": "IN1",
+      "role": "signal_in",
+      "x": 8,
+      "y": 6,
+      "required": false
+    },
+    {
+      "name": "IN2",
+      "role": "signal_in",
+      "x": 8,
+      "y": 30,
+      "required": false
+    },
+    {
+      "name": "OUT",
+      "role": "signal_out",
+      "x": 34,
+      "y": 18,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

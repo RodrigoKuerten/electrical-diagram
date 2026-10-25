@@ -1,0 +1,115 @@
+{
+  "symbol_version": 1,
+  "type": "motor_3ph_1ph",
+  "display_name": "Three-phase motor as single-phase",
+  "display_name_pt": "Motor trifásico como monofásico",
+  "category": "legacy",
+  "size": [
+    6.541,
+    3.094
+  ],
+  "pins": [
+    {
+      "name": "U1",
+      "role": "supply_in",
+      "x": 1.308,
+      "y": 0.206,
+      "required": false
+    },
+    {
+      "name": "V1",
+      "role": "supply_in",
+      "x": 3.053,
+      "y": 0.206,
+      "required": false
+    },
+    {
+      "name": "W1",
+      "role": "supply_in",
+      "x": 4.797,
+      "y": 0.206,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 5.669,
+      "y": 1.547,
+      "required": false
+    },
+    {
+      "name": "W2",
+      "role": "terminal",
+      "x": 1.308,
+      "y": 2.681,
+      "required": false
+    },
+    {
+      "name": "U2",
+      "role": "terminal",
+      "x": 3.053,
+      "y": 2.681,
+      "required": false
+    },
+    {
+      "name": "V2",
+      "role": "terminal",
+      "x": 4.797,
+      "y": 2.681,
+      "required": false
+    },
+    {
+      "name": "C1",
+      "role": "terminal",
+      "x": 5.887,
+      "y": 1.031,
+      "required": false
+    },
+    {
+      "name": "C2",
+      "role": "terminal",
+      "x": 5.887,
+      "y": 1.547,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "power_kw": 1.5,
+    "rated_voltage": 380,
+    "min_live_phases": 2
+  },
+  "parameter_schema": [
+    {
+      "key": "power_kw",
+      "type": "number",
+      "label": "Power",
+      "label_pt": "Potência",
+      "unit": "kW",
+      "min": 0
+    },
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "min_live_phases",
+      "type": "int",
+      "label": "Minimum live phases",
+      "label_pt": "Fases mínimas",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "motor_3ph_1ph_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33238,
+  "geometry_clean": true,
+  "library_hidden": true
+}

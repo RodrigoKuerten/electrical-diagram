@@ -1,0 +1,60 @@
+{
+  "symbol_version": 1,
+  "type": "switch_nc",
+  "display_name": "Switch NC",
+  "display_name_pt": "Interruptor NF",
+  "category": "control",
+  "size": [
+    18.739,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "11",
+      "role": "contact_common",
+      "x": 6.629,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "13",
+      "role": "contact_common",
+      "x": 14.585,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "12",
+      "role": "contact_nc",
+      "x": 6.629,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "contact_nc",
+      "x": 14.585,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "maintained"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "switch_nc_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32921,
+  "geometry_clean": true
+}

@@ -1,0 +1,55 @@
+{
+  "symbol_version": 1,
+  "type": "pneumatic_motor",
+  "display_name": "Pneumatic motor",
+  "display_name_pt": "Motor pneumático",
+  "category": "pneumatic",
+  "size": [
+    40.263,
+    50.384
+  ],
+  "pins": [
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 37.125,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 17.679,
+      "y": 37.125,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 45.08,
+      "required": false
+    },
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 15.027,
+      "y": 45.08,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 17.679,
+      "y": 45.08,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33251,
+  "geometry_clean": true
+}

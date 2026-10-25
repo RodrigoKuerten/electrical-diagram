@@ -1,0 +1,59 @@
+{
+  "symbol_version": 1,
+  "type": "plc_power",
+  "display_name": "PLC power supply",
+  "display_name_pt": "Alimentação I/O digital PLC",
+  "category": "legacy",
+  "size": [
+    15.911,
+    22.098
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 2.767,
+      "y": 1.768,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 7.609,
+      "y": 1.768,
+      "required": false
+    },
+    {
+      "name": "+",
+      "role": "supply_out",
+      "x": 2.767,
+      "y": 20.33,
+      "required": false
+    },
+    {
+      "name": "-",
+      "role": "supply_out",
+      "x": 7.609,
+      "y": 20.33,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "voltage": 24
+  },
+  "parameter_schema": [
+    {
+      "key": "voltage",
+      "type": "int",
+      "label": "Voltage",
+      "label_pt": "Tensão",
+      "unit": "V",
+      "min": 0
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33276
+}

@@ -1,0 +1,41 @@
+{
+  "symbol_version": 1,
+  "type": "supply_battery",
+  "display_name": "Battery",
+  "display_name_pt": "Bateria",
+  "category": "supplies",
+  "size": [
+    14.894,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "supply_in",
+      "x": 9.723,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "supply_in",
+      "x": 7.071,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "supply_in",
+      "x": 12.375,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33047,
+  "geometry_clean": true
+}

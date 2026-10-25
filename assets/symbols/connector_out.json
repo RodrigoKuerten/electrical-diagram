@@ -1,0 +1,34 @@
+{
+  "symbol_version": 1,
+  "type": "connector_out",
+  "display_name": "Output connector",
+  "display_name_pt": "Conector de saída",
+  "category": "terminals",
+  "size": [
+    12.11,
+    21.214
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 21.214,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32898,
+  "geometry_clean": true
+}

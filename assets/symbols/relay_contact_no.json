@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "relay_contact_no",
+  "display_name": "Relay contact NO",
+  "display_name_pt": "Contato de relé NA",
+  "category": "relays",
+  "size": [
+    4.154,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "11",
+      "role": "contact_common",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "12",
+      "role": "contact_no",
+      "x": 0.0,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "relay_contact_no_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32938,
+  "geometry_clean": true
+}

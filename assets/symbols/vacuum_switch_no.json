@@ -1,0 +1,54 @@
+{
+  "symbol_version": 1,
+  "type": "vacuum_switch_no",
+  "display_name": "Vacuum switch NO",
+  "display_name_pt": "Vacuostato NA",
+  "category": "sensors",
+  "size": [
+    10.607,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "V",
+      "role": "contact_no",
+      "x": 5.304,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "threshold": 0.5
+  },
+  "parameter_schema": [
+    {
+      "key": "threshold",
+      "type": "number",
+      "label": "Threshold",
+      "label_pt": "Limiar",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "vacuum_switch_no_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33256,
+  "geometry_clean": true
+}

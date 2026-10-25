@@ -1,0 +1,36 @@
+{
+  "symbol_version": 1,
+  "type": "bell",
+  "display_name": "Bell",
+  "display_name_pt": "Campainha",
+  "category": "indication",
+  "size": [
+    5.304,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "X1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "X2",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "bell_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32962,
+  "geometry_clean": true
+}

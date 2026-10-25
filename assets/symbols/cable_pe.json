@@ -1,0 +1,34 @@
+{
+  "symbol_version": 1,
+  "type": "cable_pe",
+  "display_name": "Protective cable",
+  "display_name_pt": "Cabo proteção",
+  "category": "terminals",
+  "size": [
+    7.955,
+    2.21
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 0.497,
+      "y": 1.105,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 7.458,
+      "y": 1.105,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32897,
+  "geometry_clean": true
+}

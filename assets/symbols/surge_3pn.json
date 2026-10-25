@@ -1,0 +1,41 @@
+{
+  "symbol_version": 1,
+  "type": "surge_3pn",
+  "display_name": "Surge arrester IIIN",
+  "display_name_pt": "Limitador sobretensões IIIN",
+  "category": "protection",
+  "size": [
+    15.778,
+    11.933
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 3.978,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 9.281,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 9.281,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33056,
+  "geometry_clean": true
+}

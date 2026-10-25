@@ -1,0 +1,72 @@
+{
+  "symbol_version": 1,
+  "type": "selector_3pos",
+  "display_name": "Selector I-II-III",
+  "display_name_pt": "Comutador I-II-III",
+  "category": "control",
+  "size": [
+    14.452,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 6.629,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 11.933,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "contact_no",
+      "x": 6.629,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "contact_no",
+      "x": 11.933,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "positions": 3,
+    "position": 1
+  },
+  "parameter_schema": [
+    {
+      "key": "positions",
+      "type": "int",
+      "label": "Positions",
+      "label_pt": "Posições",
+      "unit": "",
+      "min": 0
+    },
+    {
+      "key": "position",
+      "type": "int",
+      "label": "Position",
+      "label_pt": "position",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "position_1": "selector_3pos_position_1.svg",
+    "position_2": "selector_3pos_position_2.svg",
+    "position_3": "selector_3pos_position_3.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33049,
+  "geometry_clean": true
+}

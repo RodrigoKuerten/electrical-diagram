@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.70 30.00" width="11.3585mm" height="13.2589mm">
+<text x="10" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="22" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<text x="10" y="24" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="22" y="24" fill="#1f5f9e" font-family="Arial" font-size="6">4</text>
+<path d="M 8 6 L 8 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 24 L 8 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 2 12 L 8 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="0,15 3,14 4,17 1,18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 6 L 20 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 24 L 20 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 14 12 L 20 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 5 18 L 9 18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 13 18 L 17 18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="12,15 15,14 16,17 13,18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "symbol_version": 1,
+  "type": "logic_edge_down",
+  "display_name": "Falling edge",
+  "display_name_pt": "Flanco descendente",
+  "category": "logic",
+  "size": [
+    13.126,
+    3.094
+  ],
+  "pins": [
+    {
+      "name": "IN1",
+      "role": "signal_in",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "OUT",
+      "role": "signal_out",
+      "x": 10.607,
+      "y": 2.652,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "logic_edge_down_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33067,
+  "geometry_clean": true
+}

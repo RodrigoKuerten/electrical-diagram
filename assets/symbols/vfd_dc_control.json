@@ -1,0 +1,39 @@
+{
+  "symbol_version": 1,
+  "type": "vfd_dc_control",
+  "display_name": "DC drive control",
+  "display_name_pt": "Controle variador CC",
+  "category": "legacy",
+  "size": [
+    50,
+    44
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 8,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 8,
+      "y": 40,
+      "required": false
+    },
+    {
+      "name": "AO",
+      "role": "signal_out",
+      "x": 42,
+      "y": 22,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

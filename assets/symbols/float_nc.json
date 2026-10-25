@@ -1,0 +1,45 @@
+{
+  "symbol_version": 1,
+  "type": "float_nc",
+  "display_name": "Float switch NC",
+  "display_name_pt": "Boia NF",
+  "category": "legacy",
+  "size": [
+    36,
+    44
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 11,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 11,
+      "y": 40,
+      "required": true
+    }
+  ],
+  "default_parameters": {
+    "level": 50
+  },
+  "parameter_schema": [
+    {
+      "key": "level",
+      "type": "int",
+      "label": "Level",
+      "label_pt": "level",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "float_nc_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

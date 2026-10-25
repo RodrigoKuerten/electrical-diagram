@@ -1,0 +1,49 @@
+{
+  "symbol_version": 1,
+  "type": "timer_on_off",
+  "display_name": "Timer ON/OFF",
+  "display_name_pt": "Temporizador conexão/desconexão",
+  "category": "timers",
+  "size": [
+    7.69,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 3.536,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 3.536,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "delay_ms": 1000,
+    "time_base": "ms",
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "delay_ms",
+      "type": "int",
+      "label": "Delay",
+      "label_pt": "Tempo",
+      "unit": "ms",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "timer_on_off_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32955,
+  "geometry_clean": true
+}

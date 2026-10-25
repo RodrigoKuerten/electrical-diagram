@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 34" width="30mm" height="34mm">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="8.00" y1="4.00" x2="8.00" y2="12.00" stroke="#1f2933" stroke-width="0.8"/><line x1="8.00" y1="12.00" x2="12.00" y2="12.00" stroke="#1f2933" stroke-width="0.8"/><line x1="8.00" y1="30.00" x2="8.00" y2="22.00" stroke="#1f2933" stroke-width="0.8"/><line x1="8.00" y1="22.00" x2="12.00" y2="22.00" stroke="#1f2933" stroke-width="0.8"/><rect x="12.00" y="10.00" width="11.00" height="14.00" rx="0" stroke="#1f2933" stroke-width="0.9" fill="none"/><line x1="20.00" y1="4.00" x2="20.00" y2="12.00" stroke="#1f2933" stroke-width="0.8"/><line x1="20.00" y1="12.00" x2="24.00" y2="12.00" stroke="#1f2933" stroke-width="0.8"/><line x1="20.00" y1="30.00" x2="20.00" y2="22.00" stroke="#1f2933" stroke-width="0.8"/><line x1="20.00" y1="22.00" x2="24.00" y2="22.00" stroke="#1f2933" stroke-width="0.8"/><rect x="24.00" y="10.00" width="8.00" height="14.00" rx="0" stroke="#1f2933" stroke-width="0.9" fill="none"/><text x="5.20" y="8.00" fill="#1f5f9e" font-family="Arial" font-size="2.3" text-anchor="middle" font-weight="normal">A1</text><text x="5.20" y="30.00" fill="#1f5f9e" font-family="Arial" font-size="2.3" text-anchor="middle" font-weight="normal">A2</text>
+</g>
+</svg>

@@ -1,0 +1,60 @@
+{
+  "symbol_version": 1,
+  "type": "disconnector_3pn",
+  "display_name": "Disconnector IIIN",
+  "display_name_pt": "Seccionador IIIN",
+  "category": "protection",
+  "size": [
+    16.662,
+    18.562
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 18.562,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "closed": true
+  },
+  "parameter_schema": [
+    {
+      "key": "closed",
+      "type": "bool",
+      "label": "Closed",
+      "label_pt": "closed",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "disconnector_3pn_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32863,
+  "geometry_clean": true
+}

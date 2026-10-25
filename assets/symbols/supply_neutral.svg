@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 34" width="22mm" height="34mm">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="11.00" y1="4.00" x2="11.00" y2="22.00" stroke="#1f2933" stroke-width="0.8"/><line x1="7.00" y1="22.00" x2="15.00" y2="22.00" stroke="#1f2933" stroke-width="1.2"/><text x="11.00" y="2.00" fill="#1f5f9e" font-family="Arial" font-size="2.6" text-anchor="middle" font-weight="normal">N</text><text x="11.00" y="30.00" fill="#1f2933" font-family="Arial" font-size="3.0" text-anchor="middle" font-weight="bold">N</text>
+</g>
+</svg>

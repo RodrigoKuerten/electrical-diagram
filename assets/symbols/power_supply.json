@@ -1,0 +1,41 @@
+{
+  "symbol_version": 1,
+  "type": "power_supply",
+  "display_name": "Power supply",
+  "display_name_pt": "Fonte de alimentação",
+  "category": "supplies",
+  "size": [
+    20.065,
+    16.353
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 8.397,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "terminal",
+      "x": 15.911,
+      "y": 8.397,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 16.353,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32999,
+  "geometry_clean": true
+}

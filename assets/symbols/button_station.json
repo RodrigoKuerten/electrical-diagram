@@ -1,0 +1,75 @@
+{
+  "symbol_version": 1,
+  "type": "button_station",
+  "display_name": "Pushbutton station",
+  "display_name_pt": "Botonera",
+  "category": "legacy",
+  "size": [
+    68.946,
+    58.339
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 9.849,
+      "y": 53.266,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 17.729,
+      "y": 53.266,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "contact_common",
+      "x": 29.548,
+      "y": 53.266,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "contact_no",
+      "x": 37.428,
+      "y": 53.266,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "contact_common",
+      "x": 49.247,
+      "y": 53.266,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "contact_no",
+      "x": 57.127,
+      "y": 53.266,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "buttons": 3
+  },
+  "parameter_schema": [
+    {
+      "key": "buttons",
+      "type": "int",
+      "label": "Buttons",
+      "label_pt": "buttons",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "button_station_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33324
+}

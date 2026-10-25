@@ -1,0 +1,42 @@
+{
+  "symbol_version": 1,
+  "type": "supply_ac1_pe",
+  "display_name": "Supply L + N + PE",
+  "display_name_pt": "Alimentação F + N + PE",
+  "category": "legacy",
+  "size": [
+    1.768,
+    8.839
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 0.416,
+      "y": 0.769,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 1.144,
+      "y": 0.769,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 0.78,
+      "y": 8.071,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32873,
+  "geometry_clean": true,
+  "library_hidden": true
+}

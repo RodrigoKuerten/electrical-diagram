@@ -1,0 +1,50 @@
+{
+  "symbol_version": 1,
+  "type": "contact_nc",
+  "display_name": "Contact NC",
+  "display_name_pt": "Contato NF",
+  "category": "contacts",
+  "size": [
+    12.11,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "11",
+      "role": "contact_common",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "13",
+      "role": "contact_common",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "12",
+      "role": "contact_nc",
+      "x": 0.0,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "14",
+      "role": "contact_nc",
+      "x": 7.955,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "contact_nc_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32939,
+  "geometry_clean": true
+}

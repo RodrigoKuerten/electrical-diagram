@@ -1,0 +1,73 @@
+{
+  "symbol_version": 1,
+  "type": "motor_3ph_yd",
+  "display_name": "Three-phase motor Y/D",
+  "display_name_pt": "Motor trifásico Y/D",
+  "category": "legacy",
+  "size": [
+    22.717,
+    21.214
+  ],
+  "pins": [
+    {
+      "name": "U1",
+      "role": "supply_in",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "V1",
+      "role": "supply_in",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "earth",
+      "x": 18.562,
+      "y": 2.652,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "power_kw": 1.5,
+    "rated_voltage": 380,
+    "min_live_phases": 2
+  },
+  "parameter_schema": [
+    {
+      "key": "power_kw",
+      "type": "number",
+      "label": "Power",
+      "label_pt": "Potência",
+      "unit": "kW",
+      "min": 0
+    },
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "min_live_phases",
+      "type": "int",
+      "label": "Minimum live phases",
+      "label_pt": "Fases mínimas",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "motor_3ph_yd_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32830,
+  "geometry_clean": true,
+  "library_hidden": true
+}

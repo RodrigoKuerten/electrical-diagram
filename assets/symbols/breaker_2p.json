@@ -1,0 +1,76 @@
+{
+  "symbol_version": 1,
+  "type": "breaker_2p",
+  "display_name": "Breaker II",
+  "display_name_pt": "Disjuntor II",
+  "category": "protection",
+  "size": [
+    22.717,
+    21.214
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 19.446,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 8.839,
+      "y": 21.214,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 14.143,
+      "y": 21.214,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 22.098,
+      "y": 18.562,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_current": 16,
+    "tripped": false
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_current",
+      "type": "number",
+      "label": "Rated current",
+      "label_pt": "Corrente nominal",
+      "unit": "A",
+      "min": 0
+    }
+  ],
+  "states": {
+    "tripped": "breaker_2p_tripped.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32867,
+  "geometry_clean": true
+}

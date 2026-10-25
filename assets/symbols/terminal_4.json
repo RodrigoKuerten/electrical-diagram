@@ -1,0 +1,48 @@
+{
+  "symbol_version": 1,
+  "type": "terminal_4",
+  "display_name": "4 round terminals",
+  "display_name_pt": "4 bornes redondos",
+  "category": "legacy",
+  "size": [
+    17.679,
+    1.768
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 0.884,
+      "y": 0.884,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 6.188,
+      "y": 0.884,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 11.491,
+      "y": 0.884,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 16.795,
+      "y": 0.884,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32993,
+  "geometry_clean": true
+}

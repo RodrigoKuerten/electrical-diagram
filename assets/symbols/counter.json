@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "counter",
+  "display_name": "Counter",
+  "display_name_pt": "Contador",
+  "category": "legacy",
+  "size": [
+    7.69,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 3.536,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 3.536,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "preset": 10
+  },
+  "parameter_schema": [
+    {
+      "key": "preset",
+      "type": "int",
+      "label": "Preset",
+      "label_pt": "Preset",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33098,
+  "geometry_clean": true,
+  "library_hidden": true
+}

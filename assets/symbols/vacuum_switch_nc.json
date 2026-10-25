@@ -1,0 +1,45 @@
+{
+  "symbol_version": 1,
+  "type": "vacuum_switch_nc",
+  "display_name": "Vacuum switch NC",
+  "display_name_pt": "Vacuostato NF",
+  "category": "legacy",
+  "size": [
+    32,
+    44
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 11,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 11,
+      "y": 40,
+      "required": true
+    }
+  ],
+  "default_parameters": {
+    "threshold": 0.5
+  },
+  "parameter_schema": [
+    {
+      "key": "threshold",
+      "type": "number",
+      "label": "Threshold",
+      "label_pt": "Limiar",
+      "unit": "",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "vacuum_switch_nc_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

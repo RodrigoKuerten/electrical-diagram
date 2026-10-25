@@ -1,0 +1,36 @@
+{
+  "symbol_version": 1,
+  "type": "horn",
+  "display_name": "Horn",
+  "display_name_pt": "Bocina",
+  "category": "indication",
+  "size": [
+    7.071,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "X1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "X2",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {
+    "active": "horn_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32960,
+  "geometry_clean": true
+}

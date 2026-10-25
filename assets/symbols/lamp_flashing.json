@@ -1,0 +1,55 @@
+{
+  "symbol_version": 1,
+  "type": "lamp_flashing",
+  "display_name": "Flashing pilot lamp",
+  "display_name_pt": "Piloto intermitente",
+  "category": "indication",
+  "size": [
+    9.281,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "X1",
+      "role": "terminal",
+      "x": 1.768,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "X2",
+      "role": "terminal",
+      "x": 1.768,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "color": "amber",
+    "period_ms": 1000
+  },
+  "parameter_schema": [
+    {
+      "key": "color",
+      "type": "string",
+      "label": "Color",
+      "label_pt": "Cor",
+      "unit": ""
+    },
+    {
+      "key": "period_ms",
+      "type": "int",
+      "label": "Period",
+      "label_pt": "Período",
+      "unit": "ms",
+      "min": 0
+    }
+  ],
+  "states": {
+    "active": "lamp_flashing_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32959,
+  "geometry_clean": true
+}

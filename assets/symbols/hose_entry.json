@@ -1,0 +1,34 @@
+{
+  "symbol_version": 1,
+  "type": "hose_entry",
+  "display_name": "Hose entry",
+  "display_name_pt": "Entrada de mangueira",
+  "category": "pneumatic",
+  "size": [
+    10.607,
+    10.607
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 0.0,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 10.607,
+      "y": 0.0,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32891,
+  "geometry_clean": true
+}

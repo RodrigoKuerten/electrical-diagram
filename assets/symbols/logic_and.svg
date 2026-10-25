@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.70 28.00" width="15.7781mm" height="12.375mm">
+<text x="2" y="10" fill="#1f2933" font-family="Arial" font-size="6">1</text>
+<text x="2" y="22" fill="#1f2933" font-family="Arial" font-size="6">2</text>
+<text x="32" y="22" fill="#1f2933" font-family="Arial" font-size="6">3</text>
+<path d="M 0 10 L 6 10" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 0 22 L 6 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 22 L 30 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<polygon points="6,4 24,4 24,28 6,28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 6 4 L 24 4" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 4 L 24 28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 24 28 L 6 28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 6 28 L 6 4" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="10" y="6" fill="#1f2933" font-family="Arial" font-size="6">&gt;</text>
+<text x="10" y="9" fill="#1f2933" font-family="Arial" font-size="6">=</text>
+<text x="14" y="7" fill="#1f2933" font-family="Arial" font-size="6">1</text>
+</svg>

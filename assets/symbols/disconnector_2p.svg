@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.40 48.00" width="22.717mm" height="21.2143mm">
+<text x="22" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">1</text>
+<text x="34" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">3</text>
+<text x="46" y="6" fill="#1f5f9e" font-family="Arial" font-size="6">5</text>
+<text x="22" y="42" fill="#1f5f9e" font-family="Arial" font-size="6">2</text>
+<text x="34" y="42" fill="#1f5f9e" font-family="Arial" font-size="6">4</text>
+<text x="46" y="42" fill="#1f5f9e" font-family="Arial" font-size="6">6</text>
+<path d="M 20 6 L 20 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 24 L 20 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 42 L 20 48" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 14 12 L 20 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 30 L 20 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 31 L 22 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 22 31 L 22 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 22 34 L 20 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 20 34 L 20 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="20" y="36" fill="#1f2933" font-family="Arial" font-size="6">I&gt;</text>
+<path d="M 32 6 L 32 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 32 24 L 32 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 32 42 L 32 48" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 26 12 L 32 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 32 30 L 32 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 32 31 L 34 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 34 31 L 34 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 34 34 L 32 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 32 34 L 32 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="32" y="36" fill="#1f2933" font-family="Arial" font-size="6">I&gt;</text>
+<path d="M 44 6 L 44 12" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 44 24 L 44 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 44 42 L 44 48" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 38 12 L 44 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 44 30 L 44 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 44 31 L 46 31" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 46 31 L 46 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 46 34 L 44 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 44 34 L 44 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<text x="44" y="36" fill="#1f2933" font-family="Arial" font-size="6">I&gt;</text>
+<path d="M 14 30 L 50 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 14 36 L 50 36" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 14 42 L 50 42 L 14 42" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 26 30 L 26 42" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 38 30 L 38 42" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 50 30" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 0 14 L 0 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 0 18 L 4 18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 4 14 L 4 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 14 L 8 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 12 14 L 12 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 4 22" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 4 18 L 12 18 L 12 14" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 12 18 L 14 18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 17 18 L 21 18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 27 18 L 31 18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 36 18 L 40 18" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 22 L 8 24" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 26 L 8 28" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 30 L 8 34" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 32 L 10 32" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 12 32 L 14 32" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 36 L 8 38" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 8 38 L 10 38" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+<path d="M 12 38 L 14 38" stroke="#1f2933" stroke-width="1.1" fill="none"/>
+</svg>

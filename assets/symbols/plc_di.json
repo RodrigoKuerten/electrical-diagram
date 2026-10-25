@@ -1,0 +1,62 @@
+{
+  "symbol_version": 1,
+  "type": "plc_di",
+  "display_name": "Digital input PLC",
+  "display_name_pt": "Entrada digital PLC",
+  "category": "legacy",
+  "size": [
+    15.911,
+    22.098
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 2.357,
+      "y": 1.426,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 6.482,
+      "y": 1.426,
+      "required": false
+    },
+    {
+      "name": "I0",
+      "role": "signal_in",
+      "x": 2.357,
+      "y": 20.673,
+      "required": false
+    },
+    {
+      "name": "I1",
+      "role": "signal_in",
+      "x": 5.009,
+      "y": 20.673,
+      "required": false
+    },
+    {
+      "name": "I2",
+      "role": "signal_in",
+      "x": 7.661,
+      "y": 20.673,
+      "required": false
+    },
+    {
+      "name": "I3",
+      "role": "signal_in",
+      "x": 10.312,
+      "y": 20.673,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33273
+}

@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "sensor_capacitive_nc",
+  "display_name": "Capacitive sensor NF",
+  "display_name_pt": "Sensor capacitivo NF",
+  "category": "sensors",
+  "size": [
+    10.607,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "contact_nc",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "mode": "momentary"
+  },
+  "parameter_schema": [
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "sensor_capacitive_nc_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33023,
+  "geometry_clean": true
+}

@@ -1,0 +1,62 @@
+{
+  "symbol_version": 1,
+  "type": "soft_starter",
+  "display_name": "Electronic soft starter",
+  "display_name_pt": "Arrancador eletrônico CA",
+  "category": "power",
+  "size": [
+    22.717,
+    29.17
+  ],
+  "pins": [
+    {
+      "name": "L1",
+      "role": "supply_in",
+      "x": 2.652,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "PE",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "U",
+      "role": "terminal",
+      "x": 2.652,
+      "y": 29.17,
+      "required": false
+    },
+    {
+      "name": "V",
+      "role": "terminal",
+      "x": 7.955,
+      "y": 29.17,
+      "required": false
+    },
+    {
+      "name": "W",
+      "role": "terminal",
+      "x": 13.259,
+      "y": 29.17,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 33006,
+  "geometry_clean": true
+}

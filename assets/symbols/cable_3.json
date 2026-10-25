@@ -1,0 +1,60 @@
+{
+  "symbol_version": 1,
+  "type": "cable_3",
+  "display_name": "Three-phase cable",
+  "display_name_pt": "Cabo trifásico",
+  "category": "legacy",
+  "size": [
+    42,
+    26
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 2,
+      "y": 7,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 2,
+      "y": 13,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 2,
+      "y": 19,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 40,
+      "y": 7,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 40,
+      "y": 13,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 40,
+      "y": 19,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "library_hidden": true
+}

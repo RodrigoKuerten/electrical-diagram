@@ -1,0 +1,90 @@
+{
+  "symbol_version": 1,
+  "type": "plc_et200_di",
+  "display_name": "ET-200 8DI",
+  "display_name_pt": "ET-200 8DI",
+  "category": "legacy",
+  "size": [
+    4.906,
+    3.094
+  ],
+  "pins": [
+    {
+      "name": "L",
+      "role": "supply_in",
+      "x": 0.727,
+      "y": 0.2,
+      "required": false
+    },
+    {
+      "name": "N",
+      "role": "neutral",
+      "x": 1.999,
+      "y": 0.2,
+      "required": false
+    },
+    {
+      "name": "I0",
+      "role": "signal_in",
+      "x": 0.545,
+      "y": 2.894,
+      "required": false
+    },
+    {
+      "name": "I1",
+      "role": "signal_in",
+      "x": 0.999,
+      "y": 2.894,
+      "required": false
+    },
+    {
+      "name": "I2",
+      "role": "signal_in",
+      "x": 1.454,
+      "y": 2.894,
+      "required": false
+    },
+    {
+      "name": "I3",
+      "role": "signal_in",
+      "x": 1.908,
+      "y": 2.894,
+      "required": false
+    },
+    {
+      "name": "I4",
+      "role": "signal_in",
+      "x": 2.362,
+      "y": 2.894,
+      "required": false
+    },
+    {
+      "name": "I5",
+      "role": "signal_in",
+      "x": 2.816,
+      "y": 2.894,
+      "required": false
+    },
+    {
+      "name": "I6",
+      "role": "signal_in",
+      "x": 3.271,
+      "y": 2.894,
+      "required": false
+    },
+    {
+      "name": "I7",
+      "role": "signal_in",
+      "x": 3.725,
+      "y": 2.894,
+      "required": false
+    }
+  ],
+  "default_parameters": {},
+  "parameter_schema": [],
+  "states": {},
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_clean": true,
+  "geometry_command": 33335
+}

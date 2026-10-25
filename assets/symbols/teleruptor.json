@@ -1,0 +1,67 @@
+{
+  "symbol_version": 1,
+  "type": "teleruptor",
+  "display_name": "Latching relay (teleruptor)",
+  "display_name_pt": "Telerruptor",
+  "category": "legacy",
+  "size": [
+    30,
+    34
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 8,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 8,
+      "y": 30,
+      "required": true
+    },
+    {
+      "name": "B1",
+      "role": "coil_input",
+      "x": 20,
+      "y": 4,
+      "required": false
+    },
+    {
+      "name": "B2",
+      "role": "coil_output",
+      "x": 20,
+      "y": 30,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "rated_voltage": 220,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "teleruptor_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

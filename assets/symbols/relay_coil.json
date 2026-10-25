@@ -1,0 +1,53 @@
+{
+  "symbol_version": 1,
+  "type": "relay_coil",
+  "display_name": "Relay coil",
+  "display_name_pt": "Bobina de relé",
+  "category": "legacy",
+  "size": [
+    26,
+    34
+  ],
+  "pins": [
+    {
+      "name": "A1",
+      "role": "coil_input",
+      "x": 8,
+      "y": 4,
+      "required": true
+    },
+    {
+      "name": "A2",
+      "role": "coil_output",
+      "x": 8,
+      "y": 30,
+      "required": true
+    }
+  ],
+  "default_parameters": {
+    "rated_voltage": 24,
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "rated_voltage",
+      "type": "int",
+      "label": "Rated voltage",
+      "label_pt": "Tensão nominal",
+      "unit": "V",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "relay_coil_active.svg"
+  },
+  "element_ids": {},
+  "library_hidden": true
+}

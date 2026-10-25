@@ -1,0 +1,46 @@
+{
+  "symbol_version": 1,
+  "type": "contact_thermal_no",
+  "display_name": "Thermal relay contact NO",
+  "display_name_pt": "Contato auxiliar térmico NA",
+  "category": "protection",
+  "size": [
+    9.723,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "95",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "96",
+      "role": "terminal",
+      "x": 5.304,
+      "y": 13.259,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "label_group": ""
+  },
+  "parameter_schema": [
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "active": "contact_thermal_no_active.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32928,
+  "geometry_clean": true
+}

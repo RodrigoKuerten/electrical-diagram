@@ -3,29 +3,84 @@
   "type": "selector_switch",
   "display_name": "Selector switch",
   "display_name_pt": "Chave seletora",
-  "category": "control",
-  "size": [60, 50],
-  "pins": [
-    {"name": "1", "role": "contact_common", "x": 0, "y": 25, "required": true},
-    {"name": "2", "role": "contact_no", "x": 60, "y": 10, "required": true},
-    {"name": "3", "role": "contact_no", "x": 60, "y": 25, "required": true},
-    {"name": "4", "role": "contact_no", "x": 60, "y": 40, "required": true}
+  "category": "legacy",
+  "size": [
+    60,
+    50
   ],
-  "default_parameters": {"positions": 2, "mode": "maintained", "position": 1, "label_group": ""},
+  "pins": [
+    {
+      "name": "1",
+      "role": "contact_common",
+      "x": 10,
+      "y": 40,
+      "required": true
+    },
+    {
+      "name": "2",
+      "role": "contact_no",
+      "x": 25,
+      "y": 40,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "contact_no",
+      "x": 40,
+      "y": 40,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "contact_no",
+      "x": 55,
+      "y": 40,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "positions": 2,
+    "mode": "maintained",
+    "position": 1,
+    "label_group": ""
+  },
   "parameter_schema": [
-    {"key": "positions", "type": "int", "label": "Positions", "label_pt": "Posições", "min": 2, "max": 3},
-    {"key": "mode", "type": "enum", "label": "Mode", "label_pt": "Modo", "options": ["maintained", "momentary"]},
-    {"key": "position", "type": "int", "label": "Position", "label_pt": "Posição", "min": 1, "max": 3},
-    {"key": "label_group", "type": "string", "label": "Label group", "label_pt": "Grupo de etiqueta"}
+    {
+      "key": "positions",
+      "type": "int",
+      "label": "Positions",
+      "label_pt": "Posições",
+      "unit": "",
+      "min": 0
+    },
+    {
+      "key": "mode",
+      "type": "string",
+      "label": "Mode",
+      "label_pt": "Modo",
+      "unit": ""
+    },
+    {
+      "key": "position",
+      "type": "int",
+      "label": "Position",
+      "label_pt": "position",
+      "unit": "",
+      "min": 0
+    },
+    {
+      "key": "label_group",
+      "type": "string",
+      "label": "Label group",
+      "label_pt": "Grupo de etiqueta",
+      "unit": ""
+    }
   ],
   "states": {
     "position_1": "selector_switch_position_1.svg",
     "position_2": "selector_switch_position_2.svg",
     "position_3": "selector_switch_position_3.svg"
   },
-  "element_ids": {
-    "position_1": ["selector_blade"],
-    "position_2": ["selector_blade"],
-    "position_3": ["selector_blade"]
-  }
+  "element_ids": {},
+  "library_hidden": true
 }

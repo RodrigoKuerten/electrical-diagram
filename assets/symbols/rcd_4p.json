@@ -1,0 +1,83 @@
+{
+  "symbol_version": 1,
+  "type": "rcd_4p",
+  "display_name": "Differential switch IIIN",
+  "display_name_pt": "Interruptor diferencial IIIN",
+  "category": "protection",
+  "size": [
+    15.469,
+    13.259
+  ],
+  "pins": [
+    {
+      "name": "1",
+      "role": "terminal",
+      "x": 0.0,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "3",
+      "role": "terminal",
+      "x": 6.629,
+      "y": 2.652,
+      "required": false
+    },
+    {
+      "name": "5",
+      "role": "terminal",
+      "x": 15.469,
+      "y": 5.304,
+      "required": false
+    },
+    {
+      "name": "2",
+      "role": "terminal",
+      "x": 1.326,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "4",
+      "role": "terminal",
+      "x": 6.629,
+      "y": 13.259,
+      "required": false
+    },
+    {
+      "name": "6",
+      "role": "terminal",
+      "x": 15.469,
+      "y": 10.607,
+      "required": false
+    }
+  ],
+  "default_parameters": {
+    "sensitivity_ma": 30,
+    "tripped": false
+  },
+  "parameter_schema": [
+    {
+      "key": "sensitivity_ma",
+      "type": "int",
+      "label": "Sensitivity",
+      "label_pt": "Sensibilidade",
+      "unit": "mA",
+      "min": 0
+    },
+    {
+      "key": "tripped",
+      "type": "bool",
+      "label": "Tripped",
+      "label_pt": "tripped",
+      "unit": ""
+    }
+  ],
+  "states": {
+    "tripped": "rcd_4p_tripped.svg"
+  },
+  "element_ids": {},
+  "geometry_source": "cadesimu-gdi",
+  "geometry_command": 32865,
+  "geometry_clean": true
+}
